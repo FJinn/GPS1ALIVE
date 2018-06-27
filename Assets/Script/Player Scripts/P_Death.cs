@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class P_Death : MonoBehaviour {
 
     public bool isDead;
-    public Animator ScreenFade;
+    public GameObject ScreenFade;
+    public int sceneIndex;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,9 +23,10 @@ public class P_Death : MonoBehaviour {
     {
         GameObject.FindGameObjectWithTag("Player2").GetComponent<P_controls>().StopGameControl = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<P_controls>().StopGameControl = true;
-        ScreenFade.SetTrigger("FadeOut");
+        //ScreenFade.GetComponent<LevelChanger>().FadeToLevel(2);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene(2);
+        ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
+       // SceneManager.LoadScene(2);
     }
     
 }
