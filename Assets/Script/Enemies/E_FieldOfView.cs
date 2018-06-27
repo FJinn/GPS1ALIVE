@@ -38,7 +38,7 @@ public class E_FieldOfView : MonoBehaviour {
 
                 if (hit.collider != null && Mathf.Sign(transform.localScale.x) == Mathf.Sign(playerPos.x) && (hit.collider.tag == "Player" || hit.collider.tag == "Player2"))
                 {
-                    if (!Detected && !hit.collider.gameObject.GetComponent<P_ShadowDetect>().P_isUnderShadow)
+                    if (!Detected && !hit.collider.GetComponent<P_ShadowDetect>().P_isUnderShadow)
                     {
                         
                         gameObject.GetComponent<E_Sound_Detection>().EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_value += 1f;

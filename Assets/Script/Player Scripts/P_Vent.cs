@@ -29,17 +29,17 @@ public class P_Vent : MonoBehaviour {
         var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 150f, bypassEnemyMask);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
-            if(onVent)
-            {
-                Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k]);
-            }else
-            {
-                Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k],false);
-            }
+            Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k]);
         }
         
-        Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player2").GetComponent<P_Vent>().BoxColliderOrigin);
-        Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
+        if(gameObject.CompareTag("Player"))
+        {
+            Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player2").GetComponent<P_Vent>().BoxColliderOrigin);
+        }
+        if(gameObject.CompareTag("Player2"))
+        {
+            Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
+        }
 
         
     }

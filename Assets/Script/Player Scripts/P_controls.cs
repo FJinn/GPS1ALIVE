@@ -54,6 +54,7 @@ public class P_controls : MonoBehaviour {
             animList[3] = "B_CrawlAnim";
 
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
+
         }
         else if (gameObject.tag == "Player2")
         {
@@ -69,6 +70,15 @@ public class P_controls : MonoBehaviour {
             animList[3] = "G_CrawlAnim";
 
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
+        }
+
+        var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 500000f);
+        for (int k = 0; k < foundEnemies.Length; k++)
+        {
+            if(foundEnemies[k].CompareTag("Enemy"))
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), foundEnemies[k]);
+            }
         }
     }
 
