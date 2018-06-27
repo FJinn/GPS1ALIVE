@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class P_Death : MonoBehaviour {
 
-    public bool isDead = false;
-
+    public bool isDead;
+    public Animator ScreenFade;
 	// Use this for initialization
 	void Start () {
 		
@@ -14,9 +14,16 @@ public class P_Death : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (isDead){
-            SceneManager.LoadScene("Prototype_Level_2");
-            isDead = false;
-        }
+
 	}
+
+    IEnumerator Dead()
+    {
+        GameObject.FindGameObjectWithTag("Player2").GetComponent<P_controls>().StopGameControl = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<P_controls>().StopGameControl = true;
+        ScreenFade.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(2);
+    }
+    
 }

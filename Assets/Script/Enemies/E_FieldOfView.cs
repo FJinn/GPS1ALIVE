@@ -11,6 +11,8 @@ public class E_FieldOfView : MonoBehaviour {
     private float dstEnemy;
 
     public LayerMask playerMask;
+
+    public GameObject Alerted_Spawn;
    
     public bool Detected;
 
@@ -40,9 +42,8 @@ public class E_FieldOfView : MonoBehaviour {
                 {
                     if (!Detected && !hit.collider.GetComponent<P_ShadowDetect>().P_isUnderShadow)
                     {
+                        Instantiate(Alerted_Spawn, transform.position - new Vector3(0,transform.localScale.y - 17f,0), transform.rotation);
                         
-                        gameObject.GetComponent<E_Sound_Detection>().EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_value += 1f;
-                        // Instantiate(Alerted_Spawn, transform.position - new Vector3(0,transform.localScale.y - 6f,0), transform.rotation);
                         Detected = true;
                     }
 

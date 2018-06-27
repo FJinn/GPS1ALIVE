@@ -34,6 +34,8 @@ public class P_controls : MonoBehaviour {
     public Animator anim;
     public string[] animList;
 
+    public bool StopGameControl;
+
 
     private void Awake()
     {
@@ -119,7 +121,7 @@ public class P_controls : MonoBehaviour {
             moveHorizontal = Input.GetAxis("Horizontal2");
         }
        
-        if (!GetComponent<P_throw>().onThrow) {
+        if (!GetComponent<P_throw>().onThrow && !StopGameControl) {
 
             if (!OnLadder){
 

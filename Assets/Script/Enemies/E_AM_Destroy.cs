@@ -11,8 +11,11 @@ public class E_AM_Destroy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
         p = GameObject.Find("Player1");
 
+        p.GetComponent<P_Death>().StartCoroutine("Dead");
+        
         if(AM_enemy != null)
         {
             AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
@@ -32,8 +35,6 @@ public class E_AM_Destroy : MonoBehaviour {
             {
                 AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = false;
             }
-            Debug.Log(p);
-            p.GetComponent<P_Death>().isDead = true;
             Destroy(gameObject);
         }
 

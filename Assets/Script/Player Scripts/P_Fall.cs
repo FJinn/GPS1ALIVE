@@ -13,9 +13,10 @@ public class P_Fall : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-        if (GetComponent<Rigidbody2D>().velocity.y <= -fallSpeed)
+        if (GetComponent<Rigidbody2D>().velocity.y <= -fallSpeed && !GetComponent<P_Death>().isDead)
         {
             GetComponent<P_Death>().isDead = true;
+            GetComponent<P_Death>().StartCoroutine("Dead");
         }
     }
 }
