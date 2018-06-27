@@ -1,0 +1,757 @@
+fileFormatVersion: 2
+guid: b5e1aaeef612aab479f5813cec28e9dd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Full Animation Right_0
+    21300002: Full Animation Right_1
+    21300004: Full Animation Right_2
+    21300006: Full Animation Right_3
+    21300008: Full Animation Right_4
+    21300010: Full Animation Right_5
+    21300012: Full Animation Right_6
+    21300014: Full Animation Right_7
+    21300016: Full Animation Right_8
+    21300018: Full Animation Right_9
+    21300020: Full Animation Right_10
+    21300022: Full Animation Right_11
+    21300024: Full Animation Right_12
+    21300026: Full Animation Right_13
+    21300028: Full Animation Right_14
+    21300030: Full Animation Right_15
+    21300032: Full Animation Right_16
+    21300034: Full Animation Right_17
+    21300036: Full Animation Right_18
+    21300038: Full Animation Right_19
+    21300040: Full Animation Right_20
+    21300042: Full Animation Right_21
+    21300044: Full Animation Right_22
+    21300046: Full Animation Right_23
+    21300048: Full Animation Right_24
+    21300050: Full Animation Right_25
+    21300052: Full Animation Right_26
+    21300054: Full Animation Right_27
+    21300056: Full Animation Right_28
+    21300058: Full Animation Right_29
+    21300060: E_IdleMode_0
+    21300062: E_IdleMode_1
+    21300064: E_IdleMode_2
+    21300066: E_IdleMode_3
+    21300068: E_IdleMode_4
+    21300070: E_IdleMode_5
+    21300072: E_IdleMode_6
+    21300074: E_IdleMode_7
+    21300076: E_IdleMode_8
+    21300078: E_IdleMode_9
+    21300080: E_IdleMode_10
+    21300082: E_IdleMode_11
+    21300084: E_IdleMode_12
+    21300086: E_IdleMode_13
+    21300088: E_IdleMode_14
+    21300090: E_IdleMode_15
+    21300092: E_IdleMode_16
+    21300094: E_IdleMode_17
+    21300096: E_IdleMode_18
+    21300098: E_IdleMode_19
+    21300100: E_IdleMode_20
+    21300102: E_IdleMode_21
+    21300104: E_IdleMode_22
+    21300106: E_IdleMode_23
+    21300108: E_IdleMode_24
+    21300110: E_IdleMode_25
+    21300112: E_IdleMode_26
+    21300114: E_IdleMode_27
+    21300116: E_IdleMode_28
+    21300118: E_IdleMode_29
+  externalObjects: {}
+  serializedVersion: 6
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E_IdleMode_0
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 3075
+        width: 221
+        height: 742
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5af432154772b843af691507c005097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_1
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 3074
+        width: 219
+        height: 744
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8398957abd14294ea73e6ca765b59df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_2
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 3076
+        width: 218
+        height: 742
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2295d14e79907144087dd2c34c766c63
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_3
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 3076
+        width: 213
+        height: 742
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbf4d616dff81244b8a0606490acae6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_4
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 3074
+        width: 209
+        height: 744
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e36bceb3b24864b84db483516b9d49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_5
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 3076
+        width: 210
+        height: 744
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e314b4890cdf71c4896a479fe2e4941c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 2308
+        width: 248
+        height: 738
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cae460d780f22b4da12764b34f193de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_7
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 2308
+        width: 242
+        height: 738
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e44ae97ae6d19c439781c9e1bbfa2c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_8
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 2309
+        width: 241
+        height: 737
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54ca443379d8102408a60f6004300621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_9
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 2309
+        width: 234
+        height: 737
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb9b6cfbcf199f45b43946a3d4d7868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_10
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 2309
+        width: 228
+        height: 739
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a51abab0e31414343a9596677eede8d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_11
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 2309
+        width: 227
+        height: 739
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f91897ec17f284bbb346b1bd065885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_12
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 1543
+        width: 248
+        height: 734
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7ed40d9599a604eabe126a33cd15c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_13
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 1543
+        width: 251
+        height: 737
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf609c9a7dd173c4993f375d401bf837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_14
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 1543
+        width: 253
+        height: 732
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c23adb77b48133a4c908530da526cae3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_15
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1542
+        width: 259
+        height: 731
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ddc28723a8871048aac9a788681ea52
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_16
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 1543
+        width: 253
+        height: 732
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7019a683fb6954846963deb4677e15fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_17
+      rect:
+        serializedVersion: 2
+        x: 1512
+        y: 1542
+        width: 250
+        height: 733
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22af25b00aa98e24fba0ce6127d96e97
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_18
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 773
+        width: 223
+        height: 743
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57b314db1e5dab4d95c91b5f2038160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_19
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 772
+        width: 227
+        height: 743
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8d370d7118438478c1b78dda37f070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_20
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 773
+        width: 231
+        height: 742
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ef56c6330d3c640846a0aa67c11b06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_21
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 773
+        width: 235
+        height: 737
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fff9d3ae0fac144ca8ac2711e8c4ba2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_22
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 772
+        width: 241
+        height: 740
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adcd94a6e406dd34d82d560f877268e0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_23
+      rect:
+        serializedVersion: 2
+        x: 1514
+        y: 772
+        width: 244
+        height: 738
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaaa6913eea56b048a50134053dbec88
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_24
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 7
+        width: 204
+        height: 746
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c155ce9b79abdba4b9a52a44a1152faa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_25
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 7
+        width: 205
+        height: 744
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a51f92d44ca1548a2f79d2ffe14b8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_26
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 7
+        width: 213
+        height: 744
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b01a12120305944190215cb5e649c5f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_27
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 7
+        width: 218
+        height: 743
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee18134b1401f3a47bc3fd39a8a4dfb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_28
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 7
+        width: 217
+        height: 743
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be979a3bd158884282434b1dbe99b50
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: E_IdleMode_29
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 7
+        width: 221
+        height: 743
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8679ff3229fa75443a3a6db23850fca3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4ee81cbdc2759eb41b3064c9b7e51770
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
