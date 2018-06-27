@@ -46,7 +46,7 @@ public class P_Vent : MonoBehaviour {
             crouched = false;
             GetComponent<P_controls>().onVent = false;
             //GetComponent<BoxCollider2D>().isTrigger = false;
-            GetComponent<Rigidbody2D>().gravityScale = 2;
+            GetComponent<Rigidbody2D>().gravityScale = 10;
             GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer;
         }
 

@@ -24,6 +24,8 @@ public class P_controls : MonoBehaviour {
     private bool IsCrouch;
     // To disable jump in vent
     public bool onVent = false;
+    // To disable jump when pull/push box
+    public bool noJump = false;
 
     public bool OnLadder; // after throw, it will stay true which cause player cannot jump -> OnTriggerStay
 
@@ -37,8 +39,6 @@ public class P_controls : MonoBehaviour {
     public bool isPlayer1;
     public Animator anim;
     public string[] animList;
-
-    public float velocityY;
 
 
     private void Awake()
@@ -62,7 +62,7 @@ public class P_controls : MonoBehaviour {
         else if (gameObject.tag == "Player2")
         {
             KeyUp = KeyCode.UpArrow;
-            KeyUse = KeyCode.M;
+            KeyUse = KeyCode.Slash;
             KeyDown = KeyCode.DownArrow;
             KeyLeft = KeyCode.LeftArrow;
             KeyRight = KeyCode.RightArrow;
@@ -178,8 +178,11 @@ public class P_controls : MonoBehaviour {
 
     void Jump()
     {
-       // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
-       rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+        if (!noJump)
+        {
+            // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
+            rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+        }
     }
 
     private bool ladderPositionChanged = false;

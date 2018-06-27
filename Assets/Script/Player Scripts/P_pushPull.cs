@@ -27,11 +27,13 @@ public class P_pushPull : MonoBehaviour {
             box.GetComponent<FixedJoint2D>().enabled = true;
             box.GetComponent<M_BoxPull>().beingPush = true;
             box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            GetComponent<P_controls>().noJump = true;
         }
         else if (Input.GetKeyUp(GetComponent<P_controls>().KeyUse) && box != null)
         {
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<M_BoxPull>().beingPush = false;
+            GetComponent<P_controls>().noJump = false;
         }
     }
 
