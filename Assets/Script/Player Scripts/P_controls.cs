@@ -12,16 +12,10 @@ public class P_controls : MonoBehaviour {
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
     private float iniGravity;
-
-	private Vector2 IniColSize;
-	private Vector2 HalfColSize;
-	private Vector2 CrouchReposition;
-	private float xPos;
+    
 
     private Vector2 climbPosition;
-
-
-    private bool IsCrouch;
+    
     // To disable jump in vent
     public bool onVent = false;
     // To disable jump when pull/push box
@@ -58,6 +52,8 @@ public class P_controls : MonoBehaviour {
             animList[1] = "B_WalkAnim";
             animList[2] = "B_CrawlIdleAnim";
             animList[3] = "B_CrawlAnim";
+
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
         }
         else if (gameObject.tag == "Player2")
         {
@@ -71,6 +67,8 @@ public class P_controls : MonoBehaviour {
             animList[1] = "G_WalkAnim";
             animList[2] = "G_CrawlIdleAnim";
             animList[3] = "G_CrawlAnim";
+
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
         }
     }
 
@@ -85,10 +83,6 @@ public class P_controls : MonoBehaviour {
 
         b2d = GetComponent<BoxCollider2D>();
         
-		// Get initial collider size
-		IniColSize = b2d.size;
-		// Half its height
-		HalfColSize = new Vector2 (b2d.size.x, b2d.size.y/2);
         
     }
 
@@ -106,9 +100,7 @@ public class P_controls : MonoBehaviour {
 		
     void FixedUpdate()
 	{
-		// keep track of xPosition
-		xPos = transform.position.x;
-
+        
         if(isPlayer1)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
@@ -116,20 +108,7 @@ public class P_controls : MonoBehaviour {
         {
             moveHorizontal = Input.GetAxis("Horizontal2");
         }
-
-        if (IsCrouch)
-        {
-            if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
-            {
-                anim.Play(animList[3]);
-            }
-            else
-            {
-                anim.Play(animList[2]);
-            }
-        }
-        
-
+       
         if (!GetComponent<P_throw>().onThrow) {
 
             if (!OnLadder){
@@ -145,7 +124,7 @@ public class P_controls : MonoBehaviour {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                 }
 
-                if (!IsCrouch && !onVent)
+                if (!onVent)
                 {
                     if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
                     {
@@ -155,6 +134,16 @@ public class P_controls : MonoBehaviour {
                     {
                         anim.Play(animList[0]);
                     }
+                }else
+                {
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
+                    {
+                        anim.Play(animList[3]);
+                    }
+                    else
+                    {
+                        anim.Play(animList[2]);
+                    }
                 }
                 
                 // just moving lmao
@@ -162,16 +151,11 @@ public class P_controls : MonoBehaviour {
             }
 
 			//jump // can't jump after throw, unless move to another object/platform
-			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder)
+			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
-                if (!onVent) Jump();
+                 Jump();
 			}
-
-			//crouch
-			if (Grounded()) 
-			{
-                if (!onVent) Crouch();
-			}
+            
 		}
         climbPosition.y = transform.position.y;
     }
@@ -230,24 +214,5 @@ public class P_controls : MonoBehaviour {
             rb2d.gravityScale = iniGravity;
         }
     }
-
-    private void Crouch()
-	{
-		// Readjust the position Y of character so the coliider will be on the ground even when its size changes during crouch
-		CrouchReposition = new Vector2(xPos, transform.position.y - HalfColSize.y);
-		if (Input.GetKey(KeyDown)) // crouch
-		{
-			if (!IsCrouch) 
-			{
-				b2d.size = HalfColSize;
-				transform.position = CrouchReposition;
-				IsCrouch = true;
-            }
-		}
-		else if (Input.GetKeyUp(KeyDown))
-		{
-			b2d.size = IniColSize;
-			IsCrouch = false;
-		}
-	}
+    
 }

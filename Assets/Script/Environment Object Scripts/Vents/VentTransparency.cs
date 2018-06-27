@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrawlIntoVent : MonoBehaviour {
+public class VentTransparency: MonoBehaviour {
 
     // player
     public GameObject[] p;

@@ -19,7 +19,6 @@ public class P_avoidEnemyVent : MonoBehaviour {
     void Update () {
         tempX = transform.position.x;
         if (firstTap) {
-
             this.gameObject.tag = "Untagged";
         }
         else {

@@ -29,12 +29,22 @@ public class InsideVent : MonoBehaviour {
                 p[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 //insideVent = true;
             }
-            else if (!GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && !p[i].GetComponent<P_avoidEnemyVent>().firstTap )//&& insideVent)
+            /*
+            else if (!GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && p[i].GetComponent<P_avoidEnemyVent>().firstTap && !p[i].GetComponent<P_Vent>().preventColliderErase)//&& insideVent)
             {
                 p[i].GetComponent<P_Vent>().onVent = false;
+                p[i].GetComponent<P_avoidEnemyVent>().firstTap = false;
                 //insideVent = false;
             } 
+            */
         }
-        
 	}
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        collision.GetComponent<P_Vent>().onVent = false;
+        collision.GetComponent<P_avoidEnemyVent>().firstTap = false;
+
+        collision.GetComponent<P_Vent>().StartCoroutine("ResetCollider");
+    }
 }
