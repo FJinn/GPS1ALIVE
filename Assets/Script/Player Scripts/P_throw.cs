@@ -40,7 +40,9 @@ public class P_throw : MonoBehaviour {
 	void throwing(){
 		throwReady = false;
 		if (spawnStone > 0) {		// spawn only one stone
-			Vector2 tempPos = new Vector2 (transform.position.x , transform.position.y + 6f);
+            // Offset Y
+            float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
+            Vector2 tempPos = new Vector2 (transform.position.x , transform.position.y + tempYSize);
 			Instantiate (stone, tempPos, Quaternion.identity);
             stone.GetComponent<S_Movement>().enabled = true;
 			spawnStone = 0;
@@ -74,6 +76,9 @@ public class P_throw : MonoBehaviour {
 		var DOTS = GameObject.FindGameObjectsWithTag ("Dots");
 		if (onThrow && count == 0) {
 			p_position = transform.position;
+            // Offset Y
+            float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
+            p_position.y = p_position.y + tempYSize;
 			for (int i = 0; i < numDots; i++) {
 				dots.transform.position = CalculatePosition (dotsPositionOverTime * i);  // set position based on calculation the position of dots over time
 				Instantiate (dots,dots.transform.position,Quaternion.identity);
