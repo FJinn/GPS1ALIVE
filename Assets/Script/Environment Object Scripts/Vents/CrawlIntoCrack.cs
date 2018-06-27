@@ -8,7 +8,7 @@ public class CrawlIntoCrack : MonoBehaviour {
     public GameObject[] p;
     public LayerMask bypassEnemyMask;
 
-    private BoxCollider2D boxColliderFix;
+    // private BoxCollider2D boxColliderFix;
 
     /* RESETING COLLISION BOX BOX COLLIDER 2D
     IEnumerator ResetCollider()
@@ -23,7 +23,7 @@ public class CrawlIntoCrack : MonoBehaviour {
         p = new GameObject[2];
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
-        boxColliderFix = GetComponent<BoxCollider2D>();
+    //    boxColliderFix = GetComponent<BoxCollider2D>();
     }
 
     void Update () {

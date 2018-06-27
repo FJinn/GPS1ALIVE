@@ -38,6 +38,8 @@ public class P_controls : MonoBehaviour {
     public Animator anim;
     public string[] animList;
 
+    public float velocityY;
+
 
     private void Awake()
     {

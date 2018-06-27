@@ -21,17 +21,7 @@ public class E_FieldOfView : MonoBehaviour {
         Players[1] = GameObject.FindGameObjectWithTag("Player2");
     }
 
-
-    void DetectedEye()
-    {
-        foreach (Transform child in transform)
-        {
-            if (child.CompareTag("T_EnemyEyeLight"))
-            {
-                child.gameObject.GetComponent<E_DetectionIntensity>().fb_value += 10f;
-            }
-        }
-    }
+    
 
     void Update()
     {
@@ -50,20 +40,14 @@ public class E_FieldOfView : MonoBehaviour {
                 {
                     if (!Detected && !hit.collider.gameObject.GetComponent<P_ShadowDetect>().P_isUnderShadow)
                     {
-                        DetectedEye();
-                        // gameObject.GetComponent<E_Sound_Detection>().EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_value += 10f;
+                        
+                        gameObject.GetComponent<E_Sound_Detection>().EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_value += 1f;
                         // Instantiate(Alerted_Spawn, transform.position - new Vector3(0,transform.localScale.y - 6f,0), transform.rotation);
                         Detected = true;
                     }
 
                 }
-
-                if (GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()) && !Detected)
-                {
-                    DetectedEye();
-                    transform.localScale = new Vector3(Mathf.Sign(playerPos.x), 1f, 1f);
-                    Detected = true;
-                }
+                
             }
 
         }

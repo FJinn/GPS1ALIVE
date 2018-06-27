@@ -18,7 +18,6 @@ public class E_Detection_Meter : MonoBehaviour {
     // Use this for initialization
     void Start () {
         fb_Enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
-        fb_value += 1;
 
         foreach (Transform child in transform)
         {
@@ -53,15 +52,15 @@ public class E_Detection_Meter : MonoBehaviour {
         }
 
         // decreasing bar
-        if (fb_value > 1)
+        if (fb_value > 0)
         {
             if(fb_tempDelay >= 1f)
             {
-                fb_value -= 0.15f * Time.deltaTime;
+                fb_value -= 0.1f * Time.deltaTime;
             }
         }else 
         {
-            fb_value = 1;
+            fb_value = 0;
             Invoke("DestroySelf", 2f);
         }
 
@@ -71,7 +70,7 @@ public class E_Detection_Meter : MonoBehaviour {
             fb_tempDelay += 1f * Time.deltaTime;
         }
 
-      //  fill_Bar.localScale = new Vector3(5, fb_value, transform.localScale.z);
-        fill_Bar.GetComponent<Light>().intensity += fb_value;
+        //  fill_Bar.localScale = new Vector3(5, fb_value, transform.localScale.z);
+        fill_Bar.transform.localScale = new Vector3(transform.localScale.x, fb_value, transform.localScale.y);
     }
 }

@@ -16,6 +16,9 @@ public class E_Sound_Detection : MonoBehaviour {
     [Header("Exclamation mark spawn object")]
     public GameObject DM_Object;
 
+    [Header("Detection meter object")]
+    public GameObject EM_Object;
+
     [Header("Don't touch anything below")]
     public bool soundHeard;
     public Vector2 soundSource;
@@ -23,7 +26,7 @@ public class E_Sound_Detection : MonoBehaviour {
     private bool startMoving;
     private Vector2 tempPos;
 
-    public GameObject EM_EyeLight;
+    public GameObject EM_DetectionMeter;
     public bool EM_isSpawned;
     public bool EM_instantSound;
     private bool EM_alerted;
@@ -66,46 +69,35 @@ public class E_Sound_Detection : MonoBehaviour {
 
     void EM_Fillbar()
     {
-        EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_tempDelay = 0;
+        EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_tempDelay = 0;
         if (EM_instantSound)
         {
-            EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_value += EM_triggerAmounts;
+            EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_value += EM_triggerAmounts;
         }
         else
         {
-            EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_value += EM_triggerAmounts * Time.deltaTime;
+            EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_value += EM_triggerAmounts * Time.deltaTime;
         }
     }
 	
     public void Detection_Manager()
     {
-        /*
         if (!EM_isSpawned)
         {
-            EM_EyeLight = (GameObject)Instantiate(EM_Object, transform.position + new Vector3(0, 14f, 0), transform.rotation);
+            EM_DetectionMeter = (GameObject)Instantiate(EM_Object, transform.position + new Vector3(0, 14f, 0), transform.rotation);
             EM_Fillbar();
-            EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_Enemy = gameObject;
-            EM_EyeLight.transform.parent = transform;
+            EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_Enemy = gameObject;
+            EM_DetectionMeter.transform.parent = transform;
         }
         else
         {
-            if(EM_EyeLight != null)
+            if(EM_DetectionMeter != null)
             {
                 EM_Fillbar();
             }
             
-        }*/
-
-        foreach (Transform eyelight in transform)
-        {
-            if(eyelight.CompareTag("T_EnemyEyeLight"))
-            {
-                EM_EyeLight = eyelight.gameObject;
-                EM_EyeLight.GetComponent<E_DetectionIntensity>().fb_Owner = gameObject;
-                EM_Fillbar();
-            }
-
         }
+        
     }
 
 
