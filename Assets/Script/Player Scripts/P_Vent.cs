@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class P_Vent : MonoBehaviour {
 
@@ -14,10 +15,15 @@ public class P_Vent : MonoBehaviour {
 
     public bool preventColliderErase;
 
+    private GameObject passthroughWall;
+
     void Start()
     {
+        passthroughWall = GameObject.Find("WallwithVents");
+
         iniSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         BoxColliderOrigin = GetComponent<BoxCollider2D>();
+        
     }
 
     IEnumerator ResetCollider()
@@ -41,7 +47,10 @@ public class P_Vent : MonoBehaviour {
             Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
         }
 
-        
+        if(onVent == false)
+        {
+            Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall.GetComponent<TilemapCollider2D>(), false);
+        }
     }
 
     // Update is called once per frame
@@ -62,6 +71,7 @@ public class P_Vent : MonoBehaviour {
             //GetComponent<BoxCollider2D>().isTrigger = false;
             GetComponent<Rigidbody2D>().gravityScale = 10;
             GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer;
+            
         }
 
         /*

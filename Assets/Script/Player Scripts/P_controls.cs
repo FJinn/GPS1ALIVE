@@ -138,7 +138,7 @@ public class P_controls : MonoBehaviour {
 
                 if (!onVent)
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -1f)
                     {
                         anim.Play(animList[1]);
                     }
@@ -148,7 +148,7 @@ public class P_controls : MonoBehaviour {
                     }
                 }else
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -1f)
                     {
                         anim.Play(animList[3]);
                     }
@@ -158,7 +158,7 @@ public class P_controls : MonoBehaviour {
                     }
                 }
                 
-                // just moving lmao
+                // move
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
             }
 
@@ -169,6 +169,10 @@ public class P_controls : MonoBehaviour {
 			}
             
 		}
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        }
         climbPosition.y = transform.position.y;
     }
 

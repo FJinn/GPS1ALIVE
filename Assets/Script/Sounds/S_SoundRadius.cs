@@ -45,24 +45,25 @@ public class S_SoundRadius : MonoBehaviour {
     {
             Collider2D[] targetsInSoundRadius = Physics2D.OverlapCircleAll(transform.position, s_soundRadius, enemyMask);
             for (int i = 0; i < targetsInSoundRadius.Length; i++)
-            {
-                if(s_moveTarget)
+              {
+            targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().EM_triggerAmounts = triggerAmounts;
+            if (s_moveTarget)
                 {
                     targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundSource = new Vector2(transform.position.x, targetsInSoundRadius[i].transform.position.y);
                     targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundHeard = true;
-                }
+                    targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
+            }
                 if(s_moveSound)
                 {
                     targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
                 }
-                targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().EM_triggerAmounts = triggerAmounts;
             }
         }
 
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag != "Enemy" && s_onCollides)
+        if (other.gameObject.tag != "Enemy" && s_onCollides && other.gameObject.tag != "Player" && other.gameObject.tag != "Player2")
         {
             soundTrigger(s_triggerAmounts);
         }

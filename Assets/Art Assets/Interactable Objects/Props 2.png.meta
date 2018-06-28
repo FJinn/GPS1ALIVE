@@ -17,9 +17,9 @@ TextureImporter:
     21300024: Props 2_12
     21300026: P_DoorP2
     21300028: P_DoorP3
-    21300030: Props 2_15
-    21300032: Props 2_16
-    21300034: Props 2_17
+    21300030: P_PlatformTrail01
+    21300032: P_PlatformTrail02
+    21300034: P_PlatformTrail03
     21300036: Props 2_18
     21300038: Props 2_19
     21300040: Props 2_20
@@ -248,7 +248,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props 2_15
+      name: P_PlatformTrail01
       rect:
         serializedVersion: 2
         x: 0
@@ -268,7 +268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props 2_16
+      name: P_PlatformTrail02
       rect:
         serializedVersion: 2
         x: 256
@@ -288,7 +288,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Props 2_17
+      name: P_PlatformTrail03
       rect:
         serializedVersion: 2
         x: 512

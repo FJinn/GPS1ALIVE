@@ -9,10 +9,7 @@ public class E_Sound_Detection : MonoBehaviour {
 
     [Header("Investigate sound source duration")]
     public float investigateTimer;
-
-    [Header("Enemy alert amounts for eye light")]
-    public float EM_triggerAmounts;
-
+    
     [Header("Exclamation mark spawn object")]
     public GameObject DM_Object;
 
@@ -27,6 +24,7 @@ public class E_Sound_Detection : MonoBehaviour {
     private Vector2 tempPos;
 
     public GameObject EM_DetectionMeter;
+    public float EM_triggerAmounts;
     public bool EM_isSpawned;
     public bool EM_instantSound;
     private bool EM_alerted;

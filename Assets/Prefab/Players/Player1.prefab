@@ -78,7 +78,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317265310782640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.11, y: -10.82, z: 0}
+  m_LocalPosition: {x: -5.3, y: -9.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4081787224860022}
@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  ScreenFade: {fileID: 0}
+  sceneIndex: 2
 --- !u!114 &114264716893500676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -237,6 +239,7 @@ MonoBehaviour:
   s_onCollides: 0
   s_moveSound: 1
   s_triggerAmounts: 0.1
+  onVent: 0
 --- !u!114 &114602624433087044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -331,6 +334,7 @@ MonoBehaviour:
   isPlayer1: 1
   anim: {fileID: 0}
   animList: []
+  StopGameControl: 0
 --- !u!212 &212479937129745526
 SpriteRenderer:
   m_ObjectHideFlags: 1
