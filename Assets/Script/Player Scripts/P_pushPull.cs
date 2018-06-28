@@ -7,7 +7,7 @@ public class P_pushPull : MonoBehaviour {
     public float distance;
     public LayerMask boxMask;
     public bool isPulling;
-    
+
     GameObject box;
 
 	// Use this for initialization
@@ -24,10 +24,13 @@ public class P_pushPull : MonoBehaviour {
         if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && hit.collider.tag == "PushPull")
         {
             box = hit.collider.gameObject;
-            box.GetComponent<FixedJoint2D>().enabled = true;
-            box.GetComponent<M_BoxPull>().beingPush = true;
-            box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
-            GetComponent<P_controls>().noJump = true;
+            if(box.GetComponent<M_BoxPull>().isActiveAndEnabled)
+            {
+                box.GetComponent<FixedJoint2D>().enabled = true;
+                box.GetComponent<M_BoxPull>().beingPush = true;
+                box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+                GetComponent<P_controls>().noJump = true;
+            }
         }
         else if (Input.GetKeyUp(GetComponent<P_controls>().KeyUse) && box != null)
         {

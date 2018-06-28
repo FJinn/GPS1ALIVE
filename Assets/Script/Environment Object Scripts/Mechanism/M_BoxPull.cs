@@ -13,7 +13,7 @@ public class M_BoxPull : MonoBehaviour {
     public bool pushable;
     
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
         xPos = transform.position.x;
 	}
 	
