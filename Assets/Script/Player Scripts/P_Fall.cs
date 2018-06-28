@@ -6,15 +6,9 @@ public class P_Fall : MonoBehaviour {
 
     public float fallSpeed;
 
-	// Use this for initialization
-	void Start () {
-        
-	}
-
     // Update is called once per frame
     void Update(){
-        if (GetComponent<Rigidbody2D>().velocity.y <= -fallSpeed && !GetComponent<P_Death>().isDead)
-        {
+        if (GetComponent<Rigidbody2D>().velocity.y <= -fallSpeed && !GetComponent<P_Death>().isDead){
             GetComponent<P_Death>().isDead = true;
             GetComponent<P_Death>().StartCoroutine("Dead");
         }

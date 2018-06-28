@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 255136463656288744}
   - component: {fileID: 114747571561586414}
   - component: {fileID: 114316460298524728}
+  - component: {fileID: 114505898689547068}
   m_Layer: 8
   m_Name: IO_Box
   m_TagString: PushPull
@@ -56,7 +57,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 10
@@ -64,7 +65,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!61 &61442099597582028
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -109,6 +110,18 @@ MonoBehaviour:
   s_onCollides: 0
   s_moveSound: 1
   s_triggerAmounts: 1
+  onVent: 0
+--- !u!114 &114505898689547068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184283748810362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b12f35e0b957694fb907737be190bef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114747571561586414
 MonoBehaviour:
   m_ObjectHideFlags: 1
