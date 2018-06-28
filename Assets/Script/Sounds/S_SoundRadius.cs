@@ -19,6 +19,8 @@ public class S_SoundRadius : MonoBehaviour {
 
     public float s_triggerAmounts;
 
+    public bool onVent = false;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -26,7 +28,11 @@ public class S_SoundRadius : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(s_moveSound)
+        if(gameObject.name == "Player1" || gameObject.name == "Player2")
+        {
+            onVent = GetComponent<P_Vent>().onVent;
+        }
+        if(s_moveSound && !onVent)
         {
             if (GetComponent<Rigidbody2D>().velocity.x > 1f || GetComponent<Rigidbody2D>().velocity.x < -1f)
             {
