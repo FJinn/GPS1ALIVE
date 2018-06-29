@@ -8,11 +8,11 @@ public class P_ShadowDetect : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        Invoke("InitialShadow", 0.5f);
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    void InitialShadow()
+    {
+        P_isUnderShadow = true;
+    }
 }
