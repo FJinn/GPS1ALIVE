@@ -50,6 +50,7 @@ public class CrawlIntoCrack : MonoBehaviour {
                 p[i].GetComponent<P_avoidEnemyVent>().firstTap = false;
 
                 p[i].GetComponent<P_Vent>().StartCoroutine("ResetCollider");
+                
                 /*
                 var foundEnemies = Physics2D.OverlapCircleAll(p[i].transform.position, 150f, bypassEnemyMask);
                 for (int k = 0; k < foundEnemies.Length; k++)

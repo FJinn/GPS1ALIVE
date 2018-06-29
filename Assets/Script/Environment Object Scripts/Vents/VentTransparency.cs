@@ -20,10 +20,9 @@ public class VentTransparency: MonoBehaviour {
 
     void Update()
     {
-
             if (p[0].GetComponent<P_avoidEnemyVent>().firstTap || p[1].GetComponent<P_avoidEnemyVent>().firstTap)
             {
-                spriteR.a = 0.7f;
+                spriteR.a = 0.5f;
                 GetComponent<SpriteRenderer>().color = spriteR;
             }
             else if (!p[0].GetComponent<P_avoidEnemyVent>().firstTap && !p[1].GetComponent<P_avoidEnemyVent>().firstTap)
@@ -31,6 +30,8 @@ public class VentTransparency: MonoBehaviour {
                 spriteR.a = 1f;
                 GetComponent<SpriteRenderer>().color = spriteR;
             }
+
+            
 
     }
 }

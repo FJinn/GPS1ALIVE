@@ -35,6 +35,7 @@ GameObject:
   - component: {fileID: 95336084657961866}
   - component: {fileID: 114105510617791348}
   - component: {fileID: 114392869153099030}
+  - component: {fileID: 114466794235940346}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Player2
@@ -64,7 +65,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743861540611790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.61, y: -10.27, z: 0}
+  m_LocalPosition: {x: 1.8, y: -28.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938982363093062}
@@ -222,6 +223,19 @@ MonoBehaviour:
   s_onCollides: 0
   s_moveSound: 1
   s_triggerAmounts: 0.1
+  onVent: 0
+--- !u!114 &114466794235940346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743861540611790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c143fee5048be4c4fadcc6bb20d386a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnLocation: {fileID: 0}
 --- !u!114 &114538729715515012
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,7 +252,7 @@ MonoBehaviour:
   BoxColliderOrigin: {fileID: 0}
   bypassEnemyMask:
     serializedVersion: 2
-    m_Bits: 2560
+    m_Bits: 6656
   preventColliderErase: 0
 --- !u!114 &114590115144228014
 MonoBehaviour:
@@ -252,6 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDead: 0
+  ScreenFade: {fileID: 0}
+  sceneIndex: 2
 --- !u!114 &114717652680165388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -303,6 +319,7 @@ MonoBehaviour:
   isPlayer1: 1
   anim: {fileID: 0}
   animList: []
+  StopGameControl: 0
 --- !u!114 &114996712177572422
 MonoBehaviour:
   m_ObjectHideFlags: 1
