@@ -30,13 +30,13 @@ public class Camera_RoomTrigger : MonoBehaviour {
         if(collision.CompareTag("Player") && !p1Triggered)
         {
             p1Triggered = true;
-            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = true;
+            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = false;
 
         }
         else if(collision.CompareTag("Player2") && !p2Triggered)
         {
             p2Triggered = true;
-            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = true;
+            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = false;
         }
     }
 

@@ -23,7 +23,7 @@ public class Camera_Control : MonoBehaviour {
     public int[] roomCameraSize;
     public Camera currentCamera;
 
-    public bool targetRoom = true;
+    public bool targetRoom = false;
     public bool targetRoomsMiddle = false;
 
 	// Use this for initialization
