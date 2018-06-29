@@ -171,7 +171,7 @@ public class P_controls : MonoBehaviour {
 		}
         else
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         }
         climbPosition.y = transform.position.y;
     }
