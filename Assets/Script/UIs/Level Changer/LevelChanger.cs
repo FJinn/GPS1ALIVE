@@ -19,9 +19,4 @@ public class LevelChanger : MonoBehaviour {
     {
        SceneManager.LoadScene(levelToLoad);
     }
-
-    void LoadLevel()
-    {
-        SceneManager.LoadScene(1);
-    }
 }

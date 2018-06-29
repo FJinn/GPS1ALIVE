@@ -40,7 +40,7 @@ public class Camera_Control : MonoBehaviour {
     float getDistance()
     {
         distanceTwoPlayer = Vector2.Distance(player2.transform.position, player.transform.position);
-        distancePlayerAndEnemy = Vector2.Distance(((player2.transform.position + player.transform.position)/2), enemy.transform.position);
+        //distancePlayerAndEnemy = Vector2.Distance(((player2.transform.position + player.transform.position)/2), enemy.transform.position);
 
         return distanceTwoPlayer;
         /*
