@@ -40,7 +40,9 @@ public class S_Manager : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
-			
+
+        // ignore collision with enemy
+        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Enemy").GetComponent<BoxCollider2D>());
 	}
 
 }
