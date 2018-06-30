@@ -6,32 +6,42 @@ public class ButtonPressed : MonoBehaviour {
 
     public Transform Spawnpoint;
     public GameObject Ui;
-    private GameObject spawnedObject;
+    public GameObject[] player;
     public bool canSpawn = true;
-    public bool objectTaken = false;
-	public bool playerEnter = false;
+    private GameObject spawnedObject;
 
-	void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (canSpawn && objectTaken == false)
+        if(gameObject.GetComponent<FixedJoint2D>().isActiveAndEnabled)
         {
-			spawnedObject = Instantiate (Ui, Spawnpoint.position, Spawnpoint.rotation);
-			canSpawn = false;
-			playerEnter = true;
-			spawnedObject.GetComponent<IncreasingAlpha> ().objectSpawner = gameObject;
-        }    
-		if (spawnedObject != null) {
-			spawnedObject.GetComponent<IncreasingAlpha> ().cancelEverything ();
-			spawnedObject.GetComponent<IncreasingAlpha> ().callingFadeTo ();
-		}
-		//GameObject.Find ("Player").GetComponent<Movement> ().collidedWithObject = true;
+            canSpawn = false;
+        }
+        else
+        {
+            canSpawn = true;
+        }
+        if (canSpawn && other.tag == "Player" ||
+            canSpawn && other.tag == "Player2")
+        {
+            spawnedObject = Instantiate(Ui, Spawnpoint.position, Spawnpoint.rotation);
+            canSpawn = false;
+            spawnedObject.GetComponent<IncreasingAlpha>().objectSpawner = gameObject;
+        }
+        if (spawnedObject != null)
+        {
+            spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
+            spawnedObject.GetComponent<IncreasingAlpha>().callingFadeTo();
+        }
     }
 
-	void OnTriggerExit2D()
+	void OnTriggerExit2D(Collider2D other)
     {
-		spawnedObject.GetComponent<IncreasingAlpha> ().cancelEverything ();
-		spawnedObject.GetComponent<IncreasingAlpha> ().callingFadeOut ();
-       // GameObject.Find("Player").GetComponent<Movement>().collidedWithObject = false;
-		playerEnter = false;
+        if(other.tag == "Player" && spawnedObject != null ||
+           other.tag == "Player2" && spawnedObject != null)
+        {
+            spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
+            spawnedObject.GetComponent<IncreasingAlpha>().callingFadeOut();
+            canSpawn = true;
+        }
     }
 }
