@@ -22,9 +22,10 @@ public class Camera_Control : MonoBehaviour {
     public GameObject[] roomCameraFocusObject;
     public int[] roomCameraSize;
     public Camera currentCamera;
+    private float cameraSmooth;
+    private float cameraSizeSmoothTimer;
 
     public bool targetRoom = false;
-    public bool targetRoomsMiddle = false;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class Camera_Control : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("Player2");
 
         InitSize = currentCamera.orthographicSize;
+        roomCameraInt = 0;
     }
 	
     float getDistance()
@@ -43,20 +45,7 @@ public class Camera_Control : MonoBehaviour {
     
 	// Update is called once per frame
 	void Update () {
-        midpointX = (player.transform.position.x + player2.transform.position.x) / 2;
-        midpointY = (player.transform.position.y + player2.transform.position.y) / 2;
-
-        float xPos = Mathf.SmoothDamp(transform.position.x, midpointX, ref velocity.x, smoothX);
-        float yPos = Mathf.SmoothDamp(transform.position.y, midpointY, ref velocity.y, smoothX);
-
-        transform.position = new Vector3(xPos, yPos, transform.position.z);
-
-
-        // too buggy for the function below
-        //float SmoothSize = Mathf.SmoothDamp(InitSize, InitSize +  distance(), ref velocitySize, SmoothenSize); 
-        // currentCamera.orthographicSize = InitSize + + Mathf.Sqrt(distance() / 1.5f);
-        currentCamera.orthographicSize = InitSize + (Mathf.Sqrt(getDistance()));
-        /*
+        
         if (!targetRoom)
             {
                 midpointX = (player.transform.position.x + player2.transform.position.x) / 2;
@@ -74,10 +63,15 @@ public class Camera_Control : MonoBehaviour {
                 currentCamera.orthographicSize = InitSize + (Mathf.Sqrt(getDistance()));
             }else if (targetRoom)
             {
-                transform.position = roomCameraFocusObject[roomCameraInt].transform.position;
+
+                float xPos = Mathf.SmoothDamp(transform.position.x, roomCameraFocusObject[roomCameraInt].transform.position.x, ref velocity.x, smoothX);
+                float yPos = Mathf.SmoothDamp(transform.position.y, roomCameraFocusObject[roomCameraInt].transform.position.y, ref velocity.y, smoothX);
+                transform.position = new Vector3(xPos,yPos,transform.position.z);
+                
+            //    cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], 1f * Time.deltaTime);
                 currentCamera.orthographicSize = roomCameraSize[roomCameraInt];
             }
         
-        */
+        
     }
 }
