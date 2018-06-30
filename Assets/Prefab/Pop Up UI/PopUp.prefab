@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4183516146042268}
   - component: {fileID: 212341407045400872}
+  - component: {fileID: 114336478010072928}
   m_Layer: 0
   m_Name: PopUp
   m_TagString: Untagged
@@ -40,6 +41,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114336478010072928
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1824666771033088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96804b384c28d29458e8a2d1f7432bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectSpawner: {fileID: 0}
+  alphachecker: 0
 --- !u!212 &212341407045400872
 SpriteRenderer:
   m_ObjectHideFlags: 1
