@@ -13,38 +13,45 @@ public class ButtonPressed : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(gameObject.GetComponent<M_BoxPull>().beingPush == true)
+        if (other.tag == "Player")
         {
-            Despawn();
-            canSpawn = false;
-        }
-        
-
-        if(other.tag == "Player")
-        {
-            player1Inside = true;
+            Debug.Log("1");
+            player1Inside = true;            
         }
 
         if(other.tag == "Player2")
         {
             player2Inside = true;
+            Debug.Log("2");
         }     
  
         if (canSpawn && other.tag == "Player" ||
             canSpawn && other.tag == "Player2")
         {
-            spawnedObject = Instantiate(Ui, Spawnpoint.position, Spawnpoint.rotation);
-            canSpawn = false;
+            spawnedObject = Instantiate(Ui, Spawnpoint.position, Spawnpoint.rotation);           
             spawnedObject.GetComponent<IncreasingAlpha>().objectSpawner = gameObject;
+            canSpawn = false;
         }
         if (spawnedObject != null)
         {
             spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
             spawnedObject.GetComponent<IncreasingAlpha>().callingFadeTo();
+        }      
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (GetComponent<FixedJoint2D>().enabled)
+        {
+            Debug.Log("Pushing");
+            if(spawnedObject != null)
+            {
+                Destroy(spawnedObject);
+            }          
         }
     }
 
-	void OnTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if(other.tag == "Player")
         {

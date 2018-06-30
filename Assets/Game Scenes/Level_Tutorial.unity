@@ -960,6 +960,11 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 1564953876}
+    - target: {fileID: 255750442766176440, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -12803,6 +12808,11 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 1564953876}
+    - target: {fileID: 255793511399073882, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: m_EnableCollision
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
@@ -12815,11 +12825,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4723957722482334, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 38.33
+      value: 31.1
       objectReference: {fileID: 0}
     - target: {fileID: 4723957722482334, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -91.54
+      value: -28.1
       objectReference: {fileID: 0}
     - target: {fileID: 4723957722482334, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12849,6 +12859,31 @@ Prefab:
         type: 2}
       propertyPath: pushable
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255136463656288744, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_EnableCollision
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61491658809819632, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255136463656288744, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 255136463656288744, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.x
+      value: 31.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 255136463656288744, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_ConnectedAnchor.y
+      value: -28.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
