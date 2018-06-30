@@ -13563,6 +13563,10 @@ Prefab:
       propertyPath: levelChanger
       value: 
       objectReference: {fileID: 1564953876}
+    - target: {fileID: 1886201355636458, guid: e514da96665a13442b11525bf9de4edd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e514da96665a13442b11525bf9de4edd, type: 2}
   m_IsPrefabAsset: 0
