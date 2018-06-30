@@ -8,8 +8,7 @@ public class Camera_RoomTrigger : MonoBehaviour {
     private bool p2Triggered = false;
 
     public int CameraIndexTrigger;
-
-    public GameObject AllowPass;
+    
     private GameObject MainCamera;
 
 	// Use this for initialization
@@ -30,13 +29,10 @@ public class Camera_RoomTrigger : MonoBehaviour {
         if(collision.CompareTag("Player") && !p1Triggered)
         {
             p1Triggered = true;
-            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = false;
-
         }
         else if(collision.CompareTag("Player2") && !p2Triggered)
         {
             p2Triggered = true;
-            MainCamera.GetComponent<Camera_Control>().targetRoomsMiddle = false;
         }
     }
 
