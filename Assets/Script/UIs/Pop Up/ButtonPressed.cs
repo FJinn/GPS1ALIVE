@@ -6,20 +6,30 @@ public class ButtonPressed : MonoBehaviour {
 
     public Transform Spawnpoint;
     public GameObject Ui;
-    public GameObject[] player;
     public bool canSpawn = true;
+    public bool player1Inside = false;
+    public bool player2Inside = false;
     private GameObject spawnedObject;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(gameObject.GetComponent<FixedJoint2D>().isActiveAndEnabled)
+        if(gameObject.GetComponent<M_BoxPull>().beingPush == true)
         {
+            Despawn();
             canSpawn = false;
         }
-        else
+        
+
+        if(other.tag == "Player")
         {
-            canSpawn = true;
+            player1Inside = true;
         }
+
+        if(other.tag == "Player2")
+        {
+            player2Inside = true;
+        }     
+ 
         if (canSpawn && other.tag == "Player" ||
             canSpawn && other.tag == "Player2")
         {
@@ -36,12 +46,29 @@ public class ButtonPressed : MonoBehaviour {
 
 	void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Player" && spawnedObject != null ||
-           other.tag == "Player2" && spawnedObject != null)
+        if(other.tag == "Player")
+        {
+            player1Inside = false;
+        }
+
+        if(other.tag == "Player2")
+        {
+            player2Inside = false;
+        }
+
+        if(!player1Inside && !player2Inside)           
+        {
+            Despawn();
+            canSpawn = true;
+        }
+    }
+
+    void Despawn()
+    {
+        if (spawnedObject != null)
         {
             spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
             spawnedObject.GetComponent<IncreasingAlpha>().callingFadeOut();
-            canSpawn = true;
-        }
+        }     
     }
 }
