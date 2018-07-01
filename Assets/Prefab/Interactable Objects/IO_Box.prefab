@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 114505898689547068}
   - component: {fileID: 114996616041709806}
   - component: {fileID: 61491658809819632}
+  - component: {fileID: 114297642221450128}
   m_Layer: 8
   m_Name: IO_Box
   m_TagString: PushPull
@@ -70,8 +71,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184283748810362}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.95, y: -91.87, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 275.92, y: -21.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4702904294364532}
@@ -148,6 +149,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114297642221450128
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184283748810362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2027bec2edbb51743940b341a60865c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Elevator: {fileID: 0}
 --- !u!114 &114316460298524728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,8 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawnpoint: {fileID: 4702904294364532}
   Ui: {fileID: 1824666771033088, guid: cc67d67bb672f324aa7fe32606d9b57c, type: 2}
-  player: []
   canSpawn: 1
+  player1Inside: 0
+  player2Inside: 0
 --- !u!212 &212201412061633716
 SpriteRenderer:
   m_ObjectHideFlags: 1
