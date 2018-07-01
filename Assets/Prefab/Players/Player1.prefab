@@ -109,7 +109,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317265310782640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.3, y: -9.2, z: 0}
+  m_LocalPosition: {x: 142.24385, y: -7.981123, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4081787224860022}
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.10609615, y: 0.07342291}
@@ -178,7 +178,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.84375, y: 7}
+    oldSize: {x: 3.84375, y: 6.9375}
     newSize: {x: 3.828125, y: 6.890625}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -361,7 +361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onVent: 0
   onCrack: 0
-  BoxColliderOrigin: {fileID: 0}
+  BoxColliderOrigin: {fileID: 61660883917423264}
   bypassEnemyMask:
     serializedVersion: 2
     m_Bits: 6656
@@ -389,10 +389,14 @@ MonoBehaviour:
   KeyLeft: 97
   KeyRight: 100
   isPlayer1: 1
-  anim: {fileID: 0}
-  animList: []
+  anim: {fileID: 95374722202243344}
+  animList:
+  - B_IdleAnim
+  - B_WalkAnim
+  - B_CrawlIdleAnim
+  - B_CrawlAnim
   StopGameControl: 0
-  CameraStarted: 0
+  CameraStarted: 1
 --- !u!114 &114884209733073360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,7 +455,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300006, guid: 0f872cb7937562b4ca028b5e9e9d6de1, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 0f872cb7937562b4ca028b5e9e9d6de1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

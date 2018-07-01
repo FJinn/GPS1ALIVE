@@ -14,8 +14,10 @@ public class M_BoxRotate : MonoBehaviour {
             || (transform.eulerAngles.z <= 361 && transform.eulerAngles.z >= 359)){
             GetComponent<M_BoxPull>().enabled = true;
         }
-        else{
+        else
+        {
             GetComponent<M_BoxPull>().enabled = false;
+            GetComponent<M_BoxPull>().xPos = transform.position.x;
         }
 	}
 }

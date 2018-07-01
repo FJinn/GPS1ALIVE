@@ -1445,6 +1445,11 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 640172129}
+    - target: {fileID: 114215403269366364, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: fallSpeed
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
@@ -17801,6 +17806,11 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 640172129}
+    - target: {fileID: 114752218460438156, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: fallSpeed
+      value: 120
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -24824,6 +24834,11 @@ Prefab:
       propertyPath: Elevator
       value: 
       objectReference: {fileID: 834456375}
+    - target: {fileID: 114297642221450128, guid: df5e87ba8713e664e9308affc0f8ad0f,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
   m_IsPrefabAsset: 0
