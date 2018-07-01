@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class S_Manager : MonoBehaviour {
 
+
 	private GameObject[] p;
 
 	void Awake(){
@@ -19,6 +20,7 @@ public class S_Manager : MonoBehaviour {
             if (p[i].GetComponent<P_throw>().onThrow)
             {
                 GetComponent<S_Movement>().enabled = true;
+               
             }
         }
 		
