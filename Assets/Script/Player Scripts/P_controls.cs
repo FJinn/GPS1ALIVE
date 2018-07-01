@@ -113,7 +113,6 @@ public class P_controls : MonoBehaviour {
 		
     void FixedUpdate()
 	{
-        
         if(isPlayer1)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
@@ -126,13 +125,13 @@ public class P_controls : MonoBehaviour {
 
             if (!OnLadder){
 
-                if (Input.GetKeyDown(KeyLeft))
+                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
                 {
                     var tempScale = transform.localScale.x;
                     tempScale = Mathf.Abs(tempScale);
                     transform.localScale = new Vector3(-tempScale, transform.localScale.y, transform.localScale.z); // player flipping
                 }
-                else if (Input.GetKeyDown(KeyRight))
+                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                 }
