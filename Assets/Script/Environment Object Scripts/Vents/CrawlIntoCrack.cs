@@ -14,8 +14,6 @@ public class CrawlIntoCrack : MonoBehaviour {
     // RESETING COLLISION BOX BOX COLLIDER 2D
     
     
-
-
     private void Awake() {
         p = new GameObject[2];
         p[0] = GameObject.FindGameObjectWithTag("Player");

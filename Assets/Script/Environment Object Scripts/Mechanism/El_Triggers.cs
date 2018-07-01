@@ -15,13 +15,14 @@ public class El_Triggers : MonoBehaviour {
 	void Update () {
 		
 	}
-    /*
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.collider.CompareTag("Player") || collision.collider.CompareTag("Player2"))
         {
+            Debug.Log("Hit box");
             Elevator.GetComponent<El_Manager>().callElevatorCheck(collision.collider.gameObject);
         }
     }
-    */
+    
 }

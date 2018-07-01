@@ -21,7 +21,7 @@ public class P_pushPull : MonoBehaviour {
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.Find("Eye").position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && hit.collider.tag == "PushPull") {
+        if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && hit.collider.tag == "PushPull" && (GetComponent<Rigidbody2D>().velocity.y <= 0.5f && GetComponent<Rigidbody2D>().velocity.y >= -0.5f)) {
             box = hit.collider.gameObject;
             if(box.GetComponent<M_BoxPull>().isActiveAndEnabled) {
                 box.GetComponent<FixedJoint2D>().enabled = true;

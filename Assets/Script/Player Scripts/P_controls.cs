@@ -125,20 +125,20 @@ public class P_controls : MonoBehaviour {
 
             if (!OnLadder){
 
-                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
+                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
                 {
                     var tempScale = transform.localScale.x;
                     tempScale = Mathf.Abs(tempScale);
                     transform.localScale = new Vector3(-tempScale, transform.localScale.y, transform.localScale.z); // player flipping
                 }
-                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f)
+                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                 }
 
                 if (!onVent)
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -1f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
                     {
                         anim.Play(animList[1]);
                     }
@@ -148,7 +148,7 @@ public class P_controls : MonoBehaviour {
                     }
                 }else
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -1f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
                     {
                         anim.Play(animList[3]);
                     }
