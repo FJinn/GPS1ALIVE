@@ -34,7 +34,8 @@ public class S_Movement : MonoBehaviour {
 
 		if (!launched && timeForLaunching <= 0) {
 			Launch ();
-		}
+            gameObject.GetComponent<AudioSource>().Play();
+        }
 	}
 
 	private void Launch(){
