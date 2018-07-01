@@ -34,7 +34,7 @@ public class CrawlIntoCrack : MonoBehaviour {
                 {
                     p[i].transform.position = teleportLocation.transform.position;
                 }
-
+                
                 p[i].GetComponent<P_Vent>().StartCoroutine("ResetCollider");
                 /*
                 var foundEnemies = Physics2D.OverlapCircleAll(p[i].transform.position, 150f, bypassEnemyMask);

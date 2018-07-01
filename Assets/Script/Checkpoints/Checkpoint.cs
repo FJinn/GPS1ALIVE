@@ -7,7 +7,7 @@ public class Checkpoint : MonoBehaviour {
     private int CheckpointInt;
     public Vector3 spawnPoint;
     public static bool managerCallOnce;
-
+    public int CheckpointCamera;
 
     // Use this for initialization
     void Start () {

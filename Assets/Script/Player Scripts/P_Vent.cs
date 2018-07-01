@@ -19,6 +19,7 @@ public class P_Vent : MonoBehaviour {
 
     void Start()
     {
+
         passthroughWall = GameObject.Find("WallwithVents");
 
         iniSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;

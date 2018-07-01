@@ -33,7 +33,8 @@ public class Camera_Control : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("Player2");
 
         InitSize = currentCamera.orthographicSize;
-        roomCameraInt = 0;
+        roomCameraInt = GameObject.Find("SO_CheckpointManager").GetComponent<Checkpoint>().CheckpointCamera;
+        transform.position = roomCameraFocusObject[roomCameraInt].transform.position;
     }
 	
     float getDistance()

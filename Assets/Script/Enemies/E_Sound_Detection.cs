@@ -85,7 +85,7 @@ public class E_Sound_Detection : MonoBehaviour {
             EM_DetectionMeter = (GameObject)Instantiate(EM_Object, transform.position + new Vector3(0, 14f, 0), transform.rotation);
             EM_Fillbar();
             EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_Enemy = gameObject;
-            EM_DetectionMeter.transform.parent = transform;
+            
         }
         else
         {

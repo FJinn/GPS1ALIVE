@@ -15,14 +15,12 @@ public class ButtonPressed : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-            Debug.Log("1");
             player1Inside = true;            
         }
 
         if(other.tag == "Player2")
         {
             player2Inside = true;
-            Debug.Log("2");
         }     
  
         if (canSpawn && other.tag == "Player" ||

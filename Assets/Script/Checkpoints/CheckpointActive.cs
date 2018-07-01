@@ -5,10 +5,11 @@ using UnityEngine;
 public class CheckpointActive : MonoBehaviour {
 
     private GameObject CheckpointManager;
+    public int setCheckpointInt;
 
 	// Use this for initialization
 	void Start () {
-        CheckpointManager = GameObject.Find("EO_CheckpointManager");
+        CheckpointManager = GameObject.Find("SO_CheckpointManager");
         
 	}
 	
@@ -22,6 +23,7 @@ public class CheckpointActive : MonoBehaviour {
         if(collision.CompareTag("Player") || collision.CompareTag("Player2"))
         {
             CheckpointManager.GetComponent<Checkpoint>().spawnPoint = transform.position;
+            CheckpointManager.GetComponent<Checkpoint>().CheckpointCamera = setCheckpointInt;
         }
     }
 }

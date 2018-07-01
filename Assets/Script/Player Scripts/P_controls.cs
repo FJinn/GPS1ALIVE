@@ -35,6 +35,7 @@ public class P_controls : MonoBehaviour {
     public string[] animList;
 
     public bool StopGameControl;
+    public bool CameraStarted = false;
 
 
     private void Awake()
@@ -162,10 +163,14 @@ public class P_controls : MonoBehaviour {
 
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
 
-                var pos = Camera.main.WorldToViewportPoint(transform.position);
-                pos.x = Mathf.Clamp01(pos.x);
-                pos.y = Mathf.Clamp01(pos.y);
-                transform.position = Camera.main.ViewportToWorldPoint(pos);
+                if(CameraStarted)
+                {
+                    var pos = Camera.main.WorldToViewportPoint(transform.position);
+                    pos.x = Mathf.Clamp01(pos.x);
+                    pos.y = Mathf.Clamp01(pos.y);
+                    transform.position = Camera.main.ViewportToWorldPoint(pos);
+                }
+               
             }
 
 			//jump // can't jump after throw, unless move to another object/platform

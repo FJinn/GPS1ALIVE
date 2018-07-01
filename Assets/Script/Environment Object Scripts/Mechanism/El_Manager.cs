@@ -31,11 +31,29 @@ public class El_Manager : MonoBehaviour
         //InitialDestination = transform.position;
         //targetPosition = FinalDestination.position;
     }
+    /*
+    public void callElevatorCheck(GameObject playerCollider)
+    {
+        if (!onEl && p_OnEl != playerCollider)
+        {
+            p_OnEl = playerCollider;
+            p_Counts++;
+            onEl = true;
+            //p_collided = p[i];
+            GetComponent<SliderJoint2D>().enabled = true;
+            GetComponent<SliderJoint2D>().enableCollision = true;
+            p_OnEl.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+            GetComponent<FixedJoint2D>().connectedBody = p_OnEl.GetComponent<Rigidbody2D>();
+        }
+    }
+    */
+
 
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < p.Length; i++) {
+        for (int i = 0; i < p.Length; i++)
+        {
             if (GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && !onEl && p_OnEl != p[i])
             {
                 p_OnEl = p[i];
@@ -44,12 +62,11 @@ public class El_Manager : MonoBehaviour
                 //p_collided = p[i];
                 GetComponent<SliderJoint2D>().enabled = true;
                 GetComponent<SliderJoint2D>().enableCollision = true;
-                p[i].GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
                 GetComponent<FixedJoint2D>().connectedBody = p[i].GetComponent<Rigidbody2D>();
             }
         }
 
-       if (p_Counts == 1)
+        if (p_Counts == 1)
         {
             //If 1 Player got onto the elevator, the elevator will go to destined distance and won't get back up.
             // Enable slider and thus, the limit will be used.
