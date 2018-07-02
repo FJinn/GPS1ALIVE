@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class P_controls : MonoBehaviour {
 
@@ -209,6 +210,9 @@ public class P_controls : MonoBehaviour {
         //! check whether the player is near ladder or not
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
+
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>());
+
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;

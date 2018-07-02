@@ -20,7 +20,6 @@ public class El_Triggers : MonoBehaviour {
     {
         if(collision.collider.CompareTag("Player") || collision.collider.CompareTag("Player2"))
         {
-            Debug.Log("Hit box");
             Elevator.GetComponent<El_Manager>().callElevatorCheck(collision.collider.gameObject);
         }
     }
