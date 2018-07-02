@@ -8,7 +8,6 @@ public class P_controls : MonoBehaviour {
     public float walkSpeed;
     public float climbSpeed;
     private float moveHorizontal;
-    public AudioSource audiosource2;
 
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
@@ -117,17 +116,9 @@ public class P_controls : MonoBehaviour {
         if(isPlayer1)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
-            if(moveHorizontal == Input.GetAxis("Horizontal"));
-            {
-                audiosource2.UnPause();
-            }
-            
-
-            
         }else
         {
             moveHorizontal = Input.GetAxis("Horizontal2");
-            audiosource2.UnPause();
         }
        
         if (!GetComponent<P_throw>().onThrow && !StopGameControl) {
@@ -232,7 +223,13 @@ public class P_controls : MonoBehaviour {
                 }
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
 			}
-			else
+            else if (Input.GetKeyDown(KeyLeft) || Input.GetKeyDown(KeyRight))
+            {
+                OnLadder = true;
+                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+
+            }
+            else
 			{
 				gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
 			}
