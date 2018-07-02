@@ -23034,6 +23034,11 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 1564953876}
+    - target: {fileID: 82610784512998268, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
