@@ -1,0 +1,937 @@
+fileFormatVersion: 2
+guid: 8e6f4c0e584c94949a6882e4e540dcf0
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: G_Idle_Right Spritesheet_0
+    21300002: G_Idle_Right Spritesheet_1
+    21300004: G_Idle_Right Spritesheet_2
+    21300006: G_Idle_Right Spritesheet_3
+    21300008: G_Idle_Right Spritesheet_4
+    21300010: G_Idle_Right Spritesheet_5
+    21300012: G_Idle_Right Spritesheet_6
+    21300014: G_Idle_Right Spritesheet_7
+    21300016: G_Idle_Right Spritesheet_8
+    21300018: G_Idle_Right Spritesheet_9
+    21300020: G_Idle_Right Spritesheet_10
+    21300022: G_Idle_Right Spritesheet_11
+    21300024: G_Idle_Right Spritesheet_12
+    21300026: G_Idle_Right Spritesheet_13
+    21300028: G_Idle_Right Spritesheet_14
+    21300030: G_Idle_Right Spritesheet_15
+    21300032: G_Idle_Right Spritesheet_16
+    21300034: G_Idle_Right Spritesheet_17
+    21300036: G_Idle_Right Spritesheet_18
+    21300038: G_Idle_Right Spritesheet_19
+    21300040: G_Idle_Right Spritesheet_20
+    21300042: G_Idle_Right Spritesheet_21
+    21300044: G_Idle_Right Spritesheet_22
+    21300046: G_Idle_Right Spritesheet_23
+    21300048: G_Idle_Right Spritesheet_24
+    21300050: G_Idle_Right Spritesheet_25
+    21300052: G_Idle_Right Spritesheet_26
+    21300054: G_Idle_Right Spritesheet_27
+    21300056: G_Idle_Right Spritesheet_28
+    21300058: G_Idle_Right Spritesheet_29
+    21300060: G_Idle_Right Spritesheet_30
+    21300062: G_Idle_Right Spritesheet_31
+    21300064: G_Idle_Right Spritesheet_32
+    21300066: G_Idle_Right Spritesheet_33
+    21300068: G_Idle_Right Spritesheet_34
+    21300070: G_Idle_Right Spritesheet_35
+    21300072: G_Idle_Right Spritesheet_36
+    21300074: G_Idle_Right Spritesheet_37
+    21300076: G_Idle_Right Spritesheet_38
+    21300078: G_Idle_Right Spritesheet_39
+  externalObjects: {}
+  serializedVersion: 6
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 2122
+        width: 248
+        height: 505
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aeabf40dc38f0945a9a1b9856ab52df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2122
+        width: 249
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b9a3b480f26e744cb5b9212e1d2c6ec
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 2122
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d580556e515696b41b2704ab6deab284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 2122
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97aded0e59a7914fb247461b5507e7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 2122
+        width: 249
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4753fb387f1d04981bb124c7d56c02
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 2122
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 541fdd97886f22344a666306897d242c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 2122
+        width: 247
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d285c729a738e964ba0c944e3b27873d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 2122
+        width: 247
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56d97df415fa884d92c7ea81ee0abc9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 1608
+        width: 246
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c406f1701b15c45b744e11096f55fc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1608
+        width: 245
+        height: 500
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfbd6dd4cfc164478a4a907684db034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1608
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbc7e5c717c5e94a96e16e361d30379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1608
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfa2112e12414b54d8d12be6e6f7f45c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 1608
+        width: 246
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79040576200d4143b1cabc25909aee0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 1608
+        width: 248
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18711e3e3f1ee1f48ad648c10be07654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 1608
+        width: 247
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e3f2b95b66c7a42928bb08e0ef94a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 1608
+        width: 248
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9530fe4ef7a9fca4b91ed5493528489e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1082
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17e42c7ded6790441a66f82902079ab0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 1082
+        width: 248
+        height: 505
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20140891b5630064ba4b8ba6ae333cf3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1082
+        width: 248
+        height: 505
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bacecdd9ef0e77649b6926b87d8d5cd3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1082
+        width: 248
+        height: 505
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a2cbe3c2dddb14e85633165cfbfaee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 1082
+        width: 249
+        height: 505
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1920730c61f5244ab0177e3340d6c16
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 1082
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77cb8d746ff217041a7ff243e37c094e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 1082
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a88aabdabd7024b80f368589ec2f80
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 1082
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5147287c2a1ef6a438d91c413b94ab48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 564
+        width: 247
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75ed0b5431542d40b45129aa2919a47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 564
+        width: 248
+        height: 504
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5c4e02eda5da014ca09bf9178a14b03
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 564
+        width: 248
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081e9103685ac094e9bdb8975de8e9b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 564
+        width: 248
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 549bad545fe1d55478f05aa1ba1781c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 564
+        width: 248
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ed8bf7bd4ebc8945b8037b3a7db767f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 564
+        width: 247
+        height: 501
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca0c7e0831ae6d46ab1b2c4be56ec9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 1611
+        y: 564
+        width: 247
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d009af03c8072494e93693212fc36814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 564
+        width: 247
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 018880ac76c64ea4b8085203717bd274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 43
+        width: 246
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8651f69c7c78942bca87d883bfbb39
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 43
+        width: 246
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a0115e3fce6744b8a75a0229fd3c8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 43
+        width: 248
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e967f2b88be323e4cab09f3d96bde0fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_35
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 43
+        width: 249
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0462d2526c471ef43b0785e064f17dd9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_36
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 43
+        width: 249
+        height: 502
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61eaa52a12b1f8344898a96215aaeec8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_37
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 43
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc5f1766830c4c488d9b4ae9a76ca7d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_38
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 43
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8895593d625aa41b4f8a47aa2b92ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: G_Idle_Right Spritesheet_39
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 43
+        width: 248
+        height: 503
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 461db1afaaa165240a75f86222d1d678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8c16cceaae7fc834ba333a88615ef14e
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

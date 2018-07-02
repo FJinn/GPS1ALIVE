@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,9 +7,11 @@ public class D_Manager : MonoBehaviour {
 
     [SerializeField] private int doorNum;
     public GameObject[] p;
+    public Animator doorUnlocked;
 
     private void Start()
     {
+        doorUnlocked = GetComponent<Animator>();
         p = new GameObject[2];
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
@@ -29,5 +32,6 @@ public class D_Manager : MonoBehaviour {
 
     void DoorOpen(){
         GetComponent<BoxCollider2D>().enabled = false;
+        doorUnlocked.Play("DoorUnlocked");
     }
 }

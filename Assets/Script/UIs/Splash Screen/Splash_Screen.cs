@@ -8,6 +8,7 @@ public class Splash_Screen : MonoBehaviour
 
     public Animator anim;
     public GameObject lvlChanger;
+    public int levelToLoad;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,6 @@ public class Splash_Screen : MonoBehaviour
     void setNextScene()
     {
         anim.SetTrigger("FadeOut");
-        lvlChanger.GetComponent<LevelChanger>().FadeToLevel(1);
+        lvlChanger.GetComponent<LevelChanger>().FadeToLevel(levelToLoad);
     }
 }

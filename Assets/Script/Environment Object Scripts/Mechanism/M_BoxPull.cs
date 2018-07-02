@@ -6,7 +6,7 @@ public class M_BoxPull : MonoBehaviour {
 
 
     public bool beingPush;
-    private float xPos;
+    public float xPos;
     private Vector2 velocity;
 
     [Header("Does it pushable at start?")]
@@ -20,8 +20,7 @@ public class M_BoxPull : MonoBehaviour {
 	// Update is called once per frame
     
 	void Update () {
-        if (beingPush == false  || pushable == false)
-        {
+        if (beingPush == false  || pushable == false){
                GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
                // make it remain on the same position X
                transform.position = new Vector3(xPos, transform.position.y);
