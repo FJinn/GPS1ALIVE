@@ -9,6 +9,8 @@ public class P_throw : MonoBehaviour {
 	public bool onThrow;
 	public GameObject stone;
 	public int spawnStone;
+    public AudioSource audiosource;
+
     
 
 	// Use this for initialization
@@ -46,6 +48,7 @@ public class P_throw : MonoBehaviour {
 			Instantiate (stone, tempPos, Quaternion.identity);
             stone.GetComponent<S_Movement>().enabled = true;
 			spawnStone = 0;
+            audiosource.Play();
 		}
 	}
 
