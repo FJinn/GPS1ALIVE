@@ -17,6 +17,8 @@ TagManager:
   - T_EnemyEyeLight
   - leftCrack
   - rightCrack
+  - PushPullOnElevator
+  - Elevator
   layers:
   - Default
   - TransparentFX

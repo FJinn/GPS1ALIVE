@@ -39,7 +39,7 @@ public class P_controls : MonoBehaviour {
 
     private void Awake()
     {
-        animList = new string[4];
+        animList = new string[5];
         anim = GetComponent<Animator>();
         // setting up all the keys for 2 players;
         if (gameObject.tag == "Player")
@@ -54,6 +54,7 @@ public class P_controls : MonoBehaviour {
             animList[1] = "B_WalkAnim";
             animList[2] = "B_CrawlIdleAnim";
             animList[3] = "B_CrawlAnim";
+            animList[4] = "B_JumpAnim";
 
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
 
@@ -166,6 +167,7 @@ public class P_controls : MonoBehaviour {
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
                  Jump();
+                
 			}
             
 		}
@@ -178,6 +180,7 @@ public class P_controls : MonoBehaviour {
         {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
             rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+            anim.Play(animList[4]);
         }
     }
 

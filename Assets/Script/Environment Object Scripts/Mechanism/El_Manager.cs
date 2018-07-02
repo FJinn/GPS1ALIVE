@@ -14,6 +14,7 @@ public class El_Manager : MonoBehaviour
     private bool onEl = false;
     // To register which player on elevator and use it to prevent the p_Counts keeps increasing when updating
     private GameObject p_OnEl;
+    //public GameObject BoxOnElevator;
 
     private float posX = 277.8f;
     private float posY = -41.2f;
@@ -28,15 +29,16 @@ public class El_Manager : MonoBehaviour
         p = new GameObject[2];
         p[0] = GameObject.Find("Player1");
         p[1] = GameObject.Find("Player2");
+
         //InitialDestination = transform.position;
         //targetPosition = FinalDestination.position;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        for(int i = 0; i < p.Length; i++) {
-            if (GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && !onEl && p_OnEl != p[i])
+    {for (int i = 0; i < p.Length; i++)
+        {
+            if ((GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && !onEl && p_OnEl != p[i]))
             {
                 p_OnEl = p[i];
                 p_Counts++;
@@ -49,16 +51,18 @@ public class El_Manager : MonoBehaviour
             }
         }
 
-       if (p_Counts == 1)
+        if (p_Counts == 1)
         {
             //If 1 Player got onto the elevator, the elevator will go to destined distance and won't get back up.
             // Enable slider and thus, the limit will be used.
             // And the box will not push it down before it is enabled.
-            if(GetComponent<Rigidbody2D>().velocity == Vector2.zero){
+            if (GetComponent<Rigidbody2D>().velocity == Vector2.zero)
+            {
                 GetComponent<FixedJoint2D>().connectedBody = null;
-            } 
-            GetComponent<SliderJoint2D>().connectedAnchor = new Vector2(posX,posY);
-            if (!GetComponent<BoxCollider2D>().IsTouching(p_OnEl.GetComponent<BoxCollider2D>())){
+            }
+            GetComponent<SliderJoint2D>().connectedAnchor = new Vector2(posX, posY);
+            if (!GetComponent<BoxCollider2D>().IsTouching(p_OnEl.GetComponent<BoxCollider2D>()))
+            {
                 onEl = false;
             }
 
@@ -69,8 +73,8 @@ public class El_Manager : MonoBehaviour
         else if (p_Counts >= 2)
         {
             //If 2 Player got onto the elevator, the elevator will go straight down until collide with a ground
-            GetComponent<SliderJoint2D>().breakForce = 5;
+            GetComponent<SliderJoint2D>().breakForce = 5f;
             GetComponent<FixedJoint2D>().enabled = false;
-        }
+        }   
     }
 }
