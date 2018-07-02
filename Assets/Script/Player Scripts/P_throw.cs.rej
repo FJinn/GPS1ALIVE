@@ -1,0 +1,9 @@
+diff a/Assets/Script/Player Scripts/P_throw.cs b/Assets/Script/Player Scripts/P_throw.cs	(rejected hunks)
+@@ -48,6 +48,7 @@
+ 			Instantiate (stone, tempPos, Quaternion.identity);
+             stone.GetComponent<S_Movement>().enabled = true;
+ 			spawnStone = 0;
++            audiosource.Play();
+ 		}
+ 	}
+ 
