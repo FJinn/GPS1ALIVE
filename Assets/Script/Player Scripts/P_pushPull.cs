@@ -35,6 +35,13 @@ public class P_pushPull : MonoBehaviour {
             box.GetComponent<M_BoxPull>().beingPush = false;
             GetComponent<P_controls>().noJump = false;
         }
+
+        if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
+        {
+            box.GetComponent<FixedJoint2D>().enabled = false;
+            box.GetComponent<M_BoxPull>().beingPush = false;
+            GetComponent<P_controls>().noJump = false;
+        }
     }
 
     private void OnDrawGizmos(){
