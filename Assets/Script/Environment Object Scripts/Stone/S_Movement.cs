@@ -20,16 +20,13 @@ public class S_Movement : MonoBehaviour {
 		GetComponent<BoxCollider2D> ().isTrigger = true;
         p = GetComponent<FS_searchNearest>().FindClosestEnemy();
 	}
-	// Use this for initialization
-	void Start () {
-	}
 	
 	// Update is called once per frame
 	void Update () {
 		SpeedX = p.GetComponent<P_throw>().speedX; 
 		SpeedY = p.GetComponent<P_throw>().speedY;
 		launchVelocity = new Vector2 (SpeedX * p.transform.localScale.x , SpeedY);
-			
+
 		timeForLaunching -= Time.deltaTime;
 
 		if (!launched && timeForLaunching <= 0) {
