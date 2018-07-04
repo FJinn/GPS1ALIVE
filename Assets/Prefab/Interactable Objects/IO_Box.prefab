@@ -43,9 +43,8 @@ GameObject:
   - component: {fileID: 114747571561586414}
   - component: {fileID: 114316460298524728}
   - component: {fileID: 114505898689547068}
-  - component: {fileID: 114996616041709806}
-  - component: {fileID: 61491658809819632}
-  - component: {fileID: 114297642221450128}
+  - component: {fileID: 58126866003670298}
+  - component: {fileID: 114541220472457010}
   m_Layer: 8
   m_Name: IO_Box
   m_TagString: PushPull
@@ -72,8 +71,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184283748810362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 163.5, y: -3.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 27.3, y: -27.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4702904294364532}
@@ -100,6 +99,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &58126866003670298
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184283748810362}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 9
 --- !u!61 &61442099597582028
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -125,43 +139,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8.009373, y: 7.981449}
   m_EdgeRadius: 0
---- !u!61 &61491658809819632
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184283748810362}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 20, y: 1}
-  m_EdgeRadius: 0
---- !u!114 &114297642221450128
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184283748810362}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2027bec2edbb51743940b341a60865c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Elevator: {fileID: 0}
 --- !u!114 &114316460298524728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -193,6 +170,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b12f35e0b957694fb907737be190bef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114541220472457010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1184283748810362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8653b653d5f997459df8bf9e15f8ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ui: {fileID: 1824666771033088, guid: cc67d67bb672f324aa7fe32606d9b57c, type: 2}
+  canSpawn: 1
+  player1Inside: 0
+  player2Inside: 0
 --- !u!114 &114747571561586414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -219,22 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   onSupport: 1
---- !u!114 &114996616041709806
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1184283748810362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8653b653d5f997459df8bf9e15f8ba4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Spawnpoint: {fileID: 4702904294364532}
-  Ui: {fileID: 1824666771033088, guid: cc67d67bb672f324aa7fe32606d9b57c, type: 2}
-  canSpawn: 1
-  player1Inside: 0
-  player2Inside: 0
 --- !u!212 &212201412061633716
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -335,7 +311,7 @@ FixedJoint2D:
   m_GameObject: {fileID: 1184283748810362}
   m_Enabled: 0
   serializedVersion: 4
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_ConnectedRigidBody: {fileID: 0}
   m_BreakForce: Infinity
   m_BreakTorque: Infinity

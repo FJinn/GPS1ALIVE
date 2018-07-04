@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class ButtonPressed : MonoBehaviour {
 
-    public Transform Spawnpoint;
     public GameObject Ui;
     public bool canSpawn = true;
     public bool player1Inside = false;
     public bool player2Inside = false;
     private GameObject spawnedObject;
 
+    void Update()
+    {
+        if (GetComponent<FixedJoint2D>().enabled)
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+            if (spawnedObject != null)
+            {
+                Destroy(spawnedObject);
+                canSpawn = true;
+            }
+        }
+        else
+        {
+            GetComponent<CircleCollider2D>().enabled = true;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        Vector3 spawnPos = new Vector3(0,8f,0);
+        Quaternion spawnRot = Quaternion.Euler(0, 0, 0);
+
         if (other.tag == "Player")
         {
             player1Inside = true;            
@@ -26,7 +45,7 @@ public class ButtonPressed : MonoBehaviour {
         if (canSpawn && other.tag == "Player" ||
             canSpawn && other.tag == "Player2")
         {
-            spawnedObject = Instantiate(Ui, Spawnpoint.position, Spawnpoint.rotation);           
+            spawnedObject = Instantiate(Ui,(transform.position + spawnPos),spawnRot);           
             spawnedObject.GetComponent<IncreasingAlpha>().objectSpawner = gameObject;
             canSpawn = false;
         }
@@ -35,18 +54,6 @@ public class ButtonPressed : MonoBehaviour {
             spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
             spawnedObject.GetComponent<IncreasingAlpha>().callingFadeTo();
         }      
-    }
-
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if (GetComponent<FixedJoint2D>().enabled)
-        {
-            Debug.Log("Pushing");
-            if(spawnedObject != null)
-            {
-                Destroy(spawnedObject);
-            }          
-        }
     }
 
     void OnTriggerExit2D(Collider2D other)
