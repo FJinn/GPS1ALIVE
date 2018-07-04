@@ -14,7 +14,7 @@ public class ButtonPressed : MonoBehaviour {
     {
         if (GetComponent<FixedJoint2D>().enabled)
         {
-            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<EdgeCollider2D>().enabled = false;
             if (spawnedObject != null)
             {
                 Destroy(spawnedObject);
@@ -23,7 +23,7 @@ public class ButtonPressed : MonoBehaviour {
         }
         else
         {
-            GetComponent<CircleCollider2D>().enabled = true;
+            GetComponent<EdgeCollider2D>().enabled = true;
         }
     }
 

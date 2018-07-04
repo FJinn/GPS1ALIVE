@@ -40,6 +40,13 @@ public class P_controls : MonoBehaviour {
     public bool StopGameControl;
     public bool CameraStarted = false;
 
+    public bool faceLeft = false;
+    public bool faceRight = false;
+    public bool Walking = false;
+    public bool Jumping = false;
+    public bool Idle = false;
+    public bool Crawling = false;
+    public bool CrawlingIdle = false;
 
     private void Awake()
     {
@@ -54,13 +61,8 @@ public class P_controls : MonoBehaviour {
             KeyLeft = KeyCode.A;
             KeyRight = KeyCode.D;
             isPlayer1 = true;
-            animList[0] = "B_IdleAnim";
-            animList[1] = "B_WalkAnim";
-            animList[2] = "B_CrawlIdleAnim";
-            animList[3] = "B_CrawlAnim";
 
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
-
         }
         else if (gameObject.tag == "Player2")
         {
@@ -129,38 +131,55 @@ public class P_controls : MonoBehaviour {
 
             if (!OnLadder){
 
-                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
+                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false) 
                 {
                     var tempScale = transform.localScale.x;
                     tempScale = Mathf.Abs(tempScale);
                     transform.localScale = new Vector3(-tempScale, transform.localScale.y, transform.localScale.z); // player flipping
+                    faceLeft = true;
+                    faceRight = false;                    
                 }
-                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f)
+                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
+                    faceLeft = false;
+                    faceRight = true;                    
                 }
 
                 if (!onVent)
                 {
                     if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
                     {
-                        anim.Play(animList[1]);
+                        //anim.Play(animList[1]);
+                        Walking = true;
+                        Idle = false;
+                        Crawling = false;
+                        CrawlingIdle = false;
                         audiosource2.UnPause();
                     }
                     else
                     {
-                        anim.Play(animList[0]);
+                        //anim.Play(animList[0]);
+                        Walking = false;
+                        Idle = true;
+                        Crawling = false;
+                        CrawlingIdle = false;
                         audiosource2.Pause();
                     }
-                }else
+                }
+                else
                 {
                     if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
                     {
-                        anim.Play(animList[3]);
+                        //anim.Play(animList[3]);
+                        CrawlingIdle = false;
+                        Crawling = true;
                     }
                     else
                     {
-                        anim.Play(animList[2]);
+                        //anim.Play(animList[2]);
+                        CrawlingIdle = true;
+                        Crawling = false;                      
                     }
                 }
 
@@ -181,10 +200,14 @@ public class P_controls : MonoBehaviour {
 			//jump // can't jump after throw, unless move to another object/platform
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
-                 Jump();
-			}
-            
-		}
+                Jump();
+                Jumping = true;
+			}               
+            else if(Grounded() && !OnLadder && !onVent)
+            {
+                Jumping = false;
+            }
+        }
         else
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
