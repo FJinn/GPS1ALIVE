@@ -39,6 +39,14 @@ public class Paused : MonoBehaviour
         GameIsPauseed = true;
     }
 
+    // skip tutorial
+    public void Skip()
+    {
+        Time.timeScale = 1f;
+        levelChanger.GetComponent<LevelChanger>().FadeToLevel(2);
+        Debug.Log("Skipping Tutorial");
+    }
+
     public void LoadMenu()
     {
         Time.timeScale = 1f;
