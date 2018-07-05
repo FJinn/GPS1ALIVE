@@ -585,7 +585,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUi: {fileID: 1886201355636458}
-  levelChanger: {fileID: 0}
+  levelChanger: {fileID: 1880585466097682, guid: c5409e991af7bbe4fbf4347f62685447,
+    type: 2}
 --- !u!222 &222082046845533102
 CanvasRenderer:
   m_ObjectHideFlags: 1
