@@ -7,6 +7,7 @@ public class P_pushPull : MonoBehaviour {
     public float distance;
     public LayerMask boxMask;
     public bool isPulling;
+    public bool OnBox = false;
 
     GameObject box;
 
@@ -28,12 +29,14 @@ public class P_pushPull : MonoBehaviour {
                 box.GetComponent<M_BoxPull>().beingPush = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
                 GetComponent<P_controls>().noJump = true;
+                OnBox = true;
             }
         }
         else if (Input.GetKeyUp(GetComponent<P_controls>().KeyUse) && box != null){
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<M_BoxPull>().beingPush = false;
             GetComponent<P_controls>().noJump = false;
+            OnBox = false;
         }
 
         if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
@@ -41,6 +44,7 @@ public class P_pushPull : MonoBehaviour {
             box.GetComponent<FixedJoint2D>().enabled = false;
             box.GetComponent<M_BoxPull>().beingPush = false;
             GetComponent<P_controls>().noJump = false;
+            OnBox = false;
         }
     }
 

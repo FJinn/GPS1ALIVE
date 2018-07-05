@@ -72,7 +72,7 @@ public class P_throw : MonoBehaviour {
 	public float speedX;
 	public float speedY;
 
-	private Vector2 GRAVITY = new Vector2(0, -9.81f);
+	private Vector2 GRAVITY = new Vector2(0, -45f);
 
 	private void DotsSpawner(){
 		
