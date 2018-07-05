@@ -66,7 +66,7 @@ public class IncreasingAlpha : MonoBehaviour {
 
 	void DestroySelf()
 	{
-		objectSpawner.GetComponent<ButtonPressed> ().canSpawn = true;
+		//objectSpawner.GetComponent<ButtonPressed> ().canSpawn = true;
 		Destroy (gameObject);
 	}
 

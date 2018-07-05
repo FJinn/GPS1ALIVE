@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class M_outLadder : MonoBehaviour {
 
@@ -18,10 +19,12 @@ public class M_outLadder : MonoBehaviour {
         for(int i=0; i<Players.Length; i++){ 
             if (Input.GetKey(Players[i].GetComponent<P_controls>().KeyLeft))
             {
+                Physics2D.IgnoreCollision(Players[i].GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>() , false);
                 Players[i].GetComponent<P_controls>().OnLadder = false;
             }
             else if (Input.GetKey(Players[i].GetComponent<P_controls>().KeyRight))
             {
+                Physics2D.IgnoreCollision(Players[i].GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
                 Players[i].GetComponent<P_controls>().OnLadder = false;
             }
 

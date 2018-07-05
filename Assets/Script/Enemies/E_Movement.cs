@@ -28,7 +28,17 @@ public class E_Movement : MonoBehaviour {
         // considering using moveposition
 		transform.position = Vector2.MoveTowards (transform.position, tempHolder , e_patrolSpeed * Time.deltaTime);
 
-		if(Vector2.Distance(transform.position, tempHolder) < 1f ){
+
+        if (tempHolder.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (tempHolder.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+        if (Vector2.Distance(transform.position, tempHolder) < 1f ){
 			if (waitTime <= 0)
             {
                 moveSpotsCount++;
@@ -38,15 +48,7 @@ public class E_Movement : MonoBehaviour {
                 }
 
 				tempHolder = moveSpots [moveSpotsCount].position;
-
-                if(tempHolder.x > tempPos.x)
-                {
-                    transform.localScale = new Vector3(1, 1, 1);
-                }else 
-                if (tempHolder.x < tempPos.x)
-                {
-                    transform.localScale = new Vector3(-1, 1, 1);
-                }
+                
 
                 //   transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
                 tempPos = tempHolder;

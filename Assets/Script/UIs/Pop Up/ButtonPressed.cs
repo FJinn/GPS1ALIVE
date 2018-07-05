@@ -4,34 +4,83 @@ using UnityEngine;
 
 public class ButtonPressed : MonoBehaviour {
 
-    public Transform Spawnpoint;
     public GameObject Ui;
-    private GameObject spawnedObject;
     public bool canSpawn = true;
-    public bool objectTaken = false;
-	public bool playerEnter = false;
+    public bool player1Inside = false;
+    public bool player2Inside = false;
+    private GameObject spawnedObject;
 
-	void OnTriggerEnter2D()
+    void Update()
     {
-        if (canSpawn && objectTaken == false)
+        if (GetComponent<FixedJoint2D>().enabled)
         {
-			spawnedObject = Instantiate (Ui, Spawnpoint.position, Spawnpoint.rotation);
-			canSpawn = false;
-			playerEnter = true;
-			spawnedObject.GetComponent<IncreasingAlpha> ().objectSpawner = gameObject;
-        }    
-		if (spawnedObject != null) {
-			spawnedObject.GetComponent<IncreasingAlpha> ().cancelEverything ();
-			spawnedObject.GetComponent<IncreasingAlpha> ().callingFadeTo ();
-		}
-		//GameObject.Find ("Player").GetComponent<Movement> ().collidedWithObject = true;
+            GetComponent<CircleCollider2D>().enabled = false;
+            if (spawnedObject != null)
+            {
+                Destroy(spawnedObject);
+                canSpawn = true;
+            }
+        }
+        else
+        {
+            GetComponent<CircleCollider2D>().enabled = true;
+        }
     }
 
-	void OnTriggerExit2D()
+    void OnTriggerEnter2D(Collider2D other)
     {
-		spawnedObject.GetComponent<IncreasingAlpha> ().cancelEverything ();
-		spawnedObject.GetComponent<IncreasingAlpha> ().callingFadeOut ();
-       // GameObject.Find("Player").GetComponent<Movement>().collidedWithObject = false;
-		playerEnter = false;
+        Vector3 spawnPos = new Vector3(0,8f,0);
+        Quaternion spawnRot = Quaternion.Euler(0, 0, 0);
+
+        if (other.tag == "Player")
+        {
+            player1Inside = true;            
+        }
+
+        if(other.tag == "Player2")
+        {
+            player2Inside = true;
+        }     
+ 
+        if (canSpawn && other.tag == "Player" ||
+            canSpawn && other.tag == "Player2")
+        {
+            spawnedObject = Instantiate(Ui,(transform.position + spawnPos),spawnRot);           
+            spawnedObject.GetComponent<IncreasingAlpha>().objectSpawner = gameObject;
+            canSpawn = false;
+        }
+        if (spawnedObject != null)
+        {
+            spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
+            spawnedObject.GetComponent<IncreasingAlpha>().callingFadeTo();
+        }      
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            player1Inside = false;
+        }
+
+        if(other.tag == "Player2")
+        {
+            player2Inside = false;
+        }
+
+        if(!player1Inside && !player2Inside)           
+        {
+            Despawn();
+            canSpawn = true;
+        }
+    }
+
+    void Despawn()
+    {
+        if (spawnedObject != null)
+        {
+            spawnedObject.GetComponent<IncreasingAlpha>().cancelEverything();
+            spawnedObject.GetComponent<IncreasingAlpha>().callingFadeOut();
+        }     
     }
 }

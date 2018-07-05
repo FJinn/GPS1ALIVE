@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class S_Manager : MonoBehaviour {
-
+    
 	private GameObject[] p;
+    private GameObject[] e;
 
 	void Awake(){
         p = new GameObject[2];
+        e = GameObject.FindGameObjectsWithTag("Enemy");
 	}
 
 	// Use this for initialization
@@ -19,6 +21,7 @@ public class S_Manager : MonoBehaviour {
             if (p[i].GetComponent<P_throw>().onThrow)
             {
                 GetComponent<S_Movement>().enabled = true;
+               
             }
         }
 		
@@ -40,7 +43,12 @@ public class S_Manager : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
-			
+
+        // ignore collision with enemy
+        for(int i=0; i<e.Length; i++)
+        {
+            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), e[i].GetComponent<BoxCollider2D>());
+        }
 	}
 
 }

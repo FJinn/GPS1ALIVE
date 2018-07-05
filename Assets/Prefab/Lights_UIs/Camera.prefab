@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1510123856243936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.21, y: -1.62, z: -10}
+  m_LocalPosition: {x: -3.22, y: -3.98, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -52,7 +52,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -65,7 +65,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 95
+  field of view: 115
   orthographic: 0
   orthographic size: 4
   m_Depth: 0
@@ -105,6 +105,7 @@ MonoBehaviour:
   smoothY: 0.5
   player: {fileID: 1317265310782640, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   player2: {fileID: 0}
+  enemy: {fileID: 0}
   SmoothenSize: 0.4
   currentCamera: {fileID: 20447997912859356}
 --- !u!124 &124637588034097910

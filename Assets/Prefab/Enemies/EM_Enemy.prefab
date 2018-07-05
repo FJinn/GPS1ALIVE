@@ -67,8 +67,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1260825282592712}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.31, y: -1.15, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 79.87, y: -136, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children:
   - {fileID: 4385271451762848}
@@ -89,7 +89,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 10
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -154,6 +154,8 @@ MonoBehaviour:
   playerMask:
     serializedVersion: 2
     m_Bits: 768
+  Alerted_Spawn: {fileID: 1696160541660526, guid: 0a99564363b8aea418641c50784f181d,
+    type: 2}
   Detected: 0
 --- !u!114 &114158883134678424
 MonoBehaviour:
@@ -167,12 +169,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shockTimer: 1
-  investigateTimer: 3
-  EM_triggerAmounts: 2
+  investigateTimer: 4
   DM_Object: {fileID: 1696160541660526, guid: 0a99564363b8aea418641c50784f181d, type: 2}
+  EM_Object: {fileID: 1501796329642154, guid: 7a1fce4d4879aa147a0d667b0661fbdb, type: 2}
   soundHeard: 0
   soundSource: {x: 0, y: 0}
-  EM_EyeLight: {fileID: 0}
+  EM_DetectionMeter: {fileID: 0}
+  EM_triggerAmounts: 0.5
   EM_isSpawned: 0
   EM_instantSound: 0
   DM_triggerOnce: 0
@@ -190,7 +193,7 @@ MonoBehaviour:
   e_patrolSpeed: 5
   moveSpots:
   - {fileID: 0}
-  startWaitTime: 1
+  startWaitTime: 4
 --- !u!212 &212234333642665756
 SpriteRenderer:
   m_ObjectHideFlags: 1

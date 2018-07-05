@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class P_controls : MonoBehaviour {
 
@@ -8,6 +9,7 @@ public class P_controls : MonoBehaviour {
     public float walkSpeed;
     public float climbSpeed;
     private float moveHorizontal;
+    public AudioSource audiosource2;
 
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
@@ -22,6 +24,7 @@ public class P_controls : MonoBehaviour {
     public bool noJump = false;
 
     public bool OnLadder; // after throw, it will stay true which cause player cannot jump -> OnTriggerStay
+    public float myVelocityX;
 
     [Header("Ignore everything below")]
     public KeyCode KeyUp;
@@ -35,11 +38,12 @@ public class P_controls : MonoBehaviour {
     public string[] animList;
 
     public bool StopGameControl;
+    public bool CameraStarted = false;
 
 
     private void Awake()
     {
-        animList = new string[5];
+        animList = new string[4];
         anim = GetComponent<Animator>();
         // setting up all the keys for 2 players;
         if (gameObject.tag == "Player")
@@ -54,7 +58,6 @@ public class P_controls : MonoBehaviour {
             animList[1] = "B_WalkAnim";
             animList[2] = "B_CrawlIdleAnim";
             animList[3] = "B_CrawlAnim";
-            animList[4] = "B_JumpAnim";
 
             Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
 
@@ -113,7 +116,7 @@ public class P_controls : MonoBehaviour {
 		
     void FixedUpdate()
 	{
-        
+        myVelocityX = GetComponent<Rigidbody2D>().velocity.x;
         if(isPlayer1)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
@@ -126,30 +129,32 @@ public class P_controls : MonoBehaviour {
 
             if (!OnLadder){
 
-                if (Input.GetKeyDown(KeyLeft))
+                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
                 {
                     var tempScale = transform.localScale.x;
                     tempScale = Mathf.Abs(tempScale);
                     transform.localScale = new Vector3(-tempScale, transform.localScale.y, transform.localScale.z); // player flipping
                 }
-                else if (Input.GetKeyDown(KeyRight))
+                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                 }
 
                 if (!onVent)
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
                     {
                         anim.Play(animList[1]);
+                        audiosource2.UnPause();
                     }
                     else
                     {
                         anim.Play(animList[0]);
+                        audiosource2.Pause();
                     }
                 }else
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
+                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
                     {
                         anim.Play(animList[3]);
                     }
@@ -158,19 +163,32 @@ public class P_controls : MonoBehaviour {
                         anim.Play(animList[2]);
                     }
                 }
-                
-                // just moving lmao
+
+                // move
+
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
+
+                if(CameraStarted)
+                {
+                    var pos = Camera.main.WorldToViewportPoint(transform.position);
+                    pos.x = Mathf.Clamp01(pos.x);
+                    pos.y = Mathf.Clamp01(pos.y);
+                    transform.position = Camera.main.ViewportToWorldPoint(pos);
+                }
+               
             }
 
 			//jump // can't jump after throw, unless move to another object/platform
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
                  Jump();
-                
 			}
             
 		}
+        else
+        {
+            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+        }
         climbPosition.y = transform.position.y;
     }
 
@@ -180,7 +198,6 @@ public class P_controls : MonoBehaviour {
         {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
             rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
-            anim.Play(animList[4]);
         }
     }
 
@@ -193,6 +210,9 @@ public class P_controls : MonoBehaviour {
         //! check whether the player is near ladder or not
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
+
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>());
+
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;
