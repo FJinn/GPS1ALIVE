@@ -12,6 +12,7 @@ public class E_FieldOfView : MonoBehaviour {
 
     public LayerMask playerMask;
 
+    private GameObject myAlerted_Spawn;
     public GameObject Alerted_Spawn;
    
     public bool Detected;
@@ -42,8 +43,9 @@ public class E_FieldOfView : MonoBehaviour {
                 {
                     if (!Detected && !hit.collider.GetComponent<P_ShadowDetect>().P_isUnderShadow)
                     {
-                        Instantiate(Alerted_Spawn, transform.position - new Vector3(0,transform.localScale.y - 17f,0), transform.rotation);
-                        
+                        GameObject myAlerted_Spawn = Instantiate(Alerted_Spawn, transform.position - new Vector3(0,transform.localScale.y - 17f,0), transform.rotation);
+                        myAlerted_Spawn.GetComponent<E_AM_Destroy>().AM_enemy = this.gameObject;
+
                         Detected = true;
                     }
 

@@ -19,6 +19,7 @@ TagManager:
   - rightCrack
   - PushPullOnElevator
   - Elevator
+  - DetectionMeter
   layers:
   - Default
   - TransparentFX

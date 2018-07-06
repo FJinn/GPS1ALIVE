@@ -186,14 +186,7 @@ public class P_controls : MonoBehaviour {
                 // move
 
                 gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
-
-                if(CameraStarted)
-                {
-                    var pos = Camera.main.WorldToViewportPoint(transform.position);
-                    pos.x = Mathf.Clamp01(pos.x);
-                    pos.y = Mathf.Clamp01(pos.y);
-                    transform.position = Camera.main.ViewportToWorldPoint(pos);
-                }
+                
                
             }
 
@@ -212,7 +205,16 @@ public class P_controls : MonoBehaviour {
         {
             gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
         }
+
         climbPosition.y = transform.position.y;
+
+        if (CameraStarted)
+        {
+            var pos = Camera.main.WorldToViewportPoint(transform.position);
+            pos.x = Mathf.Clamp01(pos.x);
+            pos.y = Mathf.Clamp01(pos.y);
+            transform.position = Camera.main.ViewportToWorldPoint(pos);
+        }
     }
 
     void Jump()
@@ -267,6 +269,7 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
             OnLadder = false;
             ladderPositionChanged = false;
             rb2d.gravityScale = iniGravity;

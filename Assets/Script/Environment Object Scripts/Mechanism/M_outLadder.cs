@@ -6,6 +6,8 @@ using UnityEngine.Tilemaps;
 public class M_outLadder : MonoBehaviour {
 
     public GameObject[] Players;
+    public bool check;
+
 
     private void Start()
     {
@@ -13,21 +15,26 @@ public class M_outLadder : MonoBehaviour {
         Players[0] = GameObject.FindGameObjectWithTag("Player");
         Players[1] = GameObject.FindGameObjectWithTag("Player2");
     }
+    
 
     private void OnTriggerStay2D(Collider2D player)
     {
-        for(int i=0; i<Players.Length; i++){ 
-            if (Input.GetKey(Players[i].GetComponent<P_controls>().KeyLeft))
+            if (Input.GetKey(player.GetComponent<P_controls>().KeyLeft))
             {
-                Physics2D.IgnoreCollision(Players[i].GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>() , false);
-                Players[i].GetComponent<P_controls>().OnLadder = false;
+                Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>() , false);
+                player.GetComponent<P_controls>().OnLadder = false;
             }
-            else if (Input.GetKey(Players[i].GetComponent<P_controls>().KeyRight))
+            else if (Input.GetKey(player.GetComponent<P_controls>().KeyRight))
             {
-                Physics2D.IgnoreCollision(Players[i].GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
-                Players[i].GetComponent<P_controls>().OnLadder = false;
+                Physics2D.IgnoreCollision(player.GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
+                player.GetComponent<P_controls>().OnLadder = false;
             }
-
-        }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Physics2D.IgnoreCollision(collision.GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
+
+    }
+  
 }
