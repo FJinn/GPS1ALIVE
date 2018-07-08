@@ -11,6 +11,7 @@ public class M_Interaction : MonoBehaviour {
     private bool isStepped;
     private float originalScaleY;
     private float scaleY;
+    private int enterCounter;
     
     private Animator M_animator;
     private Animation M_animation;
@@ -69,16 +70,23 @@ public class M_Interaction : MonoBehaviour {
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
+        {
+            if (enterCounter <= 0)
+            {
+                UnitTrigger();
+            }
+            enterCounter++;
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D other)
     {
         if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
         {
             isStepped = true;
-            if(transform.localScale.y == originalScaleY)
-            {
-                UnitTrigger();
-            }
-
         }
     }
 
@@ -86,8 +94,14 @@ public class M_Interaction : MonoBehaviour {
     {
         if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
         {
-           
+            enterCounter--;
+            if (isStepped && enterCounter == 0)
+            {
+                UnitTrigger();
+            }
             isStepped = false;
         }
     }
+
+
 }

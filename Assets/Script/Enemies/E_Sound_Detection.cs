@@ -101,6 +101,7 @@ public class E_Sound_Detection : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+        
         if(soundHeard)
         {
             soundHeard = false;
