@@ -7,6 +7,7 @@ public class L_InLight : MonoBehaviour {
     public LayerMask playerMask;
     public float LightDetectionRadius;
 
+
 	// Use this for initialization
 	void Start () {
         
@@ -18,14 +19,18 @@ public class L_InLight : MonoBehaviour {
 
         foreach (Collider2D player in playerWithinRange)
         {
-           
             if (player.CompareTag("Player") || player.CompareTag("Player2"))
             {
+                var SR = player.GetComponent<SpriteRenderer>().color;
                 if (Vector2.Distance(player.transform.position, transform.position) <= LightDetectionRadius)
                 {
+                    var color = new Color(171, 171, 171);
+                    player.GetComponent<SpriteRenderer>().color = color;
                     player.GetComponent<P_ShadowDetect>().P_isUnderShadow = false;
                 }else
                 {
+                    var color = new Color(171, 171, 171);
+                    player.GetComponent<SpriteRenderer>().color = color;
                     player.GetComponent<P_ShadowDetect>().P_isUnderShadow = true;
                 }
             }

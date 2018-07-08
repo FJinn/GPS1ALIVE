@@ -9,12 +9,23 @@ public class ButtonPressed : MonoBehaviour {
     public bool player1Inside = false;
     public bool player2Inside = false;
     private GameObject spawnedObject;
+    Quaternion iniRot;
+
+    private void Start()
+    {
+        iniRot = transform.rotation;
+    }
+
+    private void LateUpdate()
+    {
+        transform.rotation = iniRot;
+    }
 
     void Update()
     {
-        if (GetComponent<FixedJoint2D>().enabled)
+        if (GetComponentInParent<FixedJoint2D>().enabled)
         {
-            GetComponent<EdgeCollider2D>().enabled = false;
+            GetComponent<BoxCollider2D>().enabled = false;
             if (spawnedObject != null)
             {
                 Destroy(spawnedObject);
@@ -23,7 +34,7 @@ public class ButtonPressed : MonoBehaviour {
         }
         else
         {
-            GetComponent<EdgeCollider2D>().enabled = true;
+            GetComponent<BoxCollider2D>().enabled = true;
         }
     }
 

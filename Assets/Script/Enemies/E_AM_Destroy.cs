@@ -22,10 +22,17 @@ public class E_AM_Destroy : MonoBehaviour {
         }
         
         AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);
-	}
+
+        if(AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned)
+        {
+            Destroy(AM_enemy.GetComponent<E_Sound_Detection>().EM_DetectionMeter);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
+
         if (AM_alpha > 0.1f)
         {
             AM_alpha -= 0.25f * Time.deltaTime;

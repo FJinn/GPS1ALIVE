@@ -71,7 +71,7 @@ public class B_Animations : MonoBehaviour {
     {
         if(GetComponent<P_pushPull>().OnBox == true)
         {
-            if(GetComponent<Rigidbody2D>().velocity.x > 0)
+            if(GetComponent<Rigidbody2D>().velocity.x > 0.1f)
             {
                 if(GetComponent<P_controls>().faceRight == true)
                 {
@@ -87,7 +87,7 @@ public class B_Animations : MonoBehaviour {
                 }
                 
             }
-            else if(GetComponent<Rigidbody2D>().velocity.x < 0)
+            else if(GetComponent<Rigidbody2D>().velocity.x < -0.1f)
             {
                 if (GetComponent<P_controls>().faceRight == true)
                 {
@@ -108,5 +108,10 @@ public class B_Animations : MonoBehaviour {
             anim.SetBool("Pushing", false);
             anim.SetBool("Pulling", false);
         }
+    }
+
+    void PressButton()
+    {
+
     }
 }
