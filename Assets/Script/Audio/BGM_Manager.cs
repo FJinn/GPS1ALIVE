@@ -10,6 +10,20 @@ public class BGM_Manager : MonoBehaviour {
     // to get the slider object
     public GameObject slider;
 
+    public static bool oneBGM;
+
+    private void Awake()
+    {
+        if (oneBGM == false)
+        {
+            oneBGM = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Update () {
         GetComponent<AudioSource>().ignoreListenerVolume = true;
 

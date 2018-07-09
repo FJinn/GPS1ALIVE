@@ -9,6 +9,20 @@ public class BrightnessManager : MonoBehaviour {
 
     public GameObject slider;
 
+    public static bool oneBright;
+
+    private void Awake()
+    {
+        if (oneBright == false)
+        {
+            oneBright = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Update()
     {
         GammaCorrection = slider.GetComponent<Slider>().value;
