@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 82773111516794446}
   - component: {fileID: 82610784512998268}
   - component: {fileID: 114681425635175136}
+  - component: {fileID: 114722189447425544}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Player2
@@ -569,6 +570,18 @@ MonoBehaviour:
   buttonMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114722189447425544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1743861540611790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb0757977c29b14397ac8a450ff39ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95336084657961866}
 --- !u!114 &114870908154176100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,6 +626,13 @@ MonoBehaviour:
   - G_CrawlAnim
   StopGameControl: 0
   CameraStarted: 1
+  faceLeft: 0
+  faceRight: 0
+  Walking: 0
+  Jumping: 0
+  Idle: 0
+  Crawling: 0
+  CrawlingIdle: 0
 --- !u!114 &114996712177572422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -629,6 +649,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   isPulling: 0
+  OnBox: 0
 --- !u!212 &212502857846790350
 SpriteRenderer:
   m_ObjectHideFlags: 1

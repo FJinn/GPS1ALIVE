@@ -171,15 +171,24 @@ public class P_controls : MonoBehaviour {
                 {
                     if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
                     {
-                        //anim.Play(animList[3]);
-                        CrawlingIdle = false;
-                        Crawling = true;
+                        if(Jumping == true)
+                        {
+                            //anim.Play(animList[3]);
+                            CrawlingIdle = false;
+                            Crawling = true;
+                        }
+                        
+                       
                     }
                     else
                     {
-                        //anim.Play(animList[2]);
-                        CrawlingIdle = true;
-                        Crawling = false;                      
+                        if(Jumping == true)
+                        {
+                            //anim.Play(animList[2]);
+                            CrawlingIdle = true;
+                            Crawling = false;     
+                        }
+                                        
                     }
                 }
 
