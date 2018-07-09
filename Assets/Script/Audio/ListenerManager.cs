@@ -10,6 +10,20 @@ public class ListenerManager : MonoBehaviour {
     // to get the slider object
     public GameObject slider;
 
+    public static bool oneLis;
+
+    private void Awake()
+    {
+        if (oneLis == false)
+        {
+            oneLis = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void Update()
     {
         // so volume = user-set-slider value
