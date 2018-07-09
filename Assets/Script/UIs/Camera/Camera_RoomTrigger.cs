@@ -6,6 +6,7 @@ public class Camera_RoomTrigger : MonoBehaviour {
 
     private bool p1Triggered = false;
     private bool p2Triggered = false;
+    private bool triggerOnce = false;
 
     public int CameraIndexTrigger;
     public bool ActiveDynamic;
@@ -35,6 +36,12 @@ public class Camera_RoomTrigger : MonoBehaviour {
                 }
             }
             MainCamera.GetComponent<Camera_Control>().roomCameraInt = CameraIndexTrigger;
+
+            if(!triggerOnce)
+            {
+                triggerOnce = true;
+                MainCamera.GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
+            }
             if (ActiveDynamic)
             {
                 MainCamera.GetComponent<Camera_Control>().targetRoom = false;

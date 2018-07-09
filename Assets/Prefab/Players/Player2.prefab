@@ -570,6 +570,8 @@ MonoBehaviour:
   buttonMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  ScreenFade: {fileID: 0}
+  sceneIndex: 2
 --- !u!114 &114722189447425544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -686,7 +688,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 4af53932d9da9f646aefe0d27f9afda7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
