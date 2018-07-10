@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ListenerManager : MonoBehaviour {
-
-    // this will let user set BGM volume
-    private float userSetVolume;
+    
     // to get the slider object
-    public GameObject slider;
+    public Slider slider;
 
     public static bool oneLis;
 
@@ -24,14 +22,17 @@ public class ListenerManager : MonoBehaviour {
         }
     }
 
-    void Update()
+    private void Start()
     {
-        // so volume = user-set-slider value
-        userSetVolume = slider.GetComponent<Slider>().value;
-
-        // set audio volume to userSetVolume
-        AudioListener.volume = userSetVolume;
+        slider.onValueChanged.AddListener(delegate { valueChanged(); });
 
         DontDestroyOnLoad(this.gameObject);
+    }
+    
+
+    public void valueChanged()
+    {
+        // set audio volume to userSetVolume
+        AudioListener.volume = slider.value;
     }
 }
