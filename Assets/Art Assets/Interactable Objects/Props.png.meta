@@ -21,6 +21,7 @@ TextureImporter:
     21300032: P_GreenPressure
     21300034: P_PressurePad
     21300036: Props (1)_24
+    21300038: P_Lamp_Shorter
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -418,6 +419,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6d0b1a18e2d828e4bae69d8fea1d4e47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P_Lamp_Shorter
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 511
+        width: 256
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162eb65608ccfc24cbe4f3ba46e6d7c3
       vertices: []
       indices: 
       edges: []
