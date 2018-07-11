@@ -28,7 +28,7 @@ public class CrawlIntoCrack : MonoBehaviour {
             if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && !p[i].GetComponent<P_avoidEnemyVent>().firstTap && GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>())) {
                 p[i].GetComponent<P_Vent>().onVent = true;
                 p[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                p[i].GetComponent<P_avoidEnemyVent>().firstTap = true;
+                p[i].GetComponent<P_avoidEnemyVent>().firstTap = true;         
 
                 if (DisableCameraLimit)
                 {

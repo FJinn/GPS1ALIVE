@@ -171,19 +171,14 @@ public class P_controls : MonoBehaviour {
                 else
                 {
                     if (rb2d.velocity.x > 0.3f || rb2d.velocity.x < -0.3f)
-                    {                   
-                        //anim.Play(animList[3]);
-                        CrawlingIdle = false;
+                    {                        
                         Crawling = true;
-                        
-                        
-                       
+                        CrawlingIdle = false;
                     }
                     else
-                    {                       
-                        //anim.Play(animList[2]);
+                    {
                         CrawlingIdle = true;
-                        Crawling = false;                                         
+                        Crawling = false;
                     }
                 }
 
@@ -228,6 +223,16 @@ public class P_controls : MonoBehaviour {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
             rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
         }
+    }
+
+    public void StopControl()
+    {
+        StopGameControl = true;
+    }
+    
+    public void ResumeControl()
+    {
+        StopGameControl = false;
     }
 
     private bool ladderPositionChanged = false;
@@ -285,5 +290,4 @@ public class P_controls : MonoBehaviour {
             rb2d.gravityScale = iniGravity;
         }
     }
-    
 }

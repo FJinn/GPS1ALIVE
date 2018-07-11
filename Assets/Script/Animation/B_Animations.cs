@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class B_Animations : MonoBehaviour {
     public Animator anim;
+    P_controls playerControl;
+    P_pushPull playerPushPull;
+    Rigidbody2D playerVelocity;
 
-	void Update () {
+    private void Start()
+    {
+        playerControl = GetComponent<P_controls>();
+        playerPushPull = GetComponent<P_pushPull>();
+        playerVelocity = GetComponent<Rigidbody2D>();
+    }
+
+    void Update () {
         Walking();
         Idle();
         Crawling();
@@ -15,7 +25,7 @@ public class B_Animations : MonoBehaviour {
 
     void Walking()
     {
-        if(GetComponent<P_controls>().Walking == true)
+        if(playerControl.Walking == true)
         {
             anim.SetBool("Walking", true);
             anim.SetBool("Idle", false);
@@ -24,7 +34,7 @@ public class B_Animations : MonoBehaviour {
 
     void Idle()
     {
-        if(GetComponent<P_controls>().Idle == true)
+        if(playerControl.Idle == true)
         {
             anim.SetBool("Walking", false);
             anim.SetBool("Idle", true);
@@ -33,21 +43,20 @@ public class B_Animations : MonoBehaviour {
 
     void Crawling()
     {
-        if(GetComponent<P_controls>().CrawlingIdle == true)
+        if (playerControl.CrawlingIdle == true)
         {
             anim.SetBool("Idle", false);
             anim.SetBool("Walking", false);
             anim.SetBool("Crawling", false);
             anim.SetBool("CrawlingIdle", true);
         }
-        else if(GetComponent<P_controls>().Crawling == true)
+        else if (playerControl.Crawling == true)
         {
             anim.SetBool("Idle", false);
             anim.SetBool("Walking", false);
             anim.SetBool("Crawling", true);
             anim.SetBool("CrawlingIdle", false);
-        }
-       
+        }    
         else
         {
             anim.SetBool("Crawling", false);
@@ -57,11 +66,11 @@ public class B_Animations : MonoBehaviour {
 
     void Jumping()
     {
-        if(GetComponent<P_controls>().Jumping == true)
+        if(playerControl.Jumping == true)
         {
             anim.SetBool("Jumping", true);
         }
-        else if(GetComponent<P_controls>().Jumping == false)
+        else if(playerControl.Jumping == false)
         {
             anim.SetBool("Jumping", false); 
         }
@@ -69,17 +78,17 @@ public class B_Animations : MonoBehaviour {
 
     void PullPush()
     {
-        if(GetComponent<P_pushPull>().OnBox == true)
+        if(playerPushPull.OnBox == true)
         {
-            if(GetComponent<Rigidbody2D>().velocity.x > 0.1f)
+            if(playerVelocity.velocity.x > 0.1f)
             {
-                if(GetComponent<P_controls>().faceRight == true)
+                if(playerControl.faceRight == true)
                 {
                     anim.SetBool("Pushing", true);
                     anim.SetBool("Pulling", false);
                     anim.SetBool("Idle", false);
                 }
-                else if(GetComponent<P_controls>().faceLeft == true)
+                else if(playerControl.faceLeft == true)
                 {
                     anim.SetBool("Pushing", false);
                     anim.SetBool("Pulling", true);
@@ -87,15 +96,15 @@ public class B_Animations : MonoBehaviour {
                 }
                 
             }
-            else if(GetComponent<Rigidbody2D>().velocity.x < -0.1f)
+            else if(playerVelocity.velocity.x < -0.1f)
             {
-                if (GetComponent<P_controls>().faceRight == true)
+                if (playerControl.faceRight == true)
                 {
                     anim.SetBool("Pushing", false);
                     anim.SetBool("Pulling", true);
                     anim.SetBool("Idle", false);
                 }
-                else if (GetComponent<P_controls>().faceLeft == true)
+                else if (playerControl.faceLeft == true)
                 {
                     anim.SetBool("Pushing", true);
                     anim.SetBool("Pulling", false);
