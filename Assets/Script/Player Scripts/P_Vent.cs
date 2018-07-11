@@ -48,11 +48,20 @@ public class P_Vent : MonoBehaviour {
 
         if (CompareTag("Player"))
         {
-            Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player2").GetComponent<P_Vent>().BoxColliderOrigin);
+            GameObject tempObject = GameObject.FindGameObjectWithTag("Player2");
+            if(tempObject.GetComponent<P_Vent>().BoxColliderOrigin != null)
+            {
+                Physics2D.IgnoreCollision(BoxColliderOrigin, tempObject.GetComponent<P_Vent>().BoxColliderOrigin);
+            }
+            
         }else
         if(CompareTag("Player2"))
         {
-            Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
+            GameObject tempObject = GameObject.FindGameObjectWithTag("Player");
+            if (tempObject.GetComponent<P_Vent>().BoxColliderOrigin != null)
+            {
+                Physics2D.IgnoreCollision(BoxColliderOrigin, tempObject.GetComponent<P_Vent>().BoxColliderOrigin);
+            }
         }
 
     }

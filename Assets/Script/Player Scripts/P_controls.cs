@@ -55,6 +55,7 @@ public class P_controls : MonoBehaviour {
         animList = new string[4];
         anim = GetComponent<Animator>();
         walls = GameObject.FindGameObjectsWithTag("Walls");
+
         // setting up all the keys for 2 players;
         if (gameObject.tag == "Player")
         {

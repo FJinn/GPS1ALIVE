@@ -30,21 +30,21 @@ public class CrawlIntoCrack : MonoBehaviour {
                 p[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 p[i].GetComponent<P_avoidEnemyVent>().firstTap = true;
 
-                if(teleport)
-                {
-                    p[i].transform.position = teleportLocation.transform.position;
-                }
-
-                if(DisableCameraLimit )
+                if (DisableCameraLimit)
                 {
                     p[i].GetComponent<P_controls>().CameraStarted = false;
+                    p[i].GetComponent<P_controls>().CrawlingIdle = true;
                 }
 
-                if(StopGameControl )
+                if (StopGameControl)
                 {
                     p[i].GetComponent<P_controls>().StopGameControl = true;
                 }
-                
+
+                if (teleport)
+                {
+                    p[i].transform.position = teleportLocation.transform.position;
+                }
                 
                 p[i].GetComponent<P_Vent>().ResetCollisions();
                 /*
