@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.PostProcessing;
 
 public class BrightnessManager : MonoBehaviour {
 
@@ -10,7 +11,7 @@ public class BrightnessManager : MonoBehaviour {
     public Slider slider;
 
     public static bool oneBright;
-
+   
     private void Awake()
     {
         if (oneBright == false)
@@ -23,8 +24,9 @@ public class BrightnessManager : MonoBehaviour {
         }
     }
 
-    private void Start()
+    void Start()
     {
+
         slider.onValueChanged.AddListener(delegate { valueChanged(); });
 
         DontDestroyOnLoad(this.gameObject);
