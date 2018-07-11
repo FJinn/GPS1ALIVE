@@ -174,11 +174,15 @@ public class P_controls : MonoBehaviour {
                     {                        
                         Crawling = true;
                         CrawlingIdle = false;
+                        Walking = false;
+                        Idle = false;
                     }
                     else
                     {
                         CrawlingIdle = true;
                         Crawling = false;
+                        Walking = false;
+                        Idle = false;
                     }
                 }
 
