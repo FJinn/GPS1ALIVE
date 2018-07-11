@@ -40,6 +40,7 @@ public class P_controls : MonoBehaviour {
     public bool StopGameControl;
     public bool CameraStarted = false;
 
+    private BoxCollider2D myBoxCollider;
     public bool faceLeft = false;
     public bool faceRight = false;
     public bool Walking = false;
@@ -52,6 +53,7 @@ public class P_controls : MonoBehaviour {
     {
         animList = new string[4];
         anim = GetComponent<Animator>();
+
         // setting up all the keys for 2 players;
         if (gameObject.tag == "Player")
         {
@@ -62,7 +64,7 @@ public class P_controls : MonoBehaviour {
             KeyRight = KeyCode.D;
             isPlayer1 = true;
 
-            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
         }
         else if (gameObject.tag == "Player2")
         {
@@ -77,10 +79,10 @@ public class P_controls : MonoBehaviour {
             animList[2] = "G_CrawlIdleAnim";
             animList[3] = "G_CrawlAnim";
 
-            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
         }
 
-        var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 500000f);
+        Collider2D[] foundEnemies = Physics2D.OverlapCircleAll(transform.position, 500000f);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
             if(foundEnemies[k].CompareTag("Enemy"))
@@ -96,12 +98,10 @@ public class P_controls : MonoBehaviour {
 
         rb2d = GetComponent<Rigidbody2D>();
         iniGravity = rb2d.gravityScale;
+    //    myBoxCollider = GetComponent<BoxCollider2D>();
 
         // setup boxcollider2d for easier use(just for saving getcomponent<boxcollider2d>() space) -> btw, why boxcollider but not circle collider?
 
-        b2d = GetComponent<BoxCollider2D>();
-        
-        
     }
 
     private bool Grounded()
@@ -118,7 +118,6 @@ public class P_controls : MonoBehaviour {
 		
     void FixedUpdate()
 	{
-        myVelocityX = GetComponent<Rigidbody2D>().velocity.x;
         if(isPlayer1)
         {
             moveHorizontal = Input.GetAxis("Horizontal");
@@ -131,7 +130,7 @@ public class P_controls : MonoBehaviour {
 
             if (!OnLadder){
 
-                if (gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false) 
+                if (rb2d.velocity.x < -0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false) 
                 {
                     var tempScale = transform.localScale.x;
                     tempScale = Mathf.Abs(tempScale);
@@ -139,7 +138,7 @@ public class P_controls : MonoBehaviour {
                     faceLeft = true;
                     faceRight = false;                    
                 }
-                else if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false)
+                else if (rb2d.velocity.x > 0.1f && gameObject.GetComponent<P_pushPull>().OnBox == false)
                 {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                     faceLeft = false;
@@ -148,7 +147,7 @@ public class P_controls : MonoBehaviour {
 
                 if (!onVent)
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.1f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.1f)
+                    if (rb2d.velocity.x > 0.1f || rb2d.velocity.x < -0.1f)
                     {
                         //anim.Play(animList[1]);
                         Walking = true;
@@ -169,23 +168,32 @@ public class P_controls : MonoBehaviour {
                 }
                 else
                 {
-                    if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 0.3f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -0.3f)
+                    if (rb2d.velocity.x > 0.3f || rb2d.velocity.x < -0.3f)
                     {
-                        //anim.Play(animList[3]);
-                        CrawlingIdle = false;
-                        Crawling = true;
+                        if(Jumping == true)
+                        {
+                            //anim.Play(animList[3]);
+                            CrawlingIdle = false;
+                            Crawling = true;
+                        }
+                        
+                       
                     }
                     else
                     {
-                        //anim.Play(animList[2]);
-                        CrawlingIdle = true;
-                        Crawling = false;                      
+                        if(Jumping == true)
+                        {
+                            //anim.Play(animList[2]);
+                            CrawlingIdle = true;
+                            Crawling = false;     
+                        }
+                                        
                     }
                 }
 
                 // move
 
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
+                rb2d.velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
                 
                
             }
@@ -203,7 +211,7 @@ public class P_controls : MonoBehaviour {
         }
         else
         {
-            gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, GetComponent<Rigidbody2D>().velocity.y);
+            rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
 
         climbPosition.y = transform.position.y;
@@ -245,7 +253,7 @@ public class P_controls : MonoBehaviour {
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, climbSpeed);
+                rb2d.velocity = new Vector2(0, climbSpeed);
 			}
 			else if (Input.GetKey(KeyDown))
 			{
@@ -255,11 +263,11 @@ public class P_controls : MonoBehaviour {
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
-                gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -climbSpeed);
+                rb2d.velocity = new Vector2(0, -climbSpeed);
 			}
 			else
 			{
-				gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+				rb2d.velocity = new Vector2(0, 0);
 			}
 		}
     }

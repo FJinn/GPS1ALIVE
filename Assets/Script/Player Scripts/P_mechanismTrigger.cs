@@ -7,8 +7,11 @@ public class P_mechanismTrigger : MonoBehaviour {
     public float distance = 1f;
     public LayerMask buttonMask;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject ScreenFade;
+    public int sceneIndex;
+
+    // Use this for initialization
+    void Start () {
 
     }
 	
@@ -29,7 +32,17 @@ public class P_mechanismTrigger : MonoBehaviour {
                     }
                 }
             }
-            
+            if (player.CompareTag("levelProceed"))
+            {
+                if (GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()))
+                {
+                    if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse))
+                    {
+                        ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
+                    }
+                }
+            }
+
         }
             
 	}

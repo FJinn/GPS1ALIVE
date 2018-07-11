@@ -23,7 +23,7 @@ public class Camera_Control : MonoBehaviour {
     public float[] roomCameraSize;
     public Camera currentCamera;
     private float cameraSmooth;
-    private float cameraSizeSmoothTimer;
+    public float cameraSizeSmoothTimer;
 
     public bool targetRoom = false;
 
@@ -67,11 +67,11 @@ public class Camera_Control : MonoBehaviour {
                 float xPos = Mathf.SmoothDamp(transform.position.x, roomCameraFocusObject[roomCameraInt].transform.position.x, ref velocity.x, smoothX);
                 float yPos = Mathf.SmoothDamp(transform.position.y, roomCameraFocusObject[roomCameraInt].transform.position.y, ref velocity.y, smoothX);
                 transform.position = new Vector3(xPos,yPos,transform.position.z);
-                
-             //   cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], 1f * Time.deltaTime);
-                
 
-                currentCamera.orthographicSize = roomCameraSize[roomCameraInt];
+                cameraSizeSmoothTimer += 2f * Time.deltaTime;
+                cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], cameraSizeSmoothTimer);
+                
+                currentCamera.orthographicSize = cameraSmooth;
             }
         
         

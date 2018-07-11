@@ -25,9 +25,10 @@ public class P_pushPull : MonoBehaviour {
         if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && hit.collider.tag == "PushPull" && (GetComponent<Rigidbody2D>().velocity.y <= 0.5f && GetComponent<Rigidbody2D>().velocity.y >= -0.5f)) {
             box = hit.collider.gameObject;
             if(box.GetComponent<M_BoxPull>().isActiveAndEnabled) {
+                
                 box.GetComponent<FixedJoint2D>().enabled = true;
-                box.GetComponent<M_BoxPull>().beingPush = true;
                 box.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+                box.GetComponent<M_BoxPull>().beingPush = true;
                 GetComponent<P_controls>().noJump = true;
                 OnBox = true;
             }
@@ -39,12 +40,24 @@ public class P_pushPull : MonoBehaviour {
             OnBox = false;
         }
 
-        if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
-        {         
-            box.GetComponent<FixedJoint2D>().enabled = false;
-            box.GetComponent<M_BoxPull>().beingPush = false;
-            GetComponent<P_controls>().noJump = false;
-            OnBox = false;
+<<<<<<< HEAD
+        if (box != null)
+        {
+            if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
+            {
+                box.GetComponent<FixedJoint2D>().enabled = false;
+=======
+        if(box != null)
+        {
+            if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
+            {
+              //  box.GetComponent<FixedJoint2D>().enabled = false;
+
+>>>>>>> dd962a0cc73b70c051378883826f2e31ba95cd57
+                box.GetComponent<M_BoxPull>().beingPush = false;
+                GetComponent<P_controls>().noJump = false;
+                OnBox = false;
+            }
         }
     }
 
