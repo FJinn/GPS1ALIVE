@@ -40,23 +40,23 @@ public class P_pushPull : MonoBehaviour {
             OnBox = false;
         }
 
-<<<<<<< HEAD
+
         if (box != null)
         {
             if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
-=======
-        if(box != null)
-        {
-            if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
-            {
-              //  box.GetComponent<FixedJoint2D>().enabled = false;
 
->>>>>>> dd962a0cc73b70c051378883826f2e31ba95cd57
-                box.GetComponent<M_BoxPull>().beingPush = false;
-                GetComponent<P_controls>().noJump = false;
-                OnBox = false;
+                if (box != null)
+                {
+                    if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
+                    {
+                        box.GetComponent<FixedJoint2D>().enabled = false;
+                        box.GetComponent<M_BoxPull>().beingPush = false;
+                        GetComponent<P_controls>().noJump = false;
+                        OnBox = false;
+                    }
+                }
             }
         }
     }

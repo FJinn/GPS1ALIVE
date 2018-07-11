@@ -169,25 +169,19 @@ public class P_controls : MonoBehaviour {
                 else
                 {
                     if (rb2d.velocity.x > 0.3f || rb2d.velocity.x < -0.3f)
-                    {
-                        if(Jumping == true)
-                        {
-                            //anim.Play(animList[3]);
-                            CrawlingIdle = false;
-                            Crawling = true;
-                        }
+                    {                   
+                        //anim.Play(animList[3]);
+                        CrawlingIdle = false;
+                        Crawling = true;
+                        
                         
                        
                     }
                     else
-                    {
-                        if(Jumping == true)
-                        {
-                            //anim.Play(animList[2]);
-                            CrawlingIdle = true;
-                            Crawling = false;     
-                        }
-                                        
+                    {                       
+                        //anim.Play(animList[2]);
+                        CrawlingIdle = true;
+                        Crawling = false;                                         
                     }
                 }
 
