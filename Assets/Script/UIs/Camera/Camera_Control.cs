@@ -69,9 +69,16 @@ public class Camera_Control : MonoBehaviour {
                 transform.position = new Vector3(xPos,yPos,transform.position.z);
 
                 cameraSizeSmoothTimer += 2f * Time.deltaTime;
-                cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], cameraSizeSmoothTimer);
-                
-                currentCamera.orthographicSize = cameraSmooth;
+
+                if(roomCameraInt == 0)
+                {
+                currentCamera.orthographicSize = InitSize;
+                }else
+                {
+                    cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], cameraSizeSmoothTimer);
+
+                    currentCamera.orthographicSize = cameraSmooth;
+                  }
             }
         
         

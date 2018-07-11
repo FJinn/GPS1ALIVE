@@ -80,7 +80,6 @@ public class Camera_RoomTrigger : MonoBehaviour {
     {
         if (collision == players[0].GetComponent<BoxCollider2D>() && !p1Triggered)
         {
-            Debug.Log(collision);
             p1Triggered = true;
         }
         else if(collision == players[1].GetComponent<BoxCollider2D>() && !p2Triggered)

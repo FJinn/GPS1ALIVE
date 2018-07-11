@@ -10,45 +10,47 @@ public class P_Vent : MonoBehaviour {
     private bool crouched = false;
 
     public BoxCollider2D BoxColliderOrigin;
+    private Rigidbody2D rg2b;
     private int iniSortingLayer;
     public LayerMask bypassEnemyMask;
 
     public bool preventColliderErase;
 
-    private GameObject passthroughWall;
+    private GameObject[] passthroughWall;
+
 
     void Start()
     {
-
-        passthroughWall = GameObject.Find("WallwithVents");
-
+        rg2b = GetComponent<Rigidbody2D>();
+        passthroughWall = GameObject.FindGameObjectsWithTag("Walls");
+        
         iniSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         BoxColliderOrigin = GetComponent<BoxCollider2D>();
-        
     }
 
-    IEnumerator ResetCollider()
+    public void ResetCollisions()
     {
-        Destroy(BoxColliderOrigin);
-        yield return new WaitForSeconds(0.05f);
-        BoxColliderOrigin = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
-
         var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 150f, bypassEnemyMask);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k]);
         }
+        
 
         if (onVent == false)
         {
-            Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall.GetComponent<TilemapCollider2D>(), false);
+            for(int i =0; i < passthroughWall.Length; i++)
+            {
+                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>(),false);
+                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>(), false);
+            }
         }
 
-        if (gameObject.CompareTag("Player"))
+        if (CompareTag("Player"))
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player2").GetComponent<P_Vent>().BoxColliderOrigin);
         }else
-        if(gameObject.CompareTag("Player2"))
+        if(CompareTag("Player2"))
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
         }
@@ -61,33 +63,27 @@ public class P_Vent : MonoBehaviour {
 		if(onVent == true && !crouched){
             crouched = true;
            // GetComponent<BoxCollider2D>().isTrigger = true;
-            GetComponent<Rigidbody2D>().gravityScale = 0;
+            rg2b.gravityScale = 0;
+            rg2b.velocity = new Vector2(rg2b.velocity.x, 0);
             GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer - 4;
             GetComponent<P_controls>().onVent = true;
 
+            for (int i = 0; i < passthroughWall.Length; i++)
+            {
+                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>());
+                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>());
+            }
         }
         else if (onVent == false && crouched)
         {
             crouched = false;
             GetComponent<P_controls>().onVent = false;
             //GetComponent<BoxCollider2D>().isTrigger = false;
-            GetComponent<Rigidbody2D>().gravityScale = 10;
+            rg2b.gravityScale = 10;
             GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer;
             
         }
-
-        /*
-        if(crouched && onVent){
-            if (gameObject.GetComponent<Rigidbody2D>().velocity.x > 2f || gameObject.GetComponent<Rigidbody2D>().velocity.x < -2f)
-            {
-                GetComponent<P_controls>().anim.Play(GetComponent<P_controls>().animList[3]);
-            }
-            else
-            {
-                GetComponent<P_controls>().anim.Play(GetComponent<P_controls>().animList[2]);
-            }
-        }
-        */
+        
     }
 
 }
