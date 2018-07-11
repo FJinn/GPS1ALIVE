@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317265310782640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.1, y: -30.18, z: 0}
+  m_LocalPosition: {x: -0.3, y: -27.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4081787224860022}
@@ -458,11 +458,11 @@ MonoBehaviour:
   stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
   spawnStone: 0
   audiosource: {fileID: 82254944185973164}
-  numDots: 10
+  numDots: 25
   dotsPositionOverTime: 0.22
   dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
-  speedX: 15
-  speedY: 17.5
+  speedX: 40
+  speedY: 35
 --- !u!114 &114307913849896360
 MonoBehaviour:
   m_ObjectHideFlags: 1

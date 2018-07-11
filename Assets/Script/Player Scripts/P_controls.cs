@@ -249,36 +249,57 @@ public class P_controls : MonoBehaviour {
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
 
-            for(int i =0;i < walls.Length; i ++)
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
-            }
 
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;
+                for (int i = 0; i < walls.Length; i++)
+                {
+                    if(walls[i].GetComponent<TilemapCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+                    }
+                    if(walls[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
+                    }
+                }
                 if (!ladderPositionChanged){
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
                 rb2d.velocity = new Vector2(0, climbSpeed);
+                transform.position = new Vector2(ladder.transform.position.x,transform.position.y);
 			}
 			else if (Input.GetKey(KeyDown))
 			{
                 OnLadder = true;
+                for (int i = 0; i < walls.Length; i++)
+                {
+                    if (walls[i].GetComponent<TilemapCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+                    }
+                    if (walls[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
+                    }
+                }
                 if (!ladderPositionChanged)
                 {
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
                 rb2d.velocity = new Vector2(0, -climbSpeed);
-			}
+                transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+            }
 			else
 			{
 				rb2d.velocity = new Vector2(0, 0);
 			}
 		}
     }
+    
 
     private void OnTriggerExit2D(Collider2D ladder)
     {
@@ -287,7 +308,14 @@ public class P_controls : MonoBehaviour {
         {
             for (int i = 0; i < walls.Length; i++)
             {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
+                if (walls[i].GetComponent<TilemapCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
+                }
+                if (walls[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>(),false);
+                }
             }
             OnLadder = false;
             ladderPositionChanged = false;

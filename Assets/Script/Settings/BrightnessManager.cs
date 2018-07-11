@@ -6,7 +6,7 @@ using UnityEngine.PostProcessing;
 
 public class BrightnessManager : MonoBehaviour {
 
-    public float GammaCorrection;
+    public float GammaCorrection = 0.5f;
 
     public Slider slider;
 

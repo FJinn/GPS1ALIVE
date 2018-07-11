@@ -3292,7 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fd70707ae174764397eb221540abca4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GammaCorrection: 0
+  GammaCorrection: 0.5
   slider: {fileID: 1447397778}
 --- !u!4 &1471043637
 Transform:
@@ -3918,7 +3918,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1881034631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4435,7 +4435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1980861572
 MonoBehaviour:
   m_ObjectHideFlags: 0

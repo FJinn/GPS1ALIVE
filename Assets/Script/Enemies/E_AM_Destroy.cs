@@ -15,16 +15,18 @@ public class E_AM_Destroy : MonoBehaviour {
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
 
-        p[0].GetComponent<P_Death>().StartCoroutine("Dead");
-        
-        for(int i =0;i < p.Length;i++)
+        for (int i = 0; i < p.Length; i++)
         {
             p[i].GetComponent<P_controls>().StopGameControl = true;
+            p[i].GetComponent<P_Death>().StartCoroutine("Dead");
         }
+        
+        
 
         if(AM_enemy != null)
         {
             AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
+            AM_enemy.GetComponent<E_Movement>().enabled = false;
         }
         
         AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);

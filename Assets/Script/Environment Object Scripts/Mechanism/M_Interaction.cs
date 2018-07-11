@@ -16,6 +16,9 @@ public class M_Interaction : MonoBehaviour {
     private Animator M_animator;
     private int animCounter;
 
+    [Header("Is this a switch?")]
+    public bool switchAnim = false;
+
 
 	// Use this for initialization
 	void Start () 
@@ -35,16 +38,19 @@ public class M_Interaction : MonoBehaviour {
         {
             ObjectList[i].GetComponent<M_Trigger>().Trigger();
         }
-        animCounter++;
-        if(animCounter == 1)
+        if(switchAnim)
         {
-            M_animator.Play("AIO_AnimLeverDown");
-        }
-        else
-        if(animCounter >= 2)
-        {
-            M_animator.Play("AIO_AnimLeverUp");
-            animCounter = 0;
+            animCounter++;
+            if (animCounter == 1)
+            {
+                M_animator.Play("AIO_AnimLeverDown");
+            }
+            else
+            if (animCounter >= 2)
+            {
+                M_animator.Play("AIO_AnimLeverUp");
+                animCounter = 0;
+            }
         }
         
     }

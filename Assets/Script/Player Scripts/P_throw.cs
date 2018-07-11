@@ -92,18 +92,18 @@ public class P_throw : MonoBehaviour {
 				Destroy(Dots);
 			}
 			count = 0;
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 20f){		// adjust trajectory with 10 x limits 
+		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 35f){		// adjust trajectory with 10 x limits 
 			foreach(var Dots in DOTS){
 				Destroy(Dots);
 			}
-			speedX += 0.1f;
+			speedX += 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
 			foreach(var Dots in DOTS){
 				Destroy(Dots);
 			}
-			speedX -= 0.1f;
+			speedX -= 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyLeft))
