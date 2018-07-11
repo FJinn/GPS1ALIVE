@@ -7,10 +7,13 @@ public class Camera_RoomTrigger : MonoBehaviour {
     private bool p1Triggered = false;
     private bool p2Triggered = false;
     private bool triggerOnce = false;
+    private GameObject[] players;
 
     public int CameraIndexTrigger;
     public bool ActiveDynamic;
     public GameObject[] ActiveBlocker;
+
+
 
     [Header("For dynamic movement!")]
     public bool changeCameraSize = false;
@@ -22,6 +25,9 @@ public class Camera_RoomTrigger : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        players = new GameObject[2];
+        players[0] = GameObject.FindGameObjectWithTag("Player");
+        players[1] = GameObject.FindGameObjectWithTag("Player2");
 	}
 	
 	// Update is called once per frame
@@ -37,11 +43,14 @@ public class Camera_RoomTrigger : MonoBehaviour {
             }
             MainCamera.GetComponent<Camera_Control>().roomCameraInt = CameraIndexTrigger;
 
+            Invoke("ResumeCamera", 1f);
+
             if(!triggerOnce)
             {
                 triggerOnce = true;
                 MainCamera.GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
             }
+
             if (ActiveDynamic)
             {
                 MainCamera.GetComponent<Camera_Control>().targetRoom = false;
@@ -58,13 +67,23 @@ public class Camera_RoomTrigger : MonoBehaviour {
         }
 	}
 
+    void ResumeCamera()
+    {
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].GetComponent<P_controls>().CameraStarted = true;
+            players[i].GetComponent<P_controls>().StopGameControl = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") && !p1Triggered)
+        if (collision == players[0].GetComponent<BoxCollider2D>() && !p1Triggered)
         {
+            Debug.Log(collision);
             p1Triggered = true;
         }
-        else if(collision.CompareTag("Player2") && !p2Triggered)
+        else if(collision == players[1].GetComponent<BoxCollider2D>() && !p2Triggered)
         {
             p2Triggered = true;
         }
@@ -72,12 +91,12 @@ public class Camera_RoomTrigger : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") && p1Triggered)
+        if (collision == players[0].GetComponent<BoxCollider2D>() && p1Triggered)
         {
            p1Triggered = false;
 
         }
-        else if (collision.CompareTag("Player2") && p2Triggered)
+        else if (collision == players[1].GetComponent<BoxCollider2D>() && p2Triggered)
         {
             p2Triggered = false;
         }

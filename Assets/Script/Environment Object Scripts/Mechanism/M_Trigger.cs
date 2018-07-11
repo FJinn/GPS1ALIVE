@@ -28,9 +28,23 @@ public class M_Trigger : MonoBehaviour {
     private float initWaitTime;
 
     private bool[] Directions;
+
+    public bool isThisDoor = false;
+    private Animator doorAnimator;
+    private BoxCollider2D myCollider;
+    private int openDoorCounts;
     
     // Use this for initialization
     void Start() {
+
+        if(isThisDoor)
+        {
+            doorAnimator = GetComponent<Animator>();
+            myCollider = GetComponent<BoxCollider2D>();
+        }
+
+
+
         // 	0     1   2   3
         // left right up down
         Directions = new bool[4];
@@ -84,6 +98,24 @@ public class M_Trigger : MonoBehaviour {
     {
 
         clickCounts++;
+
+        if(isThisDoor)
+        {
+            openDoorCounts++;
+
+            if(openDoorCounts == 1)
+            {
+                myCollider.enabled = false;
+                doorAnimator.Play("DoorUnlocked");
+            }
+            else if(openDoorCounts >= 2)
+            {
+                myCollider.enabled = true;
+                doorAnimator.Play("Doorlock");
+                openDoorCounts = 0;
+            }
+
+        }
 
         if (MovingDistance > 0 )
         {
@@ -206,11 +238,12 @@ public class M_Trigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        //! TEST USE
+        /*
         if(Input.GetKeyDown(KeyCode.F))
         {
             Trigger();
         }
+        */
 
         // left
         if (Directions[0]) {
@@ -280,7 +313,7 @@ public class M_Trigger : MonoBehaviour {
             }
         }
 
-
+        
     
 
 }

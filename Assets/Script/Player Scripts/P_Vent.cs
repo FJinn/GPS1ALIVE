@@ -38,20 +38,21 @@ public class P_Vent : MonoBehaviour {
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k]);
         }
-        
-        if(gameObject.CompareTag("Player"))
+
+        if (onVent == false)
+        {
+            Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall.GetComponent<TilemapCollider2D>(), false);
+        }
+
+        if (gameObject.CompareTag("Player"))
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player2").GetComponent<P_Vent>().BoxColliderOrigin);
-        }
+        }else
         if(gameObject.CompareTag("Player2"))
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, GameObject.FindGameObjectWithTag("Player").GetComponent<P_Vent>().BoxColliderOrigin);
         }
 
-        if(onVent == false)
-        {
-            Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall.GetComponent<TilemapCollider2D>(), false);
-        }
     }
 
     // Update is called once per frame

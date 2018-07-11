@@ -63,7 +63,7 @@ public class Camera_Control : MonoBehaviour {
                 currentCamera.orthographicSize = InitSize + (Mathf.Sqrt(getDistance()) * 1.5f);
             }else if (targetRoom)
             {
-
+                
                 float xPos = Mathf.SmoothDamp(transform.position.x, roomCameraFocusObject[roomCameraInt].transform.position.x, ref velocity.x, smoothX);
                 float yPos = Mathf.SmoothDamp(transform.position.y, roomCameraFocusObject[roomCameraInt].transform.position.y, ref velocity.y, smoothX);
                 transform.position = new Vector3(xPos,yPos,transform.position.z);
