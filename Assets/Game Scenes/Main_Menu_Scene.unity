@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afd3e05dd78709640b918a37eaf57574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 1170258392}
+  slider: {fileID: 1447397778}
 --- !u!4 &176860045
 Transform:
   m_ObjectHideFlags: 0
@@ -1199,8 +1199,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62889a37cb20bdb45b1268803f91adcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventSystem: {fileID: 730319085}
-  selectedObject: {fileID: 1850988778}
+  eventSystem: {fileID: 0}
+  selectedObject: {fileID: 0}
 --- !u!1 &688004781
 GameObject:
   m_ObjectHideFlags: 0
