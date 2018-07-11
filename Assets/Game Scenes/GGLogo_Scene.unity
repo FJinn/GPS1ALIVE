@@ -405,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1826145137}
   lvlChanger: {fileID: 1826145135}
-  levelToLoad: 6
+  levelToLoad: 5
 --- !u!114 &2112019056
 MonoBehaviour:
   m_ObjectHideFlags: 0
