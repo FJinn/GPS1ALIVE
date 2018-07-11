@@ -9,7 +9,6 @@ public class Paused : MonoBehaviour
     public static bool GameIsPauseed = false;
     public GameObject pauseMenuUi;
     public GameObject levelChanger;
-    public GameObject setting;
 
     private GameObject CheckpointManager;
 
@@ -46,20 +45,6 @@ public class Paused : MonoBehaviour
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPauseed = true;
-    }
-
-    // setting
-    public void Settings()
-    {
-        pauseMenuUi.SetActive(false);
-        setting.SetActive(true);
-    }
-
-    //setting back to pause menu
-    public void backToPauseMenu()
-    {
-        pauseMenuUi.SetActive(true);
-        setting.SetActive(false);
     }
 
     // skip tutorial
