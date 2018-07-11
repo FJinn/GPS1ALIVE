@@ -33,7 +33,7 @@ public class Camera_Control : MonoBehaviour {
         player2 = GameObject.FindGameObjectWithTag("Player2");
 
         InitSize = currentCamera.orthographicSize;
-        roomCameraInt = GameObject.Find("SO_CheckpointManager").GetComponent<Checkpoint>().CheckpointCamera;
+        roomCameraInt = GameObject.FindGameObjectWithTag("CheckpointManager").GetComponent<Checkpoint>().CheckpointCamera;
         transform.position = roomCameraFocusObject[roomCameraInt].transform.position;
     }
 	
@@ -68,7 +68,10 @@ public class Camera_Control : MonoBehaviour {
                 float yPos = Mathf.SmoothDamp(transform.position.y, roomCameraFocusObject[roomCameraInt].transform.position.y, ref velocity.y, smoothX);
                 transform.position = new Vector3(xPos,yPos,transform.position.z);
 
-                cameraSizeSmoothTimer += 2f * Time.deltaTime;
+                if(cameraSizeSmoothTimer <= 16f)
+                {
+                    cameraSizeSmoothTimer += 2f * Time.deltaTime;
+                }
 
                 if(roomCameraInt == 0)
                 {
