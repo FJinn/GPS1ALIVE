@@ -7,12 +7,37 @@ public class BrightnessManager : MonoBehaviour {
 
     public float GammaCorrection;
 
-    public GameObject slider;
+    public Slider slider;
 
-    void Update()
+    public static bool oneBright;
+
+    private void Awake()
     {
-        GammaCorrection = slider.GetComponent<Slider>().value;
-        RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
+        if (oneBright == false)
+        {
+            oneBright = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void Start()
+    {
+        slider.onValueChanged.AddListener(delegate { valueChanged(); });
+
         DontDestroyOnLoad(this.gameObject);
+    }
+    
+    public void valueChanged()
+    {
+        // set audio volume to userSetVolume
+        GammaCorrection = slider.value;
+    }
+
+    private void Update()
+    {
+        RenderSettings.ambientLight = new Color(GammaCorrection, GammaCorrection, GammaCorrection, 1.0f);
     }
 }
