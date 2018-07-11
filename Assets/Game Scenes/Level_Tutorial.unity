@@ -557,7 +557,7 @@ Prefab:
         type: 2}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
+      objectReference: {fileID: 6200000, guid: dae27d4887653a54a9a493d1ce91d913, type: 2}
     - target: {fileID: 1562334548792308, guid: 405126f0669e24249b70e1061d663e5c, type: 2}
       propertyPath: m_Name
       value: EO_Ground (25)
@@ -25097,7 +25097,7 @@ Prefab:
         type: 2}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
+      objectReference: {fileID: 6200000, guid: dae27d4887653a54a9a493d1ce91d913, type: 2}
     - target: {fileID: 1562334548792308, guid: 405126f0669e24249b70e1061d663e5c, type: 2}
       propertyPath: m_Name
       value: EO_Ground (19)

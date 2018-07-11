@@ -22,21 +22,21 @@ public class P_mechanismTrigger : MonoBehaviour {
 
         
         Collider2D[] Interactable = Physics2D.OverlapCircleAll(transform.position, 5f);
-        foreach (Collider2D player in Interactable)
+        foreach (Collider2D mechanism in Interactable)
         {
-            if(player.CompareTag("Interactable"))
+            if(mechanism.CompareTag("Interactable"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()))
+                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
-                        player.GetComponent<M_Interaction>().UnitTrigger();
+                        mechanism.GetComponent<M_Interaction>().UnitTrigger();
                     }
                 }
             }
-            if (player.CompareTag("levelProceed"))
+            if (mechanism.CompareTag("levelProceed"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()))
+                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
