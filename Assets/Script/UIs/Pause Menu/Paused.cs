@@ -9,6 +9,14 @@ public class Paused : MonoBehaviour
     public static bool GameIsPauseed = false;
     public GameObject pauseMenuUi;
     public GameObject levelChanger;
+
+    private GameObject CheckpointManager;
+
+    private void Start()
+    {
+        CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -44,6 +52,7 @@ public class Paused : MonoBehaviour
     {
         Time.timeScale = 1f;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel(2);
+        Destroy(CheckpointManager);
         Debug.Log("Skipping Tutorial");
     }
 
