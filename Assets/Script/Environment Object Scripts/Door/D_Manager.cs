@@ -34,4 +34,6 @@ public class D_Manager : MonoBehaviour {
         GetComponent<BoxCollider2D>().enabled = false;
         doorUnlocked.Play("DoorUnlocked");
     }
+
+    
 }

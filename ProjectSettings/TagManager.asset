@@ -21,6 +21,7 @@ TagManager:
   - Elevator
   - DetectionMeter
   - levelProceed
+  - Walls
   layers:
   - Default
   - TransparentFX

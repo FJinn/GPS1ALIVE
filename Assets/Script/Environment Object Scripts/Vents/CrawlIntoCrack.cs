@@ -10,6 +10,8 @@ public class CrawlIntoCrack : MonoBehaviour {
 
     public bool teleport = false;
     public GameObject teleportLocation;
+    public bool DisableCameraLimit = false;
+    public bool StopGameControl = false;
 
     // RESETING COLLISION BOX BOX COLLIDER 2D
     
@@ -32,8 +34,19 @@ public class CrawlIntoCrack : MonoBehaviour {
                 {
                     p[i].transform.position = teleportLocation.transform.position;
                 }
+
+                if(DisableCameraLimit )
+                {
+                    p[i].GetComponent<P_controls>().CameraStarted = false;
+                }
+
+                if(StopGameControl )
+                {
+                    p[i].GetComponent<P_controls>().StopGameControl = true;
+                }
                 
-                p[i].GetComponent<P_Vent>().StartCoroutine("ResetCollider");
+                
+                p[i].GetComponent<P_Vent>().ResetCollisions();
                 /*
                 var foundEnemies = Physics2D.OverlapCircleAll(p[i].transform.position, 150f, bypassEnemyMask);
                 for(int k =0; k < foundEnemies.Length; k++)
@@ -47,8 +60,8 @@ public class CrawlIntoCrack : MonoBehaviour {
                 p[i].GetComponent<P_Vent>().onVent = false;
                 p[i].GetComponent<P_avoidEnemyVent>().firstTap = false;
 
-                p[i].GetComponent<P_Vent>().StartCoroutine("ResetCollider");
-                
+                p[i].GetComponent<P_Vent>().ResetCollisions();
+
                 /*
                 var foundEnemies = Physics2D.OverlapCircleAll(p[i].transform.position, 150f, bypassEnemyMask);
                 for (int k = 0; k < foundEnemies.Length; k++)

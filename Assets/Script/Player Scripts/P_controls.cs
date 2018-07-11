@@ -14,6 +14,7 @@ public class P_controls : MonoBehaviour {
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
     private float iniGravity;
+    private GameObject[] walls;
     
 
     private Vector2 climbPosition;
@@ -53,7 +54,7 @@ public class P_controls : MonoBehaviour {
     {
         animList = new string[4];
         anim = GetComponent<Animator>();
-
+        walls = GameObject.FindGameObjectsWithTag("Walls");
         // setting up all the keys for 2 players;
         if (gameObject.tag == "Player")
         {
@@ -243,7 +244,10 @@ public class P_controls : MonoBehaviour {
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
 
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>());
+            for(int i =0;i < walls.Length; i ++)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+            }
 
 			if (Input.GetKey(KeyUp))
 			{
@@ -276,7 +280,10 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.Find("Wall_Floors").GetComponent<TilemapCollider2D>(), false);
+            for (int i = 0; i < walls.Length; i++)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
+            }
             OnLadder = false;
             ladderPositionChanged = false;
             rb2d.gravityScale = iniGravity;
