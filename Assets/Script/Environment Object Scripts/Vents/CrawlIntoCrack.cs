@@ -33,7 +33,6 @@ public class CrawlIntoCrack : MonoBehaviour {
                 if (DisableCameraLimit)
                 {
                     p[i].GetComponent<P_controls>().CameraStarted = false;
-                    p[i].GetComponent<P_controls>().CrawlingIdle = true;
                 }
 
                 if (StopGameControl)
