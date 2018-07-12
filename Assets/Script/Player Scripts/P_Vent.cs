@@ -39,10 +39,17 @@ public class P_Vent : MonoBehaviour {
 
         if (onVent == false)
         {
-            for(int i =0; i < passthroughWall.Length; i++)
+
+            for (int i = 0; i < passthroughWall.Length; i++)
             {
-                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>(),false);
-                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>(), false);
+                if (passthroughWall[i].GetComponent<TilemapCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>(), false);
+                }
+                else if (passthroughWall[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>(), false);
+                }
             }
         }
 
@@ -79,8 +86,13 @@ public class P_Vent : MonoBehaviour {
 
             for (int i = 0; i < passthroughWall.Length; i++)
             {
-                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>());
-                Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>());
+                if(passthroughWall[i].GetComponent<TilemapCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<TilemapCollider2D>());
+                }else if(passthroughWall[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(BoxColliderOrigin, passthroughWall[i].GetComponent<BoxCollider2D>());
+                }
             }
         }
         else if (onVent == false && crouched)

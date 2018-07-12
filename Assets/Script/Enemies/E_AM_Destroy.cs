@@ -39,7 +39,10 @@ public class E_AM_Destroy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        for (int i = 0; i < p.Length; i++)
+        {
+            p[i].GetComponent<P_controls>().StopGameControl = true;
+        }
 
         if (AM_alpha > 0.1f)
         {
