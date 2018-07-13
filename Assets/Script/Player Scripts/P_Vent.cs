@@ -7,6 +7,7 @@ public class P_Vent : MonoBehaviour {
 
     public bool onVent = false;
     public bool onCrack = false;
+    public bool exitVent = false;
     private bool crouched = false;
 
     public BoxCollider2D BoxColliderOrigin;

@@ -191,7 +191,7 @@ public class P_controls : MonoBehaviour {
                 // move
 
                 rb2d.velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
-                
+                myVelocityX = rb2d.velocity.y;
                
             }
 
@@ -238,16 +238,6 @@ public class P_controls : MonoBehaviour {
                 inTheAir = true;
             }
         }
-    }
-
-    public void StopControl()
-    {
-        StopGameControl = true;
-    }
-    
-    public void ResumeControl()
-    {
-        StopGameControl = false;
     }
 
     private bool ladderPositionChanged = false;
