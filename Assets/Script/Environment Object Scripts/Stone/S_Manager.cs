@@ -27,7 +27,7 @@ public class S_Manager : MonoBehaviour {
         {
             if (p[i].GetComponent<P_throw>().onThrow)
             {
-                GetComponent<S_Manager>().enabled = true;
+                GetComponent<S_Control>().enabled = true;
                
             }
         }
