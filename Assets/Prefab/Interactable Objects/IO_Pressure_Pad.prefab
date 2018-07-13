@@ -68,6 +68,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4209855410227808}
   - component: {fileID: 212408966841427288}
+  - component: {fileID: 114578074651897418}
+  - component: {fileID: 61607451809884118}
   m_Layer: 0
   m_Name: IO_Pressure_Pad
   m_TagString: Untagged
@@ -186,6 +188,31 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 2.68, y: 1.15625}
+  m_EdgeRadius: 0
+--- !u!61 &61607451809884118
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820382540766924}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.421875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 8, y: 0.859375}
+    newSize: {x: 8, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.84, y: 0.84375}
   m_EdgeRadius: 0
 --- !u!108 &108136932204087802
 Light:
@@ -313,6 +340,24 @@ MonoBehaviour:
   - {fileID: 0}
   Pressure_Pad: 1
   switchAnim: 0
+--- !u!114 &114578074651897418
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820382540766924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf6afaf3bb04f644990762a5e4513bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  changedSprite: {fileID: 21300026, guid: c4a9aeb316ce7184b973881ee57fdd0d, type: 3}
+  myLights:
+  - {fileID: 1331429385975330}
+  - {fileID: 1314654065382242}
+  - {fileID: 1394122407512126}
+  deactivateColor: {r: 1, g: 0, b: 0, a: 0}
+  activateColor: {r: 0, g: 1, b: 0.13595366, a: 0}
 --- !u!212 &212408966841427288
 SpriteRenderer:
   m_ObjectHideFlags: 1

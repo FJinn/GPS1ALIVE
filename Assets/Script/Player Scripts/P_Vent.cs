@@ -30,7 +30,7 @@ public class P_Vent : MonoBehaviour {
 
     public void ResetCollisions()
     {
-        var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 150f, bypassEnemyMask);
+        var foundEnemies = Physics2D.OverlapCircleAll(transform.position, 50000f, bypassEnemyMask);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
             Physics2D.IgnoreCollision(BoxColliderOrigin, foundEnemies[k]);
