@@ -52,6 +52,8 @@ public class P_controls : MonoBehaviour {
 
     private bool inTheAir = false;
 
+    public GameObject audioManager;
+
     private void Awake()
     {
         animList = new string[4];
@@ -322,5 +324,20 @@ public class P_controls : MonoBehaviour {
             ladderPositionChanged = false;
             rb2d.gravityScale = iniGravity;
         }
+    }
+
+    public void WalkingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("Walking");
+    }
+
+    public void JumpingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("Jumping");
+    }
+
+    public void BoxDraggingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("BoxDragging");
     }
 }
