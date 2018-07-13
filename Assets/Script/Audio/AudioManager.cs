@@ -4,8 +4,8 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 
-
     public Sound[] sounds;
+    
 	// Use this for initialization
 	void Awake () {
 		foreach(Sound s in sounds)
@@ -21,8 +21,10 @@ public class AudioManager : MonoBehaviour {
     void Start()
     {
         Play("Environmental");
-    }
 
+        
+    }
+    
 
     public void Play (string name)
     {

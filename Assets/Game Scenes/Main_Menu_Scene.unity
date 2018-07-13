@@ -3107,10 +3107,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1194692660}
   m_HandleRect: {fileID: 1117933562}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: -1
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -3173,11 +3173,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471043634}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fd70707ae174764397eb221540abca4, type: 3}
+  m_Script: {fileID: 11500000, guid: 124af1c3e89f17145a46e8244221595f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GammaCorrection: 0.5
+  GammaCorrection: 0
   slider: {fileID: 1447397778}
+  myProfile: {fileID: 11400000, guid: c2408562a87119547824965d4c4a04f3, type: 2}
+  otherProfile: {fileID: 11400000, guid: 125a344716d3ce94597d4119690bb0ff, type: 2}
 --- !u!4 &1471043637
 Transform:
   m_ObjectHideFlags: 0
