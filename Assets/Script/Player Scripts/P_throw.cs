@@ -10,14 +10,7 @@ public class P_throw : MonoBehaviour {
 	public GameObject stone;
 	public int spawnStone;
     public AudioSource audiosource;
-
     
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
@@ -46,7 +39,7 @@ public class P_throw : MonoBehaviour {
             float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
             Vector2 tempPos = new Vector2 (transform.position.x , transform.position.y + tempYSize);
 			Instantiate (stone, tempPos, Quaternion.identity);
-            stone.GetComponent<S_Movement>().enabled = true;
+            stone.GetComponent<S_Control>().enabled = true;
 			spawnStone = 0;
             audiosource.Play();
 		}

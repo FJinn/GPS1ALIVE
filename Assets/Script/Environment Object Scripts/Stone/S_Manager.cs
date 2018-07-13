@@ -32,12 +32,18 @@ public class S_Manager : MonoBehaviour {
             }
         }
 		
-		Invoke ("onTrigger", 0.3f); // to prevent stone collide with player //!!!!!!!!! if throw at bottom platform, it will go through since 0.3s trigger
-	}
+        // ignore collision with players
+        for (int i = 0; i < p.Length; i++)
+        {
+            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), p[i].GetComponent<BoxCollider2D>());
+        }
 
-	void onTrigger(){
-		GetComponent<BoxCollider2D> ().isTrigger = false;
-	}
+        // ignore collision with enemy
+        for (int i = 0; i < e.Length; i++)
+        {
+            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), e[i].GetComponent<BoxCollider2D>());
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -51,18 +57,8 @@ public class S_Manager : MonoBehaviour {
             }
         }
 */
-        // ignore collision with players
-        for (int i = 0; i < p.Length; i++)
-        {
-            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), p[i].GetComponent<BoxCollider2D>());
-        }
-
-        // ignore collision with enemy
-        for (int i=0; i<e.Length; i++)
-        {
-            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), e[i].GetComponent<BoxCollider2D>());
-        }
-
+      
+/*
         //! use distance instead collision box
         // check distance
         if(Mathf.Abs(transform.position.x - p[0].transform.position.x) <= distance)
@@ -96,7 +92,7 @@ public class S_Manager : MonoBehaviour {
             GetComponent<BoxCollider2D>().isTrigger = true;
             onDistance2 = false;
             Destroy(gameObject);
-        }
+        }*/
     }
-
+    
 }

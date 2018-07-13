@@ -50,6 +50,8 @@ public class P_controls : MonoBehaviour {
     public bool Crawling = false;
     public bool CrawlingIdle = false;
 
+    private bool inTheAir = false;
+
     private void Awake()
     {
         animList = new string[4];
@@ -193,7 +195,7 @@ public class P_controls : MonoBehaviour {
                
             }
 
-			//jump // can't jump after throw, unless move to another object/platform
+			//jump 
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
                 Jump();
@@ -218,6 +220,11 @@ public class P_controls : MonoBehaviour {
             pos.y = Mathf.Clamp01(pos.y);
             transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
+
+        if(rb2d.velocity.y < 0)
+        {
+            inTheAir = false;
+        }
     }
 
     void Jump()
@@ -225,7 +232,11 @@ public class P_controls : MonoBehaviour {
         if (!noJump)
         {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
-            rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+            if(!inTheAir)
+            {
+                rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+                inTheAir = true;
+            }
         }
     }
 
