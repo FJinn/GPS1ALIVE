@@ -23560,6 +23560,11 @@ Prefab:
       propertyPath: ObjectList.Array.data[0]
       value: 
       objectReference: {fileID: 161892425}
+    - target: {fileID: 114848520677094350, guid: ad91ea1b84e9d854089ef325a8f95c8f,
+        type: 2}
+      propertyPath: switchAnim
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad91ea1b84e9d854089ef325a8f95c8f, type: 2}
   m_IsPrefabAsset: 0
@@ -23729,11 +23734,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4609929287199524, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 79.87
+      value: 79.84
       objectReference: {fileID: 0}
     - target: {fileID: 4609929287199524, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -135.5
+      value: -136
       objectReference: {fileID: 0}
     - target: {fileID: 4609929287199524, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_LocalPosition.z

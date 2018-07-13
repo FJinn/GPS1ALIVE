@@ -35,9 +35,11 @@ public class M_outLadder : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D player)
     {
+        if(player.CompareTag("Player") || player.CompareTag("Player2"))
+        {
             if (Input.GetKey(player.GetComponent<P_controls>().KeyLeft))
             {
-               ResetCollisions();
+                ResetCollisions();
                 player.GetComponent<P_controls>().OnLadder = false;
             }
             else if (Input.GetKey(player.GetComponent<P_controls>().KeyRight))
@@ -45,6 +47,7 @@ public class M_outLadder : MonoBehaviour {
                 ResetCollisions();
                 player.GetComponent<P_controls>().OnLadder = false;
             }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
