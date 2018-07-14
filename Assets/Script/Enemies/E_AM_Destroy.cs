@@ -7,18 +7,26 @@ public class E_AM_Destroy : MonoBehaviour {
     private Color AM_myColor;
     private float AM_alpha = 1f;
     public GameObject AM_enemy;
-    public GameObject p;
+    public GameObject[] p;
 
 	// Use this for initialization
 	void Start () {
+        p = new GameObject[2];
+        p[0] = GameObject.FindGameObjectWithTag("Player");
+        p[1] = GameObject.FindGameObjectWithTag("Player2");
 
-        p = GameObject.Find("Player1");
-
-        p.GetComponent<P_Death>().StartCoroutine("Dead");
+        for (int i = 0; i < p.Length; i++)
+        {
+            p[i].GetComponent<P_controls>().StopGameControl = true;
+            p[i].GetComponent<P_Death>().StartCoroutine("Dead");
+        }
         
+        
+
         if(AM_enemy != null)
         {
             AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
+            AM_enemy.GetComponent<E_Movement>().enabled = false;
         }
         
         AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);
@@ -31,7 +39,10 @@ public class E_AM_Destroy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        for (int i = 0; i < p.Length; i++)
+        {
+            p[i].GetComponent<P_controls>().StopGameControl = true;
+        }
 
         if (AM_alpha > 0.1f)
         {

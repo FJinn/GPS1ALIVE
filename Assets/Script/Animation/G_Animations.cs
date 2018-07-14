@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class G_Animations : MonoBehaviour
-{
+{   
     public Animator animator;
-
+   
     void Update()
     {
         Walking();

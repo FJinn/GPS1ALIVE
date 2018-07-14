@@ -18,36 +18,41 @@ public class M_outLadder : MonoBehaviour {
         walls = GameObject.FindGameObjectsWithTag("Walls");
     }
     
-
-    private void OnTriggerStay2D(Collider2D player)
+    void ResetCollisions()
     {
-            if (Input.GetKey(player.GetComponent<P_controls>().KeyLeft))
-            {
-
-                for (int i = 0; i < walls.Length; i++)
+        for (int i = 0; i < walls.Length; i++)
+        {
+            if (walls[i].GetComponent<TilemapCollider2D>() != null)
             {
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(), false);
             }
+            if (walls[i].GetComponent<BoxCollider2D>() != null)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>(), false);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D player)
+    {
+        if(player.CompareTag("Player") || player.CompareTag("Player2"))
+        {
+            if (Input.GetKey(player.GetComponent<P_controls>().KeyLeft))
+            {
+                ResetCollisions();
                 player.GetComponent<P_controls>().OnLadder = false;
             }
             else if (Input.GetKey(player.GetComponent<P_controls>().KeyRight))
             {
-
-                for (int i = 0; i < walls.Length; i++)
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(), false);
+                ResetCollisions();
+                player.GetComponent<P_controls>().OnLadder = false;
             }
-               player.GetComponent<P_controls>().OnLadder = false;
-            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-
-        for (int i = 0; i < walls.Length; i++)
-        {
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
-        }
+        ResetCollisions();
 
     }
   

@@ -14,7 +14,10 @@ public class M_Interaction : MonoBehaviour {
     private int enterCounter;
     
     private Animator M_animator;
-    private Animation M_animation;
+    private int animCounter;
+
+    [Header("Is this a switch?")]
+    public bool switchAnim = false;
 
 
 	// Use this for initialization
@@ -35,6 +38,21 @@ public class M_Interaction : MonoBehaviour {
         {
             ObjectList[i].GetComponent<M_Trigger>().Trigger();
         }
+        if(switchAnim)
+        {
+            animCounter++;
+            if (animCounter == 1)
+            {
+                M_animator.Play("AIO_AnimLeverDown");
+            }
+            else
+            if (animCounter >= 2)
+            {
+                M_animator.Play("AIO_AnimLeverUp");
+                animCounter = 0;
+            }
+        }
+        
     }
 
     // Update is called once per frame

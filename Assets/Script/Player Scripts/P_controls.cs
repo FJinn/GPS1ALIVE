@@ -50,6 +50,10 @@ public class P_controls : MonoBehaviour {
     public bool Crawling = false;
     public bool CrawlingIdle = false;
 
+    private bool inTheAir = false;
+
+    public GameObject audioManager;
+
     private void Awake()
     {
         animList = new string[4];
@@ -174,22 +178,26 @@ public class P_controls : MonoBehaviour {
                     {                        
                         Crawling = true;
                         CrawlingIdle = false;
+                        Walking = false;
+                        Idle = false;
                     }
                     else
                     {
                         CrawlingIdle = true;
                         Crawling = false;
+                        Walking = false;
+                        Idle = false;
                     }
                 }
 
                 // move
 
                 rb2d.velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
-                
+                myVelocityX = rb2d.velocity.y;
                
             }
 
-			//jump // can't jump after throw, unless move to another object/platform
+			//jump 
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
                 Jump();
@@ -214,6 +222,11 @@ public class P_controls : MonoBehaviour {
             pos.y = Mathf.Clamp01(pos.y);
             transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
+
+        if(rb2d.velocity.y < 0)
+        {
+            inTheAir = false;
+        }
     }
 
     void Jump()
@@ -221,18 +234,12 @@ public class P_controls : MonoBehaviour {
         if (!noJump)
         {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
-            rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+            if(!inTheAir)
+            {
+                rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+                inTheAir = true;
+            }
         }
-    }
-
-    public void StopControl()
-    {
-        StopGameControl = true;
-    }
-    
-    public void ResumeControl()
-    {
-        StopGameControl = false;
     }
 
     private bool ladderPositionChanged = false;
@@ -245,36 +252,57 @@ public class P_controls : MonoBehaviour {
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
 
-            for(int i =0;i < walls.Length; i ++)
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
-            }
 
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;
+                for (int i = 0; i < walls.Length; i++)
+                {
+                    if(walls[i].GetComponent<TilemapCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+                    }
+                    if(walls[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
+                    }
+                }
                 if (!ladderPositionChanged){
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
                 rb2d.velocity = new Vector2(0, climbSpeed);
+                transform.position = new Vector2(ladder.transform.position.x,transform.position.y);
 			}
 			else if (Input.GetKey(KeyDown))
 			{
                 OnLadder = true;
+                for (int i = 0; i < walls.Length; i++)
+                {
+                    if (walls[i].GetComponent<TilemapCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+                    }
+                    if (walls[i].GetComponent<BoxCollider2D>() != null)
+                    {
+                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
+                    }
+                }
                 if (!ladderPositionChanged)
                 {
                     transform.position = climbPosition;
                     ladderPositionChanged = true;
                 }
                 rb2d.velocity = new Vector2(0, -climbSpeed);
-			}
+                transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+            }
 			else
 			{
 				rb2d.velocity = new Vector2(0, 0);
 			}
 		}
     }
+    
 
     private void OnTriggerExit2D(Collider2D ladder)
     {
@@ -283,11 +311,33 @@ public class P_controls : MonoBehaviour {
         {
             for (int i = 0; i < walls.Length; i++)
             {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
+                if (walls[i].GetComponent<TilemapCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>(),false);
+                }
+                if (walls[i].GetComponent<BoxCollider2D>() != null)
+                {
+                    Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>(),false);
+                }
             }
             OnLadder = false;
             ladderPositionChanged = false;
             rb2d.gravityScale = iniGravity;
         }
+    }
+
+    public void WalkingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("Walking");
+    }
+
+    public void JumpingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("Jumping");
+    }
+
+    public void BoxDraggingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("BoxDragging");
     }
 }

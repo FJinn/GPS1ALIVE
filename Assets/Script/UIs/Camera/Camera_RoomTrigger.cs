@@ -12,6 +12,7 @@ public class Camera_RoomTrigger : MonoBehaviour {
     public int CameraIndexTrigger;
     public bool ActiveDynamic;
     public GameObject[] ActiveBlocker;
+    public bool DisableActiveBlocker;
 
 
 
@@ -38,7 +39,13 @@ public class Camera_RoomTrigger : MonoBehaviour {
             {
                 for(int i = 0; i < ActiveBlocker.Length; i ++)
                 {
-                    ActiveBlocker[i].GetComponent<BoxCollider2D>().isTrigger = false;
+                    if(!DisableActiveBlocker)
+                    {
+                        ActiveBlocker[i].GetComponent<BoxCollider2D>().isTrigger = false;
+                    }else
+                    {
+                        ActiveBlocker[i].GetComponent<BoxCollider2D>().isTrigger = true;
+                    }
                 }
             }
             MainCamera.GetComponent<Camera_Control>().roomCameraInt = CameraIndexTrigger;

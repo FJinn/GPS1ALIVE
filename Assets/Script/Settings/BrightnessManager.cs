@@ -1,0 +1,58 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.PostProcessing;
+
+public class BrightnessManager : MonoBehaviour {
+
+    public float GammaCorrection = 0f;
+
+    public Slider slider;
+
+    public static bool oneBright;
+
+    public ColorGradingComponent mycolor;
+
+    public PostProcessingProfile myProfile;
+
+    public PostProcessingProfile otherProfile;
+
+    ColorGradingModel.Settings tempmodel;
+    private void Awake()
+    {
+        if (oneBright == false)
+        {
+            oneBright = true;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    void Start()
+    {
+        tempmodel = myProfile.colorGrading.settings;
+
+
+
+
+        slider.onValueChanged.AddListener(delegate { valueChanged(); });
+
+        DontDestroyOnLoad(this.gameObject);
+    }
+    
+    public void valueChanged()
+    {
+        // set audio volume to userSetVolume
+        GammaCorrection = slider.value;
+
+        tempmodel.colorWheels.linear.gamma.a = GammaCorrection;
+
+        myProfile.colorGrading.settings = tempmodel;
+        otherProfile.colorGrading.settings = tempmodel;
+
+    }
+    
+}

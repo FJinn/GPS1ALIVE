@@ -10,14 +10,7 @@ public class P_throw : MonoBehaviour {
 	public GameObject stone;
 	public int spawnStone;
     public AudioSource audiosource;
-
     
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
@@ -46,7 +39,7 @@ public class P_throw : MonoBehaviour {
             float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
             Vector2 tempPos = new Vector2 (transform.position.x , transform.position.y + tempYSize);
 			Instantiate (stone, tempPos, Quaternion.identity);
-            stone.GetComponent<S_Movement>().enabled = true;
+            stone.GetComponent<S_Control>().enabled = true;
 			spawnStone = 0;
             audiosource.Play();
 		}
@@ -92,18 +85,18 @@ public class P_throw : MonoBehaviour {
 				Destroy(Dots);
 			}
 			count = 0;
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 20f){		// adjust trajectory with 10 x limits 
+		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 35f){		// adjust trajectory with 10 x limits 
 			foreach(var Dots in DOTS){
 				Destroy(Dots);
 			}
-			speedX += 0.1f;
+			speedX += 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
 			foreach(var Dots in DOTS){
 				Destroy(Dots);
 			}
-			speedX -= 0.1f;
+			speedX -= 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyLeft))
