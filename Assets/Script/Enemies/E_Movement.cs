@@ -13,6 +13,8 @@ public class E_Movement : MonoBehaviour {
     private int moveSpotsCount;
 
 	private Vector3 tempHolder;
+    public Animator anim;
+    // private bool isRight = true;
 
 	// Use this for initialization
 	void Start () {
@@ -31,12 +33,17 @@ public class E_Movement : MonoBehaviour {
 
         if (tempHolder.x > transform.position.x)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            // isRight = true;
+            anim.Play("E_PatrolAnim");
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (tempHolder.x < transform.position.x)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            // isRight = false;
+            anim.Play("E_PatrolAnim");
+            transform.localScale = new Vector3(1, 1, 1);
         }
+        else anim.Play("E_IdleAnim");
 
         if (Vector2.Distance(transform.position, tempHolder) < 1f ){
 			if (waitTime <= 0)
@@ -53,6 +60,7 @@ public class E_Movement : MonoBehaviour {
                 //   transform.localScale = new Vector3(-transform.localScale.x, 1, 1);
                 tempPos = tempHolder;
 				waitTime = startWaitTime;
+               // anim.Play("E_IdleAnim");
                 
 			} else {
 				waitTime -= Time.deltaTime;
