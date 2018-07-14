@@ -23117,6 +23117,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &1279307321 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95056261761874524, guid: bf64741665f1b1f4fb85756fc13b8766,
+    type: 2}
+  m_PrefabInternal: {fileID: 2128871259}
 --- !u!1001 &1291718022
 Prefab:
   m_ObjectHideFlags: 0
@@ -23789,6 +23794,16 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713699316502550, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1780401039}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
   m_IsPrefabAsset: 0
@@ -25106,6 +25121,11 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!95 &1780401039 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95056261761874524, guid: bf64741665f1b1f4fb85756fc13b8766,
+    type: 2}
+  m_PrefabInternal: {fileID: 1417434420}
 --- !u!1001 &1782612413
 Prefab:
   m_ObjectHideFlags: 0
@@ -26826,6 +26846,32 @@ Prefab:
       propertyPath: Distance
       value: 42.75
       objectReference: {fileID: 0}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b63f48bcb536a2a4ca0d5da900eec0c1,
+        type: 3}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2.9666667
+      objectReference: {fileID: 0}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 10.833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713699316502550, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1279307321}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
   m_IsPrefabAsset: 0
