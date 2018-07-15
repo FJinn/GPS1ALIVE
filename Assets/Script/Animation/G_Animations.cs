@@ -3,112 +3,214 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class G_Animations : MonoBehaviour
-{   
-    public Animator animator;
-   
+{
+    public Animator anim;
+    P_Vent playerVent;
+    P_controls playerControl;
+    P_pushPull playerPushPull;
+    Rigidbody2D playerVelocity;
+    bool enterVent = false;
+    bool exitVent = false;
+    public bool pullLeft = false;
+    public bool pullRight = false;
+    public bool pushLeft = false;
+    public bool pushRight = false;
+
+    private void Start()
+    {
+        playerVent = GetComponent<P_Vent>();
+        playerControl = GetComponent<P_controls>();
+        playerPushPull = GetComponent<P_pushPull>();
+        playerVelocity = GetComponent<Rigidbody2D>();
+    }
+
     void Update()
     {
-        Walking();
-        Idle();
-        Crawling();
-        Jumping();
+        Movement();
+        VentMovement();
         PullPush();
     }
 
-    void Walking()
+    void Movement()
     {
-        if (GetComponent<P_controls>().Walking == true)
+        if (playerVelocity.velocity.x > 0.1f || playerVelocity.velocity.x < -0.1f)
         {
-            animator.SetBool("Walking", true);
-            animator.SetBool("Idle", false);
+            anim.SetBool("Walking", true);
+            anim.SetBool("Idle", false);
         }
-    }
-
-    void Idle()
-    {
-        if (GetComponent<P_controls>().Idle == true)
-        {
-            animator.SetBool("Walking", false);
-            animator.SetBool("Idle", true);
-        }
-    }
-
-    void Crawling()
-    {
-        if (GetComponent<P_controls>().CrawlingIdle == true)
-        {
-            animator.SetBool("Idle", false);
-            animator.SetBool("Walking", false);
-            animator.SetBool("Crawling", false);
-            animator.SetBool("CrawlingIdle", true);
-        }
-        else if (GetComponent<P_controls>().Crawling == true)
-        {
-            animator.SetBool("Idle", false);
-            animator.SetBool("Walking", false);
-            animator.SetBool("Crawling", true);
-            animator.SetBool("CrawlingIdle", false);
-        }
-
         else
         {
-            animator.SetBool("Crawling", false);
-            animator.SetBool("CrawlingIdle", false);
+            anim.SetBool("Walking", false);
+            anim.SetBool("Idle", true);
+        }
+
+        if (playerVelocity.velocity.y > 10f)
+        {
+            anim.SetBool("Jumping", true);
+        }
+        else
+        {
+            anim.SetBool("Jumping", false);
         }
     }
 
-    void Jumping()
+    void VentMovement()
     {
-        if (GetComponent<P_controls>().Jumping == true)
+        if (playerControl.onVent)
         {
-            animator.SetBool("Jumping", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+            if (!enterVent)
+            {
+                playerControl.StopGameControl = true;
+                anim.SetBool("EnterVent", true);
+                anim.SetBool("ExitVent", false);
+                Invoke("EnterVentTransition", 1f);
+            }
+            else
+            {
+                playerControl.StopGameControl = false;
+                if (playerVelocity.velocity.x > 0.1f || playerVelocity.velocity.x < -0.1f)
+                {
+                    anim.SetBool("CrawlingIdle", false);
+                    anim.SetBool("Crawling", true);
+                }
+                else
+                {
+                    anim.SetBool("CrawlingIdle", true);
+                    anim.SetBool("Crawling", false);
+                }
+            }
         }
-        else if (GetComponent<P_controls>().Jumping == false)
+        else if (!playerControl.onVent && playerVent.exitVent == true)
         {
-            animator.SetBool("Jumping", false);
+            if (!exitVent)
+            {
+                playerVent.exitVent = false;
+                playerControl.StopGameControl = true;
+                anim.SetBool("CrawlingIdle", false);
+                anim.SetBool("Crawling", false);
+                anim.SetBool("ExitVent", true);
+                anim.SetBool("EnterVent", false);
+                Invoke("ExitVentTransition", 1f);
+            }
         }
+    }
+
+    void EnterVentTransition()
+    {
+        enterVent = true;
+        anim.SetBool("EnterVent", false);
+    }
+
+    void ExitVentTransition()
+    {
+        playerControl.StopGameControl = false;
+        exitVent = false;
+        enterVent = false;
+        anim.SetBool("ExitVent", false);
     }
 
     void PullPush()
     {
-        if (GetComponent<P_pushPull>().OnBox == true)
+        if (playerPushPull.OnBox == true)
         {
-            if (GetComponent<Rigidbody2D>().velocity.x > 0)
+            if (playerVelocity.velocity.x > 1f)
             {
-                if (GetComponent<P_controls>().faceRight == true)
+                if (playerControl.faceRight == true)
                 {
-                    animator.SetBool("Pushing", true);
-                    animator.SetBool("Pulling", false);
-                    animator.SetBool("Idle", false);
+                    anim.SetBool("Pushing", true);
+                    anim.SetBool("Pulling", false);
+                    anim.SetBool("Idle", false);
+                    anim.SetBool("PushIdle", false);
+                    anim.SetBool("PullIdle", false);
+                    pushRight = true;
+                    pushLeft = false;
+                    pullLeft = false;
+                    pullRight = false;
                 }
-                else if (GetComponent<P_controls>().faceLeft == true)
+                else if (playerControl.faceLeft == true)
                 {
-                    animator.SetBool("Pushing", false);
-                    animator.SetBool("Pulling", true);
-                    animator.SetBool("Idle", false);
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("Pulling", true);
+                    anim.SetBool("Idle", false);
+                    anim.SetBool("PushIdle", false);
+                    anim.SetBool("PullIdle", false);
+                    pullRight = true;
+                    pullLeft = false;
+                    pushRight = false;
+                    pushLeft = false;
                 }
-
             }
-            else if (GetComponent<Rigidbody2D>().velocity.x < 0)
+            else if (playerVelocity.velocity.x < -1f)
             {
-                if (GetComponent<P_controls>().faceRight == true)
+                if (playerControl.faceRight == true)
                 {
-                    animator.SetBool("Pushing", false);
-                    animator.SetBool("Pulling", true);
-                    animator.SetBool("Idle", false);
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("Pulling", true);
+                    anim.SetBool("Idle", false);
+                    anim.SetBool("PushIdle", false);
+                    anim.SetBool("PullIdle", false);
+                    pullLeft = true;
+                    pullRight = false;
+                    pushRight = false;
+                    pushLeft = false;
                 }
-                else if (GetComponent<P_controls>().faceLeft == true)
+                else if (playerControl.faceLeft == true)
                 {
-                    animator.SetBool("Pushing", true);
-                    animator.SetBool("Pulling", false);
-                    animator.SetBool("Idle", false);
+                    anim.SetBool("Pushing", true);
+                    anim.SetBool("Pulling", false);
+                    anim.SetBool("Idle", false);
+                    anim.SetBool("PushIdle", false);
+                    anim.SetBool("PullIdle", false);
+                    pushLeft = true;
+                    pushRight = false;
+                    pullLeft = false;
+                    pullRight = false;
+                }
+            }
+            else
+            {
+                if (pushLeft)
+                {
+                    anim.SetBool("PushIdle", true);
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("Idle", false);
+                }
+                else if (pushRight)
+                {
+                    anim.SetBool("PushIdle", true);
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("Pulling", false);
+                    anim.SetBool("Idle", false);
+                }
+                else if (pullLeft)
+                {
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("PullIdle", true);
+                    anim.SetBool("Pulling", false);
+                    anim.SetBool("Idle", false);
+                }
+                else if (pullRight)
+                {
+                    anim.SetBool("Pushing", false);
+                    anim.SetBool("PullIdle", true);
+                    anim.SetBool("Pulling", false);
+                    anim.SetBool("Idle", false);
                 }
             }
         }
         else
         {
-            animator.SetBool("Pushing", false);
-            animator.SetBool("Pulling", false);
+            anim.SetBool("Pushing", false);
+            anim.SetBool("Pulling", false);
+            anim.SetBool("PushIdle", false);
+            anim.SetBool("PullIdle", false);
         }
+    }
+
+    void PressButton()
+    {
+
     }
 }

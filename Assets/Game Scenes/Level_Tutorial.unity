@@ -4583,7 +4583,7 @@ Tilemap:
   - first: {x: 13, y: -39, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 4
+      m_TileSpriteIndex: 7
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -4646,7 +4646,7 @@ Tilemap:
   - first: {x: 20, y: -39, z: 0}
     second:
       m_TileIndex: 2
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 6
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -4677,16 +4677,16 @@ Tilemap:
     m_Data: {fileID: 21300032, guid: f71ff23e37f279e489fd176eda189488, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300034, guid: f71ff23e37f279e489fd176eda189488, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300030, guid: f71ff23e37f279e489fd176eda189488, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 8
     m_Data:
@@ -23582,6 +23582,11 @@ Prefab:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 1786008720}
+    - target: {fileID: 114722189447425544, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 1816622586}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
@@ -24256,7 +24261,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300010, guid: 0ecdde84c0798a34d9e8e12a141fee3b,
+      objectReference: {fileID: 21300000, guid: 215c1a55aeb94fa468060f00c4ca05ef,
         type: 3}
     - target: {fileID: 4609929287199524, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_LocalScale.x
@@ -24272,6 +24277,16 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1780401039}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 3.0333335
+      objectReference: {fileID: 0}
+    - target: {fileID: 212234333642665756, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 11.55
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
   m_IsPrefabAsset: 0
@@ -26499,6 +26514,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5409e991af7bbe4fbf4347f62685447, type: 2}
   m_IsPrefabAsset: 0
+--- !u!95 &1816622586 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 95336084657961866, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1256156747}
 --- !u!1001 &1832334756
 Prefab:
   m_ObjectHideFlags: 0
@@ -28064,6 +28084,16 @@ Prefab:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1279307321}
+    - target: {fileID: 95056261761874524, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 5791a258a739a514dafa459b12abc614, type: 2}
+    - target: {fileID: 114713699316502550, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: isNurse
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
   m_IsPrefabAsset: 0

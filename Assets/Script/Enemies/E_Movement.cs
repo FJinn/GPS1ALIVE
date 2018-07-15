@@ -14,6 +14,7 @@ public class E_Movement : MonoBehaviour {
 
 	private Vector3 tempHolder;
     public Animator anim;
+    public bool isNurse;
     // private bool isRight = true;
 
 	// Use this for initialization
@@ -31,20 +32,39 @@ public class E_Movement : MonoBehaviour {
         // considering using moveposition
 		transform.position = Vector2.MoveTowards (transform.position, tempHolder , e_patrolSpeed * Time.deltaTime);
 
-
-        if (tempHolder.x > transform.position.x)
+        if(isNurse == true)
         {
-            // isRight = true;
-            anim.Play("E_PatrolAnim");
-            transform.localScale = new Vector3(-1, 1, 1);
+            if (tempHolder.x > transform.position.x)
+            {
+                // isRight = true;
+                anim.Play("N_PatrolAnim");
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (tempHolder.x < transform.position.x)
+            {
+                // isRight = false;
+                anim.Play("N_PatrolAnim");
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else anim.Play("N_IdleAnim");
         }
-        else if (tempHolder.x < transform.position.x)
+        else if( isNurse == false)
         {
-            // isRight = false;
-            anim.Play("E_PatrolAnim");
-            transform.localScale = new Vector3(1, 1, 1);
+            if (tempHolder.x > transform.position.x)
+            {
+                // isRight = true;
+                anim.Play("D_PatrolAnim");
+                transform.localScale = new Vector3(-1, 1, 1);
+            }
+            else if (tempHolder.x < transform.position.x)
+            {
+                // isRight = false;
+                anim.Play("D_PatrolAnim");
+                transform.localScale = new Vector3(1, 1, 1);
+            }
+            else anim.Play("D_IdleAnim");
         }
-        else anim.Play("E_IdleAnim");
+       
 
         if (Vector2.Distance(transform.position, tempHolder) < 1f ){
 			if (waitTime <= 0)
