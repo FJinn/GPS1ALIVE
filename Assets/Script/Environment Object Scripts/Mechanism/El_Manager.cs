@@ -90,7 +90,10 @@ public class El_Manager : MonoBehaviour
         else if (p_Counts >= 2)
         {
             //If 2 Player got onto the elevator, the elevator will go straight down until collide with a ground
-            mySlider.breakForce = 5;
+            if(mySlider != null)
+            {
+                mySlider.breakForce = 5;
+            }
             for(int i =0; i< p.Length; i ++)
             {
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), p[i].GetComponent<BoxCollider2D>());

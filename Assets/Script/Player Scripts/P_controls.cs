@@ -16,6 +16,8 @@ public class P_controls : MonoBehaviour {
     private float iniGravity;
     private GameObject[] walls;
     private GameObject otherPlayer;
+    private SpriteRenderer mySpriteRenderer;
+    private int orderingLayer;
     
 
     private Vector2 climbPosition;
@@ -70,11 +72,14 @@ public class P_controls : MonoBehaviour {
 
         rb2d = GetComponent<Rigidbody2D>();
         iniGravity = rb2d.gravityScale;
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
         //    myBoxCollider = GetComponent<BoxCollider2D>();
 
         // setup boxcollider2d for easier use(just for saving getcomponent<boxcollider2d>() space) -> btw, why boxcollider but not circle collider?
-        
+
         // setting up all the keys for 2 players;
+        orderingLayer = mySpriteRenderer.sortingOrder;
+
         if (CompareTag("Player"))
         {
             KeyUp = KeyCode.W;
@@ -103,7 +108,6 @@ public class P_controls : MonoBehaviour {
             otherPlayer = GameObject.FindGameObjectWithTag("Player");
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), otherPlayer.GetComponent<BoxCollider2D>());
         }
-
         Collider2D[] foundEnemies = Physics2D.OverlapCircleAll(transform.position, 500000f);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
@@ -276,10 +280,13 @@ public class P_controls : MonoBehaviour {
         //! check whether the player is near ladder or not
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
-            
+
+            mySpriteRenderer.sortingOrder = orderingLayer + 20;
+
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;
+                /*
                 if(transform.position.y < otherPlayer.transform.position.y + 6f && transform.position.y > otherPlayer.transform.position.y -7f && otherPlayer.GetComponent<P_controls>().OnLadder)
                 {
                     transform.position = new Vector2(ladder.transform.position.x, transform.position.y - 0.25f);
@@ -288,11 +295,14 @@ public class P_controls : MonoBehaviour {
                 {
                     rb2d.velocity = new Vector2(0, climbSpeed);
                     transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-                }
-			}   
+                }*/
+                rb2d.velocity = new Vector2(0, climbSpeed);
+                transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+            }   
 			else if (Input.GetKey(KeyDown))
 			{
                 OnLadder = true;
+                /*
                 if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
                 {
                     transform.position = new Vector2(ladder.transform.position.x, transform.position.y + 0.25f);
@@ -302,9 +312,10 @@ public class P_controls : MonoBehaviour {
                 {
                     rb2d.velocity = new Vector2(0, -climbSpeed);
                     transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-                }
-                
-                
+                }*/
+
+                rb2d.velocity = new Vector2(0, -climbSpeed);
+                transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
             }
 			else
 			{
@@ -319,7 +330,7 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
-            rb2d.isKinematic = false;
+            /*
             if (CompareTag("Player"))
             {
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
@@ -329,7 +340,7 @@ public class P_controls : MonoBehaviour {
             {
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
             }
-
+            */
             for (int i = 0; i < walls.Length; i++)
             {
                 if (walls[i].GetComponent<TilemapCollider2D>() != null)
@@ -343,6 +354,9 @@ public class P_controls : MonoBehaviour {
             }
             OnLadder = false;
             rb2d.gravityScale = iniGravity;
+            
+            mySpriteRenderer.sortingOrder = orderingLayer;
+
         }
     }
 
