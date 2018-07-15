@@ -35,6 +35,10 @@ public class BrightnessManager : MonoBehaviour {
     {
         tempmodel = myProfile.colorGrading.settings;
 
+        tempmodel.colorWheels.linear.gamma.a = 0;
+
+        myProfile.colorGrading.settings = tempmodel;
+        otherProfile.colorGrading.settings = tempmodel;
 
 
 

@@ -18,6 +18,7 @@ public class E_Movement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        anim = GetComponent<Animator>();
         moveSpotsCount = 0;
 		tempHolder = moveSpots [0].position;
 		tempPos = tempHolder;
