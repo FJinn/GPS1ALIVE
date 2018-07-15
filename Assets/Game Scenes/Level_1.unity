@@ -1029,32 +1029,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4183798626734506, guid: 405126f0669e24249b70e1061d663e5c,
     type: 2}
   m_PrefabInternal: {fileID: 317255506}
---- !u!1 &333486859 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1317265310782640, guid: a2d17c676ed80ab499b50f6c82da5e08,
-    type: 2}
-  m_PrefabInternal: {fileID: 786754385}
---- !u!114 &333486860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333486859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bab7205e1677bb42b38edc69b35bb92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 333486867}
-  pullLeft: 0
-  pullRight: 0
-  pushLeft: 0
-  pushRight: 0
---- !u!95 &333486867 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95374722202243344, guid: a2d17c676ed80ab499b50f6c82da5e08,
-    type: 2}
-  m_PrefabInternal: {fileID: 786754385}
 --- !u!1001 &337103269
 Prefab:
   m_ObjectHideFlags: 0
@@ -35475,36 +35449,6 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 640172129}
-    - target: {fileID: 114884209733073360, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: spawnLocation
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114226541609714160, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: sceneIndex
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114798602946097624, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: walkSpeed
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114752218460438156, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: fallSpeed
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 114280755162499134, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: speedX
-      value: 33
-      objectReference: {fileID: 0}
-    - target: {fileID: 114280755162499134, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: speedY
-      value: 35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
