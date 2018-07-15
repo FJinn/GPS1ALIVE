@@ -8,11 +8,11 @@ public class VolumeSettingManager : MonoBehaviour {
     public static VolumeSettingManager instance;
 
     public bool setting = false;
-
+    
     public Slider BGMSlider;
     public Slider SFXSlider;
     public AudioSource bgm;
-
+    public Canvas MainMenu;
     public Canvas canvas;
 
     private void Awake()
@@ -28,14 +28,13 @@ public class VolumeSettingManager : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-    }
-    
+    } 
+
     void Start () {
 
         bgm = GetComponent<AudioSource>();
         bgm.ignoreListenerVolume = true;
-        BGMSlider.onValueChanged.AddListener(delegate { BGMValueChanged(); });
-        
+        BGMSlider.onValueChanged.AddListener(delegate { BGMValueChanged(); });        
         SFXSlider.onValueChanged.AddListener(delegate { SFXValueChanged(); });
     }
 
@@ -43,13 +42,21 @@ public class VolumeSettingManager : MonoBehaviour {
     {
         if(setting)
         {
-           canvas.enabled = false;
-           setting = false;
+            canvas.enabled = false;          
+            setting = false;           
+            if (MainMenu != null)
+            {
+                MainMenu.enabled = true;
+            }
         }
         else
         {
             canvas.enabled = true;
             setting = true;
+            if (MainMenu != null)
+            {
+                MainMenu.enabled = false;
+            }
         }
     }
 

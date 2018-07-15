@@ -3962,6 +3962,7 @@ MonoBehaviour:
   BGMSlider: {fileID: 115415814}
   SFXSlider: {fileID: 1170258392}
   bgm: {fileID: 1881034639}
+  MainMenu: {fileID: 1980861574}
   canvas: {fileID: 1881034635}
 --- !u!82 &1881034639
 AudioSource:
