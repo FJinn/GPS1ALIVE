@@ -15,6 +15,7 @@ public class P_controls : MonoBehaviour {
     private BoxCollider2D b2d;
     private float iniGravity;
     private GameObject[] walls;
+    private GameObject otherPlayer;
     
 
     private Vector2 climbPosition;
@@ -60,8 +61,21 @@ public class P_controls : MonoBehaviour {
         anim = GetComponent<Animator>();
         walls = GameObject.FindGameObjectsWithTag("Walls");
 
+        
+    }
+
+    void Start()
+    {
+        // setup rigidbody for easier use(just for saving getcomponent<rigidbody2d>() space);
+
+        rb2d = GetComponent<Rigidbody2D>();
+        iniGravity = rb2d.gravityScale;
+        //    myBoxCollider = GetComponent<BoxCollider2D>();
+
+        // setup boxcollider2d for easier use(just for saving getcomponent<boxcollider2d>() space) -> btw, why boxcollider but not circle collider?
+        
         // setting up all the keys for 2 players;
-        if (gameObject.tag == "Player")
+        if (CompareTag("Player"))
         {
             KeyUp = KeyCode.W;
             KeyUse = KeyCode.E;
@@ -70,9 +84,10 @@ public class P_controls : MonoBehaviour {
             KeyRight = KeyCode.D;
             isPlayer1 = true;
 
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
+            otherPlayer = GameObject.FindGameObjectWithTag("Player2");
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), otherPlayer.GetComponent<BoxCollider2D>());
         }
-        else if (gameObject.tag == "Player2")
+        else if (CompareTag ("Player2"))
         {
             KeyUp = KeyCode.UpArrow;
             KeyUse = KeyCode.Slash;
@@ -85,29 +100,18 @@ public class P_controls : MonoBehaviour {
             animList[2] = "G_CrawlIdleAnim";
             animList[3] = "G_CrawlAnim";
 
-            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
+            otherPlayer = GameObject.FindGameObjectWithTag("Player");
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), otherPlayer.GetComponent<BoxCollider2D>());
         }
 
         Collider2D[] foundEnemies = Physics2D.OverlapCircleAll(transform.position, 500000f);
         for (int k = 0; k < foundEnemies.Length; k++)
         {
-            if(foundEnemies[k].CompareTag("Enemy"))
+            if (foundEnemies[k].CompareTag("Enemy"))
             {
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), foundEnemies[k]);
             }
         }
-    }
-
-    void Start()
-    {
-        // setup rigidbody for easier use(just for saving getcomponent<rigidbody2d>() space);
-
-        rb2d = GetComponent<Rigidbody2D>();
-        iniGravity = rb2d.gravityScale;
-    //    myBoxCollider = GetComponent<BoxCollider2D>();
-
-        // setup boxcollider2d for easier use(just for saving getcomponent<boxcollider2d>() space) -> btw, why boxcollider but not circle collider?
-
     }
 
     private bool Grounded()
@@ -244,62 +248,68 @@ public class P_controls : MonoBehaviour {
 
     private bool ladderPositionChanged = false;
 
-	private void OnTriggerStay2D(Collider2D ladder) 
+    private void LadderCollision()
     {
+        for (int i = 0; i < walls.Length; i++)
+        {
+            if (walls[i].GetComponent<TilemapCollider2D>() != null)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
+            }
+            if (walls[i].GetComponent<BoxCollider2D>() != null)
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
+            }
+        }
+    }
 
-        climbPosition.x = ladder.gameObject.transform.position.x;
+    private void OnTriggerEnter2D(Collider2D ladder)
+    {
+        if(ladder.CompareTag("Climbable"))
+        {
+            LadderCollision();
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D ladder) 
+    {
         //! check whether the player is near ladder or not
         if (ladder.gameObject.tag == "Climbable") {
             rb2d.gravityScale = 0;
-
-
+            
 			if (Input.GetKey(KeyUp))
 			{
                 OnLadder = true;
-                for (int i = 0; i < walls.Length; i++)
+                if(transform.position.y < otherPlayer.transform.position.y + 6f && transform.position.y > otherPlayer.transform.position.y -7f && otherPlayer.GetComponent<P_controls>().OnLadder)
                 {
-                    if(walls[i].GetComponent<TilemapCollider2D>() != null)
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
-                    }
-                    if(walls[i].GetComponent<BoxCollider2D>() != null)
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
-                    }
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y - 0.25f);
                 }
-                if (!ladderPositionChanged){
-                    transform.position = climbPosition;
-                    ladderPositionChanged = true;
+                else
+                {
+                    rb2d.velocity = new Vector2(0, climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
                 }
-                rb2d.velocity = new Vector2(0, climbSpeed);
-                transform.position = new Vector2(ladder.transform.position.x,transform.position.y);
-			}
+			}   
 			else if (Input.GetKey(KeyDown))
 			{
                 OnLadder = true;
-                for (int i = 0; i < walls.Length; i++)
+                if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
                 {
-                    if (walls[i].GetComponent<TilemapCollider2D>() != null)
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<TilemapCollider2D>());
-                    }
-                    if (walls[i].GetComponent<BoxCollider2D>() != null)
-                    {
-                        Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), walls[i].GetComponent<BoxCollider2D>());
-                    }
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y + 0.25f);
+                    
                 }
-                if (!ladderPositionChanged)
+                else
                 {
-                    transform.position = climbPosition;
-                    ladderPositionChanged = true;
+                    rb2d.velocity = new Vector2(0, -climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
                 }
-                rb2d.velocity = new Vector2(0, -climbSpeed);
-                transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                
+                
             }
 			else
 			{
 				rb2d.velocity = new Vector2(0, 0);
-			}
+            }
 		}
     }
     
@@ -309,6 +319,17 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
+            rb2d.isKinematic = false;
+            if (CompareTag("Player"))
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
+            }
+
+            if (CompareTag("Player2"))
+            {
+                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
+            }
+
             for (int i = 0; i < walls.Length; i++)
             {
                 if (walls[i].GetComponent<TilemapCollider2D>() != null)
@@ -321,7 +342,6 @@ public class P_controls : MonoBehaviour {
                 }
             }
             OnLadder = false;
-            ladderPositionChanged = false;
             rb2d.gravityScale = iniGravity;
         }
     }
