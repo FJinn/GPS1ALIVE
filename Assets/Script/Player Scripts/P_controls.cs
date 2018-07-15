@@ -340,4 +340,9 @@ public class P_controls : MonoBehaviour {
     {
         audioManager.GetComponent<AudioManager>().Play("BoxDragging");
     }
+
+    public void ClimbingSound()
+    {
+        audioManager.GetComponent<AudioManager>().Play("Climbing");
+    }
 }
