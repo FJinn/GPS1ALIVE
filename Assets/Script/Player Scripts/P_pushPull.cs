@@ -8,12 +8,13 @@ public class P_pushPull : MonoBehaviour {
     public LayerMask boxMask;
     public bool isPulling;
     public bool OnBox = false;
+    private Rigidbody2D rb2d;
 
     GameObject box;
 
 	// Use this for initialization
 	void Start () {
-        
+        rb2d = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -22,7 +23,9 @@ public class P_pushPull : MonoBehaviour {
         Physics2D.queriesStartInColliders = false;
         RaycastHit2D hit = Physics2D.Raycast(transform.Find("Eye").position, Vector2.right * transform.localScale.x, distance, boxMask);
 
-        if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && hit.collider.tag == "PushPull" && (GetComponent<Rigidbody2D>().velocity.y <= 0.5f && GetComponent<Rigidbody2D>().velocity.y >= -0.5f)) {
+        if (hit.collider != null && Input.GetKeyDown(GetComponent<P_controls>().KeyUse) 
+            && hit.collider.tag == "PushPull" && (rb2d.velocity.y <= 0.5f && rb2d.velocity.y >= -0.5f)
+            && !hit.collider.GetComponent<FixedJoint2D>().enabled) {
             box = hit.collider.gameObject;
             if(box.GetComponent<M_BoxPull>().isActiveAndEnabled) {
                 

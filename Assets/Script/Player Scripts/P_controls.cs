@@ -330,17 +330,6 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
-            /*
-            if (CompareTag("Player"))
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
-            }
-
-            if (CompareTag("Player2"))
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
-            }
-            */
             for (int i = 0; i < walls.Length; i++)
             {
                 if (walls[i].GetComponent<TilemapCollider2D>() != null)
