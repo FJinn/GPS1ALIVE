@@ -9,12 +9,14 @@ public class Paused : MonoBehaviour
     public static bool GameIsPauseed = false;
     public GameObject pauseMenuUi;
     public GameObject levelChanger;
+    VolumeSettingManager vsm;
 
     private GameObject CheckpointManager;
 
     private void Start()
     {
         CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
+        vsm = VolumeSettingManager.instance;
     }
 
     // Update is called once per frame
@@ -22,14 +24,18 @@ public class Paused : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GameIsPauseed)
+            if (!vsm.setting)
             {
-                Resume();
+                if (GameIsPauseed)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
-            else
-            {
-                Pause();
-            }
+            
         }
     }
 
@@ -38,6 +44,8 @@ public class Paused : MonoBehaviour
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1f;
         GameIsPauseed = false;
+        vsm.canvas.enabled = false;
+        vsm.setting = false;
     }
 
     void Pause()
@@ -45,6 +53,7 @@ public class Paused : MonoBehaviour
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPauseed = true;
+
     }
 
     // skip tutorial
