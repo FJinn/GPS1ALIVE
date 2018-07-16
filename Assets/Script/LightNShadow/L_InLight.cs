@@ -24,13 +24,9 @@ public class L_InLight : MonoBehaviour {
                 var SR = player.GetComponent<SpriteRenderer>().color;
                 if (Vector2.Distance(player.transform.position, transform.position) <= LightDetectionRadius)
                 {
-                    var color = new Color(171, 171, 171);
-                    player.GetComponent<SpriteRenderer>().color = color;
                     player.GetComponent<P_ShadowDetect>().P_isUnderShadow = false;
                 }else
                 {
-                    var color = new Color(171, 171, 171);
-                    player.GetComponent<SpriteRenderer>().color = color;
                     player.GetComponent<P_ShadowDetect>().P_isUnderShadow = true;
                 }
             }

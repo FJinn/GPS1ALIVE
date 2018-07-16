@@ -13,7 +13,7 @@ public class P_Death : MonoBehaviour {
         GameObject.Find("Player2").GetComponent<P_controls>().StopGameControl = true;
         GameObject.Find("Player1").GetComponent<P_controls>().StopGameControl = true;
         //ScreenFade.GetComponent<LevelChanger>().FadeToLevel(2);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
        // SceneManager.LoadScene(2);
     }

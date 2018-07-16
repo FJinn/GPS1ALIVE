@@ -15,6 +15,8 @@ public class E_AM_Destroy : MonoBehaviour {
         p[0] = GameObject.Find("Player1");
         p[1] = GameObject.Find("Player2");
 
+        FindObjectOfType<AudioManager>().Play("EnemyDetect2");
+
         for (int i = 0; i < p.Length; i++)
         {
             p[i].GetComponent<P_controls>().StopGameControl = true;
@@ -26,7 +28,6 @@ public class E_AM_Destroy : MonoBehaviour {
         if(AM_enemy != null)
         {
             AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
-            AM_enemy.GetComponent<E_Movement>().enabled = false;
         }
         
         AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);
@@ -34,6 +35,8 @@ public class E_AM_Destroy : MonoBehaviour {
         if(AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned)
         {
             Destroy(AM_enemy.GetComponent<E_Sound_Detection>().EM_DetectionMeter);
+            AM_enemy.GetComponent<E_Sound_Detection>().enabled = false;
+            AM_enemy.GetComponent<E_Movement>().enabled = false;
         }
     }
 	

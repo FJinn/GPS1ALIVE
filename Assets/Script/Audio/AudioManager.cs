@@ -4,10 +4,22 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 
+    public static bool oneAudio;
+
     public Sound[] sounds;
     
 	// Use this for initialization
 	void Awake () {
+
+        if(oneAudio == false)
+        {
+            oneAudio = true;
+        }else
+        {
+            Destroy(this.gameObject);
+        }
+
+
 		foreach(Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -20,9 +32,8 @@ public class AudioManager : MonoBehaviour {
 
     void Start()
     {
+        DontDestroyOnLoad(this.gameObject);
         Play("Environmental");
-
-        
     }
     
 

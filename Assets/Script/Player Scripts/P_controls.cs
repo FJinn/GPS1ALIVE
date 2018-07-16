@@ -362,21 +362,22 @@ public class P_controls : MonoBehaviour {
 
     public void WalkingSound()
     {
-        audioManager.GetComponent<AudioManager>().Play("Walking");
+
+        FindObjectOfType<AudioManager>().Play("Walking");
     }
 
     public void JumpingSound()
     {
-        audioManager.GetComponent<AudioManager>().Play("Jumping");
+        FindObjectOfType<AudioManager>().Play("Jumping");
     }
 
     public void BoxDraggingSound()
     {
-        audioManager.GetComponent<AudioManager>().Play("BoxDragging");
+        FindObjectOfType<AudioManager>().Play("BoxDragging");
     }
 
     public void ClimbingSound()
     {
-        audioManager.GetComponent<AudioManager>().Play("Climbing");
+        FindObjectOfType<AudioManager>().Play("Climbing");
     }
 }

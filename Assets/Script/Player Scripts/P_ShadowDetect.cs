@@ -7,12 +7,9 @@ public class P_ShadowDetect : MonoBehaviour {
     public bool P_isUnderShadow = true;
 
 	// Use this for initialization
-	void Start () {
-        Invoke("InitialShadow", 0.5f);
-	}
-	
-    void InitialShadow()
+	void Start ()
     {
         P_isUnderShadow = true;
     }
+	
 }

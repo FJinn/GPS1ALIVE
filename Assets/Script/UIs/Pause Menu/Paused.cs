@@ -61,7 +61,6 @@ public class Paused : MonoBehaviour
     {
         Time.timeScale = 1f;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel(2);
-        Destroy(CheckpointManager);
         Debug.Log("Skipping Tutorial");
     }
 

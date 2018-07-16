@@ -112,7 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286130d8d0aa9746a170f34a64e9766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s_soundRadius: 33
+  s_soundRadius: 50
   enemyMask:
     serializedVersion: 2
     m_Bits: 2048

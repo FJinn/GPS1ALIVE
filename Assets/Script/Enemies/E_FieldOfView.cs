@@ -19,6 +19,7 @@ public class E_FieldOfView : MonoBehaviour {
 
     void Start()
     {
+        Detected = false;
         Players = new GameObject[2];
         Players[0] = GameObject.FindGameObjectWithTag("Player");
         Players[1] = GameObject.FindGameObjectWithTag("Player2");
@@ -47,7 +48,6 @@ public class E_FieldOfView : MonoBehaviour {
                         myAlerted_Spawn.GetComponent<E_AM_Destroy>().AM_enemy = this.gameObject;
 
                         Detected = true;
-                        FindObjectOfType<AudioManager>().Play("EnemyDetect2");
                     }
 
                 }

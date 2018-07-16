@@ -1,12 +1,19 @@
 fileFormatVersion: 2
-guid: 215c1a55aeb94fa468060f00c4ca05ef
+guid: eeb0a51f642f9f64a8a05a7faf907fbc
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Doctor idle Spritesheet2_0
-    21300002: Doctor idle Spritesheet2_1
-    21300004: Doctor idle Spritesheet2_2
-    21300006: Doctor idle Spritesheet2_3
-    21300008: Doctor idle Spritesheet2_4
+    21300000: Surgeon Right_0
+    21300002: Surgeon Right_1
+    21300004: Surgeon Right_2
+    21300006: Surgeon Right_3
+    21300008: Surgeon Right_4
+    21300010: Surgeon Right_5
+    21300012: D_IdleSpriteSheet_0
+    21300014: D_IdleSpriteSheet_1
+    21300016: D_IdleSpriteSheet_2
+    21300018: D_IdleSpriteSheet_3
+    21300020: D_IdleSpriteSheet_4
+    21300022: D_IdleSpriteSheet_5
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -50,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -85,39 +92,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Doctor idle Spritesheet2_0
+      name: D_IdleSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 154
+        x: 164
         y: 0
         width: 182
-        height: 693
+        height: 681
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -125,19 +110,99 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ede2af9983f22f4596862c0306a2809
+      spriteID: 5b3a43f6458f96f42919a2d1500586d7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Doctor idle Spritesheet2_1
+      name: D_IdleSpriteSheet_1
       rect:
         serializedVersion: 2
-        x: 656
+        x: 666
+        y: 0
+        width: 180
+        height: 676
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c37fc87d0f45384f97a8de15448937d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_IdleSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 0
+        width: 184
+        height: 675
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47e3f0f977f3f7241afac566df4e4e7c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_IdleSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 182
+        height: 675
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af3dd6d64662e146aa86224dd55c828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_IdleSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2166
+        y: 0
+        width: 180
+        height: 676
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3215d290231504792d179176f3d743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_IdleSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2667
         y: 0
         width: 181
-        height: 697
+        height: 680
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,67 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c7ae8a4c558bd74d908d16c930b03a2
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Doctor idle Spritesheet2_2
-      rect:
-        serializedVersion: 2
-        x: 1155
-        y: 0
-        width: 181
-        height: 695
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 854108e153f31a54b85547611401aa3f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Doctor idle Spritesheet2_3
-      rect:
-        serializedVersion: 2
-        x: 1655
-        y: 0
-        width: 182
-        height: 695
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3a84b41ba16bdd14e8ab5a0f175fe060
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Doctor idle Spritesheet2_4
-      rect:
-        serializedVersion: 2
-        x: 2155
-        y: 0
-        width: 182
-        height: 693
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79517e8aa9237654cb8a032055e7ba4f
+      spriteID: 0a953003d6d53e549b10880c9151dcf2
       vertices: []
       indices: 
       edges: []
@@ -213,7 +218,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 15a9ff0f8377e734b9af34b2e3e1175b
+    spriteID: 6b9c9a66bc2f4d94faf3f23893ba8ff8
     vertices: []
     indices: 
     edges: []
