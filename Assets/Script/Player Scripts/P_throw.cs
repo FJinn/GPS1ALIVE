@@ -66,10 +66,10 @@ public class P_throw : MonoBehaviour {
 	public float speedY;
 
 	private Vector2 GRAVITY = new Vector2(0, -45f);
+    private GameObject[] trajectoryDots = new GameObject[30];
 
 	private void DotsSpawner(){
-		
-		var DOTS = GameObject.FindGameObjectsWithTag ("Dots");
+
 		if (onThrow && count == 0) {
 			p_position = transform.position;
             // Offset Y
@@ -77,23 +77,25 @@ public class P_throw : MonoBehaviour {
             p_position.y = p_position.y + tempYSize;
 			for (int i = 0; i < numDots; i++) {
 				dots.transform.position = CalculatePosition (dotsPositionOverTime * i);  // set position based on calculation the position of dots over time
-				Instantiate (dots,dots.transform.position,Quaternion.identity);
+				trajectoryDots[i] = (GameObject)Instantiate (dots,dots.transform.position,Quaternion.identity);
 			}
 			count = 1;
 		}else if(!onThrow && count == 1){
-			foreach(var Dots in DOTS){
+			foreach(GameObject Dots in trajectoryDots){
 				Destroy(Dots);
 			}
 			count = 0;
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
-			foreach(var Dots in DOTS){
+		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 35f){		// adjust trajectory with 10 x limits 
+			foreach(GameObject Dots in trajectoryDots)
+            {
 				Destroy(Dots);
 			}
 			speedX += 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
-			foreach(var Dots in DOTS){
+			foreach(GameObject Dots in trajectoryDots)
+            {
 				Destroy(Dots);
 			}
 			speedX -= 0.25f;
@@ -102,7 +104,8 @@ public class P_throw : MonoBehaviour {
 		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyLeft))
         {		// change trajectory to left
 			transform.localScale = new Vector3(-1f, transform.localScale.y,transform.localScale.z);
-			foreach(var Dots in DOTS){
+			foreach(GameObject Dots in trajectoryDots)
+            {
 				Destroy(Dots);
 			}
 			count = 0;
@@ -110,7 +113,8 @@ public class P_throw : MonoBehaviour {
 		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyRight))
         {		// change trajectory to right
 			transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
-			foreach(var Dots in DOTS){
+			foreach(GameObject Dots in trajectoryDots)
+            {
 				Destroy(Dots);
 			}
 			count = 0;
