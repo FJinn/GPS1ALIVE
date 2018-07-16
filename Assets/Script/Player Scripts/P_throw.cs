@@ -85,7 +85,7 @@ public class P_throw : MonoBehaviour {
 				Destroy(Dots);
 			}
 			count = 0;
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 35f){		// adjust trajectory with 10 x limits 
+		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
 			foreach(GameObject Dots in trajectoryDots)
             {
 				Destroy(Dots);
