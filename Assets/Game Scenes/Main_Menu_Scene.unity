@@ -1090,6 +1090,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventSystem: {fileID: 730319085}
   selectedObject: {fileID: 0}
+--- !u!1001 &657310670
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -2.5953708
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.805463
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.206622
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4007658985597842, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5274613751dfae6498896b12121a9b7c, type: 2}
+  m_IsPrefabAsset: 0
+--- !u!114 &657310671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114803684742166170, guid: 5274613751dfae6498896b12121a9b7c,
+    type: 2}
+  m_PrefabInternal: {fileID: 657310670}
+  m_Script: {fileID: 11500000, guid: 4cc0295fc86ce87488501b3bd4ba39f1, type: 3}
 --- !u!1 &688004781
 GameObject:
   m_ObjectHideFlags: 0
@@ -3625,6 +3673,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1926085326}
         m_MethodName: FadeToLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 657310671}
+        m_MethodName: ResetCheckpoint
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -362,7 +362,6 @@ public class P_controls : MonoBehaviour {
 
     public void WalkingSound()
     {
-
         FindObjectOfType<AudioManager>().Play("Walking");
     }
 

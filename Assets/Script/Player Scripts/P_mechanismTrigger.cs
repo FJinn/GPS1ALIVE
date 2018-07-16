@@ -41,7 +41,7 @@ public class P_mechanismTrigger : MonoBehaviour {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
                         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
-                        CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(-0.3f, 3,0);
+                        CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(-0.3f, 3, 0);
                     }
                 }
             }

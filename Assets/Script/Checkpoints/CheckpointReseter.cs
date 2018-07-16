@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class CheckpointReseter : MonoBehaviour {
-    
-    
-    public void ResetCheckpoint(bool resetCheckpoint,int levelReset)
-    {
 
+    private GameObject CheckpointManager;
+
+    public void ResetCheckpoint(int levelReset)
+    {
+        CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
+        if(CheckpointManager != null)
+        {
+            if(levelReset == 2)
+            {
+                CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(-0.3f, 3, 0);
+            }else
+            if(levelReset == 3)
+            {
+                CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(10, -25, 0);
+            }
+        }
     }
 
 }
