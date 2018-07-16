@@ -26261,7 +26261,7 @@ MonoBehaviour:
   sounds:
   - name: Environmental
     clip: {fileID: 8300000, guid: 284a15d3b2cfa6e429c2e8a31ab0c98e, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -26273,8 +26273,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jumping
     clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
-    volume: 1
-    pitch: 0.55
+    volume: 0.508
+    pitch: 0.34
     loop: 0
     source: {fileID: 0}
   - name: BoxDragging
@@ -26289,34 +26289,40 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+  - name: DoorUnlocking
+    clip: {fileID: 8300000, guid: a06bddf101cc9654ba9bad5c4b2a0aa7, type: 3}
     volume: 1
-    pitch: 0.55
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+  - name: DoorLocking
+    clip: {fileID: 8300000, guid: 2f44d956ffd43be438a295e8eec5c5a6, type: 3}
     volume: 1
-    pitch: 0.55
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+  - name: EnemyDetect
+    clip: {fileID: 8300000, guid: d562dde3fd27eb54cb99589370a5a1eb, type: 3}
     volume: 1
-    pitch: 0.55
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+  - name: EnemyDetect2
+    clip: {fileID: 8300000, guid: f90fcb67273bfaf4cb9b129213a93998, type: 3}
     volume: 1
-    pitch: 0.55
+    pitch: 0.8
     loop: 0
     source: {fileID: 0}
-  - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+  - name: ElevatorSkidding
+    clip: {fileID: 8300000, guid: e07d3c7ad93b0a64da03454f2249c200, type: 3}
     volume: 1
-    pitch: 0.55
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneThrowing
+    clip: {fileID: 8300000, guid: 9480e40549f88d349b3aab86dbe755df, type: 3}
+    volume: 1
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1786008722

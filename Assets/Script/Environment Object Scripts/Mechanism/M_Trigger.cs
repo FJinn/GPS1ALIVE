@@ -32,7 +32,7 @@ public class M_Trigger : MonoBehaviour {
     public bool isThisDoor = false;
     private Animator doorAnimator;
     private BoxCollider2D myCollider;
-    private int openDoorCounts;
+    public int openDoorCounts;
     
     // Use this for initialization
     void Start() {
@@ -107,15 +107,19 @@ public class M_Trigger : MonoBehaviour {
             {
                 myCollider.enabled = false;
                 doorAnimator.Play("DoorUnlocked");
+                FindObjectOfType<AudioManager>().Play("DoorUnlocking");
             }
             else if(openDoorCounts >= 2)
             {
                 myCollider.enabled = true;
                 doorAnimator.Play("Doorlock");
+                FindObjectOfType<AudioManager>().Play("DoorLocking");
                 openDoorCounts = 0;
             }
 
         }
+
+
 
         if (MovingDistance > 0 )
         {

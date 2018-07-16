@@ -78,7 +78,8 @@ public class El_Manager : MonoBehaviour
             // And the box will not push it down before it is enabled.
             
             mySlider.connectedAnchor = new Vector2(posX,posY);
-            
+            FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
+
             if (!GetComponent<BoxCollider2D>().IsTouching(p_OnEl.GetComponent<BoxCollider2D>())){
                 onEl = false;
             }
@@ -93,6 +94,7 @@ public class El_Manager : MonoBehaviour
             if(mySlider != null)
             {
                 mySlider.breakForce = 5;
+                FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
             }
             for(int i =0; i< p.Length; i ++)
             {

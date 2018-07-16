@@ -92,6 +92,7 @@ public class E_Sound_Detection : MonoBehaviour {
             if(EM_DetectionMeter != null)
             {
                 EM_Fillbar();
+                FindObjectOfType<AudioManager>().Play("EnemyDetect");
             }
             
         }
