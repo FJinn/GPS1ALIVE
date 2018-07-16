@@ -53,7 +53,6 @@ public class Paused : MonoBehaviour
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0f;
         GameIsPauseed = true;
-
     }
 
     // skip tutorial
@@ -61,7 +60,6 @@ public class Paused : MonoBehaviour
     {
         Time.timeScale = 1f;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel(2);
-        Destroy(CheckpointManager);
         Debug.Log("Skipping Tutorial");
     }
 

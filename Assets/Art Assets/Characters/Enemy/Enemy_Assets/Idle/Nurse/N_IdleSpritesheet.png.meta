@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: b63f48bcb536a2a4ca0d5da900eec0c1
+guid: f4cbc9f24c682a840bde4aae8696a4ee
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Nurse idle Spritesheet_0
-    21300002: Nurse idle Spritesheet_1
-    21300004: Nurse idle Spritesheet_2
-    21300006: Nurse idle Spritesheet_3
-    21300008: Nurse idle Spritesheet_4
-    21300010: Nurse idle Spritesheet_5
+    21300000: Nurse Idle Right_0
+    21300002: Nurse Idle Right_1
+    21300004: Nurse Idle Right_2
+    21300006: Nurse Idle Right_3
+    21300008: Nurse Idle Right_4
+    21300010: Nurse Idle Right_5
+    21300012: N_IdleSpriteSheet_0
+    21300014: N_IdleSpriteSheet_1
+    21300016: N_IdleSpriteSheet_2
+    21300018: N_IdleSpriteSheet_3
+    21300020: N_IdleSpriteSheet_4
+    21300022: N_IdleSpriteSheet_5
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -51,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -86,38 +92,76 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nurse idle Spritesheet_0
+      name: N_IdleSpriteSheet_0
       rect:
         serializedVersion: 2
-        x: 152
+        x: 226
         y: 0
-        width: 178
+        width: 176
+        height: 645
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0336b3b6f4b10aa42a1e4339230f9618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_IdleSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 0
+        width: 179
+        height: 646
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fb143d1a001e794fa25871d8e2250d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_IdleSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 0
+        width: 179
+        height: 648
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d13bb40d075b184ea5fe6319f008381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: N_IdleSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1873
+        y: 0
+        width: 181
         height: 650
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -126,19 +170,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32d9100e72ec46d4d8608f56f657b647
+      spriteID: 5e872c49bad9c8541b025abe2e504990
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse idle Spritesheet_1
+      name: N_IdleSpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 654
+        x: 2424
         y: 0
-        width: 178
-        height: 651
+        width: 179
+        height: 648
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,19 +190,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7631c25a71e34e04f869ae3f768994df
+      spriteID: c4a38a47fa9e71e45b8c5720d56baf89
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse idle Spritesheet_2
+      name: N_IdleSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 1154
+        x: 2975
         y: 0
-        width: 178
-        height: 653
+        width: 177
+        height: 646
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,67 +210,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2316c0fcf799b454d9e1eaab43436d82
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nurse idle Spritesheet_3
-      rect:
-        serializedVersion: 2
-        x: 1653
-        y: 0
-        width: 181
-        height: 657
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b433fbecab4aff949a6f3b94f4870e37
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nurse idle Spritesheet_4
-      rect:
-        serializedVersion: 2
-        x: 2154
-        y: 0
-        width: 178
-        height: 651
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ae906a6649ef2f49bf244b6d4bed7f8
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Nurse idle Spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 2655
-        y: 0
-        width: 176
-        height: 651
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd07935fe2bfbbe43bfa61dade48c66c
+      spriteID: 3b89587bb2122c74da33642b25a4f1c0
       vertices: []
       indices: 
       edges: []
@@ -234,7 +218,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 65fdaf0675185484aa32ddb710cc29a1
+    spriteID: c85a6781be201014689ea71b05ac7a35
     vertices: []
     indices: 
     edges: []

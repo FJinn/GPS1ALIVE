@@ -15,10 +15,12 @@ public class E_Movement : MonoBehaviour {
 	private Vector3 tempHolder;
     public Animator anim;
     public bool isNurse;
+    private Rigidbody2D rb2d;
     // private bool isRight = true;
 
 	// Use this for initialization
 	void Start () {
+        rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         moveSpotsCount = 0;
 		tempHolder = moveSpots [0].position;
@@ -32,39 +34,69 @@ public class E_Movement : MonoBehaviour {
         // considering using moveposition
 		transform.position = Vector2.MoveTowards (transform.position, tempHolder , e_patrolSpeed * Time.deltaTime);
 
-        if(isNurse == true)
+        if (tempHolder.x > transform.position.x)
         {
-            if (tempHolder.x > transform.position.x)
+            // isRight = true;
+            
+            if (isNurse)
             {
-                // isRight = true;
                 anim.Play("N_PatrolAnim");
+<<<<<<< HEAD
                 transform.localScale = new Vector3(1, 1, 1);
-            }
-            else if (tempHolder.x < transform.position.x)
+=======
+            } else
             {
-                // isRight = false;
-                anim.Play("N_PatrolAnim");
-                transform.localScale = new Vector3(-1, 1, 1);
+                anim.Play("D_PatrolAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
-            else anim.Play("N_IdleAnim");
+            
+            transform.localScale = new Vector3(1, 1, 1);
         }
-        else if( isNurse == false)
+        else if (tempHolder.x < transform.position.x)
         {
-            if (tempHolder.x > transform.position.x)
+            // isRight = false;
+            
+            if (isNurse)
             {
+                anim.Play("N_PatrolAnim");
+<<<<<<< HEAD
+                transform.localScale = new Vector3(-1, 1, 1);
+=======
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
+            }
+            else
+            {
+                anim.Play("D_PatrolAnim");
+            }
+            
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            
+            if (isNurse)
+            {
+<<<<<<< HEAD
                 // isRight = true;
                 anim.Play("D_PatrolAnim");
                 transform.localScale = new Vector3(1, 1, 1);
+=======
+                anim.Play("N_IdleAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
-            else if (tempHolder.x < transform.position.x)
+            else
             {
+<<<<<<< HEAD
                 // isRight = false;
                 anim.Play("D_PatrolAnim");
                 transform.localScale = new Vector3(-1, 1, 1);
+=======
+                anim.Play("D_IdleAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
-            else anim.Play("D_IdleAnim");
+            
         }
-       
+        
 
         if (Vector2.Distance(transform.position, tempHolder) < 1f ){
 			if (waitTime <= 0)

@@ -11,14 +11,7 @@ public class Checkpoint : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        if(!managerCallOnce)
-        {
-            managerCallOnce = true;
-            DontDestroyOnLoad(gameObject);
-        }else
-        {
-            Destroy(gameObject);
-        }
+
 	}
 	
 	// Update is called once per frame

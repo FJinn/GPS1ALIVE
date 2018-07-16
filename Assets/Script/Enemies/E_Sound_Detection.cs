@@ -32,6 +32,8 @@ public class E_Sound_Detection : MonoBehaviour {
     private GameObject DM_Spawner;
     private bool DM_spawnOnce;
     public bool DM_triggerOnce;
+    public Animator anim;
+    public bool isNurse;
 
     IEnumerator Stunned()
     {
@@ -61,6 +63,7 @@ public class E_Sound_Detection : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        anim = GetComponent<Animator>();
         DM_triggerOnce = false;
 	}
 
@@ -85,7 +88,6 @@ public class E_Sound_Detection : MonoBehaviour {
             EM_DetectionMeter = (GameObject)Instantiate(EM_Object, transform.position + new Vector3(0, 14f, 0), transform.rotation);
             EM_Fillbar();
             EM_DetectionMeter.GetComponent<E_Detection_Meter>().fb_Enemy = gameObject;
-            
         }
         else
         {
@@ -108,6 +110,15 @@ public class E_Sound_Detection : MonoBehaviour {
             soundHeard = false;
             startMoving = false;
             GetComponent<E_Movement>().enabled = false;
+
+            if (isNurse)
+            {
+                anim.Play("N_IdleAnim");
+            }
+            else
+            {
+                anim.Play("D_IdleAnim");
+            }
             StartCoroutine(Stunned());
         }
 
@@ -116,9 +127,29 @@ public class E_Sound_Detection : MonoBehaviour {
             if(Vector2.Distance(transform.position, soundSource) < 1f)
             {
                 StartCoroutine(Investigating());
-            }else
+
+                if (isNurse)
+                {
+                    anim.Play("N_IdleAnim");
+                }
+                else
+                {
+                    anim.Play("D_IdleAnim");
+                }
+            }
+            else
             {
                 StartCoroutine(PathBlocked());
+
+                if (isNurse)
+                {
+                    anim.Play("N_PatrolAnim");
+                }
+                else
+                {
+                    anim.Play("D_PatrolAnim");
+                }
+
                 transform.position = Vector2.MoveTowards(transform.position, soundSource, GetComponent<E_Movement>().e_patrolSpeed * Time.deltaTime);
                 if(transform.position.x < soundSource.x)
                 {

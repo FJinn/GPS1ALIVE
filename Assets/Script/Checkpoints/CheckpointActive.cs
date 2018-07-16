@@ -9,8 +9,7 @@ public class CheckpointActive : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        CheckpointManager = GameObject.Find("SO_CheckpointManager");
-        
+        CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
 	}
 	
 	// Update is called once per frame
