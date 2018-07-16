@@ -41,9 +41,13 @@ public class E_Movement : MonoBehaviour {
             if (isNurse)
             {
                 anim.Play("N_PatrolAnim");
+<<<<<<< HEAD
+                transform.localScale = new Vector3(1, 1, 1);
+=======
             } else
             {
                 anim.Play("D_PatrolAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
             
             transform.localScale = new Vector3(1, 1, 1);
@@ -55,6 +59,10 @@ public class E_Movement : MonoBehaviour {
             if (isNurse)
             {
                 anim.Play("N_PatrolAnim");
+<<<<<<< HEAD
+                transform.localScale = new Vector3(-1, 1, 1);
+=======
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
             else
             {
@@ -68,11 +76,23 @@ public class E_Movement : MonoBehaviour {
             
             if (isNurse)
             {
+<<<<<<< HEAD
+                // isRight = true;
+                anim.Play("D_PatrolAnim");
+                transform.localScale = new Vector3(1, 1, 1);
+=======
                 anim.Play("N_IdleAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
             else
             {
+<<<<<<< HEAD
+                // isRight = false;
+                anim.Play("D_PatrolAnim");
+                transform.localScale = new Vector3(-1, 1, 1);
+=======
                 anim.Play("D_IdleAnim");
+>>>>>>> a7aa502ef9e932ec1a696eb79aa055c8988bbffc
             }
             
         }
