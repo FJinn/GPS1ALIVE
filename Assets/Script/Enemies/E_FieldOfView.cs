@@ -47,6 +47,7 @@ public class E_FieldOfView : MonoBehaviour {
                         myAlerted_Spawn.GetComponent<E_AM_Destroy>().AM_enemy = this.gameObject;
 
                         Detected = true;
+                        FindObjectOfType<AudioManager>().Play("EnemyDetect2");
                     }
 
                 }

@@ -107,11 +107,13 @@ public class M_Trigger : MonoBehaviour {
             {
                 myCollider.enabled = false;
                 doorAnimator.Play("DoorUnlocked");
+                FindObjectOfType<AudioManager>().Play("DoorUnlocking");
             }
             else if(openDoorCounts >= 2)
             {
                 myCollider.enabled = true;
                 doorAnimator.Play("Doorlock");
+                FindObjectOfType<AudioManager>().Play("DoorLocking");
                 openDoorCounts = 0;
             }
 
