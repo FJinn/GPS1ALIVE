@@ -32,7 +32,7 @@ public class M_Trigger : MonoBehaviour {
     public bool isThisDoor = false;
     private Animator doorAnimator;
     private BoxCollider2D myCollider;
-    private int openDoorCounts;
+    public int openDoorCounts;
     
     // Use this for initialization
     void Start() {
@@ -116,6 +116,8 @@ public class M_Trigger : MonoBehaviour {
             }
 
         }
+
+
 
         if (MovingDistance > 0 )
         {

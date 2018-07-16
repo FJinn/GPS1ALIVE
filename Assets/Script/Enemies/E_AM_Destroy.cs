@@ -12,8 +12,8 @@ public class E_AM_Destroy : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         p = new GameObject[2];
-        p[0] = GameObject.FindGameObjectWithTag("Player");
-        p[1] = GameObject.FindGameObjectWithTag("Player2");
+        p[0] = GameObject.Find("Player1");
+        p[1] = GameObject.Find("Player2");
 
         for (int i = 0; i < p.Length; i++)
         {
