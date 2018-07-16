@@ -13,7 +13,7 @@ public class Splash_Screen : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Invoke("setNextScene", 3f);
+        Invoke("setNextScene", 8f);
     }
 
     // Update is called once per frame

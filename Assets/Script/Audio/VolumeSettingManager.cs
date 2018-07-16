@@ -47,7 +47,7 @@ public class VolumeSettingManager : MonoBehaviour {
             if (MainMenu != null)
             {
                 MainMenu.enabled = true;
-            }
+            }         
         }
         else
         {
