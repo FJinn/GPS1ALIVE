@@ -513,6 +513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onVent: 0
   onCrack: 0
+  exitVent: 0
   BoxColliderOrigin: {fileID: 61113217438972178}
   bypassEnemyMask:
     serializedVersion: 2
@@ -583,7 +584,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb0757977c29b14397ac8a450ff39ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 95336084657961866}
+  anim: {fileID: 95336084657961866}
+  pullLeft: 0
+  pullRight: 0
+  pushLeft: 0
+  pushRight: 0
 --- !u!114 &114870908154176100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -635,6 +640,7 @@ MonoBehaviour:
   Idle: 0
   Crawling: 0
   CrawlingIdle: 0
+  audioManager: {fileID: 0}
 --- !u!114 &114996712177572422
 MonoBehaviour:
   m_ObjectHideFlags: 1

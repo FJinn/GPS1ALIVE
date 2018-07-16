@@ -38,13 +38,13 @@ public class E_Movement : MonoBehaviour {
             {
                 // isRight = true;
                 anim.Play("N_PatrolAnim");
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(1, 1, 1);
             }
             else if (tempHolder.x < transform.position.x)
             {
                 // isRight = false;
                 anim.Play("N_PatrolAnim");
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
             }
             else anim.Play("N_IdleAnim");
         }
@@ -54,13 +54,13 @@ public class E_Movement : MonoBehaviour {
             {
                 // isRight = true;
                 anim.Play("D_PatrolAnim");
-                transform.localScale = new Vector3(-1, 1, 1);
+                transform.localScale = new Vector3(1, 1, 1);
             }
             else if (tempHolder.x < transform.position.x)
             {
                 // isRight = false;
                 anim.Play("D_PatrolAnim");
-                transform.localScale = new Vector3(1, 1, 1);
+                transform.localScale = new Vector3(-1, 1, 1);
             }
             else anim.Play("D_IdleAnim");
         }
