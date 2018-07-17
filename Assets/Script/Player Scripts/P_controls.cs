@@ -283,7 +283,7 @@ public class P_controls : MonoBehaviour {
 
             mySpriteRenderer.sortingOrder = orderingLayer + 20;
 
-			if (Input.GetKey(KeyUp))
+			if (Input.GetKey(KeyUp)&& !StopGameControl)
 			{
                 OnLadder = true;
                 /*
@@ -299,7 +299,7 @@ public class P_controls : MonoBehaviour {
                 rb2d.velocity = new Vector2(0, climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
             }   
-			else if (Input.GetKey(KeyDown))
+			else if (Input.GetKey(KeyDown) && !StopGameControl)
 			{
                 OnLadder = true;
                 /*

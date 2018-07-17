@@ -18,7 +18,7 @@ public class CheckpointReseter : MonoBehaviour {
             }else
             if(levelReset == 3)
             {
-                CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(10, -25, 0);
+                CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(2.1f, -29.5f, 0);
             }
         }
     }
