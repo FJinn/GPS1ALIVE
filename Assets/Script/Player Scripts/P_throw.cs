@@ -66,7 +66,7 @@ public class P_throw : MonoBehaviour {
 	public float speedY;
 
 	private Vector2 GRAVITY = new Vector2(0, -45f);
-    private GameObject[] trajectoryDots = new GameObject[30];
+    private GameObject[] trajectoryDots = new GameObject[60];
 
 	private void DotsSpawner(){
 
