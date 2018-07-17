@@ -65,7 +65,7 @@ public class G_Animations : MonoBehaviour
                 playerControl.StopGameControl = true;
                 anim.SetBool("EnterVent", true);
                 anim.SetBool("ExitVent", false);
-                Invoke("EnterVentTransition", 1f);
+                Invoke("EnterVentTransition", .3f);
             }
             else
             {
