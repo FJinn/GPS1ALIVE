@@ -33,9 +33,9 @@ public class Paused : MonoBehaviour
                 else
                 {
                     Pause();
+                    vsm.setCamera();
                 }
-            }
-            
+            }            
         }
     }
 
