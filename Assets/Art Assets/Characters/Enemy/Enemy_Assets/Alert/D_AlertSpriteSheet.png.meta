@@ -1,0 +1,412 @@
+fileFormatVersion: 2
+guid: b5fccdd1be5330344b57237b71a2ebcc
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: D_AlertSpriteSheet_0
+    21300002: D_AlertSpriteSheet_1
+    21300004: D_AlertSpriteSheet_2
+    21300006: D_AlertSpriteSheet_3
+    21300008: D_AlertSpriteSheet_4
+    21300010: D_AlertSpriteSheet_5
+    21300012: D_AlertSpriteSheet_6
+    21300014: D_AlertSpriteSheet_7
+    21300016: D_AlertSpriteSheet_8
+    21300018: D_AlertSpriteSheet_9
+    21300020: D_AlertSpriteSheet_10
+    21300022: D_AlertSpriteSheet_11
+    21300024: D_AlertSpriteSheet_12
+    21300026: D_AlertSpriteSheet_13
+    21300028: D_AlertSpriteSheet_14
+  externalObjects: {}
+  serializedVersion: 6
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 0
+        width: 186
+        height: 682
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36ebfffff3bb86847b3749cb38830f21
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 0
+        width: 205
+        height: 682
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5988665556cfadb4c9fea5ba6a353ac6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 0
+        width: 227
+        height: 682
+      alignment: 9
+      pivot: {x: 0.42669436, y: -0.000000035667725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f96f525171ab3449ef6b652b737838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 0
+        width: 249
+        height: 682
+      alignment: 9
+      pivot: {x: 0.39975724, y: -0.000000035667725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7404bbbef74f664a914f9350236c78a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 0
+        width: 267
+        height: 682
+      alignment: 9
+      pivot: {x: 0.37924823, y: -0.000000035667725}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2517c24e58c68ac4fa91109291b315d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 0
+        width: 311
+        height: 686
+      alignment: 9
+      pivot: {x: 0.3729236, y: 0.0015249145}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05ecbdabd41b114eaededd419a1df10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 3162
+        y: 0
+        width: 341
+        height: 682
+      alignment: 9
+      pivot: {x: 0.327752, y: -0.00000003981962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e329fba292d5f4d91beaf3717bd134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 3660
+        y: 0
+        width: 344
+        height: 682
+      alignment: 9
+      pivot: {x: 0.3634026, y: -0.0028708251}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6789ed2d062cf3a43949382fdfa14839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 4162
+        y: 0
+        width: 344
+        height: 682
+      alignment: 9
+      pivot: {x: 0.35771143, y: -0.00000003981962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cc8e2333ed17454f86229c2684b9934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 4660
+        y: 0
+        width: 340
+        height: 682
+      alignment: 9
+      pivot: {x: 0.40786275, y: 0.0028707455}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45bb9ffcbd05d9a4eb461e5ea3c4cee6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 5158
+        y: 0
+        width: 348
+        height: 678
+      alignment: 9
+      pivot: {x: 0.3762249, y: 0.002887682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d8078bd95a71f469cce94d433374cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 5649
+        y: 0
+        width: 355
+        height: 675
+      alignment: 9
+      pivot: {x: 0.37315002, y: 0.0029005161}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558301c9026881b4c90dae41432d7c0c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 6125
+        y: 0
+        width: 381
+        height: 671
+      alignment: 9
+      pivot: {x: 0.39722258, y: -0.0000000404724}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b6fd140544b9498fe9bab23bc72d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 6605
+        y: 0
+        width: 399
+        height: 667
+      alignment: 9
+      pivot: {x: 0.4067652, y: -0.000000040715115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3940a0c943b592646963c40595a8c69b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: D_AlertSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 7081
+        y: 0
+        width: 419
+        height: 664
+      alignment: 9
+      pivot: {x: 0.45327067, y: -0.000000040899067}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289ff2b14a4a88e4fbb7f3da5014377a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a978b21b2cdae32488bb4bedaf710abd
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
