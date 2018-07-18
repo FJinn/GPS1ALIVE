@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class VolumeSettingManager : MonoBehaviour {
 
@@ -36,7 +37,8 @@ public class VolumeSettingManager : MonoBehaviour {
         bgm.ignoreListenerVolume = true;
         BGMSlider.onValueChanged.AddListener(delegate { BGMValueChanged(); });        
         SFXSlider.onValueChanged.AddListener(delegate { SFXValueChanged(); });
-    }
+        setCamera();
+    }    
 
     public void SettingSwitch()
     {
@@ -51,6 +53,7 @@ public class VolumeSettingManager : MonoBehaviour {
         }
         else
         {
+            setCamera();
             canvas.enabled = true;
             setting = true;
             if (MainMenu != null)
@@ -69,5 +72,10 @@ public class VolumeSettingManager : MonoBehaviour {
     {
         // set audio volume to userSetVolume
         AudioListener.volume = SFXSlider.value;
+    }
+
+    public void setCamera()
+    {
+        canvas.worldCamera = Camera.main;
     }
 }
