@@ -13,6 +13,14 @@ public class P_throw : MonoBehaviour {
     
 	// Update is called once per frame
 	void FixedUpdate () {
+        if(spawnStone > 0)
+        {
+            GetComponent<P_controls>().StopGameControl = true;
+        }
+        else if (spawnStone == 0)
+        {
+            GetComponent<P_controls>().StopGameControl = false;
+        }
 		if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
 			if (throwReady) {
 				onThrow = true;
