@@ -2431,6 +2431,21 @@ Prefab:
       propertyPath: dotsPositionOverTime
       value: 0.11
       objectReference: {fileID: 0}
+    - target: {fileID: 61660883917423264, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 3.207744
+      objectReference: {fileID: 0}
+    - target: {fileID: 61660883917423264, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3.123077
+      objectReference: {fileID: 0}
+    - target: {fileID: 61660883917423264, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.123077
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -23110,6 +23125,11 @@ Prefab:
       value: 
       objectReference: {fileID: 22100000, guid: 4a4c7de60e1cfaa40a5217792e101038,
         type: 2}
+    - target: {fileID: 61113217438972178, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: 3.192107
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
