@@ -55,7 +55,6 @@ public class S_Control : MonoBehaviour {
 
 		if (!launched && timeForLaunching <= 0) {
 			Launch ();
-            gameObject.GetComponent<AudioSource>().Play();
         }
 
         if(s_rigidbody.velocity == Vector2.zero)

@@ -7,7 +7,6 @@ public class Camera_Control : MonoBehaviour {
     private Vector2 velocity;
 
     public float smoothX;
-    public float smoothY;
     
     public GameObject player;
     public GameObject player2;
@@ -60,7 +59,7 @@ public class Camera_Control : MonoBehaviour {
                 // too buggy for the function below
                 //float SmoothSize = Mathf.SmoothDamp(InitSize, InitSize +  distance(), ref velocitySize, SmoothenSize); 
                 // currentCamera.orthographicSize = InitSize + + Mathf.Sqrt(distance() / 1.5f);
-                currentCamera.orthographicSize = InitSize + (Mathf.Sqrt(getDistance()) * 1.5f);
+                currentCamera.orthographicSize = InitSize + (Mathf.Sqrt(getDistance()) * 2.4f);
             }else if (targetRoom)
             {
                 
@@ -68,7 +67,7 @@ public class Camera_Control : MonoBehaviour {
                 float yPos = Mathf.SmoothDamp(transform.position.y, roomCameraFocusObject[roomCameraInt].transform.position.y, ref velocity.y, smoothX);
                 transform.position = new Vector3(xPos,yPos,transform.position.z);
 
-                if(cameraSizeSmoothTimer <= 16f)
+                if(cameraSizeSmoothTimer <= 10f)
                 {
                     cameraSizeSmoothTimer += 2f * Time.deltaTime;
                 }

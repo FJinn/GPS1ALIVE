@@ -16,7 +16,7 @@ public class E_AM_Destroy : MonoBehaviour {
         p[0] = GameObject.Find("Player1");
         p[1] = GameObject.Find("Player2");
 
-        FindObjectOfType<AudioManager>().Play("EnemyDetect2");
+    //    FindObjectOfType<AudioManager>().Play("EnemyDetect2");
 
         for (int i = 0; i < p.Length; i++)
         {

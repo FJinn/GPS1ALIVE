@@ -10,7 +10,7 @@ public class P_Spawn : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        spawnManager = GameObject.Find("SO_CheckpointManager");
+        spawnManager = GameObject.FindGameObjectWithTag("CheckpointManager");
         GetComponent<P_controls>().CameraStarted = false;
 
         if (gameObject.CompareTag("Player"))

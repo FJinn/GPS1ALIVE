@@ -9,7 +9,6 @@ public class P_controls : MonoBehaviour {
     public float walkSpeed;
     public float climbSpeed;
     private float moveHorizontal;
-    public AudioSource audiosource2;
 
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
@@ -18,9 +17,6 @@ public class P_controls : MonoBehaviour {
     private GameObject otherPlayer;
     private SpriteRenderer mySpriteRenderer;
     private int orderingLayer;
-    
-
-    private Vector2 climbPosition;
     
     // To disable jump in vent
     public bool onVent = false;
@@ -168,7 +164,6 @@ public class P_controls : MonoBehaviour {
                         Idle = false;
                         Crawling = false;
                         CrawlingIdle = false;
-                        audiosource2.UnPause();
                     }
                     else
                     {
@@ -177,7 +172,6 @@ public class P_controls : MonoBehaviour {
                         Idle = true;
                         Crawling = false;
                         CrawlingIdle = false;
-                        audiosource2.Pause();
                     }
                 }
                 else
@@ -220,9 +214,9 @@ public class P_controls : MonoBehaviour {
         {
             rb2d.velocity = new Vector2(0, rb2d.velocity.y);
         }
+        
 
-        climbPosition.y = transform.position.y;
-
+        // Determine whether players wanna get locked within camera view, if camera started == true, yes player will get locked within camera view
         if (CameraStarted)
         {
             var pos = Camera.main.WorldToViewportPoint(transform.position);
@@ -286,34 +280,12 @@ public class P_controls : MonoBehaviour {
 			if (Input.GetKey(KeyUp)&& !StopGameControl)
 			{
                 OnLadder = true;
-                /*
-                if(transform.position.y < otherPlayer.transform.position.y + 6f && transform.position.y > otherPlayer.transform.position.y -7f && otherPlayer.GetComponent<P_controls>().OnLadder)
-                {
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y - 0.25f);
-                }
-                else
-                {
-                    rb2d.velocity = new Vector2(0, climbSpeed);
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-                }*/
                 rb2d.velocity = new Vector2(0, climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
             }   
 			else if (Input.GetKey(KeyDown) && !StopGameControl)
 			{
                 OnLadder = true;
-                /*
-                if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
-                {
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y + 0.25f);
-                    
-                }
-                else
-                {
-                    rb2d.velocity = new Vector2(0, -climbSpeed);
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-                }*/
-
                 rb2d.velocity = new Vector2(0, -climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
             }
@@ -330,17 +302,6 @@ public class P_controls : MonoBehaviour {
         // whenever player leaves the ladder
         if (ladder.gameObject.tag == "Climbable")
         {
-            /*
-            if (CompareTag("Player"))
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player2").GetComponent<BoxCollider2D>());
-            }
-
-            if (CompareTag("Player2"))
-            {
-                Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>());
-            }
-            */
             for (int i = 0; i < walls.Length; i++)
             {
                 if (walls[i].GetComponent<TilemapCollider2D>() != null)
