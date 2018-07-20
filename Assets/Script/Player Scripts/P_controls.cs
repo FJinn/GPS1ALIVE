@@ -44,7 +44,7 @@ public class P_controls : MonoBehaviour {
     private BoxCollider2D myBoxCollider;
     public bool faceLeft = false;
     public bool faceRight = false;
-
+    public bool openDoor = false;
     private bool inTheAir = false;
 
     public GameObject audioManager;

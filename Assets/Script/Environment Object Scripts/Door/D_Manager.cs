@@ -25,7 +25,8 @@ public class D_Manager : MonoBehaviour {
 		for(int i=0; i<p.Length; i++){
             if (myBoxCollider.IsTouching(p[i].GetComponent<BoxCollider2D>()))
             {
-                if(p[i].GetComponent<P_keyHold>().keyNum == doorNum){
+                if(p[i].GetComponent<P_keyHold>().keyNum == doorNum && Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse)){
+                    p[i].GetComponent<P_controls>().openDoor = true;
                     Invoke("DoorOpen", 0.5f);
                     p[i].GetComponent<P_keyHold>().keyNum = 0;
                 }

@@ -8,7 +8,7 @@ public class B_Animations : MonoBehaviour {
     P_controls playerControl;
     P_pushPull playerPushPull;
     Rigidbody2D playerVelocity;
-    M_Interaction leverInteract;
+    P_mechanismTrigger leverInteract;
     bool enterVent = false;
     bool exitVent = false;
     public bool pullLeft = false;
@@ -22,7 +22,7 @@ public class B_Animations : MonoBehaviour {
         playerControl = GetComponent<P_controls>();
         playerPushPull = GetComponent<P_pushPull>();
         playerVelocity = GetComponent<Rigidbody2D>();
-        leverInteract = GameObject.FindGameObjectWithTag("Interactable").GetComponent<M_Interaction>();
+        leverInteract = GetComponent<P_mechanismTrigger>();
     }
 
     void Update () {
@@ -213,12 +213,35 @@ public class B_Animations : MonoBehaviour {
     
     void Interaction()
     {
-        if (leverInteract.leverDown)
+        if (leverInteract.triggerLever)
         {
-            Debug.Log("True");
+            playerControl.StopGameControl = true;
             anim.SetBool("PullLever", true);
             anim.SetBool("Idle", false);
+        }       
+
+        if(playerControl.openDoor)
+        {
+            playerControl.StopGameControl = true;
+            anim.SetBool("Pressing", true);
+            anim.SetBool("Idle", false);
         }
+    }
+
+    void ResetDoorInteraction()
+    {
+        playerControl.StopGameControl = false;
+        playerControl.openDoor = false;
+        anim.SetBool("Pressing", false);
+        anim.SetBool("Idle", true);
+    }
+
+    void ResetLeverInteraction()
+    {
+        leverInteract.triggerLever = false;
+        playerControl.StopGameControl = false;
+        anim.SetBool("PullLever", false);
+        anim.SetBool("Idle", true);
     }
 
     void OnLadder()

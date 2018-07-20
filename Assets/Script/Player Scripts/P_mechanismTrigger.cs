@@ -9,6 +9,7 @@ public class P_mechanismTrigger : MonoBehaviour {
 
     public GameObject ScreenFade;
     public int sceneIndex;
+    public bool triggerLever = false;
 
     private GameObject CheckpointManager;
     private BoxCollider2D myBoxCollider;
@@ -33,7 +34,8 @@ public class P_mechanismTrigger : MonoBehaviour {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
                         mechanism.GetComponent<M_Interaction>().UnitTrigger();
-                    }
+                        triggerLever = true;
+                    }                 
                 }
             }
             if (mechanism.CompareTag("levelProceed"))

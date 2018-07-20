@@ -48,17 +48,11 @@ public class M_Interaction : MonoBehaviour {
             if (animCounter == 1)
             {
                 M_animator.Play("AIO_AnimLeverDown");
-                leverDown = true;
-                leverUp = false;
-                Debug.Log(leverDown);
             }
             else
             if (animCounter >= 2)
             {
                 M_animator.Play("AIO_AnimLeverUp");
-                leverDown = false;
-                leverUp = true;
-                Debug.Log(leverUp);
                 animCounter = 0;
             }
         }
