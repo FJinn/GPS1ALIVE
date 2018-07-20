@@ -59,9 +59,9 @@ public class CrawlIntoCrack : MonoBehaviour {
             }
             else if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && !p[i].GetComponent<P_controls>().StopGameControl && p[i].GetComponent<P_avoidEnemyVent>().firstTap && GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()))
             {
-                p[i].GetComponent<P_Vent>().onVent = false;
-                p[i].GetComponent<P_avoidEnemyVent>().firstTap = false;
-                p[i].GetComponent<P_Vent>().exitVent = true;
+                p[i].GetComponent<P_Vent>().exitVent = true;         
+                p[i].GetComponent<P_Vent>().onVent = false;               
+                p[i].GetComponent<P_avoidEnemyVent>().firstTap = false;                
                 p[i].GetComponent<P_Vent>().ResetCollisions();
 
                 /*

@@ -43,11 +43,6 @@ public class P_controls : MonoBehaviour {
     private BoxCollider2D myBoxCollider;
     public bool faceLeft = false;
     public bool faceRight = false;
-    public bool Walking = false;
-    public bool Jumping = false;
-    public bool Idle = false;
-    public bool Crawling = false;
-    public bool CrawlingIdle = false;
 
     private bool inTheAir = false;
 
@@ -57,9 +52,7 @@ public class P_controls : MonoBehaviour {
     {
         animList = new string[4];
         anim = GetComponent<Animator>();
-        walls = GameObject.FindGameObjectsWithTag("Walls");
-
-        
+        walls = GameObject.FindGameObjectsWithTag("Walls");       
     }
 
     void Start()
@@ -96,10 +89,6 @@ public class P_controls : MonoBehaviour {
             KeyLeft = KeyCode.LeftArrow;
             KeyRight = KeyCode.RightArrow;
             isPlayer1 = false;
-            animList[0] = "G_IdleAnim";
-            animList[1] = "G_WalkAnim";
-            animList[2] = "G_CrawlIdleAnim";
-            animList[3] = "G_CrawlAnim";
 
             otherPlayer = GameObject.FindGameObjectWithTag("Player");
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), otherPlayer.GetComponent<BoxCollider2D>());
@@ -153,44 +142,7 @@ public class P_controls : MonoBehaviour {
                     transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // player flipping
                     faceLeft = false;
                     faceRight = true;                    
-                }
-
-                if (!onVent)
-                {
-                    if (rb2d.velocity.x > 0.1f || rb2d.velocity.x < -0.1f)
-                    {
-                        //anim.Play(animList[1]);
-                        Walking = true;
-                        Idle = false;
-                        Crawling = false;
-                        CrawlingIdle = false;
-                    }
-                    else
-                    {
-                        //anim.Play(animList[0]);
-                        Walking = false;
-                        Idle = true;
-                        Crawling = false;
-                        CrawlingIdle = false;
-                    }
-                }
-                else
-                {
-                    if (rb2d.velocity.x > 0.3f || rb2d.velocity.x < -0.3f)
-                    {                        
-                        Crawling = true;
-                        CrawlingIdle = false;
-                        Walking = false;
-                        Idle = false;
-                    }
-                    else
-                    {
-                        CrawlingIdle = true;
-                        Crawling = false;
-                        Walking = false;
-                        Idle = false;
-                    }
-                }
+                }          
 
                 // move
 
@@ -203,12 +155,7 @@ public class P_controls : MonoBehaviour {
 			if (Input.GetKeyDown(KeyUp) && Grounded() && !OnLadder&& !onVent)
 			{
                 Jump();
-                Jumping = true;
-			}               
-            else if(Grounded() && !OnLadder && !onVent)
-            {
-                Jumping = false;
-            }
+			}          
         }
         else
         {
