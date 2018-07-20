@@ -7,6 +7,8 @@ public class M_Trigger : MonoBehaviour {
     [Header("Determine moving horizontal or vertical")]
     public bool MoveHorizontal;
     public bool MoveVertical;
+    public bool MoveToSpecificPoint;
+    public GameObject PointPosition;
     
     [Header("Object's moving distance and direction")]
     public float MovingDistance;
@@ -28,6 +30,8 @@ public class M_Trigger : MonoBehaviour {
     private float initWaitTime;
 
     private bool[] Directions;
+    public bool movingToDestination;
+    private Vector3 originPosition;
 
     public bool isThisDoor = false;
     private Animator doorAnimator;
@@ -54,6 +58,9 @@ public class M_Trigger : MonoBehaviour {
         for (int i = 0; i < 4; i++) {
             Directions[i] = false;
         }
+
+        movingToDestination = false;
+        originPosition = transform.position;
 
         // setting up origin point
         StartingPoint = transform.position;
@@ -117,6 +124,18 @@ public class M_Trigger : MonoBehaviour {
                 FindObjectOfType<AudioManager>().Play("DoorLocking");
             }
 
+        }
+
+        if (MoveToSpecificPoint)
+        {
+            if(clickCounts == 1)
+            {
+                movingToDestination = true;
+            }else if(clickCounts >= 2)
+            {
+                movingToDestination = false;
+                clickCounts = 0;
+            }
         }
 
 
@@ -246,8 +265,19 @@ public class M_Trigger : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.F))
         {
             Trigger();
-        }
+        } 
         */
+        if(MoveToSpecificPoint)
+        {
+            if (movingToDestination)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, PointPosition.transform.position, Time.deltaTime * MovingSpeed);
+            }
+            else
+            {
+                transform.position = Vector2.MoveTowards(transform.position, originPosition, Time.deltaTime * MovingSpeed);
+            }
+        }
 
         // left
         if (Directions[0]) {
@@ -314,6 +344,11 @@ public class M_Trigger : MonoBehaviour {
             } else
             if (inGame && MoveVertical) {
                 Debug.DrawLine(transform.position, new Vector3(StartingPoint.x, StartingPoint.y + MovingDistance, 0));
+            }
+
+            if(MoveToSpecificPoint)
+            {
+            Debug.DrawLine(transform.position, PointPosition.transform.position);
             }
         }
 

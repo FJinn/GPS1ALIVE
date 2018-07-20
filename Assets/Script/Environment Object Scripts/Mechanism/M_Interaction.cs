@@ -8,6 +8,8 @@ public class M_Interaction : MonoBehaviour {
 
     [Header("Is this pressure pad?")]
     public bool Pressure_Pad;
+    public bool PPad_Delay;
+    public float PPad_Delay_Time;
     private bool isStepped;
     private float originalScaleY;
     private float scaleY;
@@ -90,7 +92,7 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
         {
             if (enterCounter <= 0)
             {
@@ -102,7 +104,7 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
         {
             isStepped = true;
         }
@@ -110,12 +112,20 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
         {
             enterCounter--;
-            if (isStepped && enterCounter == 0)
+            if (isStepped && enterCounter <= 0)
             {
-                UnitTrigger();
+                if(PPad_Delay)
+                {
+                    Invoke("UnitTrigger", PPad_Delay_Time);
+                }else
+                {
+                    UnitTrigger();
+                    enterCounter = 0;
+                }
+
             }
             isStepped = false;
         }

@@ -80,8 +80,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1501796329642154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.42, y: -21.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 98.099, y: -18.699, z: 0}
+  m_LocalScale: {x: 0.78885806, y: 0.78885806, z: 0.78885806}
   m_Children:
   - {fileID: 4585937717582642}
   - {fileID: 4682623944089374}
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fb_Enemy: {fileID: 0}
   fb_value: 0
-  fb_MaxSize: 1
+  fb_MaxSize: 0.8
   fb_tempDelay: 0
   DM_Object: {fileID: 1696160541660526, guid: 0a99564363b8aea418641c50784f181d, type: 2}
 --- !u!212 &212132903569599838
