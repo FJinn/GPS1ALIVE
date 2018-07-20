@@ -115,7 +115,7 @@ public class G_Animations : MonoBehaviour
     {
         if (playerPushPull.OnBox == true)
         {
-            if (playerVelocity.velocity.x > 1f)
+            if (playerVelocity.velocity.x > 0.1f)
             {
                 if (playerControl.faceRight == true)
                 {
@@ -142,7 +142,7 @@ public class G_Animations : MonoBehaviour
                     pushLeft = false;
                 }
             }
-            else if (playerVelocity.velocity.x < -1f)
+            else if (playerVelocity.velocity.x < -0.1f)
             {
                 if (playerControl.faceRight == true)
                 {
