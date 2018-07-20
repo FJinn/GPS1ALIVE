@@ -13,6 +13,8 @@ public class Camera_RoomTrigger : MonoBehaviour {
     public bool ActiveDynamic;
     public GameObject[] ActiveBlocker;
     public bool DisableActiveBlocker;
+    public bool KillEnemy;
+    public GameObject[] Enemies;
 
 
 
@@ -51,6 +53,17 @@ public class Camera_RoomTrigger : MonoBehaviour {
             MainCamera.GetComponent<Camera_Control>().roomCameraInt = CameraIndexTrigger;
 
             Invoke("ResumeCamera", 1f);
+
+            if(KillEnemy)
+            {
+               for(int i =0;i < Enemies.Length;i++)
+                {
+                    if(Enemies[i] != null)
+                    {
+                        Destroy(Enemies[i]);
+                    }
+                }
+            }
 
             if(!triggerOnce)
             {

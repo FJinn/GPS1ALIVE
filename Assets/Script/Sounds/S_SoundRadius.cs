@@ -46,18 +46,18 @@ public class S_SoundRadius : MonoBehaviour {
             Collider2D[] targetsInSoundRadius = Physics2D.OverlapCircleAll(transform.position, s_soundRadius, enemyMask);
             for (int i = 0; i < targetsInSoundRadius.Length; i++)
               {
-            targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().EM_triggerAmounts = triggerAmounts;
-            if (s_moveTarget)
-                {
-                    targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundSource = new Vector2(transform.position.x, targetsInSoundRadius[i].transform.position.y);
-                    targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundHeard = true;
-                    targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
-            }
-                if(s_moveSound)
-                {
-                    targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
+                targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().EM_triggerAmounts = triggerAmounts;
+                if (s_moveTarget)
+                    {
+                        targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundSource = new Vector2(transform.position.x, targetsInSoundRadius[i].transform.position.y);
+                        targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().soundHeard = true;
+                        targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
                 }
-            }
+                    if(s_moveSound)
+                    {
+                        targetsInSoundRadius[i].GetComponent<E_Sound_Detection>().Detection_Manager();
+                    }
+                }
         }
 
 

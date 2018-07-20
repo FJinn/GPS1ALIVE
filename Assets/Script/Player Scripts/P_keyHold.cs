@@ -20,8 +20,8 @@ public class P_keyHold : MonoBehaviour {
             {
                 spawned = true;
                 temp = (GameObject)Instantiate(key, head, Quaternion.identity);
-                temp.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
+            temp.transform.position = head;
         }
         else
         {

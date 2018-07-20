@@ -15,12 +15,11 @@ public class E_Movement : MonoBehaviour {
 	private Vector3 tempHolder;
     public Animator anim;
     public bool isNurse;
-    private Rigidbody2D rb2d;
+
     // private bool isRight = true;
 
 	// Use this for initialization
 	void Start () {
-        rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         moveSpotsCount = 0;
 		tempHolder = moveSpots [0].position;

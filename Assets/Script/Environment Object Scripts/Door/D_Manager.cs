@@ -9,18 +9,21 @@ public class D_Manager : MonoBehaviour {
     public GameObject[] p;
     public Animator doorUnlocked;
 
+    private BoxCollider2D myBoxCollider;
+
     private void Start()
     {
         doorUnlocked = GetComponent<Animator>();
         p = new GameObject[2];
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
+        myBoxCollider = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
     void Update () {
 		for(int i=0; i<p.Length; i++){
-            if (GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()))
+            if (myBoxCollider.IsTouching(p[i].GetComponent<BoxCollider2D>()))
             {
                 if(p[i].GetComponent<P_keyHold>().keyNum == doorNum){
                     Invoke("DoorOpen", 0.5f);
@@ -31,7 +34,7 @@ public class D_Manager : MonoBehaviour {
 	}
 
     void DoorOpen(){
-        GetComponent<BoxCollider2D>().enabled = false;
+        myBoxCollider.enabled = false;
         doorUnlocked.Play("DoorUnlocked");
     }
 
