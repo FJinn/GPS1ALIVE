@@ -98,7 +98,7 @@ public class P_Vent : MonoBehaviour {
         }
         else if (onVent == false && crouched)
         {
-            crouched = false;
+            crouched = false;         
             GetComponent<P_controls>().onVent = false;
             //GetComponent<BoxCollider2D>().isTrigger = false;
             rg2b.gravityScale = 10;

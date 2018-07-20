@@ -125,7 +125,7 @@ public class P_controls : MonoBehaviour {
             return true;
         }
     }
-		
+
     void FixedUpdate()
 	{
         if(isPlayer1)
