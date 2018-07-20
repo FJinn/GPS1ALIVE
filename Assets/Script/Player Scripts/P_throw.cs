@@ -35,7 +35,7 @@ public class P_throw : MonoBehaviour {
             spawned = false;
         }
 
-        head = new Vector2(transform.position.x + 1f, transform.position.y + 7f);
+        head = new Vector2(transform.position.x + 0.5f, transform.position.y + 7f);
 
         if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
 			if (throwReady) {
