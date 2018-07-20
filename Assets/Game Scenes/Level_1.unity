@@ -26185,6 +26185,10 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1562334548792308, guid: 405126f0669e24249b70e1061d663e5c, type: 2}
+      propertyPath: m_TagString
+      value: SpecialWall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 405126f0669e24249b70e1061d663e5c, type: 2}
   m_IsPrefabAsset: 0
@@ -32789,7 +32793,6 @@ MonoBehaviour:
   JumpSpeed: 2.45
   walkSpeed: 13
   climbSpeed: 10
-  audiosource2: {fileID: 2030539136}
   onVent: 0
   noJump: 0
   OnLadder: 0
