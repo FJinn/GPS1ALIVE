@@ -5,9 +5,29 @@ using UnityEngine;
 public class P_keyHold : MonoBehaviour {
 
     public int keyNum = 0;
-	
-	// Update is called once per frame
-	void Update () {
- 
+    public GameObject key;
+    GameObject temp;
+    bool spawned = false;
+    Vector2 head;
+    
+
+    // Update is called once per frame
+    void Update () {
+        head = new Vector2(transform.position.x, transform.position.y + 7f);
+        if (keyNum > 0)
+        {
+            if(!spawned)
+            {
+                spawned = true;
+                temp = (GameObject)Instantiate(key, head, Quaternion.identity);
+                temp.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            }
+        }
+        else
+        {
+            Destroy(temp);
+            spawned = false;
+        }
+
 	}
 }
