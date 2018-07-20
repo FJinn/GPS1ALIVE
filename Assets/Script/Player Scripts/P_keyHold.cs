@@ -13,7 +13,7 @@ public class P_keyHold : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        head = new Vector2(transform.position.x, transform.position.y + 7f);
+        head = new Vector2(transform.position.x - 0.5f, transform.position.y + 7f);
         if (keyNum > 0)
         {
             if(!spawned)
