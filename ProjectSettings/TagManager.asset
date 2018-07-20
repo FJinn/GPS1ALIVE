@@ -23,6 +23,7 @@ TagManager:
   - levelProceed
   - Walls
   - CheckpointManager
+  - SpecialWall
   layers:
   - Default
   - TransparentFX

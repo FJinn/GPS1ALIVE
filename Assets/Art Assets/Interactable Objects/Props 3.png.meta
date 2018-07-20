@@ -203,10 +203,10 @@ TextureImporter:
       name: Props 3_5
       rect:
         serializedVersion: 2
-        x: 512
-        y: 768
+        x: 510
+        y: 776
         width: 256
-        height: 256
+        height: 250
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

@@ -27,6 +27,7 @@ public class B_Animations : MonoBehaviour {
         Movement();
         VentMovement();  
         PullPush();
+        OnLadder();
 	}
 
     void Movement()
@@ -61,6 +62,7 @@ public class B_Animations : MonoBehaviour {
             if (!enterVent)
             {
                 playerControl.StopGameControl = true;
+                Debug.Log(playerControl.StopGameControl);
                 anim.SetBool("EnterVent", true);
                 anim.SetBool("ExitVent", false);
                 Invoke("EnterVentTransition", 1f);
@@ -210,5 +212,29 @@ public class B_Animations : MonoBehaviour {
     void PressButton()
     {
 
+    }
+
+    void OnLadder()
+    {
+        if(playerControl.OnLadder)
+        {
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+            if (playerVelocity.velocity.y == 0)
+            {               
+                anim.SetBool("ClimbingIdle", true);
+                anim.SetBool("Climbing", false);
+            }
+            else
+            {
+                anim.SetBool("ClimbingIdle", false);
+                anim.SetBool("Climbing", true);
+            }       
+        }
+        else
+        {
+            anim.SetBool("Climbing", false);
+            anim.SetBool("ClimbingIdle", false);
+        }
     }
 }

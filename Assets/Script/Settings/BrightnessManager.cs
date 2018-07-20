@@ -10,7 +10,7 @@ public class BrightnessManager : MonoBehaviour {
 
     public Slider slider;
 
-    public static bool oneBright;
+    public static BrightnessManager instance;
 
     public ColorGradingComponent mycolor;
 
@@ -21,9 +21,9 @@ public class BrightnessManager : MonoBehaviour {
     ColorGradingModel.Settings tempmodel;
     private void Awake()
     {
-        if (oneBright == false)
+        if (instance == null)
         {
-            oneBright = true;
+            instance = this;
         }
         else
         {

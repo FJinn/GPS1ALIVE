@@ -141,7 +141,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -354,6 +354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa7848a293169040baf98f4c5d11410, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  countdown: 0
+  count: 0
+  lightOffDuration: 3
 --- !u!114 &114998466037661742
 MonoBehaviour:
   m_ObjectHideFlags: 1

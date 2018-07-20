@@ -78,4 +78,11 @@ public class VolumeSettingManager : MonoBehaviour {
     {
         canvas.worldCamera = Camera.main;
     }
+
+    public void defaultSetting()
+    {
+        BGMSlider.value = 0.5f;
+        SFXSlider.value = 0.5f;
+        BrightnessManager.instance.slider.value = 0f;
+    }
 }

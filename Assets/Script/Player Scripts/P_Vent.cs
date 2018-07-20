@@ -62,8 +62,8 @@ public class P_Vent : MonoBehaviour {
                 Physics2D.IgnoreCollision(BoxColliderOrigin, tempObject.GetComponent<P_Vent>().BoxColliderOrigin);
             }
             
-        }else
-        if(CompareTag("Player2"))
+        }
+        else if(CompareTag("Player2"))
         {
             GameObject tempObject = GameObject.FindGameObjectWithTag("Player");
             if (tempObject.GetComponent<P_Vent>().BoxColliderOrigin != null)
@@ -98,7 +98,7 @@ public class P_Vent : MonoBehaviour {
         }
         else if (onVent == false && crouched)
         {
-            crouched = false;
+            crouched = false;         
             GetComponent<P_controls>().onVent = false;
             //GetComponent<BoxCollider2D>().isTrigger = false;
             rg2b.gravityScale = 10;
@@ -107,5 +107,4 @@ public class P_Vent : MonoBehaviour {
         }
         
     }
-
 }

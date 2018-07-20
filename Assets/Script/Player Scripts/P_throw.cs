@@ -11,9 +11,33 @@ public class P_throw : MonoBehaviour {
 	public int spawnStone;
     public AudioSource audiosource;
     
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
+    public GameObject s_Indicator;
+    GameObject temp;
+    bool spawned = false;
+    Vector2 head;
+
+    // Update is called once per frame
+    void FixedUpdate () {
+        if(spawnStone > 0)
+        {
+            GetComponent<P_controls>().StopGameControl = true;
+            if (!spawned)
+            {
+                spawned = true;
+                temp = (GameObject)Instantiate(s_Indicator, head, Quaternion.identity);
+                temp.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
+            }
+        }
+        else if (spawnStone == 0)
+        {
+            GetComponent<P_controls>().StopGameControl = false;
+            Destroy(temp);
+            spawned = false;
+        }
+
+        head = new Vector2(transform.position.x + 0.5f, transform.position.y + 7f);
+
+        if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
 			if (throwReady) {
 				onThrow = true;
 			}
