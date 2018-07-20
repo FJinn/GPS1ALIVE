@@ -62,7 +62,6 @@ public class B_Animations : MonoBehaviour {
             if (!enterVent)
             {
                 playerControl.StopGameControl = true;
-                Debug.Log(playerControl.StopGameControl);
                 anim.SetBool("EnterVent", true);
                 anim.SetBool("ExitVent", false);
                 Invoke("EnterVentTransition", 1f);

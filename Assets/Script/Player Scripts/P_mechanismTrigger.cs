@@ -11,9 +11,11 @@ public class P_mechanismTrigger : MonoBehaviour {
     public int sceneIndex;
 
     private GameObject CheckpointManager;
+    private BoxCollider2D myBoxCollider;
 
     private void Start()
     {
+        myBoxCollider = GetComponent<BoxCollider2D>();
         CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
     }
 
@@ -26,7 +28,7 @@ public class P_mechanismTrigger : MonoBehaviour {
         {
             if(mechanism.CompareTag("Interactable"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
+                if (myBoxCollider.IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
@@ -36,12 +38,11 @@ public class P_mechanismTrigger : MonoBehaviour {
             }
             if (mechanism.CompareTag("levelProceed"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
+                if (myBoxCollider.IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
                         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(mechanism.GetComponent<D_levelProceed>().levelIndex);
-
                         CheckpointManager.GetComponent<Checkpoint>().resetManager();
                         Destroy(CheckpointManager);
                     }

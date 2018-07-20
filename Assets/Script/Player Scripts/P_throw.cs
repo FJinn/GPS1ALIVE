@@ -20,7 +20,7 @@ public class P_throw : MonoBehaviour {
     void FixedUpdate () {
         if(spawnStone > 0)
         {
-            GetComponent<P_controls>().StopGameControl = true;
+           // GetComponent<P_controls>().StopGameControl = true;
             if (!spawned)
             {
                 spawned = true;
@@ -30,7 +30,7 @@ public class P_throw : MonoBehaviour {
         }
         else if (spawnStone == 0)
         {
-            GetComponent<P_controls>().StopGameControl = false;
+          //  GetComponent<P_controls>().StopGameControl = false;
             Destroy(temp);
             spawned = false;
         }
