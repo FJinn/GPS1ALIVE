@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.21760415, g: 0.23940907, b: 0.2830189, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -575,8 +575,8 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: -23, z: 0}
-  m_Size: {x: 71, y: 23, z: 1}
+  m_Origin: {x: 0, y: -26, z: 0}
+  m_Size: {x: 71, y: 26, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -720,6 +720,11 @@ Prefab:
     - target: {fileID: 1260825282592712, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_Name
       value: EM_Enemy (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713699316502550, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: faceOriginDirection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
@@ -2385,6 +2390,15 @@ Prefab:
     - target: {fileID: 1260825282592712, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
       propertyPath: m_Name
       value: EM_Enemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114713699316502550, guid: bf64741665f1b1f4fb85756fc13b8766,
+        type: 2}
+      propertyPath: faceOriginDirection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609929287199524, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf64741665f1b1f4fb85756fc13b8766, type: 2}

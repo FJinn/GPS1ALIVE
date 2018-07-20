@@ -53,7 +53,7 @@ public class E_Sound_Detection : MonoBehaviour {
     IEnumerator PathBlocked()
     {
         // THIS IS FOR WHEN THE ENEMY IS BLOCKED BY SOMETHING AND COULDN'T GO FORWARD, UNTIL A SPECIFIC TIME PERIOD THEN IT TURNS BACK AGAIN
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
         startMoving = false;
         GetComponent<E_Movement>().enabled = true;
         StopAllCoroutines();
@@ -94,7 +94,7 @@ public class E_Sound_Detection : MonoBehaviour {
             if(EM_DetectionMeter != null)
             {
                 EM_Fillbar();
-                FindObjectOfType<AudioManager>().Play("EnemyDetect");
+            //    FindObjectOfType<AudioManager>().Play("EnemyDetect");
             }
             
         }

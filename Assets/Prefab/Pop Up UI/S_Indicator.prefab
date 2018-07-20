@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4710464448488138}
   - component: {fileID: 212693142452408596}
   - component: {fileID: 50969008140389252}
-  - component: {fileID: 255256633487837560}
   m_Layer: 0
   m_Name: S_Indicator
   m_TagString: Untagged
@@ -108,20 +107,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!255 &255256633487837560
-FixedJoint2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1020042122483984}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 0
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_AutoConfigureConnectedAnchor: 1
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_DampingRatio: 0
-  m_Frequency: 0
