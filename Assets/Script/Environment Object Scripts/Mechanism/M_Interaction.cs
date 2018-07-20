@@ -50,7 +50,6 @@ public class M_Interaction : MonoBehaviour {
                 M_animator.Play("AIO_AnimLeverDown");
                 leverDown = true;
                 leverUp = false;
-                Debug.Log(leverDown);
             }
             else
             if (animCounter >= 2)
@@ -58,7 +57,6 @@ public class M_Interaction : MonoBehaviour {
                 M_animator.Play("AIO_AnimLeverUp");
                 leverDown = false;
                 leverUp = true;
-                Debug.Log(leverUp);
                 animCounter = 0;
             }
         }
@@ -74,7 +72,6 @@ public class M_Interaction : MonoBehaviour {
             {
                 scaleY = transform.localScale.y;
                 scaleY -= 0.05f;
-
                 transform.localScale = new Vector3(transform.localScale.x, scaleY, transform.localScale.z);
             }
         }else
@@ -83,7 +80,6 @@ public class M_Interaction : MonoBehaviour {
             {
                 scaleY = transform.localScale.y;
                 scaleY += 0.05f;
-
                 transform.localScale = new Vector3(transform.localScale.x, scaleY, transform.localScale.z);
             }
         }
@@ -107,6 +103,7 @@ public class M_Interaction : MonoBehaviour {
                 UnitTrigger();
             }
             enterCounter++;
+            isStepped = true;
         }
     }
 
