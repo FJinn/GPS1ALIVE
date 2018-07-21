@@ -19,4 +19,5 @@ public class P_Fall : MonoBehaviour {
             GetComponent<P_Death>().StartCoroutine("Dead");
         }
     }
+    
 }

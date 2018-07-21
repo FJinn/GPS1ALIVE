@@ -193,9 +193,7 @@ public class P_controls : MonoBehaviour {
             }
         }
     }
-
-    private bool ladderPositionChanged = false;
-
+    
     private void LadderCollision()
     {
         for (int i = 0; i < walls.Length; i++)

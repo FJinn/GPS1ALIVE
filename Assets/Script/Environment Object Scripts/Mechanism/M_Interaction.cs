@@ -13,12 +13,14 @@ public class M_Interaction : MonoBehaviour {
     private bool isStepped;
     private float originalScaleY;
     private float scaleY;
-    private int enterCounter;
+    public int enterCounter;
+    public bool ConnectedDoor;
     
     private Animator M_animator;
     private int animCounter;
+
     [Header("Does this thing trigger only once when touch?")]
-    public bool TriggerOnlyOnce;
+    public bool TriggerOnlyOnce = false;
 
     [Header("Is this a switch?")]
     public bool switchAnim = false;
@@ -34,16 +36,18 @@ public class M_Interaction : MonoBehaviour {
         if (Pressure_Pad)
         {
             originalScaleY = transform.localScale.y;
+            enterCounter = 0;
         }
 	}
     
     public void UnitTrigger()
     {
         
-        for (int i = 0; i < ObjectList.Length; i++)
+        for (int i = 0; i < ObjectList.Length ; i++)
         {
             ObjectList[i].GetComponent<M_Trigger>().Trigger();
         }
+
         if(switchAnim)
         {
             animCounter++;
@@ -61,12 +65,14 @@ public class M_Interaction : MonoBehaviour {
         
     }
 
+    
+
     // Update is called once per frame
     void Update () 
 	{
 		if(isStepped)
         {
-            if(transform.localScale.y > 0.1f)
+            if(transform.localScale.y > 0.6f)
             {
                 scaleY = transform.localScale.y;
                 scaleY -= 0.05f;
@@ -96,16 +102,16 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2") || other.CompareTag("Enemy")))
         {
             if (enterCounter <= 0)
             {
-                UnitTrigger();
+                 UnitTrigger();
             }
             enterCounter++;
         }
 
-        if(TriggerOnlyOnce && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
+        if(TriggerOnlyOnce && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2") || other.CompareTag("Enemy")))
         {
             TriggerOnlyOnce = false;
             UnitTrigger();
@@ -116,7 +122,7 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2") || other.CompareTag("Enemy")))
         {
             isStepped = true;
         }
@@ -124,10 +130,10 @@ public class M_Interaction : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
+        if(Pressure_Pad && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2") || other.CompareTag("Enemy")))
         {
             enterCounter--;
-            if (isStepped && enterCounter <= 0)
+            if (enterCounter <= 0)
             {
                 if(PPad_Delay)
                 {

@@ -73,6 +73,10 @@ public class Camera_RoomTrigger : MonoBehaviour {
 
             if (ActiveDynamic)
             {
+                if(MainCamera.GetComponent<Camera_Control>().targetRoom)
+                {
+                    MainCamera.transform.position = new Vector3(transform.position.x, transform.position.y, MainCamera.transform.position.z);
+                }
                 MainCamera.GetComponent<Camera_Control>().targetRoom = false;
             }
             else

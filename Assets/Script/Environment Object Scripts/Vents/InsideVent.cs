@@ -8,6 +8,7 @@ public class InsideVent : MonoBehaviour {
 
     void Start()
     {
+        players = new GameObject[2];
         players[0] = GameObject.FindGameObjectWithTag("Player");
         players[1] = GameObject.FindGameObjectWithTag("Player2");
     }

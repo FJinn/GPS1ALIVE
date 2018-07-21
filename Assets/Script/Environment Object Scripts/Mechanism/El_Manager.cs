@@ -26,7 +26,6 @@ public class El_Manager : MonoBehaviour
         // So box will not push it down.
         //GetComponent<SliderJoint2D>().enabled = false;
         mySlider = GetComponent<SliderJoint2D>();
-        mySlider.breakForce = Mathf.Infinity;
         p = new GameObject[2];
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
