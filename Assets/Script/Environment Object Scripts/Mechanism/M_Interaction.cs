@@ -17,6 +17,8 @@ public class M_Interaction : MonoBehaviour {
     
     private Animator M_animator;
     private int animCounter;
+    [Header("Does this thing trigger only once when touch?")]
+    public bool TriggerOnlyOnce;
 
     [Header("Is this a switch?")]
     public bool switchAnim = false;
@@ -102,6 +104,14 @@ public class M_Interaction : MonoBehaviour {
             }
             enterCounter++;
         }
+
+        if(TriggerOnlyOnce && (other.CompareTag("PushPull") || other.CompareTag("Player") || other.CompareTag("Player2")) || other.CompareTag("Enemy"))
+        {
+            TriggerOnlyOnce = false;
+            UnitTrigger();
+        }
+
+        
     }
 
     private void OnTriggerStay2D(Collider2D other)

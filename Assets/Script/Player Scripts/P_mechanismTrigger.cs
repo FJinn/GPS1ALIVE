@@ -8,7 +8,6 @@ public class P_mechanismTrigger : MonoBehaviour {
     public LayerMask buttonMask;
 
     public GameObject ScreenFade;
-    public int sceneIndex;
     public bool triggerLever = false;
 
     private GameObject CheckpointManager;

@@ -231,18 +231,50 @@ public class P_controls : MonoBehaviour {
 
             if (Input.GetKey(KeyUp)&& !StopGameControl)
 			{
+
                 OnLadder = true;
                 rb2d.velocity = new Vector2(0, climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+                /* // THE FOLLOWING CODE BELOW IS FOR COLLIDE TO EACH OTHER.
+                if (transform.position.y < otherPlayer.transform.position.y + 6f && transform.position.y > otherPlayer.transform.position.y - 7f && otherPlayer.GetComponent<P_controls>().OnLadder)
+                {
+                    rb2d.velocity = new Vector2(0, 0);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }
+                else
+                {
+                    OnLadder = true;
+                    rb2d.velocity = new Vector2(0, climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }
+                */
             }   
 			else if (Input.GetKey(KeyDown) && !StopGameControl)
 			{
+
                 OnLadder = true;
                 rb2d.velocity = new Vector2(0, -climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+
+
+                /* // THE FOLLOWING CODE BELOW IS FOR COLLIDE TO EACH OTHER.
+                if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
+                {
+                    rb2d.velocity = new Vector2(0, 0);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+                }
+                else
+                {
+                    OnLadder = true;
+                    rb2d.velocity = new Vector2(0, -climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }*/
             }
-			
-		}
+
+        }
     }
     
 
