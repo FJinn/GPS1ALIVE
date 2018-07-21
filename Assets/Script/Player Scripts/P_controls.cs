@@ -26,6 +26,7 @@ public class P_controls : MonoBehaviour {
     private bool ignoreLadderOnce;
     public bool OnLadder; // after throw, it will stay true which cause player cannot jump -> OnTriggerStay
     public float myVelocityX;
+    public float myVelocityY;
 
     [Header("Ignore everything below")]
     public KeyCode KeyUp;
@@ -47,6 +48,7 @@ public class P_controls : MonoBehaviour {
     public bool openDoor = false;
     public bool fallFromVent = false;
     public bool spotted = false;
+    public bool fallen = false;
     private bool inTheAir = false;
 
     public GameObject audioManager;
@@ -153,6 +155,7 @@ public class P_controls : MonoBehaviour {
 
                 rb2d.velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
                 myVelocityX = rb2d.velocity.x;
+                myVelocityY = rb2d.velocity.y;
                
             }
 

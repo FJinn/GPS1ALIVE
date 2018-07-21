@@ -55,6 +55,14 @@ public class B_Animations : MonoBehaviour {
         {
             anim.SetBool("Jumping", false);
         }
+
+        if(playerControl.fallen)
+        {
+            anim.SetBool("Fallen", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+            anim.SetBool("Jumping", false);
+        }        
     }
 
     void VentMovement()

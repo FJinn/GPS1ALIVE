@@ -11,9 +11,7 @@ public class P_Death : MonoBehaviour {
 
     IEnumerator Dead(){
         GameObject.Find("Player2").GetComponent<P_controls>().StopGameControl = true;
-        GameObject.Find("Player1").GetComponent<P_controls>().StopGameControl = true;
-        GameObject.Find("Player2").GetComponent<P_controls>().spotted = true;
-        GameObject.Find("Player1").GetComponent<P_controls>().spotted = true;
+        GameObject.Find("Player1").GetComponent<P_controls>().StopGameControl = true;        
         //ScreenFade.GetComponent<LevelChanger>().FadeToLevel(2);
         yield return new WaitForSeconds(3f);
         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
