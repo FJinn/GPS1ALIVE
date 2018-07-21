@@ -1,12 +1,13 @@
 fileFormatVersion: 2
-guid: d6d0c4a420aac3e469db9cc023a20948
+guid: c22e6276dcc90924ba03e48d56e996b5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Scared_0
-    21300002: Scared_1
-    21300004: Scared_2
-    21300006: Scared_3
-    21300008: Scared_4
+    21300000: 2nd_MidAir_Falltodeath_0
+    21300002: 2nd_MidAir_Falltodeath_1
+    21300004: 2nd_MidAir_Falltodeath_2
+    21300006: 2nd_MidAir_Falltodeath_3
+    21300008: 2nd_MidAir_Falltodeath_4
+    21300010: 2nd_MidAir_Falltodeath_5
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -89,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scared_0
+      name: 2nd_MidAir_Falltodeath_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 28
-        width: 221
-        height: 372
+        x: 64
+        y: 20
+        width: 363
+        height: 202
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -103,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5af66643a0a393842b9f5d5c9ce18b4c
+      spriteID: ddbecad448e17c34fa0eecd7f6774813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_1
+      name: 2nd_MidAir_Falltodeath_1
       rect:
         serializedVersion: 2
-        x: 276
-        y: 28
-        width: 221
-        height: 373
+        x: 572
+        y: 22
+        width: 367
+        height: 203
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -123,19 +124,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6836763c69a27e949aa67679256831a6
+      spriteID: 7c0457d5081b91f4dadfb1bc203b6c1a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_2
+      name: 2nd_MidAir_Falltodeath_2
       rect:
         serializedVersion: 2
-        x: 532
-        y: 28
-        width: 220
-        height: 376
+        x: 1078
+        y: 25
+        width: 374
+        height: 202
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b7ddcd8511359540ac137cea8a5da39
+      spriteID: 8a91063c1fc46c340b9f3e8cbdeb6972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_3
+      name: 2nd_MidAir_Falltodeath_3
       rect:
         serializedVersion: 2
-        x: 787
-        y: 28
-        width: 221
-        height: 372
+        x: 1593
+        y: 22
+        width: 371
+        height: 205
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b701579bb86f3140b42e557abb28c73
+      spriteID: 4ec3e0a4d7e59a049b7e1e61126b5bd3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_4
+      name: 2nd_MidAir_Falltodeath_4
       rect:
         serializedVersion: 2
-        x: 1044
-        y: 28
-        width: 221
-        height: 372
+        x: 2109
+        y: 19
+        width: 367
+        height: 208
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,7 +184,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2da771d2cd5dab34bb9966ba734ac027
+      spriteID: 7b8e1c8ed60a36d478121ca682f937f9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 2nd_MidAir_Falltodeath_5
+      rect:
+        serializedVersion: 2
+        x: 2622
+        y: 20
+        width: 366
+        height: 205
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 423948476a85cfa4aa6596d4c913b08e
       vertices: []
       indices: 
       edges: []
@@ -191,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 153e2913db4b2f4438d3bbfb3318ff91
+    spriteID: d8c2d12465416f54a81e6ad21b481e01
     vertices: []
     indices: 
     edges: []

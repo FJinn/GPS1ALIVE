@@ -31,6 +31,7 @@ public class B_Animations : MonoBehaviour {
         PullPush();
         OnLadder();
         Interaction();
+        Spotted();
 	}
 
     void Movement()
@@ -54,6 +55,14 @@ public class B_Animations : MonoBehaviour {
         {
             anim.SetBool("Jumping", false);
         }
+
+        if(playerControl.fallen)
+        {
+            anim.SetBool("Fallen", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+            anim.SetBool("Jumping", false);
+        }        
     }
 
     void VentMovement()
@@ -83,7 +92,7 @@ public class B_Animations : MonoBehaviour {
                     anim.SetBool("Crawling", false);
                 }
             }
-        }
+        }       
         else if (!playerControl.onVent && playerVent.exitVent == true)
         {                      
             if(!exitVent)
@@ -95,6 +104,17 @@ public class B_Animations : MonoBehaviour {
                 anim.SetBool("EnterVent", false);
                 Invoke("ExitVentTransition", 0.8f);
             }
+        }
+        else if (playerControl.fallFromVent)
+        {
+            anim.SetBool("CrawlingIdle", false);
+            anim.SetBool("Crawling", false);
+            anim.SetBool("Idle", true);
+            anim.SetBool("Walking", true);
+            playerControl.fallFromVent = false;
+            exitVent = false;
+            enterVent = false;
+            playerVent.exitVent = false;
         }
     }
 
@@ -265,6 +285,17 @@ public class B_Animations : MonoBehaviour {
         {
             anim.SetBool("Climbing", false);
             anim.SetBool("ClimbingIdle", false);
+        }
+    }
+
+    void Spotted()
+    {
+        if(playerControl.spotted)
+        {
+            anim.SetBool("Scared", true);
+            anim.SetBool("Jumping", false);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
         }
     }
 }

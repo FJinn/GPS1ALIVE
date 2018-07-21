@@ -1,12 +1,10 @@
 fileFormatVersion: 2
-guid: d6d0c4a420aac3e469db9cc023a20948
+guid: d7493eada7a67394cb473db69d84aec1
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Scared_0
-    21300002: Scared_1
-    21300004: Scared_2
-    21300006: Scared_3
-    21300008: Scared_4
+    21300000: 1st_Begining_Falltodeath_0
+    21300002: 1st_Begining_Falltodeath_1
+    21300004: 1st_Begining_Falltodeath_2
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -89,32 +87,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Scared_0
+      name: 1st_Begining_Falltodeath_0
       rect:
         serializedVersion: 2
-        x: 20
-        y: 28
-        width: 221
-        height: 372
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5af66643a0a393842b9f5d5c9ce18b4c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Scared_1
-      rect:
-        serializedVersion: 2
-        x: 276
-        y: 28
-        width: 221
+        x: 140
+        y: 62
+        width: 228
         height: 373
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -123,19 +101,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6836763c69a27e949aa67679256831a6
+      spriteID: c768138f0614716479be54a3edc0c6ca
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_2
+      name: 1st_Begining_Falltodeath_1
       rect:
         serializedVersion: 2
-        x: 532
-        y: 28
-        width: 220
-        height: 376
+        x: 563
+        y: 105
+        width: 358
+        height: 309
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,19 +121,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b7ddcd8511359540ac137cea8a5da39
+      spriteID: 8e47526287c97884da82f94414a01773
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Scared_3
+      name: 1st_Begining_Falltodeath_2
       rect:
         serializedVersion: 2
-        x: 787
-        y: 28
-        width: 221
-        height: 372
+        x: 1075
+        y: 178
+        width: 385
+        height: 193
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,27 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b701579bb86f3140b42e557abb28c73
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Scared_4
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 28
-        width: 221
-        height: 372
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2da771d2cd5dab34bb9966ba734ac027
+      spriteID: 27876ac5eba1d6b4188231d732d1284a
       vertices: []
       indices: 
       edges: []
@@ -191,7 +149,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 153e2913db4b2f4438d3bbfb3318ff91
+    spriteID: ff2b7f814e15a844f987c3d4bff9c9aa
     vertices: []
     indices: 
     edges: []

@@ -20,6 +20,7 @@ public class E_AM_Destroy : MonoBehaviour {
 
         for (int i = 0; i < p.Length; i++)
         {
+            p[i].GetComponent<P_controls>().spotted = true;
             p[i].GetComponent<P_controls>().StopGameControl = true;
             p[i].GetComponent<P_Death>().StartCoroutine("Dead");
         }

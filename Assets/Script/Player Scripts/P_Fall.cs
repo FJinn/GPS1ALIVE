@@ -15,9 +15,10 @@ public class P_Fall : MonoBehaviour {
     // Update is called once per frame
     void Update(){
         if (rb2d.velocity.y <= -fallSpeed && !GetComponent<P_Death>().isDead){
+            GetComponent<P_controls>().fallen = true;
             GetComponent<P_Death>().isDead = true;
             GetComponent<P_Death>().StartCoroutine("Dead");
-        }
+        }       
     }
     
 }

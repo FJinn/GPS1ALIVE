@@ -17,7 +17,7 @@ public class ExitVent : MonoBehaviour {
     {
         if (other == players[0].GetComponent<BoxCollider2D>() || other == players[1].GetComponent<BoxCollider2D>())
         {
-            
+            other.GetComponent<P_controls>().fallFromVent = true;
             other.GetComponent<P_Vent>().onVent = false;
             other.GetComponent<P_avoidEnemyVent>().firstTap = false;
             other.GetComponent<P_Vent>().ResetCollisions();
