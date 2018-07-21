@@ -57,12 +57,12 @@ public class S_Control : MonoBehaviour {
 			Launch ();
         }
 
-        if(s_rigidbody.velocity.x == 0)
+        if(Mathf.Abs(s_rigidbody.velocity.x) <= 1f)
         {
             t -= Time.deltaTime;
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(0,1,t));
 
-            if (sr.color.a == 0)
+            if (sr.color.a <= 0.2f)
             {
                 Destroy(gameObject);
             }

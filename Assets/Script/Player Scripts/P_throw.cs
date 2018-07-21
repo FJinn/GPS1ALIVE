@@ -125,7 +125,7 @@ public class P_throw : MonoBehaviour {
         else
         {
             if (Input.GetKey(control.KeyLeft))
-            {
+            { 
                 if (tempBar == null)
                 {
                     tempBar = (GameObject)Instantiate(fillBar, barPosition, Quaternion.identity);
@@ -197,6 +197,7 @@ public class P_throw : MonoBehaviour {
             {
 				Destroy(Dots);
 			}
+            dropStoneCount = 0; // testing andrea method
 			speedX += 0.25f;
 			count = 0;
 			DotsSpawner ();
@@ -204,8 +205,9 @@ public class P_throw : MonoBehaviour {
 			foreach(GameObject Dots in trajectoryDots)
             {
 				Destroy(Dots);
-			}
-			speedX -= 0.25f;
+            }
+            dropStoneCount = 0; // testing andrea method
+            speedX -= 0.25f;
 			count = 0;
 			DotsSpawner ();
 		}
