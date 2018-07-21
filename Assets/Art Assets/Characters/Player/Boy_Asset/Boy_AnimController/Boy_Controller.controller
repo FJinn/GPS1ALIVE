@@ -92,12 +92,15 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+<<<<<<< HEAD
+=======
   - m_Name: PullLever
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+>>>>>>> 301a40c416c65d26569c9f64020b865aa7ecdec5
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -1969,7 +1972,11 @@ AnimatorStateMachine:
     m_Position: {x: 600, y: 552, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102649805008124606}
+<<<<<<< HEAD
+    m_Position: {x: 1176, y: 36, z: 0}
+=======
     m_Position: {x: 1020, y: 60, z: 0}
+>>>>>>> 301a40c416c65d26569c9f64020b865aa7ecdec5
   - serializedVersion: 1
     m_State: {fileID: 1102467328279287958}
     m_Position: {x: 708, y: 252, z: 0}
