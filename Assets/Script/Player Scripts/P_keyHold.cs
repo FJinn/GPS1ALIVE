@@ -9,11 +9,13 @@ public class P_keyHold : MonoBehaviour {
     GameObject temp;
     bool spawned = false;
     Vector2 head;
-    
+    public float k_indicatorHeight;
+    public float k_indicatorWidth;
+
 
     // Update is called once per frame
     void Update () {
-        head = new Vector2(transform.position.x - 0.5f, transform.position.y + 7f);
+        head = new Vector2(transform.position.x - k_indicatorWidth, transform.position.y + k_indicatorHeight);
         if (keyNum > 0)
         {
             if(!spawned)
