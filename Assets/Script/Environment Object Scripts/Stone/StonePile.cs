@@ -16,7 +16,7 @@ public class StonePile : MonoBehaviour {
     {
         for (int i = 0; i < p.Length; i++)
         {
-            if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().spawnStone == 0)
+            if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false)
             {
                 p[i].GetComponent<P_throw>().spawnStone = 1;
             }

@@ -56,7 +56,6 @@ public class P_throw : MonoBehaviour {
             control.StopGameControl = true;
 			if (Input.GetKeyDown(control.KeyUse)) {		
 				throwing ();
-				throwStance = false;
 				//spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
 			}
             dropStone();
@@ -69,6 +68,10 @@ public class P_throw : MonoBehaviour {
 	void throwing(){
 		stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
 		spawnStone = 0;
+        if(stoneTemp == null)
+        {
+            throwStance = false;
+        }
         control.StopGameControl = false;
         audiosource.Play();
 	}
@@ -115,6 +118,7 @@ public class P_throw : MonoBehaviour {
             }
             else
             {
+                dropStoneCount = 0;
                 Destroy(tempBar);
             }
         }
@@ -152,6 +156,7 @@ public class P_throw : MonoBehaviour {
             }
             else
             {
+                dropStoneCount = 0;
                 Destroy(tempBar);
             }
         }

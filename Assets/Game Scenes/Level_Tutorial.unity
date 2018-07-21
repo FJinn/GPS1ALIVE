@@ -2489,6 +2489,18 @@ Prefab:
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 1564953876}
+    - target: {fileID: 114280755162499134, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: s_Indicator
+      value: 
+      objectReference: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
+        type: 2}
+    - target: {fileID: 114280755162499134, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: fillBar
+      value: 
+      objectReference: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -23192,6 +23204,18 @@ Prefab:
       propertyPath: sceneIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114328873071513184, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: s_Indicator
+      value: 
+      objectReference: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
+        type: 2}
+    - target: {fileID: 114328873071513184, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: fillBar
+      value: 
+      objectReference: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
   m_IsPrefabAsset: 0
@@ -23539,7 +23563,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b009b4a2bafb74bb03de46c960c28a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelIndex: 2
+  levelIndex: 0
 --- !u!1 &1351321305
 GameObject:
   m_ObjectHideFlags: 0
