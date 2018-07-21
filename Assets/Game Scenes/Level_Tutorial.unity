@@ -2486,20 +2486,10 @@ Prefab:
       objectReference: {fileID: 1564953876}
     - target: {fileID: 114264716893500676, guid: a2d17c676ed80ab499b50f6c82da5e08,
         type: 2}
-<<<<<<< HEAD
-    - target: {fileID: 212479937129745526, guid: a2d17c676ed80ab499b50f6c82da5e08,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 25
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114101465355413620, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
-=======
       propertyPath: ScreenFade
       value: 
       objectReference: {fileID: 1564953876}
     m_RemovedComponents: []
->>>>>>> 301a40c416c65d26569c9f64020b865aa7ecdec5
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &688440969
@@ -23191,12 +23181,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1020042122483984, guid: 283cdbc0f925301489c0de3b6d602484,
         type: 2}
-<<<<<<< HEAD
-    - target: {fileID: 212502857846790350, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
-        type: 2}
-      propertyPath: m_SortingOrder
-      value: 25
-=======
     - target: {fileID: 114074295954028800, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}
       propertyPath: key
@@ -23207,7 +23191,6 @@ Prefab:
         type: 2}
       propertyPath: sceneIndex
       value: 3
->>>>>>> 301a40c416c65d26569c9f64020b865aa7ecdec5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
@@ -24571,11 +24554,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-<<<<<<< HEAD
-  m_SortingOrder: 20
-=======
   m_SortingOrder: 17
->>>>>>> 301a40c416c65d26569c9f64020b865aa7ecdec5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 1, y: 1, z: 0}
   m_MaxChunkCount: 16
