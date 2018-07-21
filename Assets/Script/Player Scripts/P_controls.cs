@@ -136,7 +136,7 @@ public class P_controls : MonoBehaviour {
             moveHorizontal = Input.GetAxis("Horizontal2");
         }
        
-        if (!GetComponent<P_throw>().onThrow && !StopGameControl) {
+        if (!GetComponent<P_throw>().throwStance && !StopGameControl) {
 
             if (!OnLadder){
 

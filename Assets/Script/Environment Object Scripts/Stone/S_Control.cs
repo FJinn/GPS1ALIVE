@@ -57,7 +57,7 @@ public class S_Control : MonoBehaviour {
 			Launch ();
         }
 
-        if(s_rigidbody.velocity == Vector2.zero)
+        if(s_rigidbody.velocity.x == 0)
         {
             t -= Time.deltaTime;
             sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, Mathf.Lerp(0,1,t));
@@ -69,7 +69,7 @@ public class S_Control : MonoBehaviour {
         }
 	}
 
-	private void Launch(){
+    private void Launch(){
 		s_rigidbody.velocity = launchVelocity;
 
 		launched = true;
