@@ -17,6 +17,8 @@ public class P_throw : MonoBehaviour {
     Vector2 barPosition;
     float tempYSize;
     Vector2 tempPos;
+    public float s_indicatorHeight;
+    public float s_indicatorWidth;
 
     private P_controls control;
 
@@ -29,7 +31,7 @@ public class P_throw : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-        head = new Vector2(transform.position.x + 0.5f, transform.position.y + 7f);
+        head = new Vector2(transform.position.x + s_indicatorWidth, transform.position.y + s_indicatorHeight);
         barPosition = new Vector2(transform.position.x, transform.position.y + 9f);
         if (spawnStone > 0)
         {
