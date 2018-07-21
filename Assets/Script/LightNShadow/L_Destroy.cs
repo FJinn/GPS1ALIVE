@@ -19,6 +19,10 @@ public class L_Destroy : MonoBehaviour {
                 foreach (Transform child in this.transform)
                 {
                     child.GetComponent<Light>().enabled = true;
+                    if (child.GetComponent<L_InLight>() != null)
+                    {
+                        child.GetComponent<L_InLight>().enabled = true;
+                    }
                 }
             }
             else
@@ -35,6 +39,10 @@ public class L_Destroy : MonoBehaviour {
             foreach (Transform child in this.transform)
             {
                 child.GetComponent<Light>().enabled = false;
+                if(child.GetComponent<L_InLight>() != null)
+                {
+                    child.GetComponent<L_InLight>().enabled = false;
+                }
             }
         }
 
