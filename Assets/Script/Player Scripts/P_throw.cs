@@ -93,6 +93,8 @@ public class P_throw : MonoBehaviour {
 		spawnStone = 0;
         isThrowing = true;
         control.StopGameControl = false;
+        dropStoneCount = 0;
+        Destroy(tempBar);
         audiosource.Play();
 	}
 
