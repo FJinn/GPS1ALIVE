@@ -45,6 +45,8 @@ public class P_controls : MonoBehaviour {
     public bool faceLeft = false;
     public bool faceRight = false;
     public bool openDoor = false;
+    public bool fallFromVent = false;
+    public bool spotted = false;
     private bool inTheAir = false;
 
     public GameObject audioManager;
