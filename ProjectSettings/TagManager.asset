@@ -24,6 +24,8 @@ TagManager:
   - Walls
   - CheckpointManager
   - SpecialWall
+  - Undefined
+  - Nothing
   layers:
   - Default
   - TransparentFX

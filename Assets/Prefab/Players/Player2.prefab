@@ -37,7 +37,6 @@ GameObject:
   - component: {fileID: 114392869153099030}
   - component: {fileID: 114466794235940346}
   - component: {fileID: 114074295954028800}
-  - component: {fileID: 114681425635175136}
   - component: {fileID: 114722189447425544}
   m_Layer: 9
   m_Name: Player2
@@ -98,7 +97,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1743861540611790}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.78, y: -27.95, z: 0}
+  m_LocalPosition: {x: 108.65001, y: -32.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4938982363093062}
@@ -176,7 +175,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3.1615384}
+  m_Offset: {x: 0, y: 3.192107}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -198,7 +197,7 @@ Animator:
   m_GameObject: {fileID: 1743861540611790}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 59e68c60294d08241963189e5589d6dd, type: 2}
+  m_Controller: {fileID: 22100000, guid: 4a4c7de60e1cfaa40a5217792e101038, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -219,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
+  key: {fileID: 0}
 --- !u!114 &114105510617791348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -259,8 +259,9 @@ MonoBehaviour:
   stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
   spawnStone: 0
   audiosource: {fileID: 0}
-  numDots: 25
-  dotsPositionOverTime: 0.22
+  s_Indicator: {fileID: 0}
+  numDots: 50
+  dotsPositionOverTime: 0.11
   dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
   speedX: 33
   speedY: 35
@@ -287,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1286130d8d0aa9746a170f34a64e9766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  s_soundRadius: 15
+  s_soundRadius: 12
   enemyMask:
     serializedVersion: 2
     m_Bits: 2048
@@ -352,18 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dc7c61391bc9d4591919abaf6f4c84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114681425635175136
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1743861540611790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72090f74c7e6f3b4da27ef29344c411a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyNum: 0
 --- !u!114 &114717652680165388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,6 +370,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   ScreenFade: {fileID: 0}
   sceneIndex: 2
+  triggerLever: 0
 --- !u!114 &114722189447425544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -442,11 +432,7 @@ MonoBehaviour:
   CameraStarted: 1
   faceLeft: 0
   faceRight: 0
-  Walking: 0
-  Jumping: 0
-  Idle: 0
-  Crawling: 0
-  CrawlingIdle: 0
+  openDoor: 0
   audioManager: {fileID: 0}
 --- !u!114 &114996712177572422
 MonoBehaviour:

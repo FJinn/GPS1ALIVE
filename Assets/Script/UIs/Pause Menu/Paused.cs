@@ -60,7 +60,11 @@ public class Paused : MonoBehaviour
     {
         Time.timeScale = 1f;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel(2);
-        CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(-0.3f, 3, 0);
+        if(CheckpointManager != null)
+        {
+            CheckpointManager.GetComponent<Checkpoint>().resetManager();
+            Destroy(CheckpointManager);
+        }
         Debug.Log("Skipping Tutorial");
     }
 
@@ -68,6 +72,11 @@ public class Paused : MonoBehaviour
     {
         Time.timeScale = 1f;
         levelChanger.GetComponent<LevelChanger>().FadeToLevel(1);
+        if (CheckpointManager != null)
+        {
+            CheckpointManager.GetComponent<Checkpoint>().resetManager();
+            Destroy(CheckpointManager);
+        }
         Debug.Log("Loading Menu");
     }
 

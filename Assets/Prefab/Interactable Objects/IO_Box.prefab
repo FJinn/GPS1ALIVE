@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184283748810362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.3, y: -91.8, z: 0}
+  m_LocalPosition: {x: 19.7, y: -135.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4212278609151448}
@@ -89,7 +89,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 500
+  m_Mass: 300
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 10
@@ -220,6 +220,7 @@ MonoBehaviour:
   canSpawn: 1
   player1Inside: 0
   player2Inside: 0
+  boxUi: 1
 --- !u!212 &212201412061633716
 SpriteRenderer:
   m_ObjectHideFlags: 1

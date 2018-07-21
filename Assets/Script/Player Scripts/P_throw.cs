@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class P_throw : MonoBehaviour {
-
-	public float doubleTapTime;
-	private bool throwReady = false;
-	public bool onThrow;
+    
+	public bool throwStance;
 	public GameObject stone;
 	public int spawnStone;
     public AudioSource audiosource;
@@ -15,70 +14,149 @@ public class P_throw : MonoBehaviour {
     GameObject temp;
     bool spawned = false;
     Vector2 head;
+    Vector2 barPosition;
+    float tempYSize;
+    Vector2 tempPos;
+
+    private P_controls control;
+
+    void Start()
+    {
+        control = GetComponent<P_controls>();
+        // Offset Y
+        tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
+    }
 
     // Update is called once per frame
     void FixedUpdate () {
-        if(spawnStone > 0)
+        head = new Vector2(transform.position.x + 0.5f, transform.position.y + 7f);
+        barPosition = new Vector2(transform.position.x, transform.position.y + 9f);
+        if (spawnStone > 0)
         {
-            GetComponent<P_controls>().StopGameControl = true;
             if (!spawned)
             {
                 spawned = true;
                 temp = (GameObject)Instantiate(s_Indicator, head, Quaternion.identity);
-                temp.GetComponent<FixedJoint2D>().connectedBody = this.GetComponent<Rigidbody2D>();
             }
+            temp.transform.position = head;
+            throwStance = true;
         }
         else if (spawnStone == 0)
         {
-            GetComponent<P_controls>().StopGameControl = false;
-            Destroy(temp);
+            if(temp != null)
+            {
+                Destroy(temp);
+            }
             spawned = false;
+            throwStance = false;
         }
 
-        head = new Vector2(transform.position.x + 0.5f, transform.position.y + 7f);
-
-        if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse)) {		// to set double tap
-			if (throwReady) {
-				onThrow = true;
-			}
-			else if(spawnStone != 0){
-				prepareThrow(true);
-			}
-		}
-			
-		if (onThrow) {
-			if (Input.GetKeyUp(GetComponent<P_controls>().KeyUse)) {		// for release second tap to throw
+        tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
+        if (throwStance) {
+            control.StopGameControl = true;
+			if (Input.GetKeyDown(control.KeyUse)) {		
 				throwing ();
-				onThrow = false;
+				throwStance = false;
 				//spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
 			}
+            dropStone();
 		}
 		DotsSpawner();
 	}
 
+    GameObject stoneTemp;
+
 	void throwing(){
-		throwReady = false;
-		if (spawnStone > 0) {		// spawn only one stone
-            // Offset Y
-            float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
-            Vector2 tempPos = new Vector2 (transform.position.x , transform.position.y + tempYSize);
-			Instantiate (stone, tempPos, Quaternion.identity);
-            stone.GetComponent<S_Control>().enabled = true;
-			spawnStone = 0;
-            audiosource.Play();
-		}
+		stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
+		spawnStone = 0;
+        control.StopGameControl = false;
+        audiosource.Play();
 	}
 
-	void prepareThrow(bool makeReady){
-		CancelInvoke ("cancelThrow");
-		Invoke ("cancelThrow", doubleTapTime);
-		throwReady = true;
-	}
+    public int dropStoneTime = 3;
+    public float dropStoneCount = 0;
+    public GameObject fillBar;
+    GameObject tempBar;
+    Transform tempMask;
 
-	void cancelThrow(){
-		throwReady = false;
-	}
-		
+    void dropStone()
+    {
+        if(control.faceLeft)
+        {
+            if (Input.GetKey(control.KeyRight))
+            {
+                if(tempBar == null)
+                {
+                    tempBar = (GameObject)Instantiate(fillBar, barPosition, Quaternion.identity);
+                    foreach (Transform child in tempBar.transform)
+                    {
+                        if (child.CompareTag("Nothing"))
+                        {
+                            tempMask = child;
+                        }
+                    }
+                }
+                if (dropStoneCount > dropStoneTime)
+                {
+                    spawnStone = 0;
+                    stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
+                    stoneTemp.GetComponent<S_Control>().launched = true;
+                    dropStoneCount = 0;
+                    control.StopGameControl = false;
+                    throwStance = false;
+                    Destroy(tempBar);
+                }
+                else
+                {
+                    dropStoneCount += Time.deltaTime;
+                }
+
+                tempMask.localScale = new Vector2(dropStoneCount, tempMask.localScale.y);
+            }
+            else
+            {
+                Destroy(tempBar);
+            }
+        }
+        else
+        {
+            if (Input.GetKey(control.KeyLeft))
+            {
+                if (tempBar == null)
+                {
+                    tempBar = (GameObject)Instantiate(fillBar, barPosition, Quaternion.identity);
+                    foreach (Transform child in tempBar.transform)
+                    {
+                        if (child.CompareTag("Nothing"))
+                        {
+                            tempMask = child;
+                        }
+                    }
+                }
+                if (dropStoneCount > dropStoneTime)
+                {
+                    spawnStone = 0;
+                    stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
+                    stoneTemp.GetComponent<S_Control>().launched = true;
+                    dropStoneCount = 0;
+                    control.StopGameControl = false;
+                    throwStance = false;
+                    Destroy(tempBar);
+                }
+                else
+                {
+                    dropStoneCount += Time.deltaTime;
+                }
+
+                tempMask.localScale = new Vector2(dropStoneCount, tempMask.localScale.y);
+            }
+            else
+            {
+                Destroy(tempBar);
+            }
+        }
+    }
+    
 	// Trajectory line
 	public int numDots;
 	public float dotsPositionOverTime;  // seconds: if 10s, means the distance between two dots takes 10 seconds to reach
@@ -94,7 +172,7 @@ public class P_throw : MonoBehaviour {
 
 	private void DotsSpawner(){
 
-		if (onThrow && count == 0) {
+		if (throwStance && count == 0) {
 			p_position = transform.position;
             // Offset Y
             float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
@@ -104,12 +182,12 @@ public class P_throw : MonoBehaviour {
 				trajectoryDots[i] = (GameObject)Instantiate (dots,dots.transform.position,Quaternion.identity);
 			}
 			count = 1;
-		}else if(!onThrow && count == 1){
+		}else if(!throwStance && count == 1){
 			foreach(GameObject Dots in trajectoryDots){
 				Destroy(Dots);
 			}
 			count = 0;
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
+		}else if(throwStance && Input.GetKey((control.KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
 			foreach(GameObject Dots in trajectoryDots)
             {
 				Destroy(Dots);
@@ -117,7 +195,7 @@ public class P_throw : MonoBehaviour {
 			speedX += 0.25f;
 			count = 0;
 			DotsSpawner ();
-		}else if(onThrow && Input.GetKey((GetComponent<P_controls>().KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
+		}else if(throwStance && Input.GetKey((control.KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
 			foreach(GameObject Dots in trajectoryDots)
             {
 				Destroy(Dots);
@@ -125,7 +203,8 @@ public class P_throw : MonoBehaviour {
 			speedX -= 0.25f;
 			count = 0;
 			DotsSpawner ();
-		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyLeft))
+		}
+  /*      else if (throwStance && Input.GetKeyDown(control.KeyLeft))
         {		// change trajectory to left
 			transform.localScale = new Vector3(-1f, transform.localScale.y,transform.localScale.z);
 			foreach(GameObject Dots in trajectoryDots)
@@ -134,7 +213,7 @@ public class P_throw : MonoBehaviour {
 			}
 			count = 0;
 			DotsSpawner ();
-		}else if (onThrow && Input.GetKeyDown(GetComponent<P_controls>().KeyRight))
+		}else if (throwStance && Input.GetKeyDown(control.KeyRight))
         {		// change trajectory to right
 			transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
 			foreach(GameObject Dots in trajectoryDots)
@@ -143,7 +222,7 @@ public class P_throw : MonoBehaviour {
 			}
 			count = 0;
 			DotsSpawner ();
-		}
+		}*/
 	}
 
 	private Vector2 CalculatePosition(float elapsedTime){		// calculate the position of dots over time

@@ -9,11 +9,14 @@ public class P_mechanismTrigger : MonoBehaviour {
 
     public GameObject ScreenFade;
     public int sceneIndex;
+    public bool triggerLever = false;
 
     private GameObject CheckpointManager;
+    private BoxCollider2D myBoxCollider;
 
     private void Start()
     {
+        myBoxCollider = GetComponent<BoxCollider2D>();
         CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
     }
 
@@ -26,22 +29,24 @@ public class P_mechanismTrigger : MonoBehaviour {
         {
             if(mechanism.CompareTag("Interactable"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
+                if (myBoxCollider.IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
                         mechanism.GetComponent<M_Interaction>().UnitTrigger();
-                    }
+                        triggerLever = true;
+                    }                 
                 }
             }
             if (mechanism.CompareTag("levelProceed"))
             {
-                if (GetComponent<BoxCollider2D>().IsTouching(mechanism.GetComponent<BoxCollider2D>()))
+                if (myBoxCollider.IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl)
                     {
-                        ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
-                        CheckpointManager.GetComponent<Checkpoint>().spawnPoint = new Vector3(-0.3f, 3, 0);
+                        ScreenFade.GetComponent<LevelChanger>().FadeToLevel(mechanism.GetComponent<D_levelProceed>().levelIndex);
+                        CheckpointManager.GetComponent<Checkpoint>().resetManager();
+                        Destroy(CheckpointManager);
                     }
                 }
             }

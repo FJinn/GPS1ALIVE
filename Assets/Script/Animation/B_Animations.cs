@@ -8,6 +8,7 @@ public class B_Animations : MonoBehaviour {
     P_controls playerControl;
     P_pushPull playerPushPull;
     Rigidbody2D playerVelocity;
+    P_mechanismTrigger leverInteract;
     bool enterVent = false;
     bool exitVent = false;
     public bool pullLeft = false;
@@ -21,6 +22,7 @@ public class B_Animations : MonoBehaviour {
         playerControl = GetComponent<P_controls>();
         playerPushPull = GetComponent<P_pushPull>();
         playerVelocity = GetComponent<Rigidbody2D>();
+        leverInteract = GetComponent<P_mechanismTrigger>();
     }
 
     void Update () {
@@ -28,6 +30,7 @@ public class B_Animations : MonoBehaviour {
         VentMovement();  
         PullPush();
         OnLadder();
+        Interaction();
 	}
 
     void Movement()
@@ -62,7 +65,6 @@ public class B_Animations : MonoBehaviour {
             if (!enterVent)
             {
                 playerControl.StopGameControl = true;
-                Debug.Log(playerControl.StopGameControl);
                 anim.SetBool("EnterVent", true);
                 anim.SetBool("ExitVent", false);
                 Invoke("EnterVentTransition", 1f);
@@ -86,13 +88,12 @@ public class B_Animations : MonoBehaviour {
         {                      
             if(!exitVent)
             {
-                playerVent.exitVent = false;
                 playerControl.StopGameControl = true;
                 anim.SetBool("CrawlingIdle", false);
                 anim.SetBool("Crawling", false);
                 anim.SetBool("ExitVent", true);
                 anim.SetBool("EnterVent", false);
-                Invoke("ExitVentTransition", 1f);
+                Invoke("ExitVentTransition", 0.8f);
             }
         }
     }
@@ -108,6 +109,7 @@ public class B_Animations : MonoBehaviour {
         playerControl.StopGameControl = false;
         exitVent = false;
         enterVent = false;
+        playerVent.exitVent = false;
         anim.SetBool("ExitVent", false);
     }
      
@@ -115,7 +117,7 @@ public class B_Animations : MonoBehaviour {
     {
         if(playerPushPull.OnBox == true)
         {
-            if(playerVelocity.velocity.x > 1f)
+            if(playerVelocity.velocity.x > 0.1f)
             {
                 if(playerControl.faceRight == true)
                 {
@@ -142,7 +144,7 @@ public class B_Animations : MonoBehaviour {
                     pushLeft = false;                
                 }                
             }
-            else if(playerVelocity.velocity.x < -1f)
+            else if(playerVelocity.velocity.x < -0.1f)
             {
                 if (playerControl.faceRight == true)
                 {
@@ -209,9 +211,37 @@ public class B_Animations : MonoBehaviour {
         }
     }
     
-    void PressButton()
+    void Interaction()
     {
+        if (leverInteract.triggerLever)
+        {
+            playerControl.StopGameControl = true;
+            anim.SetBool("PullLever", true);
+            anim.SetBool("Idle", false);
+        }       
 
+        if(playerControl.openDoor)
+        {
+            playerControl.StopGameControl = true;
+            anim.SetBool("Pressing", true);
+            anim.SetBool("Idle", false);
+        }
+    }
+
+    void ResetDoorInteraction()
+    {
+        playerControl.StopGameControl = false;
+        playerControl.openDoor = false;
+        anim.SetBool("Pressing", false);
+        anim.SetBool("Idle", true);
+    }
+
+    void ResetLeverInteraction()
+    {
+        leverInteract.triggerLever = false;
+        playerControl.StopGameControl = false;
+        anim.SetBool("PullLever", false);
+        anim.SetBool("Idle", true);
     }
 
     void OnLadder()
