@@ -29,7 +29,6 @@ public class G_Animations : MonoBehaviour
         Movement();
         VentMovement();
         PullPush();
-        ClimbLadder();
     }
 
     void Movement()
@@ -213,29 +212,5 @@ public class G_Animations : MonoBehaviour
     void PressButton()
     {
 
-    }
-
-    void ClimbLadder ()
-    {
-        if(playerControl.OnLadder)
-        {
-            anim.SetBool("Idle", false);
-            anim.SetBool("Walking", false);
-            if(playerVelocity.velocity.y == 0)
-            {
-                anim.SetBool("ClimbingIdle", true);
-                anim.SetBool("Climbing", false);
-            }
-            else
-            {
-                anim.SetBool("Climbing", true);
-                anim.SetBool("ClimbingIdle", false);
-            }
-        }
-        else
-        {
-            anim.SetBool("Climbing", false);
-            anim.SetBool("ClimbingIdle", false);
-        }
     }
 }
