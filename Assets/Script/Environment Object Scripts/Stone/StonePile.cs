@@ -5,6 +5,8 @@ using UnityEngine;
 public class StonePile : MonoBehaviour {
 
     private GameObject[] p = new GameObject[2];
+    [Header("Adjust stone projectile height")] //Changing speed Y to adjust stone projectile height
+    public float height;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +22,10 @@ public class StonePile : MonoBehaviour {
             {
                 p[i].GetComponent<P_throw>().spawnStone = 1;
                 p[i].GetComponent<testAndreaTHROWING>().spawnStone = 1;
+
             }
+
+            p[i].GetComponent<P_throw>().speedY = height;
         }
     }
 }
