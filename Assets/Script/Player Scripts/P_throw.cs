@@ -54,26 +54,44 @@ public class P_throw : MonoBehaviour {
         }
 
         tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
-        if (throwStance) {
+        
+        if (throwStance)
+        {
             control.StopGameControl = true;
-			if (Input.GetKeyDown(control.KeyUse)) {		
-				throwing ();
-				//spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
-			}
+            if (Input.GetKeyDown(control.KeyUse))
+            {
+                throwing();
+                //spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
+            }
             dropStone();
-		}
-		DotsSpawner();
+        }
+
+        if(isThrowing)
+        {
+            if (bufferCount > spawnStoneBuffer)
+            {
+                throwStance = false;
+                bufferCount = 0;
+                isThrowing = false;
+            }
+            else
+            {
+                bufferCount += Time.deltaTime;
+            }
+        }
+        DotsSpawner();
 	}
 
+    bool isThrowing = false;
     GameObject stoneTemp;
+
+    int spawnStoneBuffer = 1;
+    float bufferCount = 0;
 
 	void throwing(){
 		stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
 		spawnStone = 0;
-        if(stoneTemp == null)
-        {
-            throwStance = false;
-        }
+        isThrowing = true;
         control.StopGameControl = false;
         audiosource.Play();
 	}
@@ -85,6 +103,116 @@ public class P_throw : MonoBehaviour {
     Transform tempMask;
 
     void dropStone()
+    {
+        if (tempBar == null)
+        {
+            tempBar = (GameObject)Instantiate(fillBar, head, Quaternion.identity);
+            foreach (Transform child in tempBar.transform)
+            {
+                if (child.CompareTag("Nothing"))
+                {
+                    tempMask = child;
+                }
+            }
+        }
+        if (dropStoneCount > dropStoneTime)
+        {
+            spawnStone = 0;
+            stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
+            stoneTemp.GetComponent<S_Control>().launched = true;
+            dropStoneCount = 0;
+            control.StopGameControl = false;
+            throwStance = false;
+            Destroy(tempBar);
+        }
+        else
+        {
+            dropStoneCount += Time.deltaTime;
+        }
+
+        tempMask.localPosition = new Vector2(tempMask.localPosition.x, -(dropStoneCount/dropStoneTime)-0.3f);
+    }
+    
+	// Trajectory line
+	public int numDots;
+	public float dotsPositionOverTime;  // seconds: if 10s, means the distance between two dots takes 10 seconds to reach
+	private int count = 0;
+	public GameObject dots;
+	private Vector2 p_position;
+
+	public float speedX;
+	public float speedY;
+
+	private Vector2 GRAVITY = new Vector2(0, -45f);
+    private GameObject[] trajectoryDots = new GameObject[60];
+
+	private void DotsSpawner(){
+
+		if (throwStance && count == 0) {
+			p_position = transform.position;
+            // Offset Y
+            float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
+            p_position.y = p_position.y + tempYSize;
+			for (int i = 0; i < numDots; i++) {
+				dots.transform.position = CalculatePosition (dotsPositionOverTime * i);  // set position based on calculation the position of dots over time
+				trajectoryDots[i] = (GameObject)Instantiate (dots,dots.transform.position,Quaternion.identity);
+			}
+			count = 1;
+		}else if(!throwStance && count == 1){
+			foreach(GameObject Dots in trajectoryDots){
+				Destroy(Dots);
+			}
+			count = 0;
+		}else if(throwStance && Input.GetKey((control.KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
+			foreach(GameObject Dots in trajectoryDots)
+            {
+				Destroy(Dots);
+			}
+            dropStoneCount = 0; // testing andrea method
+			speedX += 0.25f;
+			count = 0;
+			DotsSpawner ();
+		}else if(throwStance && Input.GetKey((control.KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
+			foreach(GameObject Dots in trajectoryDots)
+            {
+				Destroy(Dots);
+            }
+            dropStoneCount = 0; // testing andrea method
+            speedX -= 0.25f;
+			count = 0;
+			DotsSpawner ();
+		}
+  /*      else if (throwStance && Input.GetKeyDown(control.KeyLeft))
+        {		// change trajectory to left
+			transform.localScale = new Vector3(-1f, transform.localScale.y,transform.localScale.z);
+			foreach(GameObject Dots in trajectoryDots)
+            {
+				Destroy(Dots);
+			}
+			count = 0;
+			DotsSpawner ();
+		}else if (throwStance && Input.GetKeyDown(control.KeyRight))
+        {		// change trajectory to right
+			transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
+			foreach(GameObject Dots in trajectoryDots)
+            {
+				Destroy(Dots);
+			}
+			count = 0;
+			DotsSpawner ();
+		}*/
+	}
+
+	private Vector2 CalculatePosition(float elapsedTime){		// calculate the position of dots over time
+		Vector2 d_launchVelocity = new Vector2(speedX * transform.localScale.x,speedY);
+		return GRAVITY * elapsedTime * elapsedTime * 0.5f + d_launchVelocity * elapsedTime + p_position;
+	}
+}
+
+
+
+/* // hold opposite key to drop
+ * void dropStone()
     {
         if(control.faceLeft)
         {
@@ -163,79 +291,5 @@ public class P_throw : MonoBehaviour {
             }
         }
     }
-    
-	// Trajectory line
-	public int numDots;
-	public float dotsPositionOverTime;  // seconds: if 10s, means the distance between two dots takes 10 seconds to reach
-	private int count = 0;
-	public GameObject dots;
-	private Vector2 p_position;
 
-	public float speedX;
-	public float speedY;
-
-	private Vector2 GRAVITY = new Vector2(0, -45f);
-    private GameObject[] trajectoryDots = new GameObject[60];
-
-	private void DotsSpawner(){
-
-		if (throwStance && count == 0) {
-			p_position = transform.position;
-            // Offset Y
-            float tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
-            p_position.y = p_position.y + tempYSize;
-			for (int i = 0; i < numDots; i++) {
-				dots.transform.position = CalculatePosition (dotsPositionOverTime * i);  // set position based on calculation the position of dots over time
-				trajectoryDots[i] = (GameObject)Instantiate (dots,dots.transform.position,Quaternion.identity);
-			}
-			count = 1;
-		}else if(!throwStance && count == 1){
-			foreach(GameObject Dots in trajectoryDots){
-				Destroy(Dots);
-			}
-			count = 0;
-		}else if(throwStance && Input.GetKey((control.KeyUp)) && speedX <= 45f){		// adjust trajectory with 10 x limits 
-			foreach(GameObject Dots in trajectoryDots)
-            {
-				Destroy(Dots);
-			}
-            dropStoneCount = 0; // testing andrea method
-			speedX += 0.25f;
-			count = 0;
-			DotsSpawner ();
-		}else if(throwStance && Input.GetKey((control.KeyDown)) && speedX >= 5f){		// adjust trajectory with 5 x limits 
-			foreach(GameObject Dots in trajectoryDots)
-            {
-				Destroy(Dots);
-            }
-            dropStoneCount = 0; // testing andrea method
-            speedX -= 0.25f;
-			count = 0;
-			DotsSpawner ();
-		}
-  /*      else if (throwStance && Input.GetKeyDown(control.KeyLeft))
-        {		// change trajectory to left
-			transform.localScale = new Vector3(-1f, transform.localScale.y,transform.localScale.z);
-			foreach(GameObject Dots in trajectoryDots)
-            {
-				Destroy(Dots);
-			}
-			count = 0;
-			DotsSpawner ();
-		}else if (throwStance && Input.GetKeyDown(control.KeyRight))
-        {		// change trajectory to right
-			transform.localScale = new Vector3(1f, transform.localScale.y, transform.localScale.z);
-			foreach(GameObject Dots in trajectoryDots)
-            {
-				Destroy(Dots);
-			}
-			count = 0;
-			DotsSpawner ();
-		}*/
-	}
-
-	private Vector2 CalculatePosition(float elapsedTime){		// calculate the position of dots over time
-		Vector2 d_launchVelocity = new Vector2(speedX * transform.localScale.x,speedY);
-		return GRAVITY * elapsedTime * elapsedTime * 0.5f + d_launchVelocity * elapsedTime + p_position;
-	}
-}
+    */
