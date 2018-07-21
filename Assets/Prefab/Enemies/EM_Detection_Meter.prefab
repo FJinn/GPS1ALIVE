@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fb_Enemy: {fileID: 0}
   fb_value: 0
-  fb_MaxSize: 0.8
+  fb_MaxSize: 1
   fb_tempDelay: 0
   DM_Object: {fileID: 1696160541660526, guid: 0a99564363b8aea418641c50784f181d, type: 2}
 --- !u!212 &212132903569599838

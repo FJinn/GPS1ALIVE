@@ -7,24 +7,26 @@ public class E_Movement : MonoBehaviour {
 	public float e_patrolSpeed;
 	public Transform[] moveSpots;
 	public float startWaitTime;
+    public bool faceOriginDirection;
+    private float originDirection;
 
-	private Vector2 tempPos;
+    private Vector2 tempPos;
 	private float waitTime;
     private int moveSpotsCount;
 
 	private Vector3 tempHolder;
     public Animator anim;
     public bool isNurse;
-    private Rigidbody2D rb2d;
+
     // private bool isRight = true;
 
 	// Use this for initialization
 	void Start () {
-        rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         moveSpotsCount = 0;
 		tempHolder = moveSpots [0].position;
 		tempPos = tempHolder;
+        originDirection = transform.localScale.x;
 	}
 	
 	// Update is called once per frame
@@ -94,6 +96,10 @@ public class E_Movement : MonoBehaviour {
                 tempPos = tempHolder;
 				waitTime = startWaitTime;
                // anim.Play("E_IdleAnim");
+               if(faceOriginDirection)
+                {
+                    transform.localScale = new Vector3(originDirection, transform.localScale.y, transform.localScale.z);
+                }
                 
 			} else {
 				waitTime -= Time.deltaTime;

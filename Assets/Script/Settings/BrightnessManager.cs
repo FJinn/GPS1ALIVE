@@ -6,7 +6,7 @@ using UnityEngine.PostProcessing;
 
 public class BrightnessManager : MonoBehaviour {
 
-    public float GammaCorrection = 0f;
+    public float BrightnessCorrection = 0f;
 
     public Slider slider;
 
@@ -35,7 +35,7 @@ public class BrightnessManager : MonoBehaviour {
     {
         tempmodel = myProfile.colorGrading.settings;
 
-        tempmodel.colorWheels.linear.gamma.a = 0;
+        tempmodel.colorWheels.log.power.a = 0;
 
         myProfile.colorGrading.settings = tempmodel;
         otherProfile.colorGrading.settings = tempmodel;
@@ -50,9 +50,9 @@ public class BrightnessManager : MonoBehaviour {
     public void valueChanged()
     {
         // set audio volume to userSetVolume
-        GammaCorrection = slider.value;
+        BrightnessCorrection = slider.value;
 
-        tempmodel.colorWheels.linear.gamma.a = GammaCorrection;
+        tempmodel.colorWheels.log.power.a = BrightnessCorrection;
 
         myProfile.colorGrading.settings = tempmodel;
         otherProfile.colorGrading.settings = tempmodel;

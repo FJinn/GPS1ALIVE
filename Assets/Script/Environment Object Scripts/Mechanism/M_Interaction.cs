@@ -21,6 +21,8 @@ public class M_Interaction : MonoBehaviour {
     [Header("Is this a switch?")]
     public bool switchAnim = false;
 
+    public bool leverUp = false;
+    public bool leverDown = false;
 
 	// Use this for initialization
 	void Start () 

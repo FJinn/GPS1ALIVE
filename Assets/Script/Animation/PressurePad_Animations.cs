@@ -22,7 +22,7 @@ public class PressurePad_Animations : MonoBehaviour {
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player") || collision.CompareTag("Player2") || collision.CompareTag("PushPull"))
+        if(collision.CompareTag("Player") || collision.CompareTag("Player2") || collision.CompareTag("PushPull") || collision.CompareTag("Enemy"))
         {
             mySprite.sprite = changedSprite;
             for (int i = 0; i < myLights.Length; i++)
@@ -37,7 +37,7 @@ public class PressurePad_Animations : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player") || collision.CompareTag("Player2") || collision.CompareTag("PushPull"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Player2") || collision.CompareTag("PushPull") || collision.CompareTag("Enemy"))
         {
             mySprite.sprite = originalSprite;
             for (int i = 0; i < myLights.Length; i++)

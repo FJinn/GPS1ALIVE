@@ -3202,7 +3202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124af1c3e89f17145a46e8244221595f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GammaCorrection: 0
+  BrightnessCorrection: 0
   slider: {fileID: 1447397778}
   myProfile: {fileID: 11400000, guid: c2408562a87119547824965d4c4a04f3, type: 2}
   otherProfile: {fileID: 11400000, guid: 125a344716d3ce94597d4119690bb0ff, type: 2}

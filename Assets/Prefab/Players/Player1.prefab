@@ -110,7 +110,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1317265310782640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.66, y: -27.85, z: 0}
+  m_LocalPosition: {x: 9.950003, y: -31.710003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4081787224860022}
@@ -175,12 +175,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 3.123077}
+  m_Offset: {x: 0, y: 3.207744}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 3.1384616, y: 6.246154}
-    newSize: {x: 3.1384616, y: 6.246154}
+    oldSize: {x: 3.123077, y: 6.246154}
+    newSize: {x: 3.123077, y: 6.246154}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyNum: 0
+  key: {fileID: 1020042122483984, guid: 283cdbc0f925301489c0de3b6d602484, type: 2}
 --- !u!114 &114226541609714160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,7 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDead: 0
   ScreenFade: {fileID: 0}
-  sceneIndex: 6
+  sceneIndex: 3
 --- !u!114 &114264716893500676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,6 +250,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   ScreenFade: {fileID: 0}
   sceneIndex: 2
+  triggerLever: 0
 --- !u!114 &114280755162499134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,8 +267,9 @@ MonoBehaviour:
   stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
   spawnStone: 0
   audiosource: {fileID: 0}
-  numDots: 25
-  dotsPositionOverTime: 0.22
+  s_Indicator: {fileID: 0}
+  numDots: 50
+  dotsPositionOverTime: 0.11
   dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
   speedX: 33
   speedY: 35
@@ -423,11 +426,7 @@ MonoBehaviour:
   CameraStarted: 1
   faceLeft: 0
   faceRight: 0
-  Walking: 0
-  Jumping: 0
-  Idle: 0
-  Crawling: 0
-  CrawlingIdle: 0
+  openDoor: 0
   audioManager: {fileID: 0}
 --- !u!114 &114884209733073360
 MonoBehaviour:
@@ -487,12 +486,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300002, guid: 6a89addf3cd631c448598f705d786f67, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 6a89addf3cd631c448598f705d786f67, type: 3}
   m_Color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.1384616, y: 6.246154}
+  m_Size: {x: 3.123077, y: 6.246154}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

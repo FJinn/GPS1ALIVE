@@ -8,6 +8,7 @@ public class ButtonPressed : MonoBehaviour {
     public bool canSpawn = true;
     public bool player1Inside = false;
     public bool player2Inside = false;
+    public bool boxUi = false;
     private GameObject spawnedObject;
     Quaternion iniRot;
 
@@ -23,19 +24,22 @@ public class ButtonPressed : MonoBehaviour {
 
     void Update()
     {
-        if (GetComponentInParent<FixedJoint2D>().enabled)
+        if (boxUi)
         {
-            GetComponent<BoxCollider2D>().enabled = false;
-            if (spawnedObject != null)
+            if (GetComponentInParent<FixedJoint2D>().enabled)
             {
-                Destroy(spawnedObject);
-                canSpawn = true;
+                GetComponent<BoxCollider2D>().enabled = false;
+                if (spawnedObject != null)
+                {
+                    Destroy(spawnedObject);
+                    canSpawn = true;
+                }
             }
-        }
-        else
-        {
-            GetComponent<BoxCollider2D>().enabled = true;
-        }
+            else
+            {
+                GetComponent<BoxCollider2D>().enabled = true;
+            }
+        }       
     }
 
     void OnTriggerEnter2D(Collider2D other)

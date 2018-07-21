@@ -12,6 +12,7 @@ public class P_Vent : MonoBehaviour {
 
     public BoxCollider2D BoxColliderOrigin;
     private Rigidbody2D rg2b;
+    private SpriteRenderer SR;
     private int iniSortingLayer;
     public LayerMask bypassEnemyMask;
 
@@ -27,6 +28,7 @@ public class P_Vent : MonoBehaviour {
         
         iniSortingLayer = GetComponent<SpriteRenderer>().sortingOrder;
         BoxColliderOrigin = GetComponent<BoxCollider2D>();
+        SR = GetComponent<SpriteRenderer>();
     }
 
     public void ResetCollisions()
@@ -82,7 +84,7 @@ public class P_Vent : MonoBehaviour {
            // GetComponent<BoxCollider2D>().isTrigger = true;
             rg2b.gravityScale = 0;
             rg2b.velocity = new Vector2(rg2b.velocity.x, 0);
-            GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer - 4;
+            SR.sortingOrder = iniSortingLayer - 4;
             GetComponent<P_controls>().onVent = true;
 
             for (int i = 0; i < passthroughWall.Length; i++)
@@ -100,9 +102,8 @@ public class P_Vent : MonoBehaviour {
         {
             crouched = false;         
             GetComponent<P_controls>().onVent = false;
-            //GetComponent<BoxCollider2D>().isTrigger = false;
             rg2b.gravityScale = 10;
-            GetComponent<SpriteRenderer>().sortingOrder = iniSortingLayer;
+            SR.sortingOrder = iniSortingLayer;
             
         }
         
