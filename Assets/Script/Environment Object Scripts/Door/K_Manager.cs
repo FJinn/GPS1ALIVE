@@ -20,7 +20,7 @@ public class K_Manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		for(int i=0; i<p.Length; i++){
-            if (this.GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && p[i].GetComponent<P_keyHold>().keyNum == 0){
+            if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && this.GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && p[i].GetComponent<P_keyHold>().keyNum == 0){
                 p[i].GetComponent<P_keyHold>().keyNum = keyNumber;
                 sr.sprite = keyGoneSprite;
             }

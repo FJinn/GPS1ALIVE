@@ -191,7 +191,6 @@ public class P_controls : MonoBehaviour {
     {
         if (!noJump)
         {
-            // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
             if(!inTheAir)
             {
                 rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
