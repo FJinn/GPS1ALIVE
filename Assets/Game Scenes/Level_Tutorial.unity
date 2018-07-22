@@ -2681,11 +2681,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.1600027
+      value: 7.110006
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -31.630005
+      value: -32.03001
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23442,11 +23442,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.85
+      value: 3.8
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -32
+      value: -32.4
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23738,20 +23738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwStance: 0
-  stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
-  spawnStone: 0
-  audiosource: {fileID: 0}
-  s_Indicator: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
-    type: 2}
-  dropStoneTime: 3
-  dropStoneCount: 0
-  fillBar: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012, type: 2}
-  numDots: 50
-  dotsPositionOverTime: 0.11
-  dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
-  speedX: 33
-  speedY: 35
 --- !u!114 &1342784581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28215,20 +28201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwStance: 0
-  stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
-  spawnStone: 0
-  audiosource: {fileID: 0}
-  s_Indicator: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
-    type: 2}
-  dropStoneTime: 3
-  dropStoneCount: 0
-  fillBar: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012, type: 2}
-  numDots: 50
-  dotsPositionOverTime: 0.11
-  dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
-  speedX: 33
-  speedY: 35
 --- !u!1 &2066605450
 GameObject:
   m_ObjectHideFlags: 0

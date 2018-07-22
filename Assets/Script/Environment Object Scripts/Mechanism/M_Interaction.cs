@@ -24,10 +24,7 @@ public class M_Interaction : MonoBehaviour {
 
     [Header("Is this a switch?")]
     public bool switchAnim = false;
-
-    public bool leverUp = false;
-    public bool leverDown = false;
-
+    
 	// Use this for initialization
 	void Start () 
 	{
@@ -54,11 +51,20 @@ public class M_Interaction : MonoBehaviour {
             if (animCounter == 1)
             {
                 M_animator.Play("AIO_AnimLeverDown");
+                GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverDown = true;
+                GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverDown = true;                
+                GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverUp = false;                
+                GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverUp = false;                
             }
             else
             if (animCounter >= 2)
             {
                 M_animator.Play("AIO_AnimLeverUp");
+                GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverUp = true;
+                GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverUp = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverDown = false;
+                GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverDown = false;
+
                 animCounter = 0;
             }
         }

@@ -17920,7 +17920,11 @@ Prefab:
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
       propertyPath: sounds.Array.size
+<<<<<<< HEAD
       value: 18
+=======
+      value: 12
+>>>>>>> e459603fe143067bdd069e70e9f76e70cea3bbb1
       objectReference: {fileID: 0}
     - target: {fileID: 4731312750120154, guid: cb2bef34c7c98fc4dbcd4145b17b9e52, type: 2}
       propertyPath: m_LocalPosition.x
@@ -17956,6 +17960,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
+<<<<<<< HEAD
       propertyPath: sounds.Array.data[1].clip
       value: 
       objectReference: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
@@ -17983,11 +17988,16 @@ Prefab:
         type: 2}
       propertyPath: sounds.Array.data[11].name
       value: Crawling
+=======
+      propertyPath: sounds.Array.data[11].name
+      value: StoneDropping
+>>>>>>> e459603fe143067bdd069e70e9f76e70cea3bbb1
       objectReference: {fileID: 0}
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
       propertyPath: sounds.Array.data[11].clip
       value: 
+<<<<<<< HEAD
       objectReference: {fileID: 8300000, guid: 86b71b266042431458f472ff72dca489, type: 3}
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
@@ -18077,10 +18087,17 @@ Prefab:
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
       propertyPath: sounds.Array.data[15].pitch
+=======
+      objectReference: {fileID: 8300000, guid: ca933534543e4d14c92e0d346dced881, type: 3}
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.data[11].volume
+>>>>>>> e459603fe143067bdd069e70e9f76e70cea3bbb1
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
+<<<<<<< HEAD
       propertyPath: sounds.Array.data[16].name
       value: KeyPickup
       objectReference: {fileID: 0}
@@ -18117,6 +18134,9 @@ Prefab:
     - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
         type: 2}
       propertyPath: sounds.Array.data[17].pitch
+=======
+      propertyPath: sounds.Array.data[11].pitch
+>>>>>>> e459603fe143067bdd069e70e9f76e70cea3bbb1
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
