@@ -74,7 +74,7 @@ public class Camera_Control : MonoBehaviour {
 
                 if(roomCameraInt == 0)
                 {
-                currentCamera.orthographicSize = InitSize;
+                currentCamera.orthographicSize = roomCameraSize[0];
                 }else
                 {
                     cameraSmooth = Mathf.Lerp(roomCameraSize[roomCameraInt - 1], roomCameraSize[roomCameraInt], cameraSizeSmoothTimer);

@@ -26,6 +26,7 @@ public class P_controls : MonoBehaviour {
     private bool ignoreLadderOnce;
     public bool OnLadder; // after throw, it will stay true which cause player cannot jump -> OnTriggerStay
     public float myVelocityX;
+    public float myVelocityY;
 
     [Header("Ignore everything below")]
     public KeyCode KeyUp;
@@ -45,6 +46,9 @@ public class P_controls : MonoBehaviour {
     public bool faceLeft = false;
     public bool faceRight = false;
     public bool openDoor = false;
+    public bool fallFromVent = false;
+    public bool spotted = false;
+    public bool fallen = false;
     private bool inTheAir = false;
 
     public GameObject audioManager;
@@ -151,6 +155,7 @@ public class P_controls : MonoBehaviour {
 
                 rb2d.velocity = new Vector2(moveHorizontal * walkSpeed, rb2d.velocity.y);
                 myVelocityX = rb2d.velocity.x;
+                myVelocityY = rb2d.velocity.y;
                
             }
 
@@ -193,9 +198,7 @@ public class P_controls : MonoBehaviour {
             }
         }
     }
-
-    private bool ladderPositionChanged = false;
-
+    
     private void LadderCollision()
     {
         for (int i = 0; i < walls.Length; i++)
@@ -231,18 +234,50 @@ public class P_controls : MonoBehaviour {
 
             if (Input.GetKey(KeyUp)&& !StopGameControl)
 			{
+
                 OnLadder = true;
                 rb2d.velocity = new Vector2(0, climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+                /* // THE FOLLOWING CODE BELOW IS FOR COLLIDE TO EACH OTHER.
+                if (transform.position.y < otherPlayer.transform.position.y + 6f && transform.position.y > otherPlayer.transform.position.y - 7f && otherPlayer.GetComponent<P_controls>().OnLadder)
+                {
+                    rb2d.velocity = new Vector2(0, 0);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }
+                else
+                {
+                    OnLadder = true;
+                    rb2d.velocity = new Vector2(0, climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }
+                */
             }   
 			else if (Input.GetKey(KeyDown) && !StopGameControl)
 			{
+
                 OnLadder = true;
                 rb2d.velocity = new Vector2(0, -climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+
+
+                /* // THE FOLLOWING CODE BELOW IS FOR COLLIDE TO EACH OTHER.
+                if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
+                {
+                    rb2d.velocity = new Vector2(0, 0);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+
+                }
+                else
+                {
+                    OnLadder = true;
+                    rb2d.velocity = new Vector2(0, -climbSpeed);
+                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
+                }*/
             }
-			
-		}
+
+        }
     }
     
 

@@ -61,6 +61,7 @@ public class E_Detection_Meter : MonoBehaviour {
             {
                 fb_value -= 0.1f * Time.deltaTime;
             }
+            CancelInvoke();
         }else 
         {
             fb_value = 0;
@@ -75,7 +76,7 @@ public class E_Detection_Meter : MonoBehaviour {
 
         //  fill_Bar.localScale = new Vector3(5, fb_value, transform.localScale.z);
         fill_Bar.transform.localScale = new Vector3(transform.localScale.x, fb_value, transform.localScale.y);
-        transform.position = fb_Enemy.transform.position + new Vector3(0, 12f, 0);
+        transform.position = fb_Enemy.transform.position + new Vector3(0, 14f, 0);
 
         if(fb_Enemy == null)
         {

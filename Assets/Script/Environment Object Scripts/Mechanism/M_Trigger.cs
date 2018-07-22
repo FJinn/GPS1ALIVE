@@ -41,9 +41,10 @@ public class M_Trigger : MonoBehaviour {
     public GameObject destroyBox;
 
     public bool isThisDoor = false;
+    public bool OpenedAtStart = false;
     private Animator doorAnimator;
     private BoxCollider2D myCollider;
-    public int openDoorCounts;
+    private int openDoorCounts;
 
     private GameObject[] players;
     
@@ -58,6 +59,11 @@ public class M_Trigger : MonoBehaviour {
         {
             doorAnimator = GetComponent<Animator>();
             myCollider = GetComponent<BoxCollider2D>();
+            openDoorCounts = 0;
+            if(OpenedAtStart)
+            {
+                Trigger();
+            }
         }
 
         if(DoesItFall)
@@ -140,6 +146,8 @@ public class M_Trigger : MonoBehaviour {
                 openDoorCounts = 0;
                 FindObjectOfType<AudioManager>().Play("DoorLocking");
             }
+
+            return;
 
         }
 

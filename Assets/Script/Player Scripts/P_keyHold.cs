@@ -23,7 +23,10 @@ public class P_keyHold : MonoBehaviour {
                 spawned = true;
                 temp = (GameObject)Instantiate(key, head, Quaternion.identity);
             }
-            temp.transform.position = head;
+            if(temp != null)
+            {
+                temp.transform.position = head;
+            }
         }
         else
         {
