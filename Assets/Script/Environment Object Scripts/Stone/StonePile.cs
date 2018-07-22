@@ -20,22 +20,25 @@ public class StonePile : MonoBehaviour {
     {
         for (int i = 0; i < p.Length; i++)
         {
-<<<<<<< HEAD
+
             if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false && p[i].GetComponent<P_throw>().canUseStonePile)
-=======
-            if (collision.gameObject == p[i] && Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false)
->>>>>>> ef25eaa5fad80dd9d55370f7f55b79365eb42e4a
             {
-                p[i].GetComponent<P_throw>().spawnStone = 1;
-                p[i].GetComponent<P_throw>().pickedUp = true;
-            }
+                if (collision.gameObject == p[i] && Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false)
 
-            if (p[i].GetComponent<P_throw>().stoneTemp != null)
-            {
-                p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
-            }
+                {
+                    p[i].GetComponent<P_throw>().spawnStone = 1;
+                    p[i].GetComponent<P_throw>().pickedUp = true;
+                }
 
-            p[i].GetComponent<P_throw>().speedY = height;
+                if (p[i].GetComponent<P_throw>().stoneTemp != null)
+                {
+                    p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
+                }
+
+                p[i].GetComponent<P_throw>().speedY = height;
+            }
         }
+
+            
     }
 }

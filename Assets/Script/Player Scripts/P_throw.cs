@@ -103,17 +103,17 @@ public class P_throw : MonoBehaviour {
         throwed = true;
         stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
         // ignore collision with stone
-<<<<<<< HEAD
+
         Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
         
-=======
+
         Physics2D.IgnoreCollision(player[0].GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
         Physics2D.IgnoreCollision(player[1].GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
 
         otherStone = GameObject.FindGameObjectWithTag("Stone");
         Physics2D.IgnoreCollision(otherStone.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
 
->>>>>>> ef25eaa5fad80dd9d55370f7f55b79365eb42e4a
+
         spawnStone = 0;
         isThrowing = true;
         //control.StopGameControl = false;
