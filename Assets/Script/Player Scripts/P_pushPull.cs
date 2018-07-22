@@ -60,6 +60,12 @@ public class P_pushPull : MonoBehaviour {
                 }
             }
         }
+        
+        if(GetComponent<P_controls>().moveHorizontal == 0 )
+        {
+            box.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        }
+
     }
 
     private void OnDrawGizmos(){
