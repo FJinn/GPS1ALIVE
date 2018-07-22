@@ -83,7 +83,7 @@ public class P_throw : MonoBehaviour {
 	}
 
     bool isThrowing = false;
-    GameObject stoneTemp;
+    [HideInInspector]public GameObject stoneTemp;
 
     int spawnStoneBuffer = 1;
     float bufferCount = 0;

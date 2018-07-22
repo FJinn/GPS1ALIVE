@@ -324,4 +324,9 @@ public class P_controls : MonoBehaviour {
     {
         FindObjectOfType<AudioManager>().Play("Climbing");
     }
+
+    public void CrawlingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("Crawling");
+    }
 }

@@ -26793,26 +26793,26 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Walking
-    clip: {fileID: 8300000, guid: 4dca808beaaa10f44bb874abef88e114, type: 3}
+    clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
     volume: 0.54
     pitch: 0.47
     loop: 0
     source: {fileID: 0}
   - name: Jumping
-    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
+    clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
     volume: 0.77
     pitch: 0.34
     loop: 0
     source: {fileID: 0}
   - name: BoxDragging
-    clip: {fileID: 8300000, guid: 211bdf2bf8dda4a46b4d0182bee98f56, type: 3}
+    clip: {fileID: 8300000, guid: d0604c8a8554d264781e82b09e9021fb, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Climbing
     clip: {fileID: 8300000, guid: e46717d3763fed54091d452c1cdff800, type: 3}
-    volume: 1
+    volume: 0.22
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -26835,7 +26835,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: EnemyDetect2
-    clip: {fileID: 8300000, guid: f90fcb67273bfaf4cb9b129213a93998, type: 3}
+    clip: {fileID: 8300000, guid: d562dde3fd27eb54cb99589370a5a1eb, type: 3}
     volume: 1
     pitch: 0.8
     loop: 0
@@ -26848,6 +26848,48 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: StoneThrowing
     clip: {fileID: 8300000, guid: 9480e40549f88d349b3aab86dbe755df, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Crawling
+    clip: {fileID: 8300000, guid: 86b71b266042431458f472ff72dca489, type: 3}
+    volume: 0.43
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StonePickup
+    clip: {fileID: 8300000, guid: e218f5019fcfd0d459a32d0f14277367, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LeverPulling
+    clip: {fileID: 8300000, guid: 1eded6ffff849d3499b47cc92dc3dcec, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FallDeath
+    clip: {fileID: 8300000, guid: 50068e9493a2c394e94bb13e9f48dd10, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BoxDeath
+    clip: {fileID: 8300000, guid: 6eeea1981f66a9741ba2b682e13ef132, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: KeyPickup
+    clip: {fileID: 8300000, guid: d1a2093d04ebe6844a671b04f7b1e6d0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyWalking
+    clip: {fileID: 8300000, guid: 2fce5292b7dd8cc4ab90fb3d345d92da, type: 3}
     volume: 1
     pitch: 1
     loop: 0
