@@ -2681,11 +2681,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 7.110006
+      value: 5.1600027
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -32.03001
+      value: -31.630005
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23442,11 +23442,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.8
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -32.4
+      value: -32
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23738,6 +23738,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwStance: 0
+  stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
+  spawnStone: 0
+  audiosource: {fileID: 0}
+  s_Indicator: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
+    type: 2}
+  dropStoneTime: 3
+  dropStoneCount: 0
+  fillBar: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012, type: 2}
+  numDots: 50
+  dotsPositionOverTime: 0.11
+  dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
+  speedX: 33
+  speedY: 35
 --- !u!114 &1342784581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26793,26 +26807,26 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: Walking
-    clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
+    clip: {fileID: 8300000, guid: 4dca808beaaa10f44bb874abef88e114, type: 3}
     volume: 0.54
     pitch: 0.47
     loop: 0
     source: {fileID: 0}
   - name: Jumping
-    clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
+    clip: {fileID: 8300000, guid: ba037d14f876042449c38d8561167356, type: 3}
     volume: 0.77
     pitch: 0.34
     loop: 0
     source: {fileID: 0}
   - name: BoxDragging
-    clip: {fileID: 8300000, guid: d0604c8a8554d264781e82b09e9021fb, type: 3}
+    clip: {fileID: 8300000, guid: 211bdf2bf8dda4a46b4d0182bee98f56, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Climbing
     clip: {fileID: 8300000, guid: e46717d3763fed54091d452c1cdff800, type: 3}
-    volume: 0.22
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -26835,7 +26849,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: EnemyDetect2
-    clip: {fileID: 8300000, guid: d562dde3fd27eb54cb99589370a5a1eb, type: 3}
+    clip: {fileID: 8300000, guid: f90fcb67273bfaf4cb9b129213a93998, type: 3}
     volume: 1
     pitch: 0.8
     loop: 0
@@ -26848,48 +26862,6 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: StoneThrowing
     clip: {fileID: 8300000, guid: 9480e40549f88d349b3aab86dbe755df, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: Crawling
-    clip: {fileID: 8300000, guid: 86b71b266042431458f472ff72dca489, type: 3}
-    volume: 0.43
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: StonePickup
-    clip: {fileID: 8300000, guid: e218f5019fcfd0d459a32d0f14277367, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: LeverPulling
-    clip: {fileID: 8300000, guid: 1eded6ffff849d3499b47cc92dc3dcec, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: FallDeath
-    clip: {fileID: 8300000, guid: 50068e9493a2c394e94bb13e9f48dd10, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: BoxDeath
-    clip: {fileID: 8300000, guid: 6eeea1981f66a9741ba2b682e13ef132, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: KeyPickup
-    clip: {fileID: 8300000, guid: d1a2093d04ebe6844a671b04f7b1e6d0, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: EnemyWalking
-    clip: {fileID: 8300000, guid: 2fce5292b7dd8cc4ab90fb3d345d92da, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -28201,6 +28173,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  throwStance: 0
+  stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
+  spawnStone: 0
+  audiosource: {fileID: 0}
+  s_Indicator: {fileID: 1020042122483984, guid: 07a8b00c7bf480240bace41d2aaa52a8,
+    type: 2}
+  dropStoneTime: 3
+  dropStoneCount: 0
+  fillBar: {fileID: 1856692789638552, guid: 91cfd30d1d348e9478c628feddcbb012, type: 2}
+  numDots: 50
+  dotsPositionOverTime: 0.11
+  dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
+  speedX: 33
+  speedY: 35
 --- !u!1 &2066605450
 GameObject:
   m_ObjectHideFlags: 0
