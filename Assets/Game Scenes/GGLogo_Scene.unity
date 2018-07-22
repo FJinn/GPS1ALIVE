@@ -406,7 +406,7 @@ MonoBehaviour:
   anim: {fileID: 1826145137}
   lvlChanger: {fileID: 1826145135}
   levelToLoad: 5
-  sceneDuration: 6
+  sceneDuration: 3
 --- !u!114 &2112019056
 MonoBehaviour:
   m_ObjectHideFlags: 0
