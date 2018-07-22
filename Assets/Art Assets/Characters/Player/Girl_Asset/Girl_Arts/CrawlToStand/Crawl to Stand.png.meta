@@ -1,17 +1,14 @@
 fileFormatVersion: 2
-guid: dd63c17eaa018194bb99a2ab364d5924
+guid: 2ad0e817f2c9c7d4f9fa294ffcff3f2f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: crouch_0
-    21300002: crouch_1
-    21300004: crouch_2
-    21300006: crouch_3
-    21300008: crouch_4
-    21300010: crouch_5
-    21300012: crouch_6
-    21300014: crouch_7
-    21300016: crouch_8
-    21300018: crouch_9
+    21300000: Crawl to Stand_0
+    21300002: Crawl to Stand_1
+    21300004: Crawl to Stand_2
+    21300006: Crawl to Stand_3
+    21300008: Crawl to Stand_4
+    21300010: Crawl to Stand_5
+    21300012: Crawl to Stand_6
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -55,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 65
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,39 +87,57 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: crouch_0
+      name: Crawl to Stand_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 129
+        y: 1
+        width: 306
+        height: 246
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fa17c3b0f93a24bbfcbb0832ff5c9e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crawl to Stand_1
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 10
+        width: 277
+        height: 277
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4627a68f18e167043ac4b65e14ba6a2c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crawl to Stand_2
+      rect:
+        serializedVersion: 2
+        x: 1165
         y: 13
-        width: 198
-        height: 410
+        width: 257
+        height: 316
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,19 +145,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac056f637ca287949b837abf5d257bad
+      spriteID: 9712c830a2924f146aba321c4b0180e0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_1
+      name: Crawl to Stand_3
       rect:
         serializedVersion: 2
-        x: 263
+        x: 1686
         y: 13
-        width: 198
-        height: 400
+        width: 233
+        height: 341
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,19 +165,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0400b1ab2e6daa84cb46e313868c3913
+      spriteID: dcb0fe24cf2b2034ba7951e9190a0d4a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_2
+      name: Crawl to Stand_4
       rect:
         serializedVersion: 2
-        x: 526
+        x: 2208
         y: 13
-        width: 197
-        height: 387
+        width: 208
+        height: 365
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af5a4a6c602aede4091e50c0f86783ce
+      spriteID: 9922dcba2f772e240bcc81dcdb753476
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_3
+      name: Crawl to Stand_5
       rect:
         serializedVersion: 2
-        x: 789
-        y: 13
-        width: 198
-        height: 377
+        x: 2712
+        y: 11
+        width: 201
+        height: 392
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,19 +205,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8231451ef377fdb449f7386da1b707d9
+      spriteID: 4bbda0242b904b545adcf5855157210e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: crouch_4
+      name: Crawl to Stand_6
       rect:
         serializedVersion: 2
-        x: 1049
-        y: 13
-        width: 199
-        height: 367
+        x: 3209
+        y: 11
+        width: 201
+        height: 416
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,107 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdffae2b0bf11154aa2bb268e1201851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crouch_5
-      rect:
-        serializedVersion: 2
-        x: 1302
-        y: 13
-        width: 210
-        height: 356
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bd132283ce8fb3741957e6befcd4e175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crouch_6
-      rect:
-        serializedVersion: 2
-        x: 1553
-        y: 13
-        width: 220
-        height: 345
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b07dc6ec89815542a59366d5671b1c1
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crouch_7
-      rect:
-        serializedVersion: 2
-        x: 1806
-        y: 13
-        width: 230
-        height: 335
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ef916625ad2aaa44ac9ab42d399534b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crouch_8
-      rect:
-        serializedVersion: 2
-        x: 2056
-        y: 14
-        width: 242
-        height: 323
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 81e5182d949b1d840a61687173c44e6e
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: crouch_9
-      rect:
-        serializedVersion: 2
-        x: 2308
-        y: 16
-        width: 251
-        height: 309
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d322bf9ec1014943a1e22eee8967319
+      spriteID: cbff951366f30f041a00d83d31099433
       vertices: []
       indices: 
       edges: []
@@ -318,7 +233,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 327db465cadacf7499ccdbd7c4ee355a
+    spriteID: 1098b452e08ccee4dbc18946529ee99f
     vertices: []
     indices: 
     edges: []

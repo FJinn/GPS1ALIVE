@@ -9,6 +9,8 @@ public class P_mechanismTrigger : MonoBehaviour {
 
     public GameObject ScreenFade;
     public bool triggerLever = false;
+    public bool leverDown = false;
+    public bool leverUp = false;
 
     private GameObject CheckpointManager;
     private BoxCollider2D myBoxCollider;

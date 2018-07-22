@@ -9,6 +9,7 @@ public class B_Animations : MonoBehaviour {
     P_pushPull playerPushPull;
     Rigidbody2D playerVelocity;
     P_mechanismTrigger leverInteract;
+
     bool enterVent = false;
     bool exitVent = false;
     public bool pullLeft = false;
@@ -22,7 +23,7 @@ public class B_Animations : MonoBehaviour {
         playerControl = GetComponent<P_controls>();
         playerPushPull = GetComponent<P_pushPull>();
         playerVelocity = GetComponent<Rigidbody2D>();
-        leverInteract = GetComponent<P_mechanismTrigger>();
+        leverInteract = GetComponent<P_mechanismTrigger>();        
     }
 
     void Update () {
@@ -233,12 +234,20 @@ public class B_Animations : MonoBehaviour {
     
     void Interaction()
     {
-        if (leverInteract.triggerLever)
+        if (leverInteract.triggerLever && leverInteract.leverDown)
         {
             playerControl.StopGameControl = true;
             anim.SetBool("PullLever", true);
+            anim.SetBool("PushLever", false);
             anim.SetBool("Idle", false);
         }       
+        else if(leverInteract.triggerLever && leverInteract.leverUp)
+        {
+            playerControl.StopGameControl = true;
+            anim.SetBool("PullLever", false);
+            anim.SetBool("PushLever", true);
+            anim.SetBool("Idle", false);
+        }
 
         if(playerControl.openDoor)
         {
@@ -259,8 +268,10 @@ public class B_Animations : MonoBehaviour {
     void ResetLeverInteraction()
     {
         leverInteract.triggerLever = false;
+
         playerControl.StopGameControl = false;
         anim.SetBool("PullLever", false);
+        anim.SetBool("PushLever", false);
         anim.SetBool("Idle", true);
     }
 
