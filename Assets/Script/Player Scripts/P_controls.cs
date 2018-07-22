@@ -8,7 +8,7 @@ public class P_controls : MonoBehaviour {
     public float JumpSpeed;
     public float walkSpeed;
     public float climbSpeed;
-    private float moveHorizontal;
+    public float moveHorizontal;
 
     private Rigidbody2D rb2d;
     private BoxCollider2D b2d;
