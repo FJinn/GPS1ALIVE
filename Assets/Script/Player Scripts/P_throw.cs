@@ -90,13 +90,21 @@ public class P_throw : MonoBehaviour {
 
 	void throwing(){
 		stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
-		spawnStone = 0;
+        // ignore collision with stone
+        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+
+        spawnStone = 0;
         isThrowing = true;
         control.StopGameControl = false;
         dropStoneCount = 0;
         Destroy(tempBar);
-        audiosource.Play();
+        ThrowingSound();
 	}
+
+    public void ThrowingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("StoneThrowing");
+    }
 
     public int dropStoneTime = 3;
     public float dropStoneCount = 0;
@@ -122,6 +130,9 @@ public class P_throw : MonoBehaviour {
             spawnStone = 0;
             stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
             stoneTemp.GetComponent<S_Control>().launched = true;
+            // ignore collision with stone
+            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+
             dropStoneCount = 0;
             control.StopGameControl = false;
             throwStance = false;

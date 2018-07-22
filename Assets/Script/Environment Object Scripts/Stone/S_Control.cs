@@ -32,11 +32,6 @@ public class S_Control : MonoBehaviour {
         e = GameObject.FindGameObjectsWithTag("Enemy");
         player[0] = GameObject.FindGameObjectWithTag("Player");
         player[1] = GameObject.FindGameObjectWithTag("Player2");
-        // ignore collision with players
-        for (int i = 0; i < player.Length; i++)
-        {
-            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), player[i].GetComponent<BoxCollider2D>());
-        }
 
         // ignore collision with enemy
         for (int i = 0; i < e.Length; i++)
@@ -69,10 +64,21 @@ public class S_Control : MonoBehaviour {
         }
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        StoneDroppingSound();
+        GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
     private void Launch(){
 		s_rigidbody.velocity = launchVelocity;
 
 		launched = true;
 	}
-    
+
+    public void StoneDroppingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("StoneDropping");
+    }
+
 }

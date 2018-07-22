@@ -17917,6 +17917,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4731312750120154, guid: cb2bef34c7c98fc4dbcd4145b17b9e52, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -17947,6 +17952,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4731312750120154, guid: cb2bef34c7c98fc4dbcd4145b17b9e52, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.data[11].name
+      value: StoneDropping
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.data[11].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ca933534543e4d14c92e0d346dced881, type: 3}
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.data[11].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114018792060106704, guid: cb2bef34c7c98fc4dbcd4145b17b9e52,
+        type: 2}
+      propertyPath: sounds.Array.data[11].pitch
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
