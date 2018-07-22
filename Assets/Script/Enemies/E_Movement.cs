@@ -34,7 +34,7 @@ public class E_Movement : MonoBehaviour {
 		tempPos.y = transform.position.y;
 		tempHolder.y = tempPos.y;
         // considering using moveposition
-		transform.position = Vector2.MoveTowards (transform.position, tempHolder , e_patrolSpeed * Time.deltaTime);
+		transform.position = Vector3.MoveTowards (transform.position, tempHolder , e_patrolSpeed * Time.deltaTime);
 
         if (tempHolder.x > transform.position.x)
         {

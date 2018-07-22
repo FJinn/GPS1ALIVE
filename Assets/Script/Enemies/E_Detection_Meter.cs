@@ -76,11 +76,13 @@ public class E_Detection_Meter : MonoBehaviour {
 
         //  fill_Bar.localScale = new Vector3(5, fb_value, transform.localScale.z);
         fill_Bar.transform.localScale = new Vector3(transform.localScale.x, fb_value, transform.localScale.y);
-        transform.position = fb_Enemy.transform.position + new Vector3(0, 14f, 0);
 
-        if(fb_Enemy == null)
+        if (fb_Enemy == null)
         {
             Destroy(gameObject);
         }
+
+        transform.position = fb_Enemy.transform.position + new Vector3(0, 14f, 0);
+
     }
 }
