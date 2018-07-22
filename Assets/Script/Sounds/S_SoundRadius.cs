@@ -21,9 +21,11 @@ public class S_SoundRadius : MonoBehaviour {
 
     public bool onVent = false;
 
+    private bool triggerOnce;
+
 	// Use this for initialization
 	void Start () {
-		
+        triggerOnce = false;
 	}
 	
 	// Update is called once per frame
@@ -65,7 +67,11 @@ public class S_SoundRadius : MonoBehaviour {
     {
         if (other.gameObject.tag != "Enemy" && s_onCollides && other.gameObject.tag != "Player" && other.gameObject.tag != "Player2")
         {
-            soundTrigger(s_triggerAmounts);
+            if(!triggerOnce)
+            {
+                triggerOnce = true;
+                soundTrigger(s_triggerAmounts);
+            }
         }
     }
 

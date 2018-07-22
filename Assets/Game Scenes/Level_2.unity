@@ -218,7 +218,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 941941}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dae27d4887653a54a9a493d1ce91d913, type: 2}
+  m_Material: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3334,7 +3334,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 643735287}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: dae27d4887653a54a9a493d1ce91d913, type: 2}
+  m_Material: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3854,6 +3854,11 @@ Prefab:
       propertyPath: destroyBox
       value: 
       objectReference: {fileID: 1754456722}
+    - target: {fileID: 212037013945615600, guid: 98e848a05d969164eb95a0e9a7bb7e6a,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
   m_IsPrefabAsset: 0
@@ -4838,7 +4843,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -28
   m_Sprite: {fileID: 21300000, guid: 162cd32def491774e9d5ec5ecb3b3858, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -21739,7 +21744,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1754456722}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
