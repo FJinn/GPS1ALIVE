@@ -9,11 +9,12 @@ public class Splash_Screen : MonoBehaviour
     public Animator anim;
     public GameObject lvlChanger;
     public int levelToLoad;
+    public float sceneDuration;
 
     // Use this for initialization
     void Start()
     {
-        Invoke("setNextScene", 8f);
+        Invoke("setNextScene", sceneDuration);
     }
 
     // Update is called once per frame

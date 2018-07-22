@@ -577,3 +577,4 @@ MonoBehaviour:
   anim: {fileID: 1296516001}
   lvlChanger: {fileID: 1296516002}
   levelToLoad: 1
+  sceneDuration: 8
