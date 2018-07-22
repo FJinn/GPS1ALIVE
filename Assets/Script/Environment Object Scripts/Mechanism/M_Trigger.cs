@@ -404,7 +404,9 @@ public class M_Trigger : MonoBehaviour {
                             Destroy(child.gameObject, 3f);
                         }
                     }
-                    myCollider.isTrigger = true;
+                    Physics2D.IgnoreCollision(myCollider, players[0].GetComponent<BoxCollider2D>());
+                    Physics2D.IgnoreCollision(myCollider, players[1].GetComponent<BoxCollider2D>());
+
                     Destroy(this.gameObject, 3f);
                     transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-10f, 10f));
                 }
