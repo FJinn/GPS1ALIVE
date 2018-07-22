@@ -44,15 +44,14 @@ public class El_Manager : MonoBehaviour
             mySlider.enabled = true;
             mySlider.enableCollision = true;
 
-            if(p_Counts == 1)
+            FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
+            if (p_Counts == 1)
             {
                 mySlider.connectedAnchor = new Vector2(posX, posY);
                 onEl = false;
             }
         }
     }
-    
-
 
     // Update is called once per frame
     void Update()
@@ -75,9 +74,7 @@ public class El_Manager : MonoBehaviour
             //If 1 Player got onto the elevator, the elevator will go to destined distance and won't get back up.
             // Enable slider and thus, the limit will be used.
             // And the box will not push it down before it is enabled.
-            
             mySlider.connectedAnchor = new Vector2(posX,posY);
-            FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
 
             if (!GetComponent<BoxCollider2D>().IsTouching(p_OnEl.GetComponent<BoxCollider2D>())){
                 onEl = false;
@@ -90,10 +87,9 @@ public class El_Manager : MonoBehaviour
         else if (p_Counts >= 2)
         {
             //If 2 Player got onto the elevator, the elevator will go straight down until collide with a ground
-            if(mySlider != null)
+            if (mySlider != null)
             {
                 mySlider.breakForce = 5;
-                FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
             }
             for(int i =0; i< p.Length; i ++)
             {

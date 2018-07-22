@@ -25,6 +25,9 @@ public class P_throw : MonoBehaviour {
     public bool droppedStone = false;
     public bool canUseStonePile = true;
 
+    GameObject[] player = new GameObject[2];
+    GameObject otherStone;
+
     private P_controls control;
 
     void Start()
@@ -32,6 +35,9 @@ public class P_throw : MonoBehaviour {
         control = GetComponent<P_controls>();
         // Offset Y
         tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
+
+        player[0] = GameObject.FindGameObjectWithTag("Player");
+        player[1] = GameObject.FindGameObjectWithTag("Player2");
     }
 
     // Update is called once per frame
@@ -97,8 +103,17 @@ public class P_throw : MonoBehaviour {
         throwed = true;
         stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
         // ignore collision with stone
+<<<<<<< HEAD
         Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
         
+=======
+        Physics2D.IgnoreCollision(player[0].GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+        Physics2D.IgnoreCollision(player[1].GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+
+        otherStone = GameObject.FindGameObjectWithTag("Stone");
+        Physics2D.IgnoreCollision(otherStone.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+
+>>>>>>> ef25eaa5fad80dd9d55370f7f55b79365eb42e4a
         spawnStone = 0;
         isThrowing = true;
         //control.StopGameControl = false;

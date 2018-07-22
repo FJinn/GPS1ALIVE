@@ -3625,6 +3625,16 @@ Prefab:
       propertyPath: height
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -1.9257941
+      objectReference: {fileID: 0}
+    - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 1.8684111
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
   m_IsPrefabAsset: 0
@@ -18453,8 +18463,6 @@ MonoBehaviour:
   ConnectedDoor: 0
   TriggerOnlyOnce: 1
   switchAnim: 0
-  leverUp: 0
-  leverDown: 0
 --- !u!1 &1341280151
 GameObject:
   m_ObjectHideFlags: 0
