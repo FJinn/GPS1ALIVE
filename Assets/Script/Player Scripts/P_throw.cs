@@ -19,6 +19,11 @@ public class P_throw : MonoBehaviour {
     Vector2 tempPos;
     public float s_indicatorHeight;
     public float s_indicatorWidth;
+    public bool canThrow = false;
+    public bool pickedUp = false;
+    public bool throwed = false;
+    public bool droppedStone = false;
+    public bool canUseStonePile = true;
 
     private P_controls control;
 
@@ -57,8 +62,8 @@ public class P_throw : MonoBehaviour {
         
         if (throwStance)
         {
-            control.StopGameControl = true;
-            if (Input.GetKeyDown(control.KeyUse))
+            control.StopGameControl = true;       
+            if (Input.GetKeyDown(control.KeyUse) && canThrow)
             {
                 throwing();
                 //spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
@@ -89,13 +94,14 @@ public class P_throw : MonoBehaviour {
     float bufferCount = 0;
 
 	void throwing(){
-		stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
+        throwed = true;
+        stoneTemp = (GameObject)Instantiate (stone, tempPos, Quaternion.identity);
         // ignore collision with stone
         Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
-
+        
         spawnStone = 0;
         isThrowing = true;
-        control.StopGameControl = false;
+        //control.StopGameControl = false;
         dropStoneCount = 0;
         Destroy(tempBar);
         ThrowingSound();
@@ -127,15 +133,17 @@ public class P_throw : MonoBehaviour {
         }
         if (dropStoneCount > dropStoneTime)
         {
+            droppedStone = true;            
             spawnStone = 0;
             stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
             stoneTemp.GetComponent<S_Control>().launched = true;
             // ignore collision with stone
             Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
-
+            
             dropStoneCount = 0;
             control.StopGameControl = false;
             throwStance = false;
+            GetComponent<B_Animations>().ResetThrowInteraction();
             Destroy(tempBar);
         }
         else

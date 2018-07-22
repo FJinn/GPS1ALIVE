@@ -7,8 +7,9 @@ public class B_Animations : MonoBehaviour {
     P_Vent playerVent;
     P_controls playerControl;
     P_pushPull playerPushPull;
-    Rigidbody2D playerVelocity;
+    P_throw playerThrow;
     P_mechanismTrigger leverInteract;
+    Rigidbody2D playerVelocity;
 
     bool enterVent = false;
     bool exitVent = false;
@@ -22,8 +23,9 @@ public class B_Animations : MonoBehaviour {
         playerVent = GetComponent<P_Vent>();
         playerControl = GetComponent<P_controls>();
         playerPushPull = GetComponent<P_pushPull>();
+        playerThrow = GetComponent<P_throw>();
+        leverInteract = GetComponent<P_mechanismTrigger>();
         playerVelocity = GetComponent<Rigidbody2D>();
-        leverInteract = GetComponent<P_mechanismTrigger>();        
     }
 
     void Update () {
@@ -33,6 +35,7 @@ public class B_Animations : MonoBehaviour {
         OnLadder();
         Interaction();
         Spotted();
+        Throwing();
 	}
 
     void Movement()
@@ -268,7 +271,6 @@ public class B_Animations : MonoBehaviour {
     void ResetLeverInteraction()
     {
         leverInteract.triggerLever = false;
-
         playerControl.StopGameControl = false;
         anim.SetBool("PullLever", false);
         anim.SetBool("PushLever", false);
@@ -309,4 +311,57 @@ public class B_Animations : MonoBehaviour {
             anim.SetBool("Walking", false);
         }
     }
+
+    void Throwing()
+    {
+        if(playerThrow.pickedUp)
+        {
+            anim.SetBool("PickUp", true);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);           
+        }
+        if(playerThrow.throwStance)
+        {
+            if (playerThrow.throwed)
+            {
+                anim.SetBool("PickUp", false);
+                anim.SetBool("Aim", false);
+                anim.SetBool("Throw", true);
+            }
+        }     
+    }
+
+    public void ResetThrowInteraction()
+    {
+        anim.SetBool("Aim", false);
+        anim.SetBool("Throw", false);
+        anim.SetBool("PickUp", false);
+        anim.SetBool("Idle", true);
+        playerControl.StopGameControl = false;
+        playerThrow.pickedUp = false;
+        playerThrow.throwed = false;
+        playerThrow.canThrow = false;
+        playerThrow.canUseStonePile = false;
+        playerThrow.droppedStone = false;
+    }
+
+    void SetCanThrow()
+    {
+        playerThrow.canThrow = true;
+    }
+
+    void DisableCanThrow()
+    {
+        playerThrow.canThrow = false;
+    }
+
+    void SetCanUseStonePile()
+    {
+        playerThrow.canUseStonePile = true;
+    }
+
+    void DisableCanUseStonePile()
+    {
+        playerThrow.canUseStonePile = false;
+    }    
 }
