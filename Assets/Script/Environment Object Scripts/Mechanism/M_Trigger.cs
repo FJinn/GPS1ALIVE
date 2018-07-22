@@ -53,12 +53,12 @@ public class M_Trigger : MonoBehaviour {
         players = new GameObject[2];
         players[0] = GameObject.FindGameObjectWithTag("Player");
         players[1] = GameObject.FindGameObjectWithTag("Player2");
+        myCollider = GetComponent<BoxCollider2D>();
 
 
         if (isThisDoor)
         {
             doorAnimator = GetComponent<Animator>();
-            myCollider = GetComponent<BoxCollider2D>();
             openDoorCounts = 0;
             if(OpenedAtStart)
             {
@@ -393,8 +393,20 @@ public class M_Trigger : MonoBehaviour {
             {
                 if (collision.collider == destroyBox.GetComponent<BoxCollider2D>())
                 {
-                    destroyBox.GetComponent<Animator>().Play("XXX");
-                    destroyBox.GetComponent<BoxCollider2D>().isTrigger = true;
+                    destroyBox.GetComponent<BoxCollider2D>().enabled = false;
+                    foreach(Transform child in destroyBox.transform)
+                    {
+                        if(child.GetComponent<Rigidbody2D>() != null)
+                        {
+                            child.GetComponent<Rigidbody2D>().isKinematic = false;
+                            child.transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-20f, 20f));
+                            child.GetComponent<BoxCollider2D>().isTrigger = true;
+                            Destroy(child.gameObject, 3f);
+                        }
+                    }
+                    myCollider.isTrigger = true;
+                    Destroy(this.gameObject, 3f);
+                    transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-10f, 10f));
                 }
             }
         }
@@ -404,12 +416,13 @@ public class M_Trigger : MonoBehaviour {
     {
         if(DoesItFall)
         {
-            if (isOnPlatform && Vector2.Distance(transform.position, PointPosition.transform.position) < 1.5f)
+            if (Vector2.Distance(transform.position, PointPosition.transform.position) < 7f)
             {
                 rb2d.isKinematic = false;
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[0].GetComponent<BoxCollider2D>());
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[1].GetComponent<BoxCollider2D>());
             }
+
             if (collision.collider.CompareTag("Player") || collision.collider.CompareTag("Player2"))
             {
                 isOnPlatform = false;

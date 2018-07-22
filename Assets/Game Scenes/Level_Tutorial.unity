@@ -28297,7 +28297,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4135199488437592, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -132.91
+      value: -135.28
       objectReference: {fileID: 0}
     - target: {fileID: 4135199488437592, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
       propertyPath: m_LocalPosition.z
@@ -28327,6 +28327,21 @@ Prefab:
         type: 2}
       propertyPath: height
       value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114796901425855980, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: soundRadius
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 15.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
