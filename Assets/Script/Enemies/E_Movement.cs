@@ -18,6 +18,9 @@ public class E_Movement : MonoBehaviour {
     public Animator anim;
     public bool isNurse;
 
+    private BoxCollider2D myCollider;
+    [SerializeField] private LayerMask enemyMask;
+    [SerializeField] private bool IgnoreEnemies;
     // private bool isRight = true;
 
 	// Use this for initialization
@@ -27,6 +30,18 @@ public class E_Movement : MonoBehaviour {
 		tempHolder = moveSpots [0].position;
 		tempPos = tempHolder;
         originDirection = transform.localScale.x;
+        myCollider = GetComponent<BoxCollider2D>();
+
+        if(IgnoreEnemies)
+        {
+            Collider2D[] allEnemies = Physics2D.OverlapCircleAll(transform.position, 10000f, enemyMask);
+            {
+                for (int i = 0; i < allEnemies.Length; i++)
+                {
+                    Physics2D.IgnoreCollision(myCollider, allEnemies[i].GetComponent<BoxCollider2D>());
+                }
+            }
+        }
 	}
 	
 	// Update is called once per frame

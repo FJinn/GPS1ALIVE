@@ -3515,7 +3515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 125a344716d3ce94597d4119690bb0ff, type: 2}
+  profile: {fileID: 11400000, guid: 7e0ef16181203514da782aa42a708e6e, type: 2}
 --- !u!1001 &855749070
 Prefab:
   m_ObjectHideFlags: 0
@@ -4095,11 +4095,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4452599670927246, guid: 87ffe4d71f675c544aa7a896738f4a47, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.4
+      value: 11.7
       objectReference: {fileID: 0}
     - target: {fileID: 4452599670927246, guid: 87ffe4d71f675c544aa7a896738f4a47, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -26.2
+      value: -28.1
       objectReference: {fileID: 0}
     - target: {fileID: 4452599670927246, guid: 87ffe4d71f675c544aa7a896738f4a47, type: 2}
       propertyPath: m_LocalPosition.z
@@ -23995,6 +23995,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelIndex: 2
+  player1Enter: 0
+  player2Enter: 0
 --- !u!1 &1351321305
 GameObject:
   m_ObjectHideFlags: 0
