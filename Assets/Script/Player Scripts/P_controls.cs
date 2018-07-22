@@ -122,7 +122,7 @@ public class P_controls : MonoBehaviour {
         }
     }
 
-    void FixedUpdate()
+    void Update()
 	{
         if(isPlayer1)
         {
@@ -193,7 +193,7 @@ public class P_controls : MonoBehaviour {
             // add force to jump (DOUBT WILL BE USING THIS FOR THE GAME)
             if(!inTheAir)
             {
-                rb2d.AddForce(Vector2.up * JumpSpeed * 1000);
+                rb2d.velocity = new Vector2(rb2d.velocity.x, JumpSpeed);
                 inTheAir = true;
             }
         }
