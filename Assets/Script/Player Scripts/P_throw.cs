@@ -70,7 +70,7 @@ public class P_throw : MonoBehaviour {
             throwStance = false;
         }
 
-  //      tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
+        tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
         screenPosition = cam.WorldToScreenPoint(head);
         
         if (throwStance)
