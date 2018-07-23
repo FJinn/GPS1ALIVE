@@ -30,6 +30,10 @@ public class P_throw : MonoBehaviour {
 
     private P_controls control;
 
+    public Camera cam;
+    public Vector3 screenPosition;
+    bool isThrowing = false;
+
     void Start()
     {
         control = GetComponent<P_controls>();
@@ -41,7 +45,7 @@ public class P_throw : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         head = new Vector2(transform.position.x + s_indicatorWidth, transform.position.y + s_indicatorHeight);
         barPosition = new Vector2(transform.position.x, transform.position.y + 9f);
         if (spawnStone > 0)
@@ -49,22 +53,23 @@ public class P_throw : MonoBehaviour {
             if (!spawned)
             {
                 spawned = true;
-                temp = (GameObject)Instantiate(s_Indicator, head, Quaternion.identity);
+   //             temp = (GameObject)Instantiate(s_Indicator, head, Quaternion.identity);
             }
-            temp.transform.position = head;
+   //         temp.transform.position = head;
             throwStance = true;
         }
         else if (spawnStone == 0)
         {
-            if(temp != null)
-            {
-                Destroy(temp);
-            }
+   //         if(temp != null)
+   //         {
+   //             Destroy(temp);
+    //        }
             spawned = false;
             throwStance = false;
         }
 
-        tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
+  //      tempPos = new Vector2(transform.position.x, transform.position.y + tempYSize);
+        screenPosition = cam.WorldToScreenPoint(head);
         
         if (throwStance)
         {
@@ -74,7 +79,10 @@ public class P_throw : MonoBehaviour {
                 throwing();
                 //spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
             }
-            dropStone();
+            if(canThrow)
+            {
+                dropStone();
+            }
         }
 
         if(isThrowing)
@@ -93,7 +101,6 @@ public class P_throw : MonoBehaviour {
         DotsSpawner();
 	}
 
-    bool isThrowing = false;
     [HideInInspector]public GameObject stoneTemp;
 
     int spawnStoneBuffer = 1;
@@ -132,20 +139,22 @@ public class P_throw : MonoBehaviour {
     public GameObject fillBar;
     GameObject tempBar;
     Transform tempMask;
+    public GameObject stoneMid;
 
     void dropStone()
     {
-        if (tempBar == null)
-        {
-            tempBar = (GameObject)Instantiate(fillBar, head, Quaternion.identity);
-            foreach (Transform child in tempBar.transform)
-            {
-                if (child.CompareTag("Nothing"))
-                {
-                    tempMask = child;
-                }
-            }
-        }
+  //      if (tempBar == null)
+  //      {
+            //        tempBar = (GameObject)Instantiate(fillBar, head, Quaternion.identity);
+     //       tempBar = (GameObject)Instantiate(stoneMid, head, Quaternion.identity);
+            //        foreach (Transform child in tempBar.transform)
+            //        {
+            //           if (child.CompareTag("Nothing"))
+            //           {
+            //               tempMask = child;
+            //          }
+            //      }
+   //     }
         if (dropStoneCount > dropStoneTime)
         {
             droppedStone = true;            
@@ -159,14 +168,16 @@ public class P_throw : MonoBehaviour {
             control.StopGameControl = false;
             throwStance = false;
             GetComponent<B_Animations>().ResetThrowInteraction();
-            Destroy(tempBar);
+   //         Destroy(tempBar);
         }
         else
         {
             dropStoneCount += Time.deltaTime;
         }
-
-        tempMask.localPosition = new Vector2(tempMask.localPosition.x, -(dropStoneCount/dropStoneTime)-0.3f);
+  //      if(tempMask != null)
+   //     {
+   //         tempMask.localPosition = new Vector2(tempMask.localPosition.x, -(dropStoneCount / dropStoneTime) - 0.3f);
+   //     }
     }
     
 	// Trajectory line
