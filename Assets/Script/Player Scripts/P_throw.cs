@@ -42,6 +42,8 @@ public class P_throw : MonoBehaviour {
 
         player[0] = GameObject.FindGameObjectWithTag("Player");
         player[1] = GameObject.FindGameObjectWithTag("Player2");
+
+        cam = Camera.main;
     }
 
     // Update is called once per frame
@@ -139,7 +141,6 @@ public class P_throw : MonoBehaviour {
     public GameObject fillBar;
     GameObject tempBar;
     Transform tempMask;
-    public GameObject stoneMid;
 
     void dropStone()
     {

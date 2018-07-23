@@ -10,6 +10,8 @@ public class StoneDropUI : MonoBehaviour {
     float[] pDropStoneCount = new float[2];
     int[] pDropStoneTime = new int[2];
 
+    Canvas canvas;
+
     GameObject[] tempUI = new GameObject[2];
 
     public GameObject indicatorUI;
@@ -39,10 +41,15 @@ public class StoneDropUI : MonoBehaviour {
         {
             pThrow[i] = p[i].GetComponent<P_throw>();
         }
+
+        canvas = GetComponent<Canvas>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+
+        canvas.worldCamera = Camera.main;
+
         for(int i=0; i<2; i++)
         {
             pDropStoneCount[i] = pThrow[i].dropStoneCount / 3;
