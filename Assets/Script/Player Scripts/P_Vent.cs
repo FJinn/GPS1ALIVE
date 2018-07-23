@@ -98,7 +98,7 @@ public class P_Vent : MonoBehaviour {
                 }
             }
         }
-        else if (onVent == false && crouched)
+        else if (onVent == false && crouched) 
         {
             crouched = false;         
             GetComponent<P_controls>().onVent = false;

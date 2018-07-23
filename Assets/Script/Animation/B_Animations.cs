@@ -78,13 +78,14 @@ public class B_Animations : MonoBehaviour {
             if (!enterVent)
             {
                 playerControl.StopGameControl = true;
+                anim.SetBool("Walking", false);
                 anim.SetBool("EnterVent", true);
                 anim.SetBool("ExitVent", false);
-                Invoke("EnterVentTransition", 1f);
+               // Invoke("EnterVentTransition", 1f);
             }
-            else
+            else if(enterVent)
             {
-                playerControl.StopGameControl = false;
+                //playerControl.StopGameControl = false;
                 if (playerVelocity.velocity.x > 0.1f || playerVelocity.velocity.x < -0.1f)
                 {
                     anim.SetBool("CrawlingIdle", false);
@@ -106,7 +107,7 @@ public class B_Animations : MonoBehaviour {
                 anim.SetBool("Crawling", false);
                 anim.SetBool("ExitVent", true);
                 anim.SetBool("EnterVent", false);
-                Invoke("ExitVentTransition", 0.8f);
+                //Invoke("ExitVentTransition", 0.8f);
             }
         }
         else if (playerControl.fallFromVent)
@@ -125,6 +126,7 @@ public class B_Animations : MonoBehaviour {
     void EnterVentTransition()
     {
         enterVent = true;
+        playerControl.StopGameControl = false;
         anim.SetBool("EnterVent", false);
     }
 

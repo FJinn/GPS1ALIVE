@@ -1,17 +1,13 @@
 fileFormatVersion: 2
-guid: 5b61b7e7554a57b42b35e41f549c7784
+guid: 8c71178baa272e1438b494eadef7e9ca
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Crouch_0
-    21300002: Crouch_1
-    21300004: Crouch_2
-    21300006: Crouch_3
-    21300008: Crouch_4
-    21300010: Crouch_5
-    21300012: Crouch_6
-    21300014: Crouch_7
-    21300016: Crouch_8
-    21300018: Crouch_9
+    21300000: Stand to Crawl_0
+    21300002: Stand to Crawl_1
+    21300004: Stand to Crawl_2
+    21300006: Stand to Crawl_3
+    21300008: Stand to Crawl_4
+    21300010: Stand to Crawl_5
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -90,39 +86,17 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Crouch_0
+      name: Stand to Crawl_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 5
-        width: 212
-        height: 421
+        x: 133
+        y: 34
+        width: 211
+        height: 420
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,19 +104,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d92db85f147f054cad5602698620556
+      spriteID: f3b610f2412f0f847aef516736226b3f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crouch_1
+      name: Stand to Crawl_1
       rect:
         serializedVersion: 2
-        x: 244
-        y: 4
+        x: 653
+        y: 31
         width: 213
-        height: 418
+        height: 405
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,78 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd776f58d2936d146b855e38e95f1dad
+      spriteID: 1af43cf8cb6bca9428f10abf4fd904d8
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crouch_2
+      name: Stand to Crawl_2
       rect:
         serializedVersion: 2
-        x: 489
-        y: 3
+        x: 1171
+        y: 26
         width: 213
-        height: 413
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4036d09b80253d44db86413fbd31b7eb
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crouch_3
-      rect:
-        serializedVersion: 2
-        x: 735
-        y: 3
-        width: 214
-        height: 407
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 49606862ca99de94fb6ba93abd2f5d24
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crouch_4
-      rect:
-        serializedVersion: 2
-        x: 981
-        y: 5
-        width: 213
-        height: 400
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dd21894984702e4db76be597e4e1530
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crouch_5
-      rect:
-        serializedVersion: 2
-        x: 1225
-        y: 5
-        width: 215
         height: 394
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -230,19 +144,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb463fbc4f8e20f48a4f0f648be22458
+      spriteID: 5c518ff74d2930e419524d20aceec414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crouch_6
+      name: Stand to Crawl_3
       rect:
         serializedVersion: 2
-        x: 1472
-        y: 5
-        width: 214
-        height: 388
+        x: 1688
+        y: 34
+        width: 219
+        height: 369
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,19 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15b25888fb112954085eaeee2cb65d88
+      spriteID: f7675bfef4efd494eae384aa13d9115f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crouch_7
+      name: Stand to Crawl_4
       rect:
         serializedVersion: 2
-        x: 1716
-        y: 5
-        width: 216
-        height: 384
+        x: 2201
+        y: 31
+        width: 268
+        height: 321
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,19 +184,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dda8e3b1735a1b84b8189685a48a00e4
+      spriteID: 0235ac5676d947845a2bc18cbb88e4d6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crouch_8
+      name: Stand to Crawl_5
       rect:
         serializedVersion: 2
-        x: 1963
-        y: 4
-        width: 215
-        height: 379
+        x: 2708
+        y: 29
+        width: 318
+        height: 268
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,27 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cde325cd8749e2342aea19e681f32d4c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crouch_9
-      rect:
-        serializedVersion: 2
-        x: 2204
-        y: 4
-        width: 220
-        height: 374
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d24be630c9d623744b52cf9184136404
+      spriteID: 3bfa50f4bf8665748ba8c1965df3b533
       vertices: []
       indices: 
       edges: []
@@ -318,7 +212,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a7be034932718e1418bf631c0e97b1ef
+    spriteID: 488dc6efb4a01754d9d670dfca676ced
     vertices: []
     indices: 
     edges: []
