@@ -21082,6 +21082,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
+        type: 2}
+      propertyPath: sounds.Array.size
+      value: 19
+      objectReference: {fileID: 0}
     - target: {fileID: 4173926800983490, guid: 467a456618e2772479f620dfb322cce9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21113,6 +21118,26 @@ Prefab:
     - target: {fileID: 4173926800983490, guid: 467a456618e2772479f620dfb322cce9, type: 2}
       propertyPath: m_RootOrder
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
+        type: 2}
+      propertyPath: sounds.Array.data[18].name
+      value: StoneDropping
+      objectReference: {fileID: 0}
+    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
+        type: 2}
+      propertyPath: sounds.Array.data[18].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: ca933534543e4d14c92e0d346dced881, type: 3}
+    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
+        type: 2}
+      propertyPath: sounds.Array.data[18].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
+        type: 2}
+      propertyPath: sounds.Array.data[18].pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467a456618e2772479f620dfb322cce9, type: 2}
@@ -21399,11 +21424,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 234.9
+      value: 13.8
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -41.8
+      value: -26.2
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24279,11 +24304,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 231.73999
+      value: 10.639995
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -41.739994
+      value: -26.139996
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.z
