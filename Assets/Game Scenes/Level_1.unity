@@ -643,7 +643,7 @@ Prefab:
     - target: {fileID: 114386388958026468, guid: 532197b9090e67548a71fa9787f7dd76,
         type: 2}
       propertyPath: LightDetectionRadius
-      value: 5.86
+      value: 6.49
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 532197b9090e67548a71fa9787f7dd76, type: 2}
@@ -28083,6 +28083,7 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 114549305106512098, guid: c15307721642b584790c6bd6eba91371, type: 2}
     - {fileID: 61217872162814102, guid: c15307721642b584790c6bd6eba91371, type: 2}
+    - {fileID: 114822355640027724, guid: c15307721642b584790c6bd6eba91371, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: c15307721642b584790c6bd6eba91371, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &1093074150 stripped
