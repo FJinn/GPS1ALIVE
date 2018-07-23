@@ -69,6 +69,12 @@ public class StoneDropUI : MonoBehaviour {
                 {
                     tempUI[i].GetComponent<Image>().fillAmount =  (pDropStoneTime[i]/ pDropStoneTime[i]) - (pDropStoneCount[i]);
                 }
+
+            }
+
+            if(pThrow[i].spawnStone == 0 && tempUI != null)
+            {
+                Destroy(tempUI[i]);
             }
             
         }

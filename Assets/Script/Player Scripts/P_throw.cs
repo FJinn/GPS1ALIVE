@@ -163,7 +163,7 @@ public class P_throw : MonoBehaviour {
        //     stoneTemp = (GameObject)Instantiate(stone, tempPos, Quaternion.identity);
        //     stoneTemp.GetComponent<S_Control>().launched = true;
             // ignore collision with stone
-            Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
+    //        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), stoneTemp.GetComponent<BoxCollider2D>());
             
             dropStoneCount = 0;
             control.StopGameControl = false;
