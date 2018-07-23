@@ -4248,6 +4248,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114894816491675254, guid: 98e848a05d969164eb95a0e9a7bb7e6a,
+        type: 2}
+      propertyPath: distanceUntilFall
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
   m_IsPrefabAsset: 0
@@ -20061,6 +20066,7 @@ MonoBehaviour:
   enterCounter: 0
   ConnectedDoor: 0
   TriggerOnlyOnce: 1
+  TriggerSpecificBool: 0
   switchAnim: 0
 --- !u!1 &1341280151
 GameObject:
@@ -20196,6 +20202,8 @@ MonoBehaviour:
   waitTime: 0
   movingToDestination: 0
   DoesItFall: 0
+  EnterToFall: 0
+  distanceUntilFall: 0
   destroyBox: {fileID: 0}
   isThisDoor: 1
   OpenedAtStart: 0
@@ -21565,6 +21573,8 @@ MonoBehaviour:
   waitTime: 0
   movingToDestination: 0
   DoesItFall: 0
+  EnterToFall: 0
+  distanceUntilFall: 0
   destroyBox: {fileID: 0}
   isThisDoor: 1
   OpenedAtStart: 0
@@ -23920,6 +23930,8 @@ MonoBehaviour:
   waitTime: 0
   movingToDestination: 0
   DoesItFall: 0
+  EnterToFall: 0
+  distanceUntilFall: 0
   destroyBox: {fileID: 0}
   isThisDoor: 1
   OpenedAtStart: 0

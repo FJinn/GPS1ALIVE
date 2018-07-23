@@ -35,6 +35,9 @@ public class M_Trigger : MonoBehaviour {
 
     [Header("Especially for MoveToSpecificPosition use")]
     public bool DoesItFall;
+    public bool EnterToFall;
+    public float distanceUntilFall;
+    public LayerMask ignoreEnemy;
     private bool isOnPlatform;
     private Rigidbody2D rb2d;
     [Header("When fall, which stuff to destroy?")]
@@ -389,28 +392,47 @@ public class M_Trigger : MonoBehaviour {
 
         if(DoesItFall)
         {
-            if (!rb2d.isKinematic)
+            if (!GetComponent<Rigidbody2D>().isKinematic)
             {
-                if (collision.collider == destroyBox.GetComponent<BoxCollider2D>())
+                if(destroyBox != null)
                 {
-                    destroyBox.GetComponent<BoxCollider2D>().enabled = false;
-                    foreach(Transform child in destroyBox.transform)
+                    if (collision.collider == destroyBox.GetComponent<BoxCollider2D>())
                     {
-                        if(child.GetComponent<Rigidbody2D>() != null)
+                        destroyBox.GetComponent<BoxCollider2D>().enabled = false;
+                        foreach (Transform child in destroyBox.transform)
                         {
-                            child.GetComponent<Rigidbody2D>().isKinematic = false;
-                            child.transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-20f, 20f));
-                            child.GetComponent<BoxCollider2D>().isTrigger = true;
-                            Destroy(child.gameObject, 3f);
+                            if (child.GetComponent<Rigidbody2D>() != null)
+                            {
+                                child.GetComponent<Rigidbody2D>().isKinematic = false;
+                                child.transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-20f, 20f));
+                                child.GetComponent<BoxCollider2D>().isTrigger = true;
+                                Destroy(child.gameObject, 3f);
+                            }
                         }
                     }
-                    Physics2D.IgnoreCollision(myCollider, players[0].GetComponent<BoxCollider2D>());
-                    Physics2D.IgnoreCollision(myCollider, players[1].GetComponent<BoxCollider2D>());
-
-                    Destroy(this.gameObject, 3f);
-                    transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-10f, 10f));
                 }
+                
+
+                Physics2D.IgnoreCollision(myCollider, players[0].GetComponent<BoxCollider2D>());
+                Physics2D.IgnoreCollision(myCollider, players[1].GetComponent<BoxCollider2D>());
+
+                Collider2D[] ignoreEnemies = Physics2D.OverlapCircleAll(transform.position, 5000f, ignoreEnemy);
+                for(int i =0;i < ignoreEnemies.Length; i++)
+                {
+                    Physics2D.IgnoreCollision(myCollider, ignoreEnemies[i]);
+                }
+
+                transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-5f, 5f));
+                Destroy(gameObject, 3f);
             }
+        }
+
+        if(EnterToFall)
+        {
+            GetComponent<Rigidbody2D>().isKinematic = false;
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[0].GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[1].GetComponent<BoxCollider2D>());
+            Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), destroyBox.GetComponent<BoxCollider2D>());
         }
     }
 
@@ -418,9 +440,9 @@ public class M_Trigger : MonoBehaviour {
     {
         if(DoesItFall)
         {
-            if (Vector2.Distance(transform.position, PointPosition.transform.position) < 7f)
+            if (Vector2.Distance(transform.position, PointPosition.transform.position) < distanceUntilFall)
             {
-                rb2d.isKinematic = false;
+                GetComponent<Rigidbody2D>().isKinematic = false;
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[0].GetComponent<BoxCollider2D>());
                 Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[1].GetComponent<BoxCollider2D>());
             }
