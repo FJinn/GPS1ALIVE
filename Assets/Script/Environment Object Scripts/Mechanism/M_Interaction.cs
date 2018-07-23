@@ -42,7 +42,10 @@ public class M_Interaction : MonoBehaviour {
         
         for (int i = 0; i < ObjectList.Length ; i++)
         {
-            ObjectList[i].GetComponent<M_Trigger>().Trigger();
+            if(ObjectList[i] != null)
+            {
+                ObjectList[i].GetComponent<M_Trigger>().Trigger();
+            }
         }
 
         if(switchAnim)
@@ -102,7 +105,10 @@ public class M_Interaction : MonoBehaviour {
         Gizmos.color = Color.cyan;
         for (int i = 0;i < ObjectList.Length; i++)
         {
-            Gizmos.DrawLine(transform.position, ObjectList[i].transform.position);
+            if(ObjectList[i] != null)
+            {
+                Gizmos.DrawLine(transform.position, ObjectList[i].transform.position);
+            }
         }
     }
 

@@ -348,17 +348,6 @@ MonoBehaviour:
   pullRight: 0
   pushLeft: 0
   pushRight: 0
---- !u!114 &64698855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 64698852}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &73106463
 GameObject:
   m_ObjectHideFlags: 0
@@ -26594,22 +26583,6 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
---- !u!1 &690089477 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1317265310782640, guid: a2d17c676ed80ab499b50f6c82da5e08,
-    type: 2}
-  m_PrefabInternal: {fileID: 690089476}
---- !u!114 &690089478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 690089477}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be435b6301cd63049aa06d0910b7062f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &699830387
 Prefab:
   m_ObjectHideFlags: 0
@@ -31352,6 +31325,10 @@ MonoBehaviour:
   faceOriginDirection: 1
   anim: {fileID: 1875413838}
   isNurse: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  IgnoreEnemies: 0
 --- !u!50 &1875413842
 Rigidbody2D:
   serializedVersion: 4
@@ -32546,6 +32523,10 @@ MonoBehaviour:
   faceOriginDirection: 1
   anim: {fileID: 2122926388}
   isNurse: 1
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  IgnoreEnemies: 0
 --- !u!50 &2122926390
 Rigidbody2D:
   serializedVersion: 4

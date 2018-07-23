@@ -49,7 +49,7 @@ public class P_controls : MonoBehaviour {
     public bool fallFromVent = false;
     public bool spotted = false;
     public bool fallen = false;
-    private bool inTheAir = false;
+    public bool inTheAir = false;
 
     public GameObject audioManager;
 
