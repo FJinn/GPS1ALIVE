@@ -32,7 +32,7 @@ public class P_mechanismTrigger : MonoBehaviour {
             {
                 if (myBoxCollider.IsTouching(mechanism.GetComponent<BoxCollider2D>()))
                 {
-                    if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl && !GetComponent<P_controls>().inTheAir)
+                    if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl && GetComponent<P_controls>().Grounded())
                     {
                         mechanism.GetComponent<M_Interaction>().UnitTrigger();
                         triggerLever = true;

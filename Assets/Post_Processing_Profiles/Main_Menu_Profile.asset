@@ -100,8 +100,8 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 0.3
-        threshold: 0.6
+        intensity: 0.44
+        threshold: 1.03
         softKnee: 0.5
         radius: 2.6
         antiFlicker: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
         mode: 1
         log:
           slope: {r: 1, g: 1, b: 1, a: 0}
-          power: {r: 1, g: 1, b: 1, a: 0.055763125}
+          power: {r: 1, g: 1, b: 1, a: 0}
           offset: {r: 1, g: 1, b: 1, a: 0}
         linear:
           lift: {r: 1, g: 1, b: 1, a: 0}
