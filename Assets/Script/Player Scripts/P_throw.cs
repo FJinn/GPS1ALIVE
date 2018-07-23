@@ -23,7 +23,7 @@ public class P_throw : MonoBehaviour {
     public bool pickedUp = false;
     public bool throwed = false;
     public bool droppedStone = false;
-    public bool canUseStonePile = true;
+    public bool canUseStonePile = false;
 
     GameObject[] player = new GameObject[2];
     GameObject otherStone;
@@ -41,7 +41,7 @@ public class P_throw : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void Update () {
         head = new Vector2(transform.position.x + s_indicatorWidth, transform.position.y + s_indicatorHeight);
         barPosition = new Vector2(transform.position.x, transform.position.y + 9f);
         if (spawnStone > 0)
@@ -124,7 +124,7 @@ public class P_throw : MonoBehaviour {
 
     public void ThrowingSound()
     {
-        FindObjectOfType<AudioManager>().Play("StoneThrowing");
+        //FindObjectOfType<AudioManager>().Play("StoneThrowing");
     }
 
     public int dropStoneTime = 3;
