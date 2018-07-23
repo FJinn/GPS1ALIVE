@@ -29,6 +29,7 @@ public class D_Manager : MonoBehaviour {
                     p[i].GetComponent<P_controls>().openDoor = true;
                     Invoke("DoorOpen", 0.5f);
                     p[i].GetComponent<P_keyHold>().keyNum = 0;
+                    DoorUnlockingSound();
                 }
             }
         }
@@ -39,5 +40,10 @@ public class D_Manager : MonoBehaviour {
         doorUnlocked.Play("DoorUnlocked");
     }
 
-    
+    public void DoorUnlockingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("DoorUnlocking");
+    }
+
+
 }
