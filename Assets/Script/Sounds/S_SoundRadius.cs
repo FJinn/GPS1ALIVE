@@ -17,6 +17,9 @@ public class S_SoundRadius : MonoBehaviour {
     [Header("Moving makes sound?")]
     public bool s_moveSound;
 
+    [Header("Can trigger multiple times?")]
+    public bool triggerMultiple;
+
     public float s_triggerAmounts;
 
     public bool onVent = false;
@@ -26,6 +29,7 @@ public class S_SoundRadius : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         triggerOnce = false;
+       
 	}
 	
 	// Update is called once per frame
@@ -70,6 +74,11 @@ public class S_SoundRadius : MonoBehaviour {
             if(!triggerOnce)
             {
                 triggerOnce = true;
+                soundTrigger(s_triggerAmounts);
+            }
+
+            if(triggerMultiple)
+            {
                 soundTrigger(s_triggerAmounts);
             }
         }

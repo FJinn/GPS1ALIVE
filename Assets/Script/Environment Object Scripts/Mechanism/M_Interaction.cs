@@ -21,7 +21,7 @@ public class M_Interaction : MonoBehaviour {
 
     [Header("Does this thing trigger only once when touch?")]
     public bool TriggerOnlyOnce = false;
-
+    public bool TriggerSpecificBool = false;
     [Header("Is this a switch?")]
     public bool switchAnim = false;
     
@@ -42,7 +42,16 @@ public class M_Interaction : MonoBehaviour {
         
         for (int i = 0; i < ObjectList.Length ; i++)
         {
-            ObjectList[i].GetComponent<M_Trigger>().Trigger();
+            if(ObjectList[i] != null)
+            {
+                ObjectList[i].GetComponent<M_Trigger>().Trigger();
+                if (TriggerSpecificBool)
+                {
+                    ObjectList[i].GetComponent<M_Trigger>().EnterToFall = true;
+                    ObjectList[i].GetComponent<M_Trigger>().MoveHorizontal = false;
+                    ObjectList[i].GetComponent<M_Trigger>().MoveVertical = false;
+                }
+            }
         }
 
         if(switchAnim)
@@ -102,7 +111,10 @@ public class M_Interaction : MonoBehaviour {
         Gizmos.color = Color.cyan;
         for (int i = 0;i < ObjectList.Length; i++)
         {
-            Gizmos.DrawLine(transform.position, ObjectList[i].transform.position);
+            if(ObjectList[i] != null)
+            {
+                Gizmos.DrawLine(transform.position, ObjectList[i].transform.position);
+            }
         }
     }
 

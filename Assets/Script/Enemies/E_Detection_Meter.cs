@@ -77,7 +77,7 @@ public class E_Detection_Meter : MonoBehaviour {
         //  fill_Bar.localScale = new Vector3(5, fb_value, transform.localScale.z);
         fill_Bar.transform.localScale = new Vector3(transform.localScale.x, fb_value, transform.localScale.y);
 
-        if (fb_Enemy == null)
+        if (fb_Enemy == null || fb_Enemy.GetComponent<E_Sound_Detection>() == null)
         {
             Destroy(gameObject);
         }

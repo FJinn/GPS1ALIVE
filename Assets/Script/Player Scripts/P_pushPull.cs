@@ -39,6 +39,7 @@ public class P_pushPull : MonoBehaviour {
             box.GetComponent<M_BoxPull>().beingPush = false;
             GetComponent<P_controls>().noJump = false;
             OnBox = false;
+            box = null;
         }
 
 
@@ -47,23 +48,22 @@ public class P_pushPull : MonoBehaviour {
             if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
             {
                 box.GetComponent<FixedJoint2D>().enabled = false;
-
-                if (box != null)
+                
+                if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
                 {
-                    if (!box.GetComponent<M_BoxPull>().isActiveAndEnabled)
-                    {
-                        box.GetComponent<FixedJoint2D>().enabled = false;
-                        box.GetComponent<M_BoxPull>().beingPush = false;
-                        GetComponent<P_controls>().noJump = false;
-                        OnBox = false;
-                    }
+                    box.GetComponent<FixedJoint2D>().enabled = false;
+                    box.GetComponent<M_BoxPull>().beingPush = false;
+                    GetComponent<P_controls>().noJump = false;
+                    OnBox = false;
+                    box = null;
                 }
             }
+            
         }
         
         if(GetComponent<P_controls>().moveHorizontal == 0 && box != null)
         {
-            box.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            box.GetComponent<Rigidbody2D>().velocity = new Vector2(0, box.GetComponent<Rigidbody2D>().velocity.y);
         }
 
     }

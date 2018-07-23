@@ -35,7 +35,7 @@ public class E_FieldOfView : MonoBehaviour {
 
             if (dstEnemy < Distance)
             {
-                playerPos = new Vector2(player.transform.transform.Find("Eye").position.x - transform.Find("Eye").position.x, player.transform.transform.Find("Eye").position.y - transform.Find("Eye").position.y);
+                playerPos = new Vector2(player.transform.Find("Eye").position.x - transform.Find("Eye").position.x, player.transform. Find("Eye").position.y - transform.Find("Eye").position.y);
 
                 Physics2D.queriesStartInColliders = false;
                 RaycastHit2D hit = Physics2D.Raycast(transform.Find("Eye").position, playerPos, dstEnemy, playerMask);

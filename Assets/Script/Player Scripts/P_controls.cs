@@ -49,7 +49,7 @@ public class P_controls : MonoBehaviour {
     public bool fallFromVent = false;
     public bool spotted = false;
     public bool fallen = false;
-    private bool inTheAir = false;
+    public bool inTheAir = false;
 
     public GameObject audioManager;
 
@@ -89,7 +89,7 @@ public class P_controls : MonoBehaviour {
         else if (CompareTag ("Player2"))
         {
             KeyUp = KeyCode.UpArrow;
-            KeyUse = KeyCode.Slash;
+            KeyUse = KeyCode.RightControl;
             KeyDown = KeyCode.DownArrow;
             KeyLeft = KeyCode.LeftArrow;
             KeyRight = KeyCode.RightArrow;
@@ -110,7 +110,7 @@ public class P_controls : MonoBehaviour {
         }
     }
 
-    private bool Grounded()
+    public bool Grounded()
     {
         // cannot double jump or whatever while u're in air
         if (rb2d.velocity.y > 0.1 || rb2d.velocity.y < -0.1)
