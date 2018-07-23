@@ -39,6 +39,7 @@ public class P_pushPull : MonoBehaviour {
             box.GetComponent<M_BoxPull>().beingPush = false;
             GetComponent<P_controls>().noJump = false;
             OnBox = false;
+            box = null;
         }
 
 
@@ -57,6 +58,7 @@ public class P_pushPull : MonoBehaviour {
                     box = null;
                 }
             }
+            
         }
         
         if(GetComponent<P_controls>().moveHorizontal == 0 && box != null)
