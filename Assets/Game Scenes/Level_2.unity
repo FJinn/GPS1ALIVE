@@ -18765,7 +18765,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 24
+  orthographic size: 30
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -18788,7 +18788,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1098249005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 244.7, y: -39.9, z: -10}
+  m_LocalPosition: {x: 14.2, y: -23.4, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18845,7 +18845,7 @@ MonoBehaviour:
   - 30
   currentCamera: {fileID: 1098249007}
   cameraSizeSmoothTimer: 0
-  targetRoom: 0
+  targetRoom: 1
 --- !u!1001 &1108211112
 Prefab:
   m_ObjectHideFlags: 0
@@ -19981,7 +19981,7 @@ Prefab:
     - target: {fileID: 114796901425855980, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
       propertyPath: height
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
@@ -21082,11 +21082,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
-        type: 2}
-      propertyPath: sounds.Array.size
-      value: 19
-      objectReference: {fileID: 0}
     - target: {fileID: 4173926800983490, guid: 467a456618e2772479f620dfb322cce9, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -21118,26 +21113,6 @@ Prefab:
     - target: {fileID: 4173926800983490, guid: 467a456618e2772479f620dfb322cce9, type: 2}
       propertyPath: m_RootOrder
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
-        type: 2}
-      propertyPath: sounds.Array.data[18].name
-      value: StoneDropping
-      objectReference: {fileID: 0}
-    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
-        type: 2}
-      propertyPath: sounds.Array.data[18].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: ca933534543e4d14c92e0d346dced881, type: 3}
-    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
-        type: 2}
-      propertyPath: sounds.Array.data[18].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
-        type: 2}
-      propertyPath: sounds.Array.data[18].pitch
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 467a456618e2772479f620dfb322cce9, type: 2}
@@ -21424,11 +21399,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 13.8
+      value: 18.26001
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -26.2
+      value: -25.260006
       objectReference: {fileID: 0}
     - target: {fileID: 4653162192806168, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24304,11 +24279,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 10.639995
+      value: 15.1
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -26.139996
+      value: -25.2
       objectReference: {fileID: 0}
     - target: {fileID: 4602860321918564, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -24514,7 +24489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1349476545180458, guid: 08f87e1f5c5577c4581633a3deb28906, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08f87e1f5c5577c4581633a3deb28906, type: 2}
