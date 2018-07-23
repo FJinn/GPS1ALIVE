@@ -23,7 +23,7 @@ public class P_throw : MonoBehaviour {
     public bool pickedUp = false;
     public bool throwed = false;
     public bool droppedStone = false;
-    public bool canUseStonePile = true;
+    public bool canUseStonePile = false;
 
     GameObject[] player = new GameObject[2];
     GameObject otherStone;
@@ -133,7 +133,7 @@ public class P_throw : MonoBehaviour {
 
     public void ThrowingSound()
     {
-        FindObjectOfType<AudioManager>().Play("StoneThrowing");
+        //FindObjectOfType<AudioManager>().Play("StoneThrowing");
     }
 
     public int dropStoneTime = 3;

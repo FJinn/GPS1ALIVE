@@ -66,8 +66,8 @@ public class B_Animations : MonoBehaviour {
             anim.SetBool("Idle", false);
             anim.SetBool("Walking", false);
             anim.SetBool("Jumping", false);
-        }        
-    }
+        }            
+    }   
 
     void VentMovement()
     {
@@ -320,13 +320,14 @@ public class B_Animations : MonoBehaviour {
             anim.SetBool("Idle", false);
             anim.SetBool("Walking", false);           
         }
+        
         if(playerThrow.throwStance)
         {
             if (playerThrow.throwed)
             {
                 anim.SetBool("PickUp", false);
                 anim.SetBool("Aim", false);
-                anim.SetBool("Throw", true);
+                anim.SetBool("Throw", true);                
             }
         }     
     }
@@ -343,11 +344,11 @@ public class B_Animations : MonoBehaviour {
         playerThrow.canThrow = false;
         playerThrow.canUseStonePile = false;
         playerThrow.droppedStone = false;
-    }
+    }  
 
     void SetCanThrow()
     {
-        playerThrow.canThrow = true;
+        playerThrow.canThrow = true;        
     }
 
     void DisableCanThrow()

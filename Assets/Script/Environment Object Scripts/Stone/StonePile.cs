@@ -23,7 +23,7 @@ public class StonePile : MonoBehaviour {
 
             if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false && p[i].GetComponent<P_throw>().canUseStonePile)
             {
-                if (collision.gameObject == p[i] && Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false)
+                if (collision.gameObject == p[i] /*&& Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false*/)
 
                 {
                     p[i].GetComponent<P_throw>().spawnStone = 1;
