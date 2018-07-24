@@ -87,7 +87,7 @@ public class M_Interaction : MonoBehaviour {
 	{
 		if(isStepped)
         {
-            if(transform.localScale.y > 0.6f)
+            if(transform.localScale.y > 0.3f)
             {
                 scaleY = transform.localScale.y;
                 scaleY -= 0.05f;
