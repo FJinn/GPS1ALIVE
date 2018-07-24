@@ -15,6 +15,8 @@ public class M_Interaction : MonoBehaviour {
     private float scaleY;
     public int enterCounter;
     public bool ConnectedDoor;
+    public bool frontSwitch;
+    public bool sideSwitch;
     
     private Animator M_animator;
     private int animCounter;
@@ -59,7 +61,14 @@ public class M_Interaction : MonoBehaviour {
             animCounter++;
             if (animCounter == 1)
             {
-                M_animator.Play("AIO_AnimLeverDown");
+                if(sideSwitch)
+                {
+                    M_animator.Play("AIO_AnimLeverDown");
+                }
+                else if(frontSwitch)
+                {
+                    M_animator.Play("AIO_FrontLeverDown");
+                }               
                 GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverDown = true;
                 GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverDown = true;                
                 GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverUp = false;                
@@ -68,7 +77,14 @@ public class M_Interaction : MonoBehaviour {
             else
             if (animCounter >= 2)
             {
-                M_animator.Play("AIO_AnimLeverUp");
+                if (sideSwitch)
+                {
+                    M_animator.Play("AIO_AnimLeverUp");
+                }
+                else if (frontSwitch)
+                {
+                    M_animator.Play("AIO_FrontLeverUp");
+                }
                 GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverUp = true;
                 GameObject.FindGameObjectWithTag("Player2").GetComponent<P_mechanismTrigger>().leverUp = true;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<P_mechanismTrigger>().leverDown = false;
