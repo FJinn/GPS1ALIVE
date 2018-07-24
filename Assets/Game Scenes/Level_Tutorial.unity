@@ -2750,7 +2750,7 @@ Prefab:
     - target: {fileID: 114280755162499134, guid: a2d17c676ed80ab499b50f6c82da5e08,
         type: 2}
       propertyPath: s_indicatorWidth
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114121725588816696, guid: a2d17c676ed80ab499b50f6c82da5e08,
         type: 2}
@@ -23715,7 +23715,7 @@ Prefab:
     - target: {fileID: 114328873071513184, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}
       propertyPath: s_indicatorWidth
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114074295954028800, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}

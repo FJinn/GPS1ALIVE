@@ -17,5 +17,24 @@ public class P_Death : MonoBehaviour {
         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
        // SceneManager.LoadScene(2);
     }
-    
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ScreenFade.GetComponent<LevelChanger>().FadeToLevel(2);
+            Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ScreenFade.GetComponent<LevelChanger>().FadeToLevel(6);
+            Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ScreenFade.GetComponent<LevelChanger>().FadeToLevel(7);
+            Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
+        }
+    }
+
 }

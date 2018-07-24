@@ -19,6 +19,7 @@ public class M_BoxRotate : MonoBehaviour {
         {
             GetComponent<M_BoxPull>().enabled = false;
             GetComponent<M_BoxPull>().xPos = transform.position.x;
+            GetComponent<FixedJoint2D>().connectedBody = null;
         }
 	}
 }
