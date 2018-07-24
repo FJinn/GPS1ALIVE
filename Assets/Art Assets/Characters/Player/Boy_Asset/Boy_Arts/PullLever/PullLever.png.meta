@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: ad44575db539bd245bb580c0c2e644f7
+guid: 54daab580e91f474c8be2fdaa8f6291b
 TextureImporter:
   fileIDToRecycleName:
-    21300000: B_PullLever_0
-    21300002: B_PullLever_1
-    21300004: B_PullLever_2
-    21300006: B_PullLever_3
+    21300000: PullLever_0
+    21300002: PullLever_1
+    21300004: PullLever_2
+    21300006: PullLever_3
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -88,13 +88,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: B_PullLever_0
+      name: PullLever_0
       rect:
         serializedVersion: 2
-        x: 123
-        y: 120
-        width: 250
-        height: 325
+        x: 0
+        y: 32
+        width: 211
+        height: 419
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -102,18 +102,58 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a01c2aa137bca0b4cb569519479b055b
+      spriteID: 979d46137e211d846a90ebab48427832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: B_PullLever_1
+      name: PullLever_1
       rect:
         serializedVersion: 2
-        x: 644
+        x: 260
         y: 32
-        width: 226
+        width: 228
+        height: 420
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38f8230bd2c97e14386bb0fe415a01cd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PullLever_2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 32
+        width: 218
+        height: 424
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460adb6ab95a9964da9a284a8c5c1c8f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PullLever_3
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 32
+        width: 200
         height: 421
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -122,47 +162,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2293feff2d404d740aa4b4abd79e3f36
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_PullLever_2
-      rect:
-        serializedVersion: 2
-        x: 1155
-        y: 10
-        width: 221
-        height: 434
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70f18d51352945440b8238b30a5af957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: B_PullLever_3
-      rect:
-        serializedVersion: 2
-        x: 1732
-        y: 7
-        width: 205
-        height: 409
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17eee17741d517249a324511f14a91f8
+      spriteID: db3f0bfe5ca36574eb4ba5a671ea4aae
       vertices: []
       indices: 
       edges: []
@@ -170,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 6a2dac5565be32b4eacd75375d0f5133
+    spriteID: d80dfa6b10116dd469040346c86dc78f
     vertices: []
     indices: 
     edges: []

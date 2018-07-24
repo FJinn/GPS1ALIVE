@@ -9,12 +9,15 @@ public class ButtonPressed : MonoBehaviour {
     public bool player1Inside = false;
     public bool player2Inside = false;
     public bool boxUi = false;
+    public float spawnPosY;
+    public float spawnPosX;
+    
     private GameObject spawnedObject;
     Quaternion iniRot;
 
     private void Start()
     {
-        iniRot = transform.rotation;
+        iniRot = transform.rotation;       
     }
 
     private void LateUpdate()
@@ -39,12 +42,12 @@ public class ButtonPressed : MonoBehaviour {
             {
                 GetComponent<BoxCollider2D>().enabled = true;
             }
-        }       
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Vector3 spawnPos = new Vector3(0,8f,0);
+        Vector3 spawnPos = new Vector3(spawnPosX,spawnPosY,0);
         Quaternion spawnRot = Quaternion.Euler(0, 0, 0);
 
         if (other.tag == "Player")
@@ -90,7 +93,7 @@ public class ButtonPressed : MonoBehaviour {
         }
     }
 
-    void Despawn()
+    public void Despawn()
     {
         if (spawnedObject != null)
         {
