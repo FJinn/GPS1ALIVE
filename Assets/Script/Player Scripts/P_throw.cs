@@ -33,6 +33,7 @@ public class P_throw : MonoBehaviour {
     public Camera cam;
     public Vector3 screenPosition;
     bool isThrowing = false;
+    private P_keyHold keyHold;
 
     void Start()
     {
@@ -43,12 +44,21 @@ public class P_throw : MonoBehaviour {
         player[0] = GameObject.FindGameObjectWithTag("Player");
         player[1] = GameObject.FindGameObjectWithTag("Player2");
 
+        keyHold = GetComponent<P_keyHold>();
         cam = Camera.main;
     }
 
     // Update is called once per frame
     void Update () {
-        head = new Vector2(transform.position.x + s_indicatorWidth, transform.position.y + s_indicatorHeight);
+        if(keyHold.keyNum == 0)
+        {
+            head = new Vector2(transform.position.x - 1.3f, transform.position.y + s_indicatorHeight);
+        }
+        else
+        {
+            head = new Vector2(transform.position.x + s_indicatorWidth, transform.position.y + s_indicatorHeight);
+        }
+
         barPosition = new Vector2(transform.position.x, transform.position.y + 9f);
         if (spawnStone > 0)
         {
@@ -138,7 +148,7 @@ public class P_throw : MonoBehaviour {
 
     public int dropStoneTime = 3;
     public float dropStoneCount = 0;
-    public GameObject fillBar;
+ //   public GameObject fillBar;
     GameObject tempBar;
     Transform tempMask;
 
