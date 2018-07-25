@@ -20,26 +20,20 @@ public class StonePile : MonoBehaviour {
     {
         for (int i = 0; i < p.Length; i++)
         {
-
             if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false && p[i].GetComponent<P_throw>().canUseStonePile)
             {
                 if (collision.gameObject == p[i] /*&& Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false*/)
-
                 {
                     p[i].GetComponent<P_throw>().spawnStone = 1;
                     p[i].GetComponent<P_throw>().pickedUp = true;
                 }
-
                 p[i].GetComponent<P_throw>().speedY = height;
             }
 
             if (p[i].GetComponent<P_throw>().stoneTemp != null)
             {
-                print("asda");
                 p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
             }
         }
-
-            
     }
 }
