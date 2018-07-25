@@ -60,13 +60,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Walking
     clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
-    volume: 0.54
+    volume: 0.64
     pitch: 0.47
     loop: 0
     source: {fileID: 0}
   - name: Jumping
     clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
-    volume: 0.77
+    volume: 0.79
     pitch: 0.34
     loop: 0
     source: {fileID: 0}

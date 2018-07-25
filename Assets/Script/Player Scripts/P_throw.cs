@@ -75,7 +75,8 @@ public class P_throw : MonoBehaviour {
         
         if (throwStance)
         {
-            control.StopGameControl = true;       
+            control.StopGameControl = true;
+            FindObjectOfType<AudioManager>().Play("StonePickup");
             if (Input.GetKeyDown(control.KeyUse) && canThrow)
             {
                 throwing();
@@ -133,7 +134,7 @@ public class P_throw : MonoBehaviour {
 
     public void ThrowingSound()
     {
-        //FindObjectOfType<AudioManager>().Play("StoneThrowing");
+        FindObjectOfType<AudioManager>().Play("StoneThrowing");
     }
 
     public int dropStoneTime = 3;

@@ -129,9 +129,7 @@ public class M_Trigger : MonoBehaviour {
     // manual control , not auto
     public void Trigger()
     {
-
-        clickCounts++;
-
+        
         // for opening door
         if(isThisDoor)
         {
