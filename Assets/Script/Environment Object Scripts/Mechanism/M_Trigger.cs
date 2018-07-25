@@ -132,6 +132,7 @@ public class M_Trigger : MonoBehaviour {
 
         clickCounts++;
 
+        // for opening door
         if(isThisDoor)
         {
             openDoorCounts++;
@@ -154,6 +155,8 @@ public class M_Trigger : MonoBehaviour {
 
         }
 
+        // for moving to a specific point
+
         if (MoveToSpecificPoint)
         {
             if(clickCounts == 1)
@@ -167,7 +170,9 @@ public class M_Trigger : MonoBehaviour {
         }
 
 
+        // for moving horizontal or vertical
 
+        clickCounts++;
         if (MovingDistance > 0 )
         {
             if (MoveHorizontal)
@@ -289,14 +294,8 @@ public class M_Trigger : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        /*
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-            Trigger();
-        } 
-        */
 
-
+        // for level 2 special platform.
         if(MoveToSpecificPoint && rb2d.isKinematic)
         {
             if (movingToDestination)
@@ -355,7 +354,7 @@ public class M_Trigger : MonoBehaviour {
         }
     
 
-        //Estimating Distance for Designers
+        // estimating distance
         private void OnDrawGizmos()
         {
             if (MoveHorizontal && !inGame) {
@@ -385,6 +384,7 @@ public class M_Trigger : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // all the codes below for special platform where the player jumps and it falls, and destroy something.
         if(collision.collider.CompareTag("Player") || collision.collider.CompareTag("Player2"))
         {
             isOnPlatform = true;
@@ -421,8 +421,7 @@ public class M_Trigger : MonoBehaviour {
                 {
                     Physics2D.IgnoreCollision(myCollider, ignoreEnemies[i]);
                 }
-
-                transform.rotation = Quaternion.EulerRotation(0, 0, Random.Range(-5f, 5f));
+                
                 Destroy(gameObject, 3f);
             }
         }

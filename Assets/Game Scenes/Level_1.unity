@@ -1164,7 +1164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 341064306}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Mechanism
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28035,6 +28035,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4770538077489294, guid: c15307721642b584790c6bd6eba91371,
     type: 2}
   m_PrefabInternal: {fileID: 1093074149}
+--- !u!1 &1093074151 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1151042981328436, guid: c15307721642b584790c6bd6eba91371,
+    type: 2}
+  m_PrefabInternal: {fileID: 1093074149}
+--- !u!61 &1093074152
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1093074151}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.37951458, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.27919152, y: 0.5}
+    oldSize: {x: 1.71875, y: 12}
+    newSize: {x: 1.71875, y: 12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.71875, y: 12}
+  m_EdgeRadius: 0
 --- !u!1 &1098083403
 GameObject:
   m_ObjectHideFlags: 0
@@ -29541,6 +29571,11 @@ Prefab:
       propertyPath: changeSize
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 61817098233848722, guid: ccbd268a43d0f1d45a52cac9eae2a12d,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 9c6407c30769b914d86b2c7a39c8fd88, type: 2}
     m_RemovedComponents:
     - {fileID: 114277192191145164, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
@@ -29908,7 +29943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1511917771}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Checkpoints
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30653,6 +30688,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 114277192191145164, guid: ccbd268a43d0f1d45a52cac9eae2a12d,
         type: 2}
+      propertyPath: DoorsToClose.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114277192191145164, guid: ccbd268a43d0f1d45a52cac9eae2a12d,
+        type: 2}
       propertyPath: ActiveBlocker.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -30730,6 +30770,11 @@ Prefab:
       propertyPath: ActiveBlocker.Array.data[0]
       value: 
       objectReference: {fileID: 1422651884}
+    - target: {fileID: 114277192191145164, guid: ccbd268a43d0f1d45a52cac9eae2a12d,
+        type: 2}
+      propertyPath: DoorsToClose.Array.data[0]
+      value: 
+      objectReference: {fileID: 1630439098}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
   m_IsPrefabAsset: 0

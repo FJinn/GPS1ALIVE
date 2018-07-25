@@ -15,8 +15,8 @@ public class Camera_RoomTrigger : MonoBehaviour {
     public bool DisableActiveBlocker;
     public bool KillEnemy;
     public GameObject[] Enemies;
-
-
+    
+    public GameObject[] DoorsToClose;
 
     [Header("For dynamic movement!")]
     public bool changeCameraSize = false;
@@ -69,6 +69,14 @@ public class Camera_RoomTrigger : MonoBehaviour {
             {
                 triggerOnce = true;
                 MainCamera.GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
+                if(DoorsToClose.Length != 0)
+                {
+                    for(int i =0; i < DoorsToClose.Length; i++)
+                    {
+                        DoorsToClose[i].GetComponent<Animator>().Play("Doorlock");
+                        FindObjectOfType<AudioManager>().Play("DoorLocking");
+                    }
+                }
             }
 
             if (ActiveDynamic)

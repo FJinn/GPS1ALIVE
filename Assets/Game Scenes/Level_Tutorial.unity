@@ -253,6 +253,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 1
   changeSize: 16
 --- !u!61 &83370999
@@ -1166,6 +1167,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &306548622
@@ -1863,6 +1865,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &452807444
@@ -1979,6 +1982,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &498095802
@@ -3969,6 +3973,7 @@ MonoBehaviour:
   DisableActiveBlocker: 1
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &906593275
@@ -12907,6 +12912,15 @@ Tilemap:
     second:
       m_TileIndex: 1
       m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_ObjectToInstantiate: {fileID: 0}
+      m_TileFlags: 1
+      m_ColliderType: 1
+  - first: {x: 6, y: -36, z: 0}
+    second:
+      m_TileIndex: 2
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -23205,7 +23219,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 15ebd659a50d52b45afa3ac8d87ca2d5, type: 2}
   - m_RefCount: 110
     m_Data: {fileID: 11400000, guid: b929209bb67b1804ba13a9b485327fac, type: 2}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 2f71ba46bb06b5e4b8977e8acb8ca02d, type: 2}
   - m_RefCount: 1597
     m_Data: {fileID: 11400000, guid: bd76d8091c5650d489315a90ff46659c, type: 2}
@@ -23262,7 +23276,7 @@ Tilemap:
     m_Data: {fileID: 21300026, guid: 978417bb8087ddd4f92367a3696a1aa5, type: 3}
   - m_RefCount: 110
     m_Data: {fileID: 21300004, guid: 978417bb8087ddd4f92367a3696a1aa5, type: 3}
-  - m_RefCount: 4
+  - m_RefCount: 5
     m_Data: {fileID: 21300006, guid: 978417bb8087ddd4f92367a3696a1aa5, type: 3}
   - m_RefCount: 1597
     m_Data: {fileID: 21300014, guid: 978417bb8087ddd4f92367a3696a1aa5, type: 3}
@@ -23315,7 +23329,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 21300018, guid: 978417bb8087ddd4f92367a3696a1aa5, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 2008
+  - m_RefCount: 2009
     m_Data:
       e00: 1
       e01: 0
@@ -23334,7 +23348,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 2008
+  - m_RefCount: 2009
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
@@ -25770,6 +25784,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &1522985602
@@ -26199,6 +26214,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &1673568673
@@ -27588,6 +27604,7 @@ MonoBehaviour:
   DisableActiveBlocker: 0
   KillEnemy: 0
   Enemies: []
+  DoorsToClose: []
   changeCameraSize: 0
   changeSize: 0
 --- !u!61 &1907363424

@@ -17,6 +17,14 @@ public class PauseMovement : MonoBehaviour {
             for(int i =0;i < Enemies.Length; i++)
             {
                 Destroy(Enemies[i].GetComponent<E_Sound_Detection>());
+                if(Enemies[i].GetComponent<E_Movement>().isNurse)
+                {
+                    Enemies[i].GetComponent<Animator>().Play("N_IdleAnim");
+                }
+                else
+                {
+                    Enemies[i].GetComponent<Animator>().Play("D_IdleAnim");
+                }
                 Destroy(Enemies[i].GetComponent<E_Movement>());
                 Enemies[i].transform.localScale = new Vector3(-1, 1, 1);
             }
