@@ -36,6 +36,7 @@ public class P_mechanismTrigger : MonoBehaviour {
                     {
                         mechanism.GetComponent<M_Interaction>().UnitTrigger();
                         triggerLever = true;
+                        LeverPullingSound();
                     }                 
                 }
             }
@@ -55,4 +56,11 @@ public class P_mechanismTrigger : MonoBehaviour {
         }
             
 	}
+
+    public void LeverPullingSound()
+    {
+        FindObjectOfType<AudioManager>().Play("LeverPulling");
+    }
+
+
 }
