@@ -9,16 +9,20 @@ public class D_levelProceed : MonoBehaviour {
     public bool player1Enter;
     public bool player2Enter;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Update()
     {
-        if(collision.CompareTag("Player"))
+        Collider2D[] players = Physics2D.OverlapCircleAll(transform.position, 10f);
+        for(int i =0;i<players.Length;i++)
         {
-            player1Enter = true;
+            if(players[i].CompareTag("Player"))
+            {
+                player1Enter = true;
+            }
+            if(players[i].CompareTag("Player2"))
+            {
+                player2Enter = true;
+            }
         }
-        if(collision.CompareTag("Player2"))
-        {
-            player2Enter = true;
-        }
+        
     }
-    
 }
