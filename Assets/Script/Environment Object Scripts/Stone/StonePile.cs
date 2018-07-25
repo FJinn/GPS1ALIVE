@@ -30,12 +30,13 @@ public class StonePile : MonoBehaviour {
                     p[i].GetComponent<P_throw>().pickedUp = true;
                 }
 
-                if (p[i].GetComponent<P_throw>().stoneTemp != null)
-                {
-                    p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
-                }
-
                 p[i].GetComponent<P_throw>().speedY = height;
+            }
+
+            if (p[i].GetComponent<P_throw>().stoneTemp != null)
+            {
+                print("asda");
+                p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
             }
         }
 
