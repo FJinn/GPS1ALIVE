@@ -23,6 +23,7 @@ public class L_Destroy : MonoBehaviour {
                     if (child.GetComponent<L_InLight>() != null)
                     {
                         child.GetComponent<L_InLight>().enabled = true;
+                        LampFlickerSound();
                     }
                 }
             }
@@ -44,9 +45,20 @@ public class L_Destroy : MonoBehaviour {
                 if(child.GetComponent<L_InLight>() != null)
                 {
                     child.GetComponent<L_InLight>().enabled = false;
+                    LampHitSound();
                 }
             }
         }
 
+    }
+
+    public void LampHitSound()
+    {
+        FindObjectOfType<AudioManager>().Play("LampHit");
+    }
+
+    public void LampFlickerSound()
+    {
+        FindObjectOfType<AudioManager>().Play("LampFlicker");
     }
 }

@@ -24,6 +24,7 @@ public class K_Manager : MonoBehaviour {
         if(keyTaken)
         {
             popupUI.GetComponent<ButtonPressed>().canSpawn = false;
+            KeyPickupSound();
         }
 		for(int i=0; i<p.Length; i++){
             if (!cannotTake && Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && this.GetComponent<BoxCollider2D>().IsTouching(p[i].GetComponent<BoxCollider2D>()) && p[i].GetComponent<P_keyHold>().keyNum == 0 && !p[i].GetComponent<P_controls>().inTheAir){
@@ -36,4 +37,10 @@ public class K_Manager : MonoBehaviour {
             }
         }
 	}
+
+    public void KeyPickupSound()
+    {
+        FindObjectOfType<AudioManager>().Play("KeyPickup");
+    }
+
 }
