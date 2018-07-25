@@ -16,8 +16,8 @@ public class IncreasingAlpha : MonoBehaviour {
 
 	void Awake() {
 		alpha = 0f;
-		gameObject.GetComponent<SpriteRenderer> ().color = new Color (1, 0, 0, alpha);
-	}
+        gameObject.GetComponent<SpriteRenderer>().color = new Color(255, 255, 255, alpha);
+    }
 
 	public void callingFadeTo(){
 		isGoingDestroy = false;
@@ -33,7 +33,7 @@ public class IncreasingAlpha : MonoBehaviour {
 
 	IEnumerator FadeTo(float aValue, float aTime) {		
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime) {
-			Color newColor = new Color (1, 0, 0, Mathf.Lerp (alpha, aValue, t));
+			Color newColor = new Color (255, 255, 255, Mathf.Lerp (alpha, aValue, t));
 			gameObject.GetComponent<SpriteRenderer> ().color = newColor;
 			yield return null;
 		}
@@ -43,7 +43,7 @@ public class IncreasingAlpha : MonoBehaviour {
 	IEnumerator FadeOut(float aValue, float aTime) {
 		
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime) {
-			Color newColor = new Color (1, 0, 0, Mathf.Lerp (alpha, aValue, t));
+			Color newColor = new Color (255, 255, 255, Mathf.Lerp (alpha, aValue, t));
 			gameObject.GetComponent<SpriteRenderer> ().color = newColor;
 			yield return null;	
 		}

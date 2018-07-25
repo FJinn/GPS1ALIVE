@@ -77,7 +77,7 @@ public class P_controls : MonoBehaviour {
         if (CompareTag("Player"))
         {
             KeyUp = KeyCode.W;
-            KeyUse = KeyCode.E;
+            KeyUse = KeyCode.G;
             KeyDown = KeyCode.S;
             KeyLeft = KeyCode.A;
             KeyRight = KeyCode.D;

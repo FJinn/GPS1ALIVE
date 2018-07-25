@@ -41,6 +41,16 @@ public class E_Movement : MonoBehaviour {
                     Physics2D.IgnoreCollision(myCollider, allEnemies[i].GetComponent<BoxCollider2D>());
                 }
             }
+            Collider2D[] allEnemies2 = Physics2D.OverlapCircleAll(transform.position, 1000f);
+            {
+                for (int i = 0; i < allEnemies2.Length; i++)
+                {
+                    if(allEnemies2[i].CompareTag("PushPull"))
+                    {
+                        Physics2D.IgnoreCollision(myCollider, allEnemies2[i].GetComponent<BoxCollider2D>());
+                    }
+                }
+            }
         }
 	}
 	

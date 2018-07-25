@@ -8,7 +8,7 @@ TextureImporter:
     21300006: Props 3_4
     21300008: Props 3_2
     21300010: Props 3_5
-    21300012: Props 3_6
+    21300012: P_Cagelight
     21300014: Props 3_7
     21300016: Props 3_8
     21300018: Props 3_9
@@ -18,6 +18,7 @@ TextureImporter:
     21300026: Props 3_13
     21300028: Props 3_14
     21300030: Props 3_15
+    21300032: P_Popup
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -295,6 +296,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ba6a84c59ccadd04ba7b89e959d6c96e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P_Cagelight
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 1024
+        width: 282
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8addffb6b2007f44bc42b4e85797f40
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P_Popup
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1050
+        width: 265
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6327dbe10821f3a4b8582c79736fc522
       vertices: []
       indices: 
       edges: []

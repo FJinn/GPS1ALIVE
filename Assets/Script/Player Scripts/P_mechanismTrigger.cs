@@ -35,8 +35,8 @@ public class P_mechanismTrigger : MonoBehaviour {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl && GetComponent<P_controls>().Grounded())
                     {
                         mechanism.GetComponent<M_Interaction>().UnitTrigger();
-                        FindObjectOfType<AudioManager>().Play("Lever");
                         triggerLever = true;
+                        FindObjectOfType<AudioManager>().Play("LeverPulling");
                     }                 
                 }
             }
