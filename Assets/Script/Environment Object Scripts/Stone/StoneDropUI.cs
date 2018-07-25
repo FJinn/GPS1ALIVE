@@ -26,10 +26,10 @@ public class StoneDropUI : MonoBehaviour {
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
 
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Use this for initialization
@@ -49,6 +49,16 @@ public class StoneDropUI : MonoBehaviour {
 	void Update () {
 
         canvas.worldCamera = Camera.main;
+
+        if(p[0] == null)
+        {
+            p[0] = GameObject.FindGameObjectWithTag("Player");
+            p[1] = GameObject.FindGameObjectWithTag("Player2");
+            for (int i = 0; i < 2; i++)
+            {
+                pThrow[i] = p[i].GetComponent<P_throw>();
+            }
+        }
 
         for(int i=0; i<2; i++)
         {
