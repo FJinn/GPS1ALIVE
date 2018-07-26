@@ -60,13 +60,13 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Walking
     clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
-    volume: 0.64
+    volume: 1
     pitch: 0.47
     loop: 0
     source: {fileID: 0}
   - name: Jumping
     clip: {fileID: 8300000, guid: ed1e0faa2e988cb479527bb0790d22bd, type: 3}
-    volume: 0.79
+    volume: 1
     pitch: 0.34
     loop: 0
     source: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Crawling
     clip: {fileID: 8300000, guid: 86b71b266042431458f472ff72dca489, type: 3}
-    volume: 0.43
+    volume: 0.21
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -151,6 +151,24 @@ MonoBehaviour:
   - name: KeyPickup
     clip: {fileID: 8300000, guid: d1a2093d04ebe6844a671b04f7b1e6d0, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LampHit
+    clip: {fileID: 8300000, guid: 7364ba0990f0e13499b6ae106a96708e, type: 3}
+    volume: 0.52
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: LampFlicker
+    clip: {fileID: 8300000, guid: 75402e7fc63d92c4caa35bac3252fc6d, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: StoneDropping
+    clip: {fileID: 8300000, guid: ca933534543e4d14c92e0d346dced881, type: 3}
+    volume: 0.73
     pitch: 1
     loop: 0
     source: {fileID: 0}

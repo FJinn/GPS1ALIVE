@@ -129,9 +129,10 @@ public class M_Trigger : MonoBehaviour {
     // manual control , not auto
     public void Trigger()
     {
-        
+
+        clickCounts++;
         // for opening door
-        if(isThisDoor)
+        if (isThisDoor)
         {
             openDoorCounts++;
 
@@ -170,7 +171,6 @@ public class M_Trigger : MonoBehaviour {
 
         // for moving horizontal or vertical
 
-        clickCounts++;
         if (MovingDistance > 0 )
         {
             if (MoveHorizontal)

@@ -66,7 +66,10 @@ public class S_Control : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        StoneDroppingSound();
+        if(collision.collider.CompareTag("Walls"))
+        {
+            StoneDroppingSound();
+        }
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
     }
 

@@ -3646,7 +3646,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4306144313568284, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 161.4
+      value: 160.91
       objectReference: {fileID: 0}
     - target: {fileID: 4306144313568284, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3716,7 +3716,7 @@ Prefab:
     - target: {fileID: 61817098233848722, guid: ccbd268a43d0f1d45a52cac9eae2a12d,
         type: 2}
       propertyPath: m_Size.x
-      value: 1.89
+      value: 2.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccbd268a43d0f1d45a52cac9eae2a12d, type: 2}
@@ -5311,7 +5311,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4270417862149400, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22
+      value: -25.1
       objectReference: {fileID: 0}
     - target: {fileID: 108421436500754226, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
         type: 2}
@@ -5342,6 +5342,11 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.4669811
+      objectReference: {fileID: 0}
+    - target: {fileID: 114998466037661742, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: LightDetectionRadius
+      value: 8.53
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
@@ -20974,7 +20979,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4270417862149400, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22
+      value: -25.3
       objectReference: {fileID: 0}
     - target: {fileID: 108421436500754226, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
         type: 2}
@@ -21005,6 +21010,11 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 0.4669811
+      objectReference: {fileID: 0}
+    - target: {fileID: 114998466037661742, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: LightDetectionRadius
+      value: 8.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
@@ -23642,6 +23652,11 @@ Prefab:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114998466037661742, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: LightDetectionRadius
+      value: 5.78
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
   m_IsPrefabAsset: 0
@@ -24371,7 +24386,7 @@ Prefab:
     - target: {fileID: 114998466037661742, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
         type: 2}
       propertyPath: LightDetectionRadius
-      value: 19.37
+      value: 19.5
       objectReference: {fileID: 0}
     - target: {fileID: 60167485588740002, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
         type: 2}

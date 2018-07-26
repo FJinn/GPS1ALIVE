@@ -44,6 +44,13 @@ public class S_SoundRadius : MonoBehaviour {
             {
                 soundTrigger(s_triggerAmounts);
             }
+            if (CompareTag("Player") || CompareTag("Player2"))
+            {
+                if ((GetComponent<Rigidbody2D>().velocity.y > 0.2f || GetComponent<Rigidbody2D>().velocity.y < -0.2f) & GetComponent<P_controls>().OnLadder)
+                {
+                    soundTrigger(s_triggerAmounts);
+                }
+            }
         }
 	}
 
