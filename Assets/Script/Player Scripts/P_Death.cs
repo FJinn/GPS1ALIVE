@@ -8,6 +8,9 @@ public class P_Death : MonoBehaviour {
     public bool isDead;
     public GameObject ScreenFade;
     public int sceneIndex;
+    [HideInInspector] public bool killByBox = false;
+    [HideInInspector] public bool groundOnBlood = false;
+    [HideInInspector] public Vector3 forGroundToCheckBlood;
 
     IEnumerator Dead(){
         GameObject.Find("Player2").GetComponent<P_controls>().StopGameControl = true;

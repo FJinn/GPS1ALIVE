@@ -57,11 +57,11 @@ GameObject:
   - component: {fileID: 114900147211259454}
   m_Layer: 9
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: Head
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1822315382895624
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keyNum: 0
   key: {fileID: 1020042122483984, guid: 283cdbc0f925301489c0de3b6d602484, type: 2}
+  k_indicatorHeight: 0
+  k_indicatorWidth: 0
 --- !u!114 &114226541609714160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -233,6 +235,8 @@ MonoBehaviour:
   isDead: 0
   ScreenFade: {fileID: 0}
   sceneIndex: 3
+  killByBox: 0
+  groundOnBlood: 0
 --- !u!114 &114264716893500676
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,8 +253,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   ScreenFade: {fileID: 0}
-  sceneIndex: 2
   triggerLever: 0
+  leverDown: 0
+  leverUp: 0
 --- !u!114 &114280755162499134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -262,12 +267,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e068110ceecd0c045a93c35404b7a6fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  doubleTapTime: 0.25
-  onThrow: 0
+  throwStance: 0
   stone: {fileID: 1444397255724410, guid: f9e4cb635dd04b74cb700460327cf00c, type: 2}
   spawnStone: 0
   audiosource: {fileID: 0}
   s_Indicator: {fileID: 0}
+  s_indicatorHeight: 0
+  s_indicatorWidth: 0
+  canThrow: 0
+  pickedUp: 0
+  throwed: 0
+  droppedStone: 0
+  canUseStonePile: 0
+  cam: {fileID: 0}
+  screenPosition: {x: 0, y: 0, z: 0}
+  stoneTemp: {fileID: 0}
+  dropStoneTime: 3
+  dropStoneCount: 0
   numDots: 50
   dotsPositionOverTime: 0.11
   dots: {fileID: 1661728614790936, guid: a4e476e62b68f0c42b4d0a5e011329a7, type: 2}
@@ -314,6 +330,7 @@ MonoBehaviour:
   s_moveTarget: 0
   s_onCollides: 0
   s_moveSound: 1
+  triggerMultiple: 0
   s_triggerAmounts: 0.25
   onVent: 0
 --- !u!114 &114672933386784614
@@ -406,10 +423,12 @@ MonoBehaviour:
   JumpSpeed: 2.45
   walkSpeed: 13
   climbSpeed: 10
+  moveHorizontal: 0
   onVent: 0
   noJump: 0
   OnLadder: 0
   myVelocityX: 0
+  myVelocityY: 0
   KeyUp: 119
   KeyUse: 101
   KeyDown: 115
@@ -427,6 +446,10 @@ MonoBehaviour:
   faceLeft: 0
   faceRight: 0
   openDoor: 0
+  fallFromVent: 0
+  spotted: 0
+  fallen: 0
+  inTheAir: 0
   audioManager: {fileID: 0}
 --- !u!114 &114884209733073360
 MonoBehaviour:
