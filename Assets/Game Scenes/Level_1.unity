@@ -845,6 +845,11 @@ Prefab:
       propertyPath: m_Size.x
       value: 1.6943169
       objectReference: {fileID: 0}
+    - target: {fileID: 114672933386784614, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: player1
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -29971,6 +29976,10 @@ Prefab:
       propertyPath: offsetY
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 1184283748810362, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df5e87ba8713e664e9308affc0f8ad0f, type: 2}
   m_IsPrefabAsset: 0
@@ -32452,6 +32461,8 @@ MonoBehaviour:
   pullRight: 0
   pushLeft: 0
   pushRight: 0
+  player1: 0
+  player2: 1
 --- !u!95 &2048828490 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95336084657961866, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,

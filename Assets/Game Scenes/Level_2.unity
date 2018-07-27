@@ -21876,6 +21876,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.47000003
       objectReference: {fileID: 0}
+    - target: {fileID: 114672933386784614, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: player1
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -25367,6 +25372,8 @@ MonoBehaviour:
   pullRight: 0
   pushLeft: 0
   pushRight: 0
+  player1: 0
+  player2: 1
 --- !u!1001 &2012341674
 Prefab:
   m_ObjectHideFlags: 0

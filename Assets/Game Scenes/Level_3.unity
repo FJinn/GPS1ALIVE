@@ -46160,6 +46160,11 @@ Prefab:
       propertyPath: JumpSpeed
       value: 41.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114672933386784614, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: player1
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114101465355413620, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
@@ -49828,6 +49833,8 @@ MonoBehaviour:
   pullRight: 0
   pushLeft: 0
   pushRight: 0
+  player1: 0
+  player2: 1
 --- !u!95 &2123726420 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95336084657961866, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
