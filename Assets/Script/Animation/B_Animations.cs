@@ -17,6 +17,10 @@ public class B_Animations : MonoBehaviour {
     public bool pullRight = false;
     public bool pushLeft = false;
     public bool pushRight = false;
+    public bool player1 = false;
+    public bool player2 = false;
+    public bool p1FallDeath = false;
+    public bool p2FallDeath = false;
 
     private void Start()
     {
@@ -65,8 +69,22 @@ public class B_Animations : MonoBehaviour {
             anim.SetBool("Fallen", true);
             anim.SetBool("Idle", false);
             anim.SetBool("Walking", false);
+            anim.SetBool("Jumping", false);           
+        } 
+        if(p1FallDeath && player2)
+        {
+            anim.SetBool("Scared", true);
             anim.SetBool("Jumping", false);
-        }            
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+        }
+        else if(p2FallDeath && player1)
+        {
+            anim.SetBool("Scared", true);
+            anim.SetBool("Jumping", false);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+        }
     }   
 
     void VentMovement()
