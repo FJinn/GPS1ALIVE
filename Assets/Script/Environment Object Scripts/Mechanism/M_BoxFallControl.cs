@@ -16,6 +16,8 @@ public class M_BoxFallControl : MonoBehaviour {
     public float offsetX;
     public float offsetY;
 
+
+    private SpriteRenderer SR;
     private Vector3 offset;
 
     Rigidbody2D rb2d;
@@ -24,6 +26,7 @@ public class M_BoxFallControl : MonoBehaviour {
     {
         offset = new Vector3(offsetX, offsetY);
         rb2d = GetComponent<Rigidbody2D>();
+        SR = GetComponent<SpriteRenderer>();
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
         death[0] = p[0].GetComponent<P_Death>();
@@ -62,6 +65,7 @@ public class M_BoxFallControl : MonoBehaviour {
         {
             if (death[i].killByBox && rb2d.velocity.y >= -0.5 && rb2d.velocity.y <= 0.5 && onKill)
             {
+                SR.sortingOrder = 7;
                 temp = (GameObject)Instantiate(blood, transform.position + offset, Quaternion.identity);
                 death[i].forGroundToCheckBlood = temp.transform.position;
             //    temp.GetComponent<SpriteRenderer>().sortingOrder = 8;
