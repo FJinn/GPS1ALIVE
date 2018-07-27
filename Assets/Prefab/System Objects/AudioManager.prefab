@@ -107,7 +107,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: ElevatorSkidding
-    clip: {fileID: 8300000, guid: e07d3c7ad93b0a64da03454f2249c200, type: 3}
+    clip: {fileID: 8300000, guid: 8cab4fb4c68352647aba1680397f5cf0, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: KeyPickup
-    clip: {fileID: 8300000, guid: d1a2093d04ebe6844a671b04f7b1e6d0, type: 3}
+    clip: {fileID: 8300000, guid: 46ed07de2a13e834d90f0548412e38f1, type: 3}
     volume: 1
     pitch: 1
     loop: 0
@@ -175,6 +175,12 @@ MonoBehaviour:
   - name: EnemyWalking
     clip: {fileID: 8300000, guid: 2fce5292b7dd8cc4ab90fb3d345d92da, type: 3}
     volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Detected
+    clip: {fileID: 8300000, guid: 108736d046d4c1d448355117e52dfa73, type: 3}
+    volume: 0.48
     pitch: 1
     loop: 0
     source: {fileID: 0}
