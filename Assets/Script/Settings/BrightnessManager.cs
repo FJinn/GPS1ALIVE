@@ -11,9 +11,7 @@ public class BrightnessManager : MonoBehaviour {
     public Slider slider;
 
     public static BrightnessManager instance;
-
-    public ColorGradingComponent mycolor;
-
+    
     public PostProcessingProfile myProfile;
 
     public PostProcessingProfile otherProfile;

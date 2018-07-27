@@ -55,8 +55,6 @@ public class P_controls : MonoBehaviour {
 
     private void Awake()
     {
-        animList = new string[4];
-        anim = GetComponent<Animator>();
         walls = GameObject.FindGameObjectsWithTag("Walls");       
     }
 
@@ -64,6 +62,8 @@ public class P_controls : MonoBehaviour {
     {
         // setup rigidbody for easier use(just for saving getcomponent<rigidbody2d>() space);
 
+        animList = new string[4];
+        anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         iniGravity = rb2d.gravityScale;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -260,21 +260,7 @@ public class P_controls : MonoBehaviour {
                 rb2d.velocity = new Vector2(0, -climbSpeed);
                 transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
 
-
-
-                /* // THE FOLLOWING CODE BELOW IS FOR COLLIDE TO EACH OTHER.
-                if (transform.position.y < otherPlayer.transform.position.y + 7f && transform.position.y > otherPlayer.transform.position.y - 6f && otherPlayer.GetComponent<P_controls>().OnLadder)
-                {
-                    rb2d.velocity = new Vector2(0, 0);
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-
-                }
-                else
-                {
-                    OnLadder = true;
-                    rb2d.velocity = new Vector2(0, -climbSpeed);
-                    transform.position = new Vector2(ladder.transform.position.x, transform.position.y);
-                }*/
+                
             }
 
         }

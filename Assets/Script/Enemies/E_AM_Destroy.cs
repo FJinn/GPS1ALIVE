@@ -10,13 +10,17 @@ public class E_AM_Destroy : MonoBehaviour {
     public GameObject AM_enemy;
     public GameObject[] p;
 
+    private SpriteRenderer AM_SR;
+    private E_Sound_Detection AM_ESD;
+
 	// Use this for initialization
 	void Start () {
         p = new GameObject[2];
         p[0] = GameObject.Find("Player1");
         p[1] = GameObject.Find("Player2");
 
-    //    FindObjectOfType<AudioManager>().Play("EnemyDetect2");
+        AM_SR = GetComponent<SpriteRenderer>();
+        FindObjectOfType<AudioManager>().Play("Detected");
 
         for (int i = 0; i < p.Length; i++)
         {
@@ -29,8 +33,11 @@ public class E_AM_Destroy : MonoBehaviour {
 
         if(AM_enemy != null)
         {
-            AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = true;
+            AM_ESD = AM_enemy.GetComponent<E_Sound_Detection>();
+
+            AM_ESD.EM_isSpawned = true;
             AM_animator = AM_enemy.GetComponent<Animator>();
+
             if(AM_enemy.GetComponent<E_Movement>().isNurse)
             {
                 AM_animator.Play("N_AlertAnim");
@@ -40,12 +47,13 @@ public class E_AM_Destroy : MonoBehaviour {
             }
         }
         
-        AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);
+        AM_myColor = new Color(AM_SR.color.r, AM_SR.color.g, AM_SR.color.b, AM_alpha);
 
         if(AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned)
         {
-            Destroy(AM_enemy.GetComponent<E_Sound_Detection>().EM_DetectionMeter);
-            AM_enemy.GetComponent<E_Sound_Detection>().enabled = false;
+            Destroy(AM_ESD.EM_DetectionMeter);
+            AM_ESD.enabled = false;
+
             AM_enemy.GetComponent<E_Movement>().enabled = false;
         }
     }
@@ -64,13 +72,13 @@ public class E_AM_Destroy : MonoBehaviour {
         {
             if(AM_enemy != null)
             {
-                AM_enemy.GetComponent<E_Sound_Detection>().EM_isSpawned = false;
+                AM_ESD.EM_isSpawned = false;
             }
             Destroy(gameObject);
         }
 
-        AM_myColor = new Color(GetComponent<SpriteRenderer>().color.r, GetComponent<SpriteRenderer>().color.g, GetComponent<SpriteRenderer>().color.b, AM_alpha);
-        GetComponent<SpriteRenderer>().color = AM_myColor;
+        AM_myColor = new Color(AM_SR.color.r, AM_SR.color.g, AM_SR.color.b, AM_alpha);
+        AM_SR.color = AM_myColor;
 
 	}
 }

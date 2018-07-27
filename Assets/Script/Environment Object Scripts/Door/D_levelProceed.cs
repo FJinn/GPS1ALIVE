@@ -5,9 +5,8 @@ using UnityEngine;
 public class D_levelProceed : MonoBehaviour {
 
     public int levelIndex;
-
-    public bool player1Enter;
-    public bool player2Enter;
+    [HideInInspector] public bool player1Enter;
+    [HideInInspector] public bool player2Enter;
 
     private void Update()
     {
