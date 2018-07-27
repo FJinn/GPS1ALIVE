@@ -7,6 +7,15 @@ public class L_Destroy : MonoBehaviour {
     public bool countdown = false;
     public float count = 0;
     public int lightOffDuration;
+    private bool flickerControl = false;
+
+    private float flickerCount;
+    [Header("Flicker happens at % (0 - 1) of its duration")]
+    public float firstFlickerTime;
+    public float secondFlickerTime;
+
+    [Header("Duration for flickering On and Off (in frames)")]
+    public int flickerFrame;
 
     private void Update()
     {
@@ -31,6 +40,50 @@ public class L_Destroy : MonoBehaviour {
             {
                 count += Time.deltaTime;
             }
+
+            if(count >= lightOffDuration - (lightOffDuration * firstFlickerTime) && count <= lightOffDuration - (lightOffDuration * secondFlickerTime) && !flickerControl)
+            {
+                flicker();
+            }
+            if(count >= lightOffDuration - (lightOffDuration * secondFlickerTime) && flickerControl)
+            {
+                flicker();
+            }
+        }
+    }
+
+    void flicker()
+    {
+        if(flickerCount == 0)
+        {
+            foreach (Transform child in this.transform)
+            {
+                child.GetComponent<Light>().enabled = true;
+                LampFlickerSound();
+            }
+        }
+
+        if (flickerCount >= flickerFrame)
+        {
+            foreach (Transform child in this.transform)
+            {
+                child.GetComponent<Light>().enabled = false;
+                LampFlickerSound();
+            }
+            flickerCount = 0;
+
+            if(!flickerControl)
+            {
+                flickerControl = true;
+            }
+            else if(flickerControl)
+            {
+                flickerControl = false;
+            }
+        }
+        else
+        {
+            flickerCount++;
         }
     }
 
