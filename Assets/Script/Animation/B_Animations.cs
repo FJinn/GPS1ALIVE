@@ -10,6 +10,7 @@ public class B_Animations : MonoBehaviour {
     P_throw playerThrow;
     P_mechanismTrigger leverInteract;
     Rigidbody2D playerVelocity;
+    P_Death[] pDeath = new P_Death[2];
 
     bool enterVent = false;
     bool exitVent = false;
@@ -22,8 +23,18 @@ public class B_Animations : MonoBehaviour {
     public bool p1FallDeath = false;
     public bool p2FallDeath = false;
 
+    GameObject[] p = new GameObject[2];
+
     private void Start()
     {
+        for(int i=0; i<2; i++)
+        {
+            p[0] = GameObject.FindGameObjectWithTag("Player");
+            p[1] = GameObject.FindGameObjectWithTag("Player2");
+            pDeath[0] = p[0].GetComponent<P_Death>();
+            pDeath[1] = p[1].GetComponent<P_Death>();
+        }
+
         playerVent = GetComponent<P_Vent>();
         playerControl = GetComponent<P_controls>();
         playerPushPull = GetComponent<P_pushPull>();
@@ -39,6 +50,7 @@ public class B_Animations : MonoBehaviour {
         OnLadder();
         Interaction();
         Spotted();
+        HitByBox();
         Throwing();
 	}
 
@@ -324,6 +336,17 @@ public class B_Animations : MonoBehaviour {
     void Spotted()
     {
         if(playerControl.spotted)
+        {
+            anim.SetBool("Scared", true);
+            anim.SetBool("Jumping", false);
+            anim.SetBool("Idle", false);
+            anim.SetBool("Walking", false);
+        }
+    }
+
+    void HitByBox()
+    {
+        if (pDeath[0].killByBox || pDeath[1].killByBox)
         {
             anim.SetBool("Scared", true);
             anim.SetBool("Jumping", false);
