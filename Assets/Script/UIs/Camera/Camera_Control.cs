@@ -25,6 +25,7 @@ public class Camera_Control : MonoBehaviour {
     public float cameraSizeSmoothTimer;
 
     public bool targetRoom = false;
+    [HideInInspector] public bool endingCamera;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +47,23 @@ public class Camera_Control : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
+        if(endingCamera)
+        {
+            cameraSmooth = Mathf.Lerp(roomCameraSize[8], 15, 10f);
+
+            midpointX = (player.transform.position.x + player2.transform.position.x) / 2;
+            midpointY = (player.transform.position.y + player2.transform.position.y) / 2;
+
+            float xPos = Mathf.SmoothDamp(transform.position.x, midpointX, ref velocity.x, smoothX);
+            float yPos = Mathf.SmoothDamp(transform.position.y, midpointY, ref velocity.y, smoothX);
+
+            transform.position = new Vector3(xPos, yPos, transform.position.z);
+            
+            currentCamera.orthographicSize = cameraSmooth;
+
+            return;
+        }
+
         if (!targetRoom)
             {
                 midpointX = (player.transform.position.x + player2.transform.position.x) / 2;

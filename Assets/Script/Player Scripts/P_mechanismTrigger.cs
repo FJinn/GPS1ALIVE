@@ -46,6 +46,8 @@ public class P_mechanismTrigger : MonoBehaviour {
                 {
                     if (Input.GetKeyDown(GetComponent<P_controls>().KeyUse) && !GetComponent<P_controls>().StopGameControl && mechanism.GetComponent<D_levelProceed>().player1Enter && mechanism.GetComponent<D_levelProceed>().player2Enter)
                     {
+                        mechanism.GetComponent<Animator>().Play("GD_Open");
+                        FindObjectOfType<AudioManager>().Play("DoorUnlocking");
                         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(mechanism.GetComponent<D_levelProceed>().levelIndex);
                         CheckpointManager.GetComponent<Checkpoint>().resetManager();
                         Destroy(CheckpointManager);

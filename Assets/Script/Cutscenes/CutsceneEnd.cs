@@ -37,6 +37,7 @@ public class CutsceneEnd : MonoBehaviour {
                 tempControl.KeyUp = KeyCode.None;
                 tempControl.KeyUse = KeyCode.None;
                 
+            tempControl.StopGameControl = true;
 
                 startWalk = true;
             }
@@ -49,7 +50,7 @@ public class CutsceneEnd : MonoBehaviour {
         if(startWalk)
         {
             counter += 1 * Time.deltaTime;
-            if(counter >= 1.5f)
+            if(counter >= 1f)
             {
                 for(int i =0;i < players.Length;i++)
                 {
