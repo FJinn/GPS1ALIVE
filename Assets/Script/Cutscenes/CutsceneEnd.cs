@@ -11,11 +11,13 @@ public class CutsceneEnd : MonoBehaviour {
     private float counter;
     [SerializeField] private PostProcessingProfile levelProfile;
     [SerializeField] private GameObject levelChanger;
+    private GameObject CheckpointManager;
 
     ColorGradingModel.Settings myBasicSettings;
 
     private void Start()
     {
+        CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
         players = new GameObject[2];
         players[0] = GameObject.FindGameObjectWithTag("Player");
         players[1] = GameObject.FindGameObjectWithTag("Player2");
@@ -69,6 +71,12 @@ public class CutsceneEnd : MonoBehaviour {
                 if(myBasicSettings.basic.postExposure >= 15f)
                 {
                     levelChanger.GetComponent<LevelChanger>().FadeToLevel(8);
+
+                    if(CheckpointManager != null)
+                    {
+                        CheckpointManager.GetComponent<Checkpoint>().resetManager();
+                        Destroy(CheckpointManager);
+                    }
                 }
 
                 levelProfile.colorGrading.settings = myBasicSettings;
