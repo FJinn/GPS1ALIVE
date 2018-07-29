@@ -55,6 +55,8 @@ public class P_controls : MonoBehaviour {
 
     private void Awake()
     {
+        animList = new string[4];
+        anim = GetComponent<Animator>();
         walls = GameObject.FindGameObjectsWithTag("Walls");       
     }
 
@@ -62,8 +64,6 @@ public class P_controls : MonoBehaviour {
     {
         // setup rigidbody for easier use(just for saving getcomponent<rigidbody2d>() space);
 
-        animList = new string[4];
-        anim = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
         iniGravity = rb2d.gravityScale;
         mySpriteRenderer = GetComponent<SpriteRenderer>();

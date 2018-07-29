@@ -37,6 +37,7 @@ public class CutsceneEnd : MonoBehaviour {
                 tempControl.KeyUp = KeyCode.None;
                 tempControl.KeyUse = KeyCode.None;
                 
+            tempControl.StopGameControl = true;
 
                 startWalk = true;
             }
@@ -49,14 +50,16 @@ public class CutsceneEnd : MonoBehaviour {
         if(startWalk)
         {
             counter += 1 * Time.deltaTime;
-            if(counter >= 1.5f)
+            if(counter >= 1f)
             {
                 for(int i =0;i < players.Length;i++)
                 {
                     Rigidbody2D playersrb2d = players[i].GetComponent<Rigidbody2D>();
+                    players[i].GetComponent<P_controls>().StopGameControl = true;
+                    playersrb2d.velocity = new Vector2(13f, playersrb2d.velocity.y);
                     players[i].GetComponent<Animator>().SetBool("Idle", false);
                     players[i].GetComponent<Animator>().SetBool("Walking", true);
-                    playersrb2d.velocity = new Vector2(13f, playersrb2d.velocity.y);
+                    players[i].transform.localScale = new Vector3(1, 1, 1);
                 }
 
                 myBasicSettings = levelProfile.colorGrading.settings;

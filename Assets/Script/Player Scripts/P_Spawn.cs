@@ -12,12 +12,12 @@ public class P_Spawn : MonoBehaviour {
 	void Start () {
         spawnManager = GameObject.FindGameObjectWithTag("CheckpointManager");
         GetComponent<P_controls>().CameraStarted = false;
-
-        if (gameObject.CompareTag("Player"))
+        
+        if (CompareTag("Player"))
         {
             transform.position = spawnManager.GetComponent<Checkpoint>().spawnPoint + new Vector3(-2, 0,0);
         }else
-        if(gameObject.CompareTag("Player2"))
+        if(CompareTag("Player2"))
         {
             transform.position = spawnManager.GetComponent<Checkpoint>().spawnPoint + new Vector3(2, 0, 0);
         }
@@ -30,8 +30,4 @@ public class P_Spawn : MonoBehaviour {
         GetComponent<P_controls>().CameraStarted = true;
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
