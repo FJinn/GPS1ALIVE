@@ -18674,6 +18674,21 @@ Prefab:
       propertyPath: m_Color.b
       value: 0.6245289
       objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: flickerFrame
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: firstFlickerTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: secondFlickerTime
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}
   m_IsPrefabAsset: 0
@@ -24775,6 +24790,21 @@ Prefab:
         type: 2}
       propertyPath: m_Color.b
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: firstFlickerTime
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: secondFlickerTime
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114787003782441772, guid: 059824bf180ccda40bfcc8e0b20ff6fa,
+        type: 2}
+      propertyPath: flickerFrame
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 059824bf180ccda40bfcc8e0b20ff6fa, type: 2}

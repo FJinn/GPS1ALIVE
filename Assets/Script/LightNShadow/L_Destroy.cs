@@ -41,11 +41,11 @@ public class L_Destroy : MonoBehaviour {
                 count += Time.deltaTime;
             }
 
-            if(count >= lightOffDuration - (lightOffDuration * firstFlickerTime) && count <= lightOffDuration - (lightOffDuration * secondFlickerTime) && !flickerControl)
+            if(count >= (lightOffDuration * firstFlickerTime) && count <= (lightOffDuration * secondFlickerTime) && !flickerControl)
             {
                 flicker();
             }
-            if(count >= lightOffDuration - (lightOffDuration * secondFlickerTime) && flickerControl)
+            if(count >= (lightOffDuration * secondFlickerTime) && flickerControl)
             {
                 flicker();
             }
