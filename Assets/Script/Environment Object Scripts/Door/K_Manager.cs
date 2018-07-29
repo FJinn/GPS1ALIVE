@@ -10,6 +10,7 @@ public class K_Manager : MonoBehaviour {
     private SpriteRenderer sr;
     bool keyTaken = false;
     bool cannotTake = false;
+    [SerializeField] GameObject[] platforms;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +37,11 @@ public class K_Manager : MonoBehaviour {
                 popupUI.GetComponent<ButtonPressed>().Despawn();
                 keyTaken = true;
                 KeyPickupSound();
+
+                for(int j = 0; j< platforms.Length;j++)
+                {
+                    platforms[j].GetComponent<M_Trigger>().Trigger();
+                }
             }
         }
 	}

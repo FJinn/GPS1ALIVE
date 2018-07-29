@@ -23,7 +23,6 @@ public class CutsceneElevator : MonoBehaviour {
             tempControl.KeyDown = KeyCode.None;
             tempControl.KeyUp = KeyCode.None;
             tempControl.KeyUse = KeyCode.None;
-            tempControl.StopGameControl = true;
 
             player1 = true;
         }
@@ -37,7 +36,6 @@ public class CutsceneElevator : MonoBehaviour {
             tempControl.KeyDown = KeyCode.None;
             tempControl.KeyUp = KeyCode.None;
             tempControl.KeyUse = KeyCode.None;
-            tempControl.StopGameControl = true;
 
             player2 = true;
         }
@@ -60,7 +58,9 @@ public class CutsceneElevator : MonoBehaviour {
         if(player1 && player2 && !triggerOnce)
         {
             triggerOnce = true;
+            FindObjectOfType<AudioManager>().Play("EscapeBGM");
             FindObjectOfType<Camera_Control>().GetComponent<Camera_Control>().endingCamera = true;
+            FindObjectOfType<Camera_Control>().GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
             CloseDoor.GetComponent<Animator>().Play("GD_Open");
             Elevator.GetComponent<M_Trigger>().Trigger();
         }

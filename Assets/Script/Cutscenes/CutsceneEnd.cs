@@ -55,9 +55,11 @@ public class CutsceneEnd : MonoBehaviour {
                 for(int i =0;i < players.Length;i++)
                 {
                     Rigidbody2D playersrb2d = players[i].GetComponent<Rigidbody2D>();
+                    players[i].GetComponent<P_controls>().StopGameControl = true;
+                    playersrb2d.velocity = new Vector2(13f, playersrb2d.velocity.y);
                     players[i].GetComponent<Animator>().SetBool("Idle", false);
                     players[i].GetComponent<Animator>().SetBool("Walking", true);
-                    playersrb2d.velocity = new Vector2(13f, playersrb2d.velocity.y);
+                    players[i].transform.localScale = new Vector3(1, 1, 1);
                 }
 
                 myBasicSettings = levelProfile.colorGrading.settings;

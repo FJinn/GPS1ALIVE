@@ -35,6 +35,7 @@ public class BGM_Manager : MonoBehaviour {
     {
         // set audio volume to userSetVolume
         GetComponent<AudioSource>().volume = slider.value;
+        
     }
     
 }
