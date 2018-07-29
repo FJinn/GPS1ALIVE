@@ -11,13 +11,11 @@ public class CutsceneEnd : MonoBehaviour {
     private float counter;
     [SerializeField] private PostProcessingProfile levelProfile;
     [SerializeField] private GameObject levelChanger;
-    private GameObject CheckpointManager;
 
     ColorGradingModel.Settings myBasicSettings;
 
     private void Start()
     {
-        CheckpointManager = GameObject.FindGameObjectWithTag("CheckpointManager");
         players = new GameObject[2];
         players[0] = GameObject.FindGameObjectWithTag("Player");
         players[1] = GameObject.FindGameObjectWithTag("Player2");
@@ -31,16 +29,14 @@ public class CutsceneEnd : MonoBehaviour {
             {
 
                 P_controls tempControl;
+                B_Animations tempAnimation;
+                players[i].GetComponent<Animator>().SetBool("Idle", true);
+                tempAnimation = players[i].GetComponent<B_Animations>();
                 tempControl = players[i].GetComponent<P_controls>();
 
-                tempControl.KeyLeft = KeyCode.None;
-                tempControl.KeyRight = KeyCode.None;
-                tempControl.KeyDown = KeyCode.None;
-                tempControl.KeyUp = KeyCode.None;
-                tempControl.KeyUse = KeyCode.None;
+                tempControl.enabled = false;
+                tempAnimation.enabled = false;
                 
-            tempControl.StopGameControl = true;
-
                 startWalk = true;
             }
         }
@@ -72,14 +68,8 @@ public class CutsceneEnd : MonoBehaviour {
                 {
                     levelChanger.GetComponent<LevelChanger>().FadeToLevel(8);
 
-                    if(CheckpointManager != null)
-                    {
-                        CheckpointManager.GetComponent<Checkpoint>().resetManager();
-                        Destroy(CheckpointManager);
-                    }
                 }
 
-                levelProfile.colorGrading.settings = myBasicSettings;
             }
         }
     }
