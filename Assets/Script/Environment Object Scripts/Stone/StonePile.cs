@@ -10,29 +10,33 @@ public class StonePile : MonoBehaviour {
     [Header("Change the spawning stone sound radius")]
     public float soundRadius;
 
+    P_throw[] pThrow = new P_throw[2];
+
     // Use this for initialization
     void Start () {
         p[0] = GameObject.FindGameObjectWithTag("Player");
         p[1] = GameObject.FindGameObjectWithTag("Player2");
+        pThrow[0] = p[0].GetComponent<P_throw>();
+        pThrow[1] = p[1].GetComponent<P_throw>();
     }
 
     private void OnTriggerStay2D(Collider2D collision)
     {
         for (int i = 0; i < p.Length; i++)
         {
-            if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false && p[i].GetComponent<P_throw>().canUseStonePile)
+            if (Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && pThrow[i].throwStance == false && pThrow[i].canUseStonePile && !pThrow[i].inTheAir)
             {
                 if (collision.gameObject == p[i] /*&& Input.GetKeyDown(p[i].GetComponent<P_controls>().KeyUse) && p[i].GetComponent<P_throw>().throwStance == false*/)
                 {
-                    p[i].GetComponent<P_throw>().spawnStone = 1;
-                    p[i].GetComponent<P_throw>().pickedUp = true;
+                    pThrow[i].spawnStone = 1;
+                    pThrow[i].pickedUp = true;
                 }
-                p[i].GetComponent<P_throw>().speedY = height;
+                pThrow[i].speedY = height;
             }
 
-            if (p[i].GetComponent<P_throw>().stoneTemp != null)
+            if (pThrow[i].stoneTemp != null)
             {
-                p[i].GetComponent<P_throw>().stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
+                pThrow[i].stoneTemp.GetComponent<S_SoundRadius>().s_soundRadius = soundRadius;
             }
         }
     }

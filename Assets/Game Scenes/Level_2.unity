@@ -5099,7 +5099,7 @@ Prefab:
     - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.55
+      value: 0.4371246
       objectReference: {fileID: 0}
     - target: {fileID: 114796901425855980, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
@@ -5109,6 +5109,11 @@ Prefab:
     - target: {fileID: 1404593708650830, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
       propertyPath: m_Name
       value: StonePile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
+        type: 2}
+      propertyPath: m_Offset.y
+      value: -0.05643767
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 939825f55cb58b04fbdac3806ec21e81, type: 2}
@@ -21492,7 +21497,7 @@ Prefab:
     - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.8
+      value: 0.4371246
       objectReference: {fileID: 0}
     - target: {fileID: 114796901425855980, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
@@ -22373,7 +22378,7 @@ Prefab:
     - target: {fileID: 61108883320057922, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.8
+      value: 0.4371246
       objectReference: {fileID: 0}
     - target: {fileID: 114796901425855980, guid: 939825f55cb58b04fbdac3806ec21e81,
         type: 2}
