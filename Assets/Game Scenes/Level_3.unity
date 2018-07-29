@@ -38046,7 +38046,7 @@ GameObject:
   - component: {fileID: 1897026836}
   m_Layer: 0
   m_Name: LastRoomElevator
-  m_TagString: Untagged
+  m_TagString: LastRoomBGM
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38100,6 +38100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03f73c215db22bd4780019934ddf4879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerOnce: 0
   Elevator: {fileID: 422147185}
   CloseDoor: {fileID: 2014913959}
 --- !u!1001 &1900440373
