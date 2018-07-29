@@ -7,9 +7,6 @@ public class CrawlIntoCrack : MonoBehaviour {
     // player
     public GameObject[] p;
     
-    public bool DisableCameraLimit = false;
-    public bool StopGameControl = false;
-
     // RESETING COLLISION BOX BOX COLLIDER 2D
     
     
@@ -26,17 +23,7 @@ public class CrawlIntoCrack : MonoBehaviour {
                 p[i].GetComponent<P_Vent>().exitVent = false; 
                 p[i].GetComponent<Rigidbody2D>().velocity = Vector2.zero;
                 p[i].GetComponent<P_avoidEnemyVent>().firstTap = true;         
-
-                if (DisableCameraLimit)
-                {
-                    p[i].GetComponent<P_controls>().CameraStarted = false;
-                }
-
-                if (StopGameControl)
-                {
-                    p[i].GetComponent<P_controls>().StopGameControl = true;
-                }
-                
+               
                 
                 p[i].GetComponent<P_Vent>().ResetCollisions();
             }

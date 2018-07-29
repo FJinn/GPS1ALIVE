@@ -36,14 +36,11 @@ public class BrightnessManager : MonoBehaviour {
     void Start()
     {
         tempmodel = myProfile.colorGrading.settings;
-        tutorialmodel = tutorialProfile.colorGrading.settings;
 
         tempmodel.colorWheels.log.power.a = 0;
-        tutorialmodel.colorWheels.log.power.a = 0;
 
         myProfile.colorGrading.settings = tempmodel;
         otherProfile.colorGrading.settings = tempmodel;
-        tutorialProfile.colorGrading.settings = tutorialmodel;
 
 
 
@@ -58,11 +55,9 @@ public class BrightnessManager : MonoBehaviour {
         BrightnessCorrection = slider.value;
 
         tempmodel.colorWheels.log.power.a = BrightnessCorrection;
-        tutorialmodel.colorWheels.log.power.a = BrightnessCorrection;
 
         myProfile.colorGrading.settings = tempmodel;
         otherProfile.colorGrading.settings = tempmodel;
-        tutorialProfile.colorGrading.settings = tutorialmodel;
 
     }
     

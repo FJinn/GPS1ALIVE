@@ -7,6 +7,7 @@ public class Camera_RoomTrigger : MonoBehaviour {
     private bool p1Triggered = false;
     private bool p2Triggered = false;
     private bool triggerOnce = false;
+
     private GameObject[] players;
 
     public int CameraIndexTrigger;
@@ -52,7 +53,6 @@ public class Camera_RoomTrigger : MonoBehaviour {
             }
             MainCamera.GetComponent<Camera_Control>().roomCameraInt = CameraIndexTrigger;
 
-            Invoke("ResumeCamera", 1f);
 
             if(KillEnemy)
             {
@@ -68,6 +68,7 @@ public class Camera_RoomTrigger : MonoBehaviour {
             if(!triggerOnce)
             {
                 triggerOnce = true;
+                Invoke("ResumeCamera", 1f);
                 MainCamera.GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
                 if(DoorsToClose.Length != 0)
                 {

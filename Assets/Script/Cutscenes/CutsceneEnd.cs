@@ -50,7 +50,16 @@ public class CutsceneEnd : MonoBehaviour {
             counter += 1 * Time.deltaTime;
             if(counter >= 1f)
             {
-                for(int i =0;i < players.Length;i++)
+                myBasicSettings = levelProfile.colorGrading.settings;
+
+                myBasicSettings.basic.postExposure += 2f * Time.deltaTime;
+
+                if (myBasicSettings.basic.postExposure >= 15f)
+                {
+                    levelChanger.GetComponent<LevelChanger>().FadeToLevel(8);
+                }
+
+                for (int i =0;i < players.Length;i++)
                 {
                     Rigidbody2D playersrb2d = players[i].GetComponent<Rigidbody2D>();
                     players[i].GetComponent<P_controls>().StopGameControl = true;
@@ -60,15 +69,7 @@ public class CutsceneEnd : MonoBehaviour {
                     players[i].transform.localScale = new Vector3(1, 1, 1);
                 }
 
-                myBasicSettings = levelProfile.colorGrading.settings;
-
-                myBasicSettings.basic.postExposure += 3f * Time.deltaTime;
-
-                if(myBasicSettings.basic.postExposure >= 15f)
-                {
-                    levelChanger.GetComponent<LevelChanger>().FadeToLevel(8);
-
-                }
+                levelProfile.colorGrading.settings = myBasicSettings;
 
             }
         }
