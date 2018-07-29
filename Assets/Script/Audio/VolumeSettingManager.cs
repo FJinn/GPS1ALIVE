@@ -12,9 +12,17 @@ public class VolumeSettingManager : MonoBehaviour {
     
     public Slider BGMSlider;
     public Slider SFXSlider;
-    public AudioSource bgm;
-    public Canvas MainMenu;
+    private AudioSource bgm;
+    static public Canvas MainMenu;
     public Canvas canvas;
+    public AudioClip mainMenuClip;
+    public AudioClip inGameClip;
+    public AudioClip endGameClip;
+    GameObject lastRoomEnd;
+    public bool playOnce = false;
+    private bool lastRoom = false;
+    static int temp;
+    int currentSceneIndex;
 
     private void Awake()
     {
@@ -32,13 +40,59 @@ public class VolumeSettingManager : MonoBehaviour {
     } 
 
     void Start () {
-
+        
         bgm = GetComponent<AudioSource>();
         bgm.ignoreListenerVolume = true;
         BGMSlider.onValueChanged.AddListener(delegate { BGMValueChanged(); });        
         SFXSlider.onValueChanged.AddListener(delegate { SFXValueChanged(); });
         setCamera();
-    }    
+    }
+
+    private void Update()
+    {
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if(temp != currentSceneIndex)
+        {
+            temp = currentSceneIndex;
+            playOnce = false;
+        }
+
+        if(currentSceneIndex == 1)
+        {
+            bgm.clip = mainMenuClip;
+        }
+        else if(currentSceneIndex == 7)
+        {
+            if(lastRoomEnd == null)
+            {
+                lastRoomEnd = GameObject.FindGameObjectWithTag("LastRoomBGM");
+            }
+            else
+            {
+                if (lastRoomEnd.GetComponent<CutsceneElevator>().triggerOnce)
+                {
+                    bgm.clip = endGameClip;
+                    if(!lastRoom)
+                    {
+                        lastRoom = true;
+                        playOnce = false;
+                    }
+                }
+            }
+            
+        }
+        else
+        {
+            bgm.clip = inGameClip;
+        }
+        
+        if (!playOnce)
+        {
+            playOnce = true;
+            bgm.Play();
+        }
+    }
 
     public void SettingSwitch()
     {

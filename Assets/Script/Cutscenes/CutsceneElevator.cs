@@ -6,7 +6,7 @@ public class CutsceneElevator : MonoBehaviour {
 
     private bool player1;
     private bool player2;
-    private bool triggerOnce = false;
+    public bool triggerOnce = false;
     [SerializeField] private GameObject Elevator;
     [SerializeField] private GameObject CloseDoor;
 
@@ -58,7 +58,7 @@ public class CutsceneElevator : MonoBehaviour {
         if(player1 && player2 && !triggerOnce)
         {
             triggerOnce = true;
-            FindObjectOfType<AudioManager>().Play("EscapeBGM");
+       //     FindObjectOfType<AudioManager>().Play("EscapeBGM");
             FindObjectOfType<Camera_Control>().GetComponent<Camera_Control>().endingCamera = true;
             FindObjectOfType<Camera_Control>().GetComponent<Camera_Control>().cameraSizeSmoothTimer = 0;
             CloseDoor.GetComponent<Animator>().Play("GD_Open");
