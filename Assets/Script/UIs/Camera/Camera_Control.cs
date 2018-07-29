@@ -49,13 +49,18 @@ public class Camera_Control : MonoBehaviour {
         
         if(endingCamera)
         {
-            cameraSmooth = Mathf.Lerp(roomCameraSize[8], 15, 10f);
+            if (cameraSizeSmoothTimer <= 10f)
+            {
+                cameraSizeSmoothTimer += 0.05f * Time.deltaTime;
+            }
+
+            cameraSmooth = Mathf.Lerp(roomCameraSize[8], 10, cameraSizeSmoothTimer);
 
             midpointX = (player.transform.position.x + player2.transform.position.x) / 2;
             midpointY = (player.transform.position.y + player2.transform.position.y) / 2;
 
-            float xPos = Mathf.SmoothDamp(transform.position.x, midpointX, ref velocity.x, smoothX);
-            float yPos = Mathf.SmoothDamp(transform.position.y, midpointY, ref velocity.y, smoothX);
+            float xPos = Mathf.SmoothDamp(transform.position.x, midpointX, ref velocity.x, 1.2f);
+            float yPos = Mathf.SmoothDamp(transform.position.y, midpointY, ref velocity.y, 1.2f);
 
             transform.position = new Vector3(xPos, yPos, transform.position.z);
             

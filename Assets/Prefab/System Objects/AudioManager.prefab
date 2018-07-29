@@ -184,3 +184,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: EscapeBGM
+    clip: {fileID: 8300000, guid: 96189c03c07f9884b909aeac00a563a8, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MainMenuBGM
+    clip: {fileID: 8300000, guid: f2ded853eee330b40aef85aa16c8297b, type: 3}
+    volume: 0.48
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

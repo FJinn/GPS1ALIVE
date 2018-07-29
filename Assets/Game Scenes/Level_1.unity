@@ -27940,7 +27940,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1061879011}
   - component: {fileID: 1061879013}
-  - component: {fileID: 1061879012}
   m_Layer: 0
   m_Name: Spot Light (2)
   m_TagString: Untagged
@@ -27961,20 +27960,6 @@ Transform:
   m_Father: {fileID: 1850424072}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 46.193, y: -75.368004, z: -4.4110003}
---- !u!114 &1061879012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1061879010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b28169a1b79684a96e84683e0a9b54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 5
-  firstColor: {r: 1, g: 0.6156863, b: 0.4745098, a: 0}
-  secondColor: {r: 0.95490247, g: 0.21226418, b: 1, a: 0}
 --- !u!108 &1061879013
 Light:
   m_ObjectHideFlags: 0
@@ -29108,7 +29093,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1260053157}
   - component: {fileID: 1260053158}
-  - component: {fileID: 1260053159}
   m_Layer: 0
   m_Name: Spot Light (1)
   m_TagString: Untagged
@@ -29148,9 +29132,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 1.05
+    m_NormalBias: 3
+    m_NearPlane: 0.4
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -29166,20 +29150,6 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &1260053159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1260053156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1b28169a1b79684a96e84683e0a9b54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 5
-  firstColor: {r: 1, g: 0.6156863, b: 0.4745098, a: 0}
-  secondColor: {r: 0.95490247, g: 0.21226418, b: 1, a: 0}
 --- !u!1001 &1264814802
 Prefab:
   m_ObjectHideFlags: 0
@@ -30012,6 +29982,29 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1435264855}
   m_CullTransparentMesh: 0
+--- !u!1 &1441342155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1967723863255836, guid: c70882d5b970feb43a594454eae34a16,
+    type: 2}
+  m_PrefabInternal: {fileID: 1173512002}
+--- !u!95 &1441342156
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1441342155}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7bf49b1b6469f32409b183dbccf725dd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1451598593
 Prefab:
   m_ObjectHideFlags: 0
