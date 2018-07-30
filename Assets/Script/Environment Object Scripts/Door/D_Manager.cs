@@ -8,6 +8,7 @@ public class D_Manager : MonoBehaviour {
     [SerializeField] private int doorNum;
     public GameObject[] p;
     public Animator doorUnlocked;
+    public bool LockedDoor = false;
 
     private BoxCollider2D myBoxCollider;
 
@@ -37,7 +38,14 @@ public class D_Manager : MonoBehaviour {
 
     void DoorOpen(){
         myBoxCollider.enabled = false;
-        doorUnlocked.Play("DoorUnlocked");
+        if(LockedDoor)
+        {
+            doorUnlocked.Play("DoorUnlockWithUi");
+        }
+        else
+        {
+            doorUnlocked.Play("DoorUnlocked");
+        }
     }
 
     public void DoorUnlockingSound()
