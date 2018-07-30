@@ -17,23 +17,23 @@ public class E_Sound_Detection : MonoBehaviour {
     public GameObject EM_Object;
 
     [Header("Don't touch anything below")]
-    public bool soundHeard;
-    public Vector2 soundSource;
+    [HideInInspector] public bool soundHeard;
+    [HideInInspector] public Vector2 soundSource;
 
     private bool startMoving;
     private Vector2 tempPos;
 
-    public GameObject EM_DetectionMeter;
-    public float EM_triggerAmounts;
-    public bool EM_isSpawned;
-    public bool EM_instantSound;
+    [HideInInspector] public GameObject EM_DetectionMeter;
+    [HideInInspector] public float EM_triggerAmounts;
+    [HideInInspector] public bool EM_isSpawned;
+    [HideInInspector] public bool EM_instantSound;
     private bool EM_alerted;
     
     private GameObject DM_Spawner;
     private bool DM_spawnOnce;
-    public bool DM_triggerOnce;
-    public Animator anim;
-    public bool isNurse;
+    [HideInInspector]  public bool DM_triggerOnce;
+    [HideInInspector] public Animator anim;
+    [SerializeField] bool isNurse;
 
     IEnumerator Stunned()
     {

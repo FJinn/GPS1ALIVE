@@ -15,7 +15,7 @@ public class P_avoidEnemyVent : MonoBehaviour {
     //rb2d
     private Rigidbody2D rb2d;
 
-    private void Awake(){
+    private void Start(){
         temp = this.gameObject.tag;
         rb2d = GetComponent<Rigidbody2D>();
     }
@@ -32,11 +32,11 @@ public class P_avoidEnemyVent : MonoBehaviour {
 
     private void OnTriggerStay2D (Collider2D other)
     {
-        if (other.tag == "leftCrack" && rb2d.velocity.x < 0 && firstTap)
+        if (other.CompareTag("leftCrack") && rb2d.velocity.x < 0 && firstTap)
         {
             transform.position = new Vector2(tempX, transform.position.y);
-        }
-        if (other.tag == "rightCrack" && rb2d.velocity.x > 0 && firstTap)
+        }else
+        if (other.CompareTag("rightCrack") && rb2d.velocity.x > 0 && firstTap)
         {
             transform.position = new Vector2(tempX, transform.position.y);
         }

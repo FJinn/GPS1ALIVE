@@ -59,6 +59,7 @@ public class P_Vent : MonoBehaviour {
         if (CompareTag("Player"))
         {
             GameObject tempObject = GameObject.FindGameObjectWithTag("Player2");
+
             if(tempObject.GetComponent<P_Vent>().BoxColliderOrigin != null)
             {
                 Physics2D.IgnoreCollision(BoxColliderOrigin, tempObject.GetComponent<P_Vent>().BoxColliderOrigin);

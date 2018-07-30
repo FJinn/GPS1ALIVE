@@ -35,8 +35,12 @@ public class P_throw : MonoBehaviour {
     bool isThrowing = false;
     private P_keyHold keyHold;
 
+    private Rigidbody2D rb2d;
+    public bool inTheAir = false;
+
     void Start()
     {
+        rb2d = GetComponent<Rigidbody2D>();
         control = GetComponent<P_controls>();
         // Offset Y
         tempYSize = GetComponent<BoxCollider2D>().size.y / 2;
@@ -50,6 +54,15 @@ public class P_throw : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        if(rb2d.velocity.y >= -0.5f && rb2d.velocity.y <= 0.5f)
+        {
+            inTheAir = false;
+        }
+        else
+        {
+            inTheAir = true;
+        }
+
         if(keyHold.keyNum == 0)
         {
             head = new Vector2(transform.position.x - 1.3f, transform.position.y + s_indicatorHeight);
@@ -87,7 +100,7 @@ public class P_throw : MonoBehaviour {
         {
             control.StopGameControl = true;
             FindObjectOfType<AudioManager>().Play("StonePickup");
-            if (Input.GetKeyDown(control.KeyUse) && canThrow)
+            if (Input.GetKeyDown(control.KeyUse) && canThrow && !inTheAir)
             {
                 throwing();
                 //spawnStone = 1;// for testing purpose, infinite stone ==> not infinity stone ;)
@@ -241,7 +254,7 @@ public class P_throw : MonoBehaviour {
 			count = 0;
 			DotsSpawner ();
 		}
-  /*      else if (throwStance && Input.GetKeyDown(control.KeyLeft))
+        else if (throwStance && Input.GetKeyDown(control.KeyLeft))
         {		// change trajectory to left
 			transform.localScale = new Vector3(-1f, transform.localScale.y,transform.localScale.z);
 			foreach(GameObject Dots in trajectoryDots)
@@ -259,7 +272,7 @@ public class P_throw : MonoBehaviour {
 			}
 			count = 0;
 			DotsSpawner ();
-		}*/
+		}
 	}
 
 	private Vector2 CalculatePosition(float elapsedTime){		// calculate the position of dots over time
