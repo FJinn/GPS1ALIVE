@@ -424,12 +424,13 @@ public class M_Trigger : MonoBehaviour {
             }
         }
 
-        if(EnterToFall)
+        if(EnterToFall && GetComponent<Rigidbody2D>().isKinematic)
         {
             GetComponent<Rigidbody2D>().isKinematic = false;
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[0].GetComponent<BoxCollider2D>());
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), players[1].GetComponent<BoxCollider2D>());
             Physics2D.IgnoreCollision(GetComponent<BoxCollider2D>(), destroyBox.GetComponent<BoxCollider2D>());
+            FindObjectOfType<AudioManager>().Play("ElevatorSkidding");
         }
     }
 
