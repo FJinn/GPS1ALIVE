@@ -28520,7 +28520,7 @@ Prefab:
     - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
         type: 2}
       propertyPath: sounds.Array.data[23].volume
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114151367406982000, guid: 467a456618e2772479f620dfb322cce9,
         type: 2}
@@ -30799,7 +30799,6 @@ GameObject:
   - component: {fileID: 1439551387}
   - component: {fileID: 1439551389}
   - component: {fileID: 1439551388}
-  - component: {fileID: 1439551390}
   m_Layer: 0
   m_Name: StopRainVFX
   m_TagString: Untagged
@@ -30859,18 +30858,6 @@ MonoBehaviour:
   StopAudio: 1
   PlayAudio: 0
   AudioToPlay: Raining
---- !u!114 &1439551390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1439551386}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45bf16e03d25c88418aae2c197357c48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cutsceneToDestroy: {fileID: 195067767}
 --- !u!1 &1441342155 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1967723863255836, guid: c70882d5b970feb43a594454eae34a16,

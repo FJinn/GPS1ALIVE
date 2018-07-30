@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CutsceneL1Room2 : MonoBehaviour {
 
@@ -36,6 +37,7 @@ public class CutsceneL1Room2 : MonoBehaviour {
             Destroy(this.gameObject);
         }
 
+
     }
 
     void Start ()
@@ -57,8 +59,13 @@ public class CutsceneL1Room2 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if(!exitOnce)
+
+        if (SceneManager.GetActiveScene().buildIndex != 2)
+        {
+            Destroy(this.gameObject);
+        }
+
+        if (!exitOnce)
         {
             switch (Stages)
             {
