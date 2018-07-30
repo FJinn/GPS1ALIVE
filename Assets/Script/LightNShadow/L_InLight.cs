@@ -15,7 +15,7 @@ public class L_InLight : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Collider2D[] playerWithinRange = Physics2D.OverlapCircleAll(transform.position, LightDetectionRadius, playerMask);
+        Collider2D[] playerWithinRange = Physics2D.OverlapCircleAll(transform.position, LightDetectionRadius + 3f, playerMask);
 
         foreach (Collider2D player in playerWithinRange)
         {

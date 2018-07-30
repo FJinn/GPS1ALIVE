@@ -190,9 +190,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: MainMenuBGM
-    clip: {fileID: 8300000, guid: f2ded853eee330b40aef85aa16c8297b, type: 3}
-    volume: 0.48
+  - name: Raining
+    clip: {fileID: 8300000, guid: 90200decdf89f3a4aaedf59b7e55d760, type: 3}
+    volume: 0.8
     pitch: 1
     loop: 0
     source: {fileID: 0}

@@ -119,6 +119,8 @@ public class E_Sound_Detection : MonoBehaviour {
             {
                 anim.Play("D_IdleAnim");
             }
+
+            StopAllCoroutines();
             StartCoroutine(Stunned());
         }
 
