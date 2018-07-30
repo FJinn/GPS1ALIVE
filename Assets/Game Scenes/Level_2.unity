@@ -2137,14 +2137,14 @@ MonoBehaviour:
   duration: 3
   firstColor: {r: 1, g: 0.5411765, b: 0.41960785, a: 0}
   secondColor: {r: 1, g: 0.7799911, b: 0.7216981, a: 0}
-  intensityLerp: 0
-  duration2: 0
-  firstIntensity: 0
-  secondIntensity: 0
+  intensityLerp: 1
+  duration2: 0.15
+  firstIntensity: 5
+  secondIntensity: 6
   rangeLerp: 1
-  duration3: 0.15
-  firstRange: 5
-  secondRange: 6
+  duration3: 0.05
+  firstRange: 13
+  secondRange: 15
 --- !u!1001 &326665016
 Prefab:
   m_ObjectHideFlags: 0
@@ -3756,14 +3756,14 @@ MonoBehaviour:
   duration: 0
   firstColor: {r: 0, g: 0, b: 0, a: 0}
   secondColor: {r: 0, g: 0, b: 0, a: 0}
-  intensityLerp: 0
-  duration2: 0
-  firstIntensity: 0
-  secondIntensity: 0
+  intensityLerp: 1
+  duration2: 0.05
+  firstIntensity: 2
+  secondIntensity: 3
   rangeLerp: 1
   duration3: 0.05
   firstRange: 3
-  secondRange: 3.5
+  secondRange: 4
 --- !u!1 &548036160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1511439318371416, guid: 98e848a05d969164eb95a0e9a7bb7e6a,
@@ -23172,6 +23172,11 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 0.05
       objectReference: {fileID: 0}
+    - target: {fileID: 114475113350279882, guid: a2d17c676ed80ab499b50f6c82da5e08,
+        type: 2}
+      propertyPath: s_triggerAmounts
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2d17c676ed80ab499b50f6c82da5e08, type: 2}
   m_IsPrefabAsset: 0
@@ -27585,6 +27590,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 114445848105710094, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
+        type: 2}
+      propertyPath: s_triggerAmounts
+      value: 0.15
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114722189447425544, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}

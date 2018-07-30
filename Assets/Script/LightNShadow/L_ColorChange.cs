@@ -46,7 +46,7 @@ public class L_ColorChange : MonoBehaviour {
         {
 
             t3 = Mathf.PingPong(Time.time, duration3) / duration3;
-            GetComponent<Light>().intensity = Mathf.Lerp(firstRange, secondRange, t3);
+            GetComponent<Light>().range = Mathf.Lerp(firstRange, secondRange, t3);
         }
 	}
 }
