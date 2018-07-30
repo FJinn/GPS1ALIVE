@@ -369,15 +369,13 @@ public class B_Animations : MonoBehaviour {
             if (playerThrow.throwed)
             {
                 anim.SetBool("PickUp", false);
-                anim.SetBool("Aim", false);
                 anim.SetBool("Throw", true);                
             }
         }     
     }
 
     public void ResetThrowInteraction()
-    {
-        anim.SetBool("Aim", false);
+    {       
         anim.SetBool("Throw", false);
         anim.SetBool("PickUp", false);
         anim.SetBool("Idle", true);
