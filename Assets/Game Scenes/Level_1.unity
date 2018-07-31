@@ -6651,12 +6651,12 @@ Prefab:
     - target: {fileID: 61015357886459344, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}
       propertyPath: m_Size.y
-      value: 0.68
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 61015357886459344, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}
       propertyPath: m_Size.x
-      value: 1.19
+      value: 0.49
       objectReference: {fileID: 0}
     - target: {fileID: 61015357886459344, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e,
         type: 2}
@@ -6667,6 +6667,10 @@ Prefab:
         type: 2}
       propertyPath: s_triggerAmounts
       value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471789066770320, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114722189447425544, guid: a5cbe6ad9d8f5fc45a3d978fe99a287e, type: 2}
