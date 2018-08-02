@@ -2259,6 +2259,10 @@ Prefab:
       propertyPath: MovingDistance
       value: -8
       objectReference: {fileID: 0}
+    - target: {fileID: 1511439318371416, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
   m_IsPrefabAsset: 0
@@ -48348,6 +48352,10 @@ Prefab:
         type: 2}
       propertyPath: MovingSpeed
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511439318371416, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
