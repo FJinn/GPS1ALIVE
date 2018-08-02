@@ -29,6 +29,10 @@ public class ButtonPressed : MonoBehaviour {
     {
         if (boxUi)
         {
+            if (!GetComponentInParent<M_BoxPull>().enabled)
+            {
+                Destroy(spawnedObject);
+            }
             if (GetComponentInParent<FixedJoint2D>().enabled)
             {
                 GetComponent<BoxCollider2D>().enabled = false;
