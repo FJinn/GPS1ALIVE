@@ -9,7 +9,7 @@ TextureImporter:
     21300008: Props 3_2
     21300010: Props 3_5
     21300012: P_Cagelight
-    21300014: Props 3_7
+    21300014: P_Displays
     21300016: Props 3_8
     21300018: Props 3_9
     21300020: Props 3_10
@@ -19,6 +19,7 @@ TextureImporter:
     21300028: Props 3_14
     21300030: Props 3_15
     21300032: P_Popup
+    21300034: P_Projector
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -284,8 +285,8 @@ TextureImporter:
       name: Props 3_11
       rect:
         serializedVersion: 2
-        x: 768
-        y: 512
+        x: 1024
+        y: 1024
         width: 256
         height: 256
       alignment: 0
@@ -304,9 +305,9 @@ TextureImporter:
       name: P_Cagelight
       rect:
         serializedVersion: 2
-        x: 498
+        x: 501
         y: 1024
-        width: 282
+        width: 273
         height: 216
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -336,6 +337,46 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6327dbe10821f3a4b8582c79736fc522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P_Projector
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 510
+        height: 362
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77f2c2b0ce8a1c349aa25c0fc0b18f6a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: P_Displays
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 0
+        width: 511
+        height: 768
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78a5bfc3142e8564093849f3d32b7139
       vertices: []
       indices: 
       edges: []

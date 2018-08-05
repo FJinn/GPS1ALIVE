@@ -52,9 +52,9 @@ public class CutsceneEnd : MonoBehaviour {
             {
                 myBasicSettings = levelProfile.colorGrading.settings;
 
-                myBasicSettings.basic.postExposure += 2f * Time.deltaTime;
+                myBasicSettings.basic.postExposure += 1f * Time.deltaTime;
 
-                if (myBasicSettings.basic.postExposure >= 15f)
+                if (myBasicSettings.basic.postExposure >= 9f)
                 {
                     levelChanger.GetComponent<LevelChanger>().FadeToLevel(8);
                 }

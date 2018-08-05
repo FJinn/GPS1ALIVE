@@ -12,6 +12,16 @@ TextureImporter:
     21300014: Nurse Alert Right_7
     21300016: Nurse Alert Right_8
     21300018: Nurse Alert Right_9
+    21300020: N_AlertSpriteSheet_0
+    21300022: N_AlertSpriteSheet_1
+    21300024: N_AlertSpriteSheet_2
+    21300026: N_AlertSpriteSheet_3
+    21300028: N_AlertSpriteSheet_4
+    21300030: N_AlertSpriteSheet_5
+    21300032: N_AlertSpriteSheet_6
+    21300034: N_AlertSpriteSheet_7
+    21300036: N_AlertSpriteSheet_8
+    21300038: N_AlertSpriteSheet_9
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -94,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Nurse Alert Right_0
+      name: N_AlertSpriteSheet_0
       rect:
         serializedVersion: 2
         x: 214
@@ -108,13 +118,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb1b624e37fd5414a8bfa90a5a0ebcdf
+      spriteID: b6875ff85bf150a47ad6dd11974a35ed
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_1
+      name: N_AlertSpriteSheet_1
       rect:
         serializedVersion: 2
         x: 761
@@ -128,13 +138,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e089c4913140e5498d361b1b1c193f4
+      spriteID: 8767e5fd4779ec844ad6d6eb60e7c360
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_2
+      name: N_AlertSpriteSheet_2
       rect:
         serializedVersion: 2
         x: 1309
@@ -148,13 +158,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b982737a0dd66c843b874b7bc3edf7b0
+      spriteID: 509ce6e79a646994aa69d25ca75c1174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_3
+      name: N_AlertSpriteSheet_3
       rect:
         serializedVersion: 2
         x: 1857
@@ -168,13 +178,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a225db4d93733d1498caac03ece35b80
+      spriteID: 4cb8fbbe2a19a1b4488ee368ae08a9b3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_4
+      name: N_AlertSpriteSheet_4
       rect:
         serializedVersion: 2
         x: 2405
@@ -188,107 +198,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab316481134ca8848baacb31d26af78b
+      spriteID: 1f012f3aef6ccbb47b8d53b43af6eda1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_5
+      name: N_AlertSpriteSheet_5
       rect:
         serializedVersion: 2
         x: 2964
         y: 0
         width: 279
         height: 657
-      alignment: 9
-      pivot: {x: 0.32385036, y: 0.0014961086}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a400eec0e61f7046bfaf40e8f304635
+      spriteID: 7fae4c8f43ec96442af1c252dc992341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_6
+      name: N_AlertSpriteSheet_6
       rect:
         serializedVersion: 2
         x: 3521
         y: 0
         width: 329
         height: 657
-      alignment: 9
-      pivot: {x: 0.26938727, y: -0.0027856452}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ef8799d03e28d347a804449d28093b3
+      spriteID: 3a693c4b07561bd41b8d0da255bd0b91
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_7
+      name: N_AlertSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 4065
+        x: 4038
         y: 0
-        width: 338
+        width: 358
         height: 651
-      alignment: 9
-      pivot: {x: 0.28738964, y: -0.0012688608}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5042a33146d4b449924c5e009e88ce1
+      spriteID: e8447ef488a49704d806cda3e5dd8a39
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_8
+      name: N_AlertSpriteSheet_8
       rect:
         serializedVersion: 2
-        x: 4594
+        x: 4580
         y: 0
-        width: 359
+        width: 363
         height: 644
-      alignment: 9
-      pivot: {x: 0.27784154, y: -0.00266327}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 816060c5166fb01449fa0c58d699bd73
+      spriteID: 85e24aca4091a664b8f6289423fbdd79
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Nurse Alert Right_9
+      name: N_AlertSpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 5139
+        x: 5123
         y: 0
-        width: 361
+        width: 366
         height: 640
-      alignment: 9
-      pivot: {x: 0.29101834, y: -2.347406e-10}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3052d8df9248f74ea58a71fbfad7acf
+      spriteID: 09c64cbe27e7e9c478e596e374eaad8a
       vertices: []
       indices: 
       edges: []
