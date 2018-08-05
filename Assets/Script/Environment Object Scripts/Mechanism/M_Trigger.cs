@@ -58,7 +58,6 @@ public class M_Trigger : MonoBehaviour {
         players[1] = GameObject.FindGameObjectWithTag("Player2");
         myCollider = GetComponent<BoxCollider2D>();
 
-
         if (isThisDoor)
         {
             doorAnimator = GetComponent<Animator>();

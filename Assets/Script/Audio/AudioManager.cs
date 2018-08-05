@@ -35,8 +35,8 @@ public class AudioManager : MonoBehaviour {
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
-        Play("Environmental");
-        Play("InGameBGM");
+   //     Play("Environmental");
+   //     Play("InGameBGM");
     }
     
 

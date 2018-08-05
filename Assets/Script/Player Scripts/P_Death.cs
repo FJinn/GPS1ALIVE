@@ -20,7 +20,7 @@ public class P_Death : MonoBehaviour {
         ScreenFade.GetComponent<LevelChanger>().FadeToLevel(sceneIndex);
        // SceneManager.LoadScene(2);
     }
-
+    /*
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -42,5 +42,5 @@ public class P_Death : MonoBehaviour {
             Destroy(GameObject.FindGameObjectWithTag("CheckpointManager"));
         }
     }
-
+    */
 }

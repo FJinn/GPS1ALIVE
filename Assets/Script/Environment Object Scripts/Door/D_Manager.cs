@@ -10,6 +10,9 @@ public class D_Manager : MonoBehaviour {
     public Animator doorUnlocked;
     public bool LockedDoor = false;
 
+    // surgeion banging door
+    public bool doorClosed;
+
     private BoxCollider2D myBoxCollider;
 
     private void Start()

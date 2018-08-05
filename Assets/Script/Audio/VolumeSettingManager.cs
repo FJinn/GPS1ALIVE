@@ -21,8 +21,8 @@ public class VolumeSettingManager : MonoBehaviour {
     GameObject lastRoomEnd;
     public bool playOnce = false;
     private bool lastRoom = false;
-    static int temp;
-    int currentSceneIndex;
+    public static int temp;
+    public int currentSceneIndex;
 
     private void Awake()
     {
@@ -52,7 +52,7 @@ public class VolumeSettingManager : MonoBehaviour {
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
-        if(temp != currentSceneIndex)
+        if(temp != currentSceneIndex && (currentSceneIndex != 8 || currentSceneIndex != 9))
         {
             temp = currentSceneIndex;
             playOnce = false;
@@ -80,7 +80,16 @@ public class VolumeSettingManager : MonoBehaviour {
                     }
                 }
             }
-            
+        }
+        else if (currentSceneIndex == 8)
+        {
+            playOnce = true;
+            bgm.clip = endGameClip;
+        }
+        else if(currentSceneIndex == 9) // main menu credit
+        {
+            playOnce = true;
+            bgm.clip = mainMenuClip;
         }
         else
         {
