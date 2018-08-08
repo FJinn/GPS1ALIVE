@@ -4332,7 +4332,7 @@ MonoBehaviour:
   SFXSlider: {fileID: 1170258392}
   canvas: {fileID: 1881034635}
   mainMenuClip: {fileID: 8300000, guid: dbe9d0cbe918c7d44a8fe2a490d87bb1, type: 3}
-  inGameClip: {fileID: 8300000, guid: 65fcda99c2c98574baf5a23140867eaf, type: 3}
+  inGameClip: {fileID: 8300000, guid: 284a15d3b2cfa6e429c2e8a31ab0c98e, type: 3}
   endGameClip: {fileID: 8300000, guid: 96189c03c07f9884b909aeac00a563a8, type: 3}
   playOnce: 0
   currentSceneIndex: 0
