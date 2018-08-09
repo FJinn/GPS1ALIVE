@@ -16758,7 +16758,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4139536780964874, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -86
+      value: -85.79
       objectReference: {fileID: 0}
     - target: {fileID: 4139536780964874, guid: 98e848a05d969164eb95a0e9a7bb7e6a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -55065,6 +55065,11 @@ Prefab:
         type: 2}
       propertyPath: doorNum
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114822355640027724, guid: c15307721642b584790c6bd6eba91371,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c15307721642b584790c6bd6eba91371, type: 2}
